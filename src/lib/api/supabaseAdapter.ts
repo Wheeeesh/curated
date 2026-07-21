@@ -46,8 +46,21 @@ const mapSession = (s: SbSession | null): Session | null =>
 export function createSupabaseAdapter(url: string, anonKey: string): DataAdapter {
   const sb = createClient(url, anonKey)
 
-  const die = (error: { message: string } | null): void => {
-    if (error) throw new Error(error.message)
+  /**
+   * Supabase surfaces errors in several shapes — `message`, GoTrue's `msg`,
+   * or a raw Postgres error for a failing trigger. Without this, a 500 from
+   * a trigger reached the UI as a useless "{}".
+   */
+  const die = (error: unknown): void => {
+    if (!error) return
+    const e = error as Record<string, unknown>
+    const text =
+      (typeof e.message === 'string' && e.message) ||
+      (typeof e.msg === 'string' && e.msg) ||
+      (typeof e.error_description === 'string' && e.error_description) ||
+      (typeof e.error === 'string' && e.error) ||
+      ''
+    throw new Error(text || `Something went wrong (${e.code ?? e.status ?? 'unknown error'}).`)
   }
 
   const uid = async (): Promise<string> => {
