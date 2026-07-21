@@ -1,10 +1,11 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import maplibregl from 'maplibre-gl'
 import { CATEGORIES, type Category, type City } from '../lib/api/types'
 import { useAddPlaceMutation, useCities } from '../lib/hooks'
 import { useUi } from '../lib/session'
 import { searchPlaces, type GeoResult } from '../lib/geo/nominatim'
+import { parseLocationInput } from '../lib/geo/parseLink'
 import { CATEGORY_META } from '../lib/format'
 import { MAP_STYLE_URL } from '../lib/mapStyle'
 
@@ -75,10 +76,14 @@ export function AddPlaceScreen() {
   const [category, setCategory] = useState<Category | null>(null)
   const [description, setDescription] = useState('')
 
+  // A pasted map link or coordinate pair short-circuits the search entirely.
+  const linkResult = useMemo(() => parseLocationInput(query), [query])
+
   // Debounced Nominatim search (400 ms, min 3 chars, cached per query).
   useEffect(() => {
-    if (!city || query.trim().length < 3) {
+    if (!city || query.trim().length < 3 || linkResult.kind !== 'not-a-link') {
       setResults([])
+      setSearching(false)
       return
     }
     setSearching(true)
@@ -90,7 +95,7 @@ export function AddPlaceScreen() {
         .finally(() => setSearching(false))
     }, 400)
     return () => clearTimeout(t)
-  }, [query, city])
+  }, [query, city, linkResult.kind])
 
   if (!city) return null
 
@@ -139,13 +144,47 @@ export function AddPlaceScreen() {
                 <input
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
-                  placeholder={`Search a place in ${city.name}`}
+                  placeholder={`Search ${city.name}, or paste a map link`}
                   className="field"
-                  aria-label="Search for a place"
+                  aria-label="Search for a place, or paste a map link"
                 />
+                {query.trim() === '' && (
+                  <p className="ios-section-footer">
+                    Found it in Google or Apple Maps? Paste the link here and we’ll take the location from it.
+                  </p>
+                )}
                 {searching && <p className="ios-section-footer">Searching…</p>}
                 {searchError && (
                   <p className="ios-section-footer text-danger">Address search is unavailable — drop a pin instead.</p>
+                )}
+
+                {linkResult.kind === 'needs-expanding' && (
+                  <p className="ios-section-footer text-danger">
+                    That’s a shortened link, which we can’t open from here. Tap it once to let it open in Maps or your
+                    browser, then copy the full link from the address bar and paste that.
+                  </p>
+                )}
+
+                {linkResult.kind === 'location' && (
+                  <div className="ios-group mt-4">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        const { lat, lng, name: pinName } = linkResult.value
+                        setPicked({ lat, lng, name: pinName, address: city.name })
+                        setName(pinName)
+                      }}
+                      className="pressable ios-row"
+                    >
+                      <span className="min-w-0 flex-1">
+                        <span className="block truncate t-body">{linkResult.value.name || 'Location from link'}</span>
+                        <span className="block truncate t-footnote text-label-2">
+                          {linkResult.value.lat.toFixed(5)}, {linkResult.value.lng.toFixed(5)}
+                        </span>
+                      </span>
+                      <span aria-hidden className="text-label-3">›</span>
+                    </button>
+                  </div>
                 )}
                 {results.length > 0 && (
                   <div className="ios-group mt-4">
