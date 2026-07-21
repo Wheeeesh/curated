@@ -1,0 +1,140 @@
+import type { Place } from '../lib/api/types'
+import { placeId, seedDate } from './ids'
+import { memberByUsername } from './members'
+
+export interface SeedPlace extends Place {
+  /** Hand-assigned venue quality 1–10 the review generator scores around. */
+  baseQuality: number
+}
+
+let n = 0
+const p = (
+  cityId: string,
+  name: string,
+  category: Place['category'],
+  lat: number,
+  lng: number,
+  address: string,
+  description: string,
+  createdBy: string,
+  baseQuality: number,
+): SeedPlace => {
+  n += 1
+  return {
+    id: placeId(n),
+    cityId,
+    name,
+    category,
+    lat,
+    lng,
+    address,
+    description,
+    createdBy: memberByUsername[createdBy].id,
+    createdAt: seedDate(180 - n),
+    baseQuality,
+  }
+}
+
+export const SEED_PLACES: SeedPlace[] = [
+  // ————— ANTWERP —————
+  p('antwerp', 'The Jane', 'food', 51.2087, 4.429, 'Paradeplein 1', 'Fine dining in a converted chapel — the altar is now the kitchen.', 'nora', 9),
+  p('antwerp', "Ciro's", 'food', 51.2103, 4.3996, 'Amerikalei 6', 'Unchanged since 1962. Steak, pepper sauce, no discussion.', 'vera', 8),
+  p('antwerp', 'Fiskebar', 'food', 51.2148, 4.3939, 'Marnixplaats 12', 'Nordic-leaning seafood on the square. Oysters at golden hour.', 'nora', 8),
+  p('antwerp', 'Dogma Cocktails', 'bars', 51.2211, 4.4046, 'Wijngaardstraat 5', 'Tiny room, encyclopedic bartenders, drinks with intent.', 'vera', 9),
+  p('antwerp', 'Paters Vaetje', 'bars', 51.2205, 4.4008, 'Blauwmoezelstraat 1', 'Trappist classics in the cathedral’s shadow. Creaky and correct.', 'vera', 7),
+  p('antwerp', 'Vitrin', 'bars', 51.2147, 4.3941, 'Marnixplaats 14', 'Natural wine and small plates; the terrace is the social map of the Zuid.', 'sam', 8),
+  p('antwerp', 'Ampere', 'nightlife', 51.2079, 4.416, 'Simonsstraat 21', 'Concrete tunnel techno under the tracks. Sweaty in the right way.', 'vera', 8),
+  p('antwerp', 'Club Vaag', 'nightlife', 51.2222, 4.3978, 'Ernest Van Dijckkaai 9', 'River-side club with a heavier, darker booking policy.', 'elif', 7),
+  p('antwerp', 'MAS', 'culture', 51.2289, 4.4046, 'Hanzestedenplaats 1', 'Red sandstone tower of city history; the rooftop view is free.', 'nora', 8),
+  p('antwerp', 'KMSKA', 'culture', 51.2091, 4.3937, 'Leopold de Waelplaats 2', 'Rubens to Tuymans under one renovated neoclassical roof.', 'jules', 9),
+  p('antwerp', 'Rubenshuis', 'culture', 51.2174, 4.4104, 'Wapper 9-11', 'The painter’s own house and garden — intimate, not monumental.', 'ken', 7),
+  p('antwerp', 'Trix', 'music', 51.2156, 4.4569, 'Noordersingel 28', 'Borgerhout venue where tomorrow’s acts play tonight.', 'dae', 8),
+  p('antwerp', 'De Roma', 'music', 51.2119, 4.4437, 'Turnhoutsebaan 286', 'Restored 1920s cinema run by volunteers. The balcony is magic.', 'nora', 9),
+  p('antwerp', 'Rivierenhof', 'nature', 51.2119, 4.4691, 'Turnhoutsebaan 246', 'Sprawling park with an open-air theatre and proper old trees.', 'nora', 8),
+  p('antwerp', 'Stadspark', 'nature', 51.2126, 4.413, 'Quinten Matsijslei', 'Triangular English garden in the city’s heart. Pond, herons, calm.', 'ken', 7),
+  p('antwerp', 'Kloosterstraat', 'shopping', 51.214, 4.397, 'Kloosterstraat', 'A kilometre of vintage, design and curiosities. Sunday sport.', 'sam', 8),
+  p('antwerp', 'Stadsfeestzaal', 'shopping', 51.2179, 4.4058, 'Meir 78', 'Gilded 1908 festival hall reborn as a shopping arcade.', 'sam', 6),
+
+  // ————— ISTANBUL —————
+  p('istanbul', 'Çiya Sofrası', 'food', 40.9903, 29.0257, 'Güneşli Bahçe Sk. 43, Kadıköy', 'Anatolian regional cooking that scholars write about. Go hungry.', 'mika', 9),
+  p('istanbul', 'Karaköy Lokantası', 'food', 41.0225, 28.9744, 'Kemankeş Cd. 37A', 'Turquoise-tiled meyhane classic; lunch trays, evening rakı.', 'elif', 8),
+  p('istanbul', 'Zübeyir Ocakbaşı', 'food', 41.0369, 28.985, 'Bekar Sk. 28, Beyoğlu', 'Charcoal grill theatre — sit at the counter, order the lamb ribs.', 'elif', 8),
+  p('istanbul', 'Geyik', 'bars', 41.0316, 28.9822, 'Akarsu Ykş. 22, Cihangir', 'Coffee roastery by day, precise cocktails by night.', 'elif', 8),
+  p('istanbul', 'Solera Şarap Evi', 'bars', 41.033, 28.9779, 'Yeni Çarşı Cd. 44', 'Cave of a wine bar with hundreds of Turkish bottles to discover.', 'vera', 7),
+  p('istanbul', 'Alexandra Cocktail Bar', 'bars', 41.0678, 29.0432, 'Arnavutköy, Bebek Arnavutköy Cd.', 'Bosphorus-side cocktails without the rooftop circus.', 'elif', 8),
+  p('istanbul', 'Babylon', 'nightlife', 41.0568, 28.9793, 'Bomontiada, Şişli', 'The city’s live-music institution inside an old brewery yard.', 'elif', 8),
+  p('istanbul', 'Klein', 'nightlife', 41.0479, 28.988, 'Harbiye, Cumhuriyet Cd.', 'Garden club where the underground lineup meets the skyline.', 'dae', 7),
+  p('istanbul', 'Hagia Sophia', 'culture', 41.0086, 28.9802, 'Sultanahmet Meydanı', 'Fifteen centuries of empire in one dome. Queue early.', 'ken', 9),
+  p('istanbul', 'Istanbul Modern', 'culture', 41.0257, 28.9743, 'Kılıçali Paşa, Karaköy', 'Renzo Piano box on the water; Turkish modern art and a killer terrace.', 'jules', 8),
+  p('istanbul', 'Pera Museum', 'culture', 41.0316, 28.975, 'Meşrutiyet Cd. 65', 'Orientalist paintings and sharp temporary shows, minus the crowds.', 'jules', 7),
+  p('istanbul', 'Nardis Jazz Club', 'music', 41.0258, 28.9741, 'Kuledibi Sk. 8, Galata', 'Intimate jazz under Galata Tower. Reserve a table, keep quiet.', 'dae', 8),
+  p('istanbul', 'Salon İKSV', 'music', 41.0247, 28.972, 'Sadi Konuralp Cd. 5, Şişhane', 'Impeccably booked small hall — new music’s Istanbul living room.', 'dae', 8),
+  p('istanbul', 'Emirgan Korusu', 'nature', 41.1076, 29.0532, 'Emirgan, Sarıyer', 'Bosphorus grove famous for April tulips and Sunday tea houses.', 'nora', 8),
+  p('istanbul', 'Yıldız Parkı', 'nature', 41.0498, 29.0114, 'Yıldız, Beşiktaş', 'Old palace gardens tumbling toward the strait. Bring simit.', 'ken', 7),
+  p('istanbul', 'Grand Bazaar', 'shopping', 41.0106, 28.968, 'Beyazıt, Kalpakçılar Cd.', 'Four thousand shops, five centuries of haggling. Get lost properly.', 'sam', 7),
+  p('istanbul', 'Çukurcuma Antiques', 'shopping', 41.03, 28.98, 'Çukurcuma Cd., Beyoğlu', 'Sloping streets of antique dealers and mid-century treasure.', 'sam', 8),
+
+  // ————— TOKYO —————
+  p('tokyo', 'Afuri Ebisu', 'food', 35.6467, 139.71, '1-1-7 Ebisu, Shibuya', 'Yuzu shio ramen bright enough to convert broth purists.', 'mika', 8),
+  p('tokyo', 'Den', 'food', 35.664, 139.7147, '2-3-18 Jingūmae, Shibuya', 'Zaiyu Hasegawa’s playful kaiseki — the most fun fine dining gets.', 'mika', 9),
+  p('tokyo', 'Tsukiji Outer Market', 'food', 35.6654, 139.7707, '4 Chome Tsukiji, Chūō', 'Tamago on sticks, knife shops, uni bowls at 8am. Go early.', 'ken', 8),
+  p('tokyo', 'Bar Benfiddich', 'bars', 35.691, 139.6982, '9F, 1-13-7 Nishi-Shinjuku', 'Herbs pounded to order in a candlelit ninth-floor apothecary.', 'mika', 9),
+  p('tokyo', 'Golden Gai', 'bars', 35.6938, 139.7045, '1 Chome Kabukichō, Shinjuku', 'Two hundred matchbox bars in six alleys. Pick a door, say hello.', 'ken', 7),
+  p('tokyo', 'Bar Trench', 'bars', 35.6474, 139.7057, '1-5-8 Ebisu-nishi, Shibuya', 'European-leaning classics from one of Asia’s most awarded teams.', 'dae', 8),
+  p('tokyo', 'Womb', 'nightlife', 35.6572, 139.6959, '2-16 Maruyamachō, Shibuya', 'Four floors, one legendary mirror ball, techno until dawn.', 'dae', 8),
+  p('tokyo', 'Vent', 'nightlife', 35.666, 139.712, 'B1F, 3-18-19 Minami-Aoyama', 'Audiophile deep house in a black-walled Omotesando basement.', 'dae', 8),
+  p('tokyo', 'teamLab Planets', 'culture', 35.6493, 139.7898, '6-1-16 Toyosu, Kōtō', 'Barefoot, knee-deep, surrounded by light. Yes it’s worth it.', 'sam', 8),
+  p('tokyo', 'Nezu Museum', 'culture', 35.6624, 139.7259, '6-5-1 Minami-Aoyama', 'Pre-modern Asian art and a garden that resets your nervous system.', 'jules', 9),
+  p('tokyo', 'Mori Art Museum', 'culture', 35.6605, 139.7292, '53F Roppongi Hills Mori Tower', 'Contemporary blockbusters 53 floors above the city.', 'ken', 8),
+  p('tokyo', 'Blue Note Tokyo', 'music', 35.662, 139.7168, '6-3-16 Minami-Aoyama', 'The Tokyo residency the world’s jazz greats actually keep.', 'mika', 8),
+  p('tokyo', 'Shelter', 'music', 35.6613, 139.6683, 'B1F, 2-6-10 Kitazawa, Setagaya', 'Shimokitazawa basement where Japanese indie rock lives.', 'dae', 8),
+  p('tokyo', 'Shinjuku Gyoen', 'nature', 35.6852, 139.71, '11 Naitōmachi, Shinjuku', 'Three gardens in one — the 500-yen reset button of Tokyo.', 'ken', 9),
+  p('tokyo', 'Todoroki Valley', 'nature', 35.6046, 139.6483, '1 Chome Todoroki, Setagaya', 'A green ravine hiding inside the city grid. Twenty quiet minutes.', 'nora', 8),
+  p('tokyo', 'Daikanyama T-Site', 'shopping', 35.6485, 139.699, '16-15 Sarugakuchō, Shibuya', 'The world’s most civilised bookstore complex. Lose an afternoon.', 'sam', 9),
+  p('tokyo', 'Kōenji Vintage Streets', 'shopping', 35.7052, 139.6497, 'Kōenji-minami, Suginami', 'Racks of the good stuff before it reaches the resellers.', 'sam', 8),
+
+  // ————— SEOUL —————
+  p('seoul', 'Mingles', 'food', 37.5253, 127.0396, '19 Dosan-daero 67-gil, Gangnam', 'Temple cuisine logic, modern technique — Seoul fine dining’s benchmark.', 'mika', 9),
+  p('seoul', 'Gwangjang Market', 'food', 37.5701, 126.9997, '88 Changgyeonggung-ro, Jongno', 'Bindaetteok, mayak gimbap and knife-cut noodles under one loud roof.', 'ken', 8),
+  p('seoul', 'Tosokchon Samgyetang', 'food', 37.5768, 126.9715, '5 Jahamun-ro 5-gil, Jongno', 'Ginseng chicken soup that justifies its permanent queue.', 'mika', 7),
+  p('seoul', 'Zest', 'bars', 37.524, 127.043, '13 Dosan-daero 55-gil, Gangnam', 'Sustainability-minded cocktails from an Asia’s-50-Best fixture.', 'vera', 8),
+  p('seoul', 'Bar Cham', 'bars', 37.572, 126.985, '38 Jahamun-ro 7-gil, Jongno', 'Korean spirits treated seriously in a hanok-adjacent hideout.', 'dae', 8),
+  p('seoul', 'Charles H', 'bars', 37.57, 126.9768, 'B1F Four Seasons, 97 Saemunan-ro', 'Hidden-door hotel bar with prohibition polish and real warmth.', 'sam', 8),
+  p('seoul', 'Cakeshop', 'nightlife', 37.5344, 126.9945, '134 Itaewon-ro, Yongsan', 'Itaewon basement that broke Seoul’s underground scene open.', 'dae', 8),
+  p('seoul', 'Faust', 'nightlife', 37.534, 126.994, '133-3 Itaewon-ro, Yongsan', 'Dark, focused techno room for people who came to dance.', 'elif', 7),
+  p('seoul', 'Leeum Museum', 'culture', 37.5384, 126.999, '60-16 Itaewon-ro 55-gil', 'Koolhaas, Botta and Nouvel buildings full of national treasures.', 'jules', 9),
+  p('seoul', 'National Museum of Korea', 'culture', 37.524, 126.9804, '137 Seobinggo-ro, Yongsan', 'Five millennia of the peninsula, free, vast, unhurried.', 'ken', 8),
+  p('seoul', 'Daelim Changgo', 'culture', 37.5446, 127.0559, '78 Seongsui-ro, Seongdong', 'Warehouse-turned-gallery anchoring Seongsu’s creative sprawl.', 'sam', 7),
+  p('seoul', 'Channel 1969', 'music', 37.5604, 126.9235, '10 Wausan-ro 35-gil, Mapo', 'Yeonnam listening bar-venue hybrid with taste to spare.', 'dae', 8),
+  p('seoul', 'Strange Fruit', 'music', 37.5493, 126.9134, '12 Wausan-ro 3-gil, Mapo', 'Hongdae’s long-running home for the weird and wonderful.', 'dae', 7),
+  p('seoul', 'Bukhansan Trailhead', 'nature', 37.662, 127.011, 'Bukhansan-ro, Gangbuk', 'Granite peaks inside city limits — Seoul’s Sunday religion.', 'nora', 9),
+  p('seoul', 'Seoul Forest', 'nature', 37.5443, 127.0374, '273 Ttukseom-ro, Seongdong', 'Deer, ginkgo avenues and river breezes east of the centre.', 'ken', 8),
+  p('seoul', 'Seongsu-dong', 'shopping', 37.5446, 127.0459, 'Seongsu-dong, Seongdong', 'Brooklyn-of-Seoul blocks: concept stores in old shoe factories.', 'sam', 8),
+  p('seoul', 'Insadong', 'shopping', 37.574, 126.985, 'Insadong-gil, Jongno', 'Brushes, hanji paper and tea houses along the old antique street.', 'ken', 7),
+
+  // ————— PARIS —————
+  p('paris', 'Le Chateaubriand', 'food', 48.8649, 2.3763, '129 Av. Parmentier, 11e', 'The bistronomy original — still surprising, still argued about.', 'jules', 9),
+  p('paris', 'Septime', 'food', 48.8534, 2.3839, '80 Rue de Charonne, 11e', 'Effortless-looking perfection; book the minute reservations open.', 'jules', 9),
+  p('paris', 'Breizh Café', 'food', 48.862, 2.3625, '109 Rue Vieille du Temple, 3e', 'Buckwheat galettes elevated by Japanese precision. The cidre list!', 'sam', 8),
+  p('paris', 'Little Red Door', 'bars', 48.863, 2.364, '60 Rue Charlot, 3e', 'Concept-driven cocktails that stay delicious. World’s-50 regular.', 'sam', 9),
+  p('paris', 'Candelaria', 'bars', 48.8637, 2.3629, '52 Rue de Saintonge, 3e', 'Taqueria in front, candlelit mezcal den behind the white door.', 'elif', 8),
+  p('paris', 'Le Syndicat', 'bars', 48.871, 2.3543, '51 Rue du Faubourg Saint-Denis, 10e', 'French spirits only, wrapped in gold-foil brutalism.', 'vera', 8),
+  p('paris', 'Rex Club', 'nightlife', 48.8709, 2.3474, '5 Bd Poissonnière, 2e', 'Three decades of techno pedigree and a sound system to match.', 'elif', 8),
+  p('paris', 'Badaboum', 'nightlife', 48.8532, 2.3706, '2bis Rue des Taillandiers, 11e', 'Intimate Bastille club with a velvet secret room upstairs.', 'elif', 7),
+  p('paris', 'Palais de Tokyo', 'culture', 48.864, 2.2966, '13 Av. du Président Wilson, 16e', 'Raw concrete anti-museum open till midnight. Always a gamble, usually worth it.', 'jules', 8),
+  p('paris', 'Fondation Louis Vuitton', 'culture', 48.8766, 2.2633, '8 Av. du Mahatma Gandhi, 16e', 'Gehry’s glass ship in the Bois; blockbuster shows inside.', 'jules', 8),
+  p('paris', "Musée d'Orsay", 'culture', 48.86, 2.3266, "1 Rue de la Légion d'Honneur, 7e", 'The impressionists in a Beaux-Arts railway cathedral.', 'ken', 9),
+  p('paris', 'New Morning', 'music', 48.8712, 2.3536, '7-9 Rue des Petites Écuries, 10e', 'Legendary jazz room — Chet Baker played here; the ghosts remain.', 'dae', 8),
+  p('paris', 'Philharmonie de Paris', 'music', 48.8892, 2.3934, '221 Av. Jean Jaurès, 19e', 'Jean Nouvel’s shimmering hall with democratic ticket prices.', 'jules', 9),
+  p('paris', 'Buttes-Chaumont', 'nature', 48.8809, 2.3819, '1 Rue Botzaris, 19e', 'Cliffs, a temple on an island, and the city’s best picnic slopes.', 'nora', 9),
+  p('paris', 'Coulée verte René-Dumont', 'nature', 48.8484, 2.3752, '1 Coulée verte René-Dumont, 12e', 'The original elevated park — five planted kilometres above the 12e.', 'nora', 8),
+  p('paris', 'Merci', 'shopping', 48.8609, 2.3663, '111 Bd Beaumarchais, 3e', 'Concept store with a conscience and the famous red Fiat.', 'sam', 8),
+  p('paris', 'Marché aux Puces de Saint-Ouen', 'shopping', 48.902, 2.344, '124 Rue des Rosiers, Saint-Ouen', 'The world’s largest flea market. Go with cash and comfortable shoes.', 'sam', 8),
+
+  // ————— fictional tourist traps (warning targets — not real businesses) —————
+  p('paris', 'Chez Papillon Doré', 'food', 48.8529, 2.3499, 'Quai de Montebello, 5e', 'Riverside “traditional” bistro aimed squarely at the camera-necked.', 'sam', 3),
+  p('istanbul', 'Sultan’s Terrace 360', 'bars', 41.0091, 28.9769, 'Sultanahmet rooftop', 'A rooftop view doing all the work the menu refuses to do.', 'ken', 4),
+  p('tokyo', 'Neo Samurai Nights', 'nightlife', 35.6595, 139.7005, 'Dōgenzaka, Shibuya', 'Flashing swords, watered drinks, and a cover charge with ambitions.', 'ken', 3),
+]
+
+export const seedPlaceById = Object.fromEntries(SEED_PLACES.map((sp) => [sp.id, sp]))

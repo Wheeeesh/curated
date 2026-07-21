@@ -1,0 +1,251 @@
+import { createClient, type Session as SbSession } from '@supabase/supabase-js'
+import type { DataAdapter } from './DataAdapter'
+import type {
+  City,
+  CreditEntry,
+  Follow,
+  InviteCode,
+  NewPlaceInput,
+  NewReviewInput,
+  Place,
+  Profile,
+  Review,
+  Session,
+  SignUpInput,
+} from './types'
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+type Row = Record<string, any>
+
+const toCity = (r: Row): City => ({
+  id: r.id, name: r.name, country: r.country,
+  centerLat: r.center_lat, centerLng: r.center_lng, defaultZoom: r.default_zoom,
+})
+const toProfile = (r: Row): Profile => ({
+  id: r.id, username: r.username, displayName: r.display_name, avatarColor: r.avatar_color,
+  bio: r.bio ?? '', interests: r.interests ?? [], homeCity: r.home_city,
+  isAdmin: r.is_admin, invitedBy: r.invited_by, onboarded: r.onboarded, isSeed: r.is_seed,
+  createdAt: r.created_at,
+})
+const toInvite = (r: Row): InviteCode => ({
+  id: r.id, code: r.code, ownerId: r.owner_id, usedBy: r.used_by, usedAt: r.used_at, createdAt: r.created_at,
+})
+const toPlace = (r: Row): Place => ({
+  id: r.id, cityId: r.city_id, name: r.name, category: r.category, lat: r.lat, lng: r.lng,
+  address: r.address ?? '', description: r.description ?? '', createdBy: r.created_by, createdAt: r.created_at,
+})
+const toReview = (r: Row): Review => ({
+  id: r.id, placeId: r.place_id, userId: r.user_id,
+  quality: r.quality, vibe: r.vibe, service: r.service, value: r.value,
+  textReview: r.text_review ?? '', isWarning: r.is_warning, warningReason: r.warning_reason,
+  createdAt: r.created_at, updatedAt: r.updated_at,
+})
+const toCredit = (r: Row): CreditEntry => ({
+  id: r.id, userId: r.user_id, amount: r.amount, reason: r.reason, refId: r.ref_id, createdAt: r.created_at,
+})
+
+const mapSession = (s: SbSession | null): Session | null =>
+  s ? { userId: s.user.id, email: s.user.email ?? '' } : null
+
+export function createSupabaseAdapter(url: string, anonKey: string): DataAdapter {
+  const sb = createClient(url, anonKey)
+
+  const die = (error: { message: string } | null): void => {
+    if (error) throw new Error(error.message)
+  }
+
+  const uid = async (): Promise<string> => {
+    const { data } = await sb.auth.getSession()
+    if (!data.session) throw new Error('Not signed in')
+    return data.session.user.id
+  }
+
+  return {
+    isDemo: false,
+
+    async getSession() {
+      const { data } = await sb.auth.getSession()
+      return mapSession(data.session)
+    },
+    onAuthChange(cb) {
+      const { data } = sb.auth.onAuthStateChange((_evt, session) => cb(mapSession(session)))
+      return () => data.subscription.unsubscribe()
+    },
+    async checkInviteCode(code) {
+      const { data, error } = await sb.rpc('check_invite_code', { p_code: code.trim().toUpperCase() })
+      die(error)
+      return { valid: data === true }
+    },
+    async signUpWithInvite(input: SignUpInput) {
+      // Pre-check so users get a clear message; the DB trigger re-validates
+      // atomically (its exception aborts the signup on a race).
+      const { valid } = await this.checkInviteCode(input.code)
+      if (!valid) throw new Error('That invite code is not valid (or already used).')
+      const { data, error } = await sb.auth.signUp({
+        email: input.email.trim(),
+        password: input.password,
+        options: {
+          data: {
+            invite_code: input.code.trim().toUpperCase(),
+            username: input.username.trim().toLowerCase(),
+            display_name: input.displayName.trim(),
+          },
+        },
+      })
+      die(error)
+      if (!data.session) {
+        throw new Error(
+          'Account created but no session — email confirmation is probably still enabled in Supabase. See README.',
+        )
+      }
+      return mapSession(data.session)!
+    },
+    async signIn(email, password) {
+      const { data, error } = await sb.auth.signInWithPassword({ email: email.trim(), password })
+      die(error)
+      return mapSession(data.session)!
+    },
+    async signOut() {
+      await sb.auth.signOut()
+    },
+
+    async getProfile(userId) {
+      const { data, error } = await sb.from('profiles').select('*').eq('id', userId).maybeSingle()
+      die(error)
+      return data ? toProfile(data) : null
+    },
+    async updateProfile(patch) {
+      const row: Row = {}
+      if (patch.displayName !== undefined) row.display_name = patch.displayName
+      if (patch.bio !== undefined) row.bio = patch.bio
+      if (patch.avatarColor !== undefined) row.avatar_color = patch.avatarColor
+      if (patch.interests !== undefined) row.interests = patch.interests
+      if (patch.homeCity !== undefined) row.home_city = patch.homeCity
+      const { data, error } = await sb.from('profiles').update(row).eq('id', await uid()).select().single()
+      die(error)
+      return toProfile(data)
+    },
+    async completeOnboarding(interests, homeCity, followIds) {
+      const me = await uid()
+      const { error } = await sb
+        .from('profiles')
+        .update({ interests, home_city: homeCity, onboarded: true })
+        .eq('id', me)
+      die(error)
+      if (followIds.length) {
+        const { error: fe } = await sb
+          .from('follows')
+          .upsert(followIds.map((fid) => ({ follower_id: me, followee_id: fid })), { ignoreDuplicates: true })
+        die(fe)
+      }
+    },
+    async listMembers() {
+      const { data, error } = await sb.from('profiles').select('*')
+      die(error)
+      return (data ?? []).map(toProfile)
+    },
+
+    async listMyInviteCodes() {
+      // RLS already scopes this to the caller's own codes.
+      const { data, error } = await sb.from('invite_codes').select('*').order('created_at')
+      die(error)
+      return (data ?? []).map(toInvite)
+    },
+    async adminGenerateCodes(n) {
+      const { data, error } = await sb.rpc('admin_generate_codes', { p_count: n })
+      die(error)
+      return (data ?? []).map(toInvite)
+    },
+
+    async follow(userId) {
+      const { error } = await sb
+        .from('follows')
+        .upsert([{ follower_id: await uid(), followee_id: userId }], { ignoreDuplicates: true })
+      die(error)
+    },
+    async unfollow(userId) {
+      const { error } = await sb.from('follows').delete().match({ follower_id: await uid(), followee_id: userId })
+      die(error)
+    },
+    async listFollows(): Promise<Follow[]> {
+      const { data, error } = await sb.from('follows').select('follower_id, followee_id')
+      die(error)
+      return (data ?? []).map((r: Row) => ({ followerId: r.follower_id, followeeId: r.followee_id }))
+    },
+
+    async listCities() {
+      const { data, error } = await sb.from('cities').select('*').order('name')
+      die(error)
+      return (data ?? []).map(toCity)
+    },
+    async listPlaces(cityId) {
+      let q = sb.from('places').select('*')
+      if (cityId) q = q.eq('city_id', cityId)
+      const { data, error } = await q
+      die(error)
+      return (data ?? []).map(toPlace)
+    },
+    async getPlace(placeId) {
+      const { data, error } = await sb.from('places').select('*').eq('id', placeId).maybeSingle()
+      die(error)
+      return data ? toPlace(data) : null
+    },
+    async addPlace(input: NewPlaceInput) {
+      const { data, error } = await sb
+        .from('places')
+        .insert({
+          city_id: input.cityId, name: input.name, category: input.category,
+          lat: input.lat, lng: input.lng, address: input.address, description: input.description,
+          created_by: await uid(),
+        })
+        .select()
+        .single()
+      die(error)
+      const place = toPlace(data)
+      // Credits are written by the DB trigger; fetch what it minted for the toast.
+      const { data: credits } = await sb.from('credit_ledger').select('*').eq('ref_id', place.id)
+      return { place, creditsAwarded: (credits ?? []).map(toCredit) }
+    },
+
+    async listReviewsForPlace(placeId) {
+      const { data, error } = await sb.from('reviews').select('*').eq('place_id', placeId)
+      die(error)
+      return (data ?? []).map(toReview)
+    },
+    async listAllReviews() {
+      const { data, error } = await sb.from('reviews').select('*')
+      die(error)
+      return (data ?? []).map(toReview)
+    },
+    async upsertReview(input: NewReviewInput) {
+      const me = await uid()
+      const { data, error } = await sb
+        .from('reviews')
+        .upsert(
+          {
+            place_id: input.placeId, user_id: me,
+            quality: input.quality, vibe: input.vibe, service: input.service, value: input.value,
+            text_review: input.textReview, is_warning: input.isWarning, warning_reason: input.warningReason,
+            updated_at: new Date().toISOString(),
+          },
+          { onConflict: 'place_id,user_id' },
+        )
+        .select()
+        .single()
+      die(error)
+      const review = toReview(data)
+      const { data: credits } = await sb.from('credit_ledger').select('*').eq('ref_id', review.id).eq('user_id', me)
+      return { review, creditsAwarded: (credits ?? []).map(toCredit) }
+    },
+
+    async listCreditLedger(userId) {
+      const { data, error } = await sb
+        .from('credit_ledger')
+        .select('*')
+        .eq('user_id', userId)
+        .order('created_at', { ascending: false })
+      die(error)
+      return (data ?? []).map(toCredit)
+    },
+  }
+}
