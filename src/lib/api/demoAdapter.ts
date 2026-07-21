@@ -145,7 +145,7 @@ export function createDemoAdapter(): DataAdapter {
       persist()
       return me
     },
-    async completeOnboarding(interests: Category[], homeCity: string, followIds: string[]) {
+    async completeOnboarding(interests: Category[], homeCity: string | null, followIds: string[]) {
       const uid = requireUser()
       const me = state.profiles.find((p) => p.id === uid)!
       me.interests = interests

@@ -18,7 +18,7 @@ export function OnboardingScreen() {
   const navigate = useNavigate()
   const qc = useQueryClient()
   const { data: me } = useMyProfile()
-  const { data: cities } = useCities()
+  const { data: cities, isLoading: citiesLoading } = useCities()
   const { data: members } = useMembers()
 
   const [step, setStep] = useState(0)
@@ -43,7 +43,6 @@ export function OnboardingScreen() {
   }, [members, me, interests])
 
   const finish = async () => {
-    if (!homeCity) return
     setBusy(true)
     try {
       await api.completeOnboarding(interests, homeCity, [...followIds])
@@ -86,19 +85,35 @@ export function OnboardingScreen() {
     // ——— 2 · home city ———
     <div key="city">
       <h2 className="t-large-title">Where are you most often?</h2>
-      <div className="ios-group mt-7">
-        {(cities ?? []).map((c) => (
-          <button key={c.id} type="button" onClick={() => setHomeCity(c.id)} className="pressable ios-row">
-            <span className="flex-1">
-              <span className="block t-body">{c.name}</span>
-              <span className="block t-footnote text-label-2">{c.country}</span>
-            </span>
-            {homeCity === c.id && <Check />}
-          </button>
-        ))}
-      </div>
-      <button type="button" disabled={!homeCity} onClick={() => setStep(2)} className="pressable btn-primary mt-7">
-        Continue
+      {citiesLoading ? (
+        <p className="mt-7 t-subhead text-label-2">Loading cities…</p>
+      ) : (cities ?? []).length === 0 ? (
+        // Never strand someone on a step with nothing to choose.
+        <div className="ios-group mt-7 p-4">
+          <p className="t-subhead text-label-2">
+            No cities have been set up yet. You can skip this and pick a city later from the map.
+          </p>
+        </div>
+      ) : (
+        <div className="ios-group mt-7">
+          {(cities ?? []).map((c) => (
+            <button key={c.id} type="button" onClick={() => setHomeCity(c.id)} className="pressable ios-row">
+              <span className="flex-1">
+                <span className="block t-body">{c.name}</span>
+                <span className="block t-footnote text-label-2">{c.country}</span>
+              </span>
+              {homeCity === c.id && <Check />}
+            </button>
+          ))}
+        </div>
+      )}
+      <button
+        type="button"
+        disabled={citiesLoading || (!homeCity && (cities ?? []).length > 0)}
+        onClick={() => setStep(2)}
+        className="pressable btn-primary mt-7"
+      >
+        {(cities ?? []).length === 0 ? 'Skip' : 'Continue'}
       </button>
     </div>,
 

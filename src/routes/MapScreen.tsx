@@ -69,7 +69,18 @@ export function MapScreen() {
     [reviews, selectedPlaceId],
   )
 
-  if (!city) return null
+  // No cities configured — explain rather than showing a blank screen.
+  if (!city) {
+    return (
+      <div className="flex h-full flex-col items-center justify-center px-8 text-center">
+        <h2 className="t-title">No cities yet</h2>
+        <p className="mt-2 t-subhead text-label-2">
+          The atlas needs at least one city before the map can open. Add them from the Supabase SQL
+          editor — see supabase/seed.sql in the repository.
+        </p>
+      </div>
+    )
+  }
 
   return (
     <div className="absolute inset-0">

@@ -31,7 +31,7 @@ export interface DataAdapter {
   // profiles & onboarding
   getProfile(userId: string): Promise<Profile | null>
   updateProfile(patch: Partial<Pick<Profile, 'displayName' | 'bio' | 'avatarColor' | 'interests' | 'homeCity'>>): Promise<Profile>
-  completeOnboarding(interests: Category[], homeCity: string, followIds: string[]): Promise<void>
+  completeOnboarding(interests: Category[], homeCity: string | null, followIds: string[]): Promise<void>
   listMembers(): Promise<Profile[]>
 
   // follows
