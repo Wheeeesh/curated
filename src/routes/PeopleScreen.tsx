@@ -29,7 +29,7 @@ export function PeopleScreen() {
   }, [members, me?.id, tab, query, iFollow, engine])
 
   return (
-    <div className="min-h-dvh overflow-y-auto bg-bg pb-24">
+    <div className="h-full overflow-y-auto bg-bg pb-24">
       <div className="glass sticky top-0 z-20 space-y-3 border-b border-separator px-4 pb-3 pt-12">
         <h1 className="t-large-title">Members</h1>
         <input

@@ -41,7 +41,7 @@ export function WelcomeScreen() {
       : email.trim() !== '' && password !== '' && username.trim().length >= 3 && displayName.trim() !== ''
 
   return (
-    <div className="flex min-h-dvh flex-col overflow-y-auto bg-surface px-6 pb-10">
+    <div className="flex h-full flex-col overflow-y-auto bg-surface px-6 pb-10">
       <div className="flex flex-1 flex-col justify-center pt-20">
         <div className="anim-fade-up">
           <h1 className="font-display text-[46px] font-semibold leading-none tracking-tight">Curated</h1>

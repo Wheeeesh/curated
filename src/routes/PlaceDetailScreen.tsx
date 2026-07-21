@@ -79,7 +79,7 @@ export function PlaceDetailScreen() {
   const influencer = match?.topInfluence ? memberById.get(match.topInfluence.userId) : undefined
 
   return (
-    <div className="min-h-dvh overflow-y-auto bg-bg pb-32">
+    <div className="h-full overflow-y-auto bg-bg pb-32">
       {/* nav bar */}
       <div className="glass sticky top-0 z-20 flex items-center border-b border-separator px-2 py-2">
         <button type="button" onClick={() => navigate(-1)} className="pressable flex min-h-[44px] items-center gap-0.5 pl-1 pr-3 t-body">

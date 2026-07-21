@@ -48,7 +48,7 @@ export function ProfileScreen() {
   if (!me) return null
 
   return (
-    <div className="min-h-dvh overflow-y-auto bg-bg pb-24">
+    <div className="h-full overflow-y-auto bg-bg pb-24">
       <div className="px-4 pt-14">
         {/* identity */}
         <div className="flex items-center gap-4 px-1">

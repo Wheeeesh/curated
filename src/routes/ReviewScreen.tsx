@@ -70,7 +70,7 @@ export function ReviewScreen() {
   }
 
   return (
-    <div className="min-h-dvh overflow-y-auto bg-bg pb-16">
+    <div className="h-full overflow-y-auto bg-bg pb-16">
       <div className="glass sticky top-0 z-20 flex items-center justify-between border-b border-separator px-4 py-2.5">
         <button type="button" onClick={() => navigate(-1)} className="pressable min-h-[44px] pr-3 t-body">
           Cancel

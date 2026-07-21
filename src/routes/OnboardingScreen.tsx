@@ -157,7 +157,7 @@ export function OnboardingScreen() {
   ]
 
   return (
-    <div className="min-h-dvh overflow-y-auto bg-bg px-4 pb-12 pt-14">
+    <div className="h-full overflow-y-auto bg-bg px-4 pb-12 pt-14">
       <div className="flex items-center justify-between px-1">
         {step > 0 ? (
           <button type="button" onClick={() => setStep(step - 1)} className="pressable -ml-1 min-h-[44px] pr-3 t-body">
