@@ -6,15 +6,12 @@ import {
   useAllReviews,
   useFollows,
   useLedger,
-  useMembers,
-  useMyInviteCodes,
   useMyProfile,
   usePlaces,
   useTasteEngine,
 } from '../lib/hooks'
 import { creditBalance, pendingConsensusBonuses } from '../lib/credits/rules'
 import { formatDate } from '../lib/format'
-import { useUi } from '../lib/session'
 import { Avatar } from '../components/ui/Avatar'
 import { Sheet } from '../components/ui/Sheet'
 import { TasteBars } from '../components/profile/TasteBars'
@@ -35,14 +32,10 @@ export function ProfileScreen() {
   const { data: reviews } = useAllReviews()
   const { data: places } = usePlaces()
   const { data: follows } = useFollows()
-  const { data: members } = useMembers()
-  const { data: codes } = useMyInviteCodes()
   const { data: ledger } = useLedger(me?.id)
   const engine = useTasteEngine()
-  const showToast = useUi((s) => s.showToast)
 
   const [ledgerOpen, setLedgerOpen] = useState(false)
-  const [generating, setGenerating] = useState(false)
 
   const myReviews = useMemo(() => (reviews ?? []).filter((r) => r.userId === me?.id), [reviews, me?.id])
   const myPlaces = useMemo(() => (places ?? []).filter((p) => p.createdBy === me?.id), [places, me?.id])
@@ -51,21 +44,8 @@ export function ProfileScreen() {
   const pending = useMemo(() => (me && reviews ? pendingConsensusBonuses(me.id, reviews) : []), [me, reviews])
   const pendingTotal = pending.reduce((s, p) => s + p.bonus, 0)
   const placeName = (id: string | null) => (places ?? []).find((p) => p.id === id)?.name
-  const memberName = (id: string | null) => (members ?? []).find((m) => m.id === id)?.displayName
-  const unusedCodes = (codes ?? []).filter((c) => !c.usedBy).length
 
   if (!me) return null
-
-  const generateCodes = async () => {
-    setGenerating(true)
-    try {
-      await api.adminGenerateCodes(3)
-      await qc.invalidateQueries({ queryKey: ['invites'] })
-      showToast('3 new invite codes added', true)
-    } finally {
-      setGenerating(false)
-    }
-  }
 
   return (
     <div className="min-h-dvh overflow-y-auto bg-bg pb-24">
@@ -119,45 +99,6 @@ export function ProfileScreen() {
         </div>
         <p className="ios-section-footer">Sharpens with every review you post.</p>
 
-        {/* invites */}
-        <div className="mt-7 flex items-end justify-between">
-          <p className="ios-section-header">Invites · {unusedCodes} left</p>
-          {me.isAdmin && (
-            <button
-              type="button"
-              disabled={generating}
-              onClick={generateCodes}
-              className="pressable pb-1.5 pr-4 t-subhead font-semibold"
-            >
-              {generating ? '…' : 'Add 3'}
-            </button>
-          )}
-        </div>
-        <div className="ios-group">
-          {(codes ?? []).map((c) => (
-            <div key={c.id} className="ios-row">
-              <span className={`flex-1 font-mono text-[16px] tracking-[0.14em] ${c.usedBy ? 'text-label-3 line-through' : ''}`}>
-                {c.code}
-              </span>
-              {c.usedBy ? (
-                <span className="t-footnote text-label-2">{memberName(c.usedBy) ?? 'used'}</span>
-              ) : (
-                <button
-                  type="button"
-                  onClick={() => {
-                    navigator.clipboard.writeText(c.code)
-                    showToast('Invite code copied')
-                  }}
-                  className="pressable t-subhead font-semibold"
-                >
-                  Copy
-                </button>
-              )}
-            </div>
-          ))}
-          {(codes ?? []).length === 0 && <div className="ios-row t-subhead text-label-2">No codes yet.</div>}
-        </div>
-        <p className="ios-section-footer">Invite people whose taste you trust — the atlas is only as good as its members.</p>
 
         {/* account */}
         <div className="ios-group mt-7">

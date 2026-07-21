@@ -28,15 +28,6 @@ export const useLedger = (userId: string | undefined) =>
     enabled: !!userId,
   })
 
-export const useMyInviteCodes = () => {
-  const session = useUi((s) => s.session)
-  return useQuery({
-    queryKey: ['invites', session?.userId],
-    queryFn: () => api.listMyInviteCodes(),
-    enabled: !!session,
-  })
-}
-
 /** One memoized taste engine per data change. null while anything loads. */
 export function useTasteEngine(): TasteEngine | null {
   const { data: me } = useMyProfile()

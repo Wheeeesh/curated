@@ -123,7 +123,6 @@ export interface NewReviewInput {
 }
 
 export interface SignUpInput {
-  code: string
   email: string
   password: string
   username: string

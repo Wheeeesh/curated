@@ -4,7 +4,6 @@ import type {
   City,
   CreditEntry,
   Follow,
-  InviteCode,
   NewPlaceInput,
   NewReviewInput,
   Place,
@@ -26,9 +25,6 @@ const toProfile = (r: Row): Profile => ({
   bio: r.bio ?? '', interests: r.interests ?? [], homeCity: r.home_city,
   isAdmin: r.is_admin, invitedBy: r.invited_by, onboarded: r.onboarded, isSeed: r.is_seed,
   createdAt: r.created_at,
-})
-const toInvite = (r: Row): InviteCode => ({
-  id: r.id, code: r.code, ownerId: r.owner_id, usedBy: r.used_by, usedAt: r.used_at, createdAt: r.created_at,
 })
 const toPlace = (r: Row): Place => ({
   id: r.id, cityId: r.city_id, name: r.name, category: r.category, lat: r.lat, lng: r.lng,
@@ -71,22 +67,12 @@ export function createSupabaseAdapter(url: string, anonKey: string): DataAdapter
       const { data } = sb.auth.onAuthStateChange((_evt, session) => cb(mapSession(session)))
       return () => data.subscription.unsubscribe()
     },
-    async checkInviteCode(code) {
-      const { data, error } = await sb.rpc('check_invite_code', { p_code: code.trim().toUpperCase() })
-      die(error)
-      return { valid: data === true }
-    },
-    async signUpWithInvite(input: SignUpInput) {
-      // Pre-check so users get a clear message; the DB trigger re-validates
-      // atomically (its exception aborts the signup on a race).
-      const { valid } = await this.checkInviteCode(input.code)
-      if (!valid) throw new Error('That invite code is not valid (or already used).')
+    async signUp(input: SignUpInput) {
       const { data, error } = await sb.auth.signUp({
         email: input.email.trim(),
         password: input.password,
         options: {
           data: {
-            invite_code: input.code.trim().toUpperCase(),
             username: input.username.trim().toLowerCase(),
             display_name: input.displayName.trim(),
           },
@@ -143,18 +129,6 @@ export function createSupabaseAdapter(url: string, anonKey: string): DataAdapter
       const { data, error } = await sb.from('profiles').select('*')
       die(error)
       return (data ?? []).map(toProfile)
-    },
-
-    async listMyInviteCodes() {
-      // RLS already scopes this to the caller's own codes.
-      const { data, error } = await sb.from('invite_codes').select('*').order('created_at')
-      die(error)
-      return (data ?? []).map(toInvite)
-    },
-    async adminGenerateCodes(n) {
-      const { data, error } = await sb.rpc('admin_generate_codes', { p_count: n })
-      die(error)
-      return (data ?? []).map(toInvite)
     },
 
     async follow(userId) {

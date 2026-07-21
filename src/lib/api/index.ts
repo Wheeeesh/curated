@@ -7,5 +7,3 @@ const key = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined
 
 /** Supabase when both env vars are present; the zero-setup demo otherwise. */
 export const api: DataAdapter = url && key ? createSupabaseAdapter(url, key) : createDemoAdapter()
-
-export { DEMO_INVITE_CODE } from './demoAdapter'

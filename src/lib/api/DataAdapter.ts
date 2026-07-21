@@ -3,7 +3,6 @@ import type {
   City,
   CreditEntry,
   Follow,
-  InviteCode,
   NewPlaceInput,
   NewReviewInput,
   Place,
@@ -25,8 +24,7 @@ export interface DataAdapter {
   // session
   getSession(): Promise<Session | null>
   onAuthChange(cb: (s: Session | null) => void): () => void
-  checkInviteCode(code: string): Promise<{ valid: boolean }>
-  signUpWithInvite(input: SignUpInput): Promise<Session>
+  signUp(input: SignUpInput): Promise<Session>
   signIn(email: string, password: string): Promise<Session>
   signOut(): Promise<void>
 
@@ -35,10 +33,6 @@ export interface DataAdapter {
   updateProfile(patch: Partial<Pick<Profile, 'displayName' | 'bio' | 'avatarColor' | 'interests' | 'homeCity'>>): Promise<Profile>
   completeOnboarding(interests: Category[], homeCity: string, followIds: string[]): Promise<void>
   listMembers(): Promise<Profile[]>
-
-  // invites
-  listMyInviteCodes(): Promise<InviteCode[]>
-  adminGenerateCodes(n: number): Promise<InviteCode[]>
 
   // follows
   follow(userId: string): Promise<void>

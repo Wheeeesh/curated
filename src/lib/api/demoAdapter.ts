@@ -4,7 +4,6 @@ import type {
   City,
   CreditEntry,
   Follow,
-  InviteCode,
   NewPlaceInput,
   NewReviewInput,
   Place,
@@ -19,10 +18,8 @@ import { SEED_MEMBERS, SEED_FOLLOWS } from '../../seed/members'
 import { SEED_PLACES } from '../../seed/places'
 import { SEED_REVIEWS } from '../../seed/reviews'
 import { buildSeedLedger } from '../../seed/ledger'
-import { inviteId } from '../../seed/ids'
 
 const STORAGE_KEY = 'curated-demo-v1'
-export const DEMO_INVITE_CODE = 'CURATED1'
 
 interface DemoState {
   session: Session | null
@@ -31,7 +28,6 @@ interface DemoState {
   places: Place[]
   reviews: Review[]
   ledger: CreditEntry[]
-  inviteCodes: InviteCode[]
   /** email → { userId, password } for demo sign-in */
   accounts: Record<string, { userId: string; password: string }>
 }
@@ -46,11 +42,6 @@ function freshState(): DemoState {
     places,
     reviews: [...SEED_REVIEWS],
     ledger: buildSeedLedger(),
-    inviteCodes: [
-      // The founding invite. In demo mode this code is printed on the
-      // welcome screen; mika is its owner.
-      { id: inviteId(1), code: DEMO_INVITE_CODE, ownerId: SEED_MEMBERS[0].id, usedBy: null, usedAt: null, createdAt: SEED_MEMBERS[0].createdAt },
-    ],
     accounts: {},
   }
 }
@@ -63,13 +54,6 @@ function load(): DemoState {
     // corrupted state → rebuild
   }
   return freshState()
-}
-
-function randomCode(): string {
-  const alphabet = 'ABCDEFGHJKMNPQRSTVWXYZ23456789'
-  let out = ''
-  for (let i = 0; i < 8; i++) out += alphabet[Math.floor(Math.random() * alphabet.length)]
-  return out
 }
 
 export function createDemoAdapter(): DataAdapter {
@@ -96,19 +80,6 @@ export function createDemoAdapter(): DataAdapter {
     return entries
   }
 
-  const mintCodes = (ownerId: string, n: number): InviteCode[] => {
-    const codes: InviteCode[] = Array.from({ length: n }, () => ({
-      id: crypto.randomUUID(),
-      code: randomCode(),
-      ownerId,
-      usedBy: null,
-      usedAt: null,
-      createdAt: new Date().toISOString(),
-    }))
-    state.inviteCodes.push(...codes)
-    return codes
-  }
-
   return {
     isDemo: true,
 
@@ -119,13 +90,7 @@ export function createDemoAdapter(): DataAdapter {
       listeners.add(cb)
       return () => listeners.delete(cb)
     },
-    async checkInviteCode(code) {
-      const c = state.inviteCodes.find((ic) => ic.code === code.trim().toUpperCase())
-      return { valid: !!c && !c.usedBy }
-    },
-    async signUpWithInvite(input: SignUpInput) {
-      const code = state.inviteCodes.find((ic) => ic.code === input.code.trim().toUpperCase())
-      if (!code || code.usedBy) throw new Error('That invite code is not valid (or already used).')
+    async signUp(input: SignUpInput) {
       const email = input.email.trim().toLowerCase()
       if (state.accounts[email]) throw new Error('An account with this email already exists — sign in instead.')
       const username = input.username.trim().toLowerCase()
@@ -144,17 +109,14 @@ export function createDemoAdapter(): DataAdapter {
         homeCity: null,
         // Demo mode: you are the admin, so every admin surface is visible.
         isAdmin: true,
-        invitedBy: code.ownerId,
+        invitedBy: null,
         onboarded: false,
         isSeed: false,
         createdAt: now,
       }
       state.profiles.push(profile)
-      code.usedBy = userId
-      code.usedAt = now
       state.accounts[email] = { userId, password: input.password }
-      mintCodes(userId, 3)
-      commitCredits(creditsForSignup(userId, code.ownerId))
+      commitCredits(creditsForSignup(userId, null))
       state.session = { userId, email }
       persist()
       notify()
@@ -198,19 +160,6 @@ export function createDemoAdapter(): DataAdapter {
     },
     async listMembers() {
       return [...state.profiles]
-    },
-
-    async listMyInviteCodes() {
-      const uid = requireUser()
-      return state.inviteCodes.filter((c) => c.ownerId === uid)
-    },
-    async adminGenerateCodes(n) {
-      const uid = requireUser()
-      const me = state.profiles.find((p) => p.id === uid)!
-      if (!me.isAdmin) throw new Error('Admins only.')
-      const codes = mintCodes(uid, n)
-      persist()
-      return codes
     },
 
     async follow(userId) {
