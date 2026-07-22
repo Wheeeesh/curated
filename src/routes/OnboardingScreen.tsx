@@ -1,9 +1,11 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useQueryClient } from '@tanstack/react-query'
 import { api } from '../lib/api'
 import { CATEGORIES, type Category, type Place } from '../lib/api/types'
-import { useCities, useMembers, useMyProfile } from '../lib/hooks'
+import { useMembers, useMyProfile } from '../lib/hooks'
+import { getCurrentPosition, reverseGeocode, searchPlaces, type GeoResult } from '../lib/geo/geocode'
+import { useUi } from '../lib/session'
 import { CATEGORY_META } from '../lib/format'
 import { buildTasteVector, cosine } from '../lib/taste/tasteVector'
 import { Avatar } from '../components/ui/Avatar'
@@ -18,12 +20,15 @@ export function OnboardingScreen() {
   const navigate = useNavigate()
   const qc = useQueryClient()
   const { data: me } = useMyProfile()
-  const { data: cities, isLoading: citiesLoading } = useCities()
+  const requestFlyTo = useUi((s) => s.requestFlyTo)
   const { data: members } = useMembers()
 
   const [step, setStep] = useState(0)
   const [interests, setInterests] = useState<Category[]>([])
   const [homeCity, setHomeCity] = useState<string | null>(null)
+  const [cityQuery, setCityQuery] = useState('')
+  const [cityResults, setCityResults] = useState<GeoResult[]>([])
+  const [locating, setLocating] = useState(false)
   const [followIds, setFollowIds] = useState<Set<string>>(new Set())
   const [busy, setBusy] = useState(false)
 
@@ -41,6 +46,31 @@ export function OnboardingScreen() {
       .sort((a, b) => b.sim - a.sim)
       .slice(0, 6)
   }, [members, me, interests])
+
+  useEffect(() => {
+    if (cityQuery.trim().length < 2) {
+      setCityResults([])
+      return
+    }
+    const t = setTimeout(() => {
+      searchPlaces(cityQuery).then(setCityResults).catch(() => setCityResults([]))
+    }, 350)
+    return () => clearTimeout(t)
+  }, [cityQuery])
+
+  const useMyLocation = async () => {
+    setLocating(true)
+    try {
+      const { lat, lng } = await getCurrentPosition()
+      const { locality } = await reverseGeocode(lat, lng)
+      setHomeCity(locality || `${lat.toFixed(3)}, ${lng.toFixed(3)}`)
+      requestFlyTo({ lat, lng, zoom: 13 })
+    } catch {
+      // leave it to the member to type somewhere instead
+    } finally {
+      setLocating(false)
+    }
+  }
 
   const finish = async () => {
     setBusy(true)
@@ -82,38 +112,59 @@ export function OnboardingScreen() {
       </button>
     </div>,
 
-    // ——— 2 · home city ———
+    // ——— 2 · home base, anywhere in the world ———
     <div key="city">
-      <h2 className="t-large-title">Where are you most often?</h2>
-      {citiesLoading ? (
-        <p className="mt-7 t-subhead text-label-2">Loading cities…</p>
-      ) : (cities ?? []).length === 0 ? (
-        // Never strand someone on a step with nothing to choose.
-        <div className="ios-group mt-7 p-4">
-          <p className="t-subhead text-label-2">
-            No cities have been set up yet. You can skip this and pick a city later from the map.
-          </p>
+      <h2 className="t-large-title">Where are you based?</h2>
+      <p className="mt-2.5 text-[17px] leading-snug text-label-2">
+        Just so the map opens somewhere useful. You can roam anywhere.
+      </p>
+
+      {homeCity ? (
+        <div className="ios-group mt-7">
+          <div className="ios-row">
+            <span className="flex-1 t-body">{homeCity}</span>
+            <button type="button" onClick={() => setHomeCity(null)} className="pressable t-subhead font-semibold text-label-2">
+              Change
+            </button>
+          </div>
         </div>
       ) : (
-        <div className="ios-group mt-7">
-          {(cities ?? []).map((c) => (
-            <button key={c.id} type="button" onClick={() => setHomeCity(c.id)} className="pressable ios-row">
-              <span className="flex-1">
-                <span className="block t-body">{c.name}</span>
-                <span className="block t-footnote text-label-2">{c.country}</span>
-              </span>
-              {homeCity === c.id && <Check />}
-            </button>
-          ))}
-        </div>
+        <>
+          <input
+            value={cityQuery}
+            onChange={(e) => setCityQuery(e.target.value)}
+            placeholder="Search any city"
+            className="field mt-7 bg-surface"
+            aria-label="Search any city"
+          />
+          <button type="button" onClick={useMyLocation} className="pressable btn-secondary mt-3">
+            {locating ? '…' : 'Use my current location'}
+          </button>
+          {cityResults.length > 0 && (
+            <div className="ios-group mt-4">
+              {cityResults.slice(0, 6).map((r, i) => (
+                <button
+                  key={`${r.lat}-${r.lng}-${i}`}
+                  type="button"
+                  onClick={() => {
+                    setHomeCity(r.locality || r.name)
+                    requestFlyTo({ lat: r.lat, lng: r.lng, zoom: 13 })
+                  }}
+                  className="pressable ios-row"
+                >
+                  <span className="min-w-0 flex-1">
+                    <span className="block truncate t-body">{r.name}</span>
+                    <span className="block truncate t-footnote text-label-2">{r.locality}</span>
+                  </span>
+                </button>
+              ))}
+            </div>
+          )}
+        </>
       )}
-      <button
-        type="button"
-        disabled={citiesLoading || (!homeCity && (cities ?? []).length > 0)}
-        onClick={() => setStep(2)}
-        className="pressable btn-primary mt-7"
-      >
-        {(cities ?? []).length === 0 ? 'Skip' : 'Continue'}
+
+      <button type="button" onClick={() => setStep(2)} className="pressable btn-primary mt-7">
+        {homeCity ? 'Continue' : 'Skip'}
       </button>
     </div>,
 

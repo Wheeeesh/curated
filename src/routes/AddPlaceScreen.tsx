@@ -1,17 +1,24 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useGoBack } from '../lib/useGoBack'
-import { ScreenLoading, ScreenMessage } from '../components/ui/ScreenMessage'
 import maplibregl from 'maplibre-gl'
-import { CATEGORIES, type Category, type City } from '../lib/api/types'
-import { useAddPlaceMutation, useCities } from '../lib/hooks'
-import { useUi } from '../lib/session'
-import { searchPlaces, type GeoResult } from '../lib/geo/nominatim'
+import { CATEGORIES, type Category } from '../lib/api/types'
+import { useAddPlaceMutation } from '../lib/hooks'
+import { useUi, type MapView as MapViewState } from '../lib/session'
+import { getCurrentPosition, reverseGeocode, searchPlaces, type GeoResult } from '../lib/geo/geocode'
 import { parseLocationInput } from '../lib/geo/parseLink'
 import { CATEGORY_META } from '../lib/format'
 import { MAP_STYLE_URL } from '../lib/mapStyle'
+import { useGoBack } from '../lib/useGoBack'
 
-function PinDropMap({ city, onPick }: { city: City; onPick: (lat: number, lng: number) => void }) {
+interface Picked {
+  lat: number
+  lng: number
+  name: string
+  locality: string
+  address: string
+}
+
+function PinDropMap({ start, onPick }: { start: MapViewState; onPick: (lat: number, lng: number) => void }) {
   const ref = useRef<HTMLDivElement>(null)
   const mapRef = useRef<maplibregl.Map | null>(null)
 
@@ -20,8 +27,8 @@ function PinDropMap({ city, onPick }: { city: City; onPick: (lat: number, lng: n
     const map = new maplibregl.Map({
       container: ref.current,
       style: MAP_STYLE_URL,
-      center: [city.centerLng, city.centerLat],
-      zoom: city.defaultZoom + 1,
+      center: [start.lng, start.lat],
+      zoom: Math.max(start.zoom, 14),
       attributionControl: false,
     })
     mapRef.current = map
@@ -61,12 +68,10 @@ function PinDropMap({ city, onPick }: { city: City; onPick: (lat: number, lng: n
 export function AddPlaceScreen() {
   const navigate = useNavigate()
   const goBack = useGoBack()
-  const { data: cities, isLoading: citiesLoading } = useCities()
-  const activeCity = useUi((s) => s.activeCity)
+  const view = useUi((s) => s.view)
   const showToast = useUi((s) => s.showToast)
+  const requestFlyTo = useUi((s) => s.requestFlyTo)
   const mutation = useAddPlaceMutation()
-
-  const city = cities?.find((c) => c.id === activeCity) ?? cities?.[0]
 
   const [tab, setTab] = useState<'search' | 'pin'>('search')
   const [query, setQuery] = useState('')
@@ -74,17 +79,15 @@ export function AddPlaceScreen() {
   const [searching, setSearching] = useState(false)
   const [searchError, setSearchError] = useState(false)
 
-  const [picked, setPicked] = useState<{ lat: number; lng: number; name: string; address: string } | null>(null)
+  const [picked, setPicked] = useState<Picked | null>(null)
   const [name, setName] = useState('')
   const [categories, setCategories] = useState<Category[]>([])
   const [description, setDescription] = useState('')
 
-  // A pasted map link or coordinate pair short-circuits the search entirely.
   const linkResult = useMemo(() => parseLocationInput(query), [query])
 
-  // Debounced Nominatim search (400 ms, min 3 chars, cached per query).
   useEffect(() => {
-    if (!city || query.trim().length < 3 || linkResult.kind !== 'not-a-link') {
+    if (query.trim().length < 2 || linkResult.kind !== 'not-a-link') {
       setResults([])
       setSearching(false)
       return
@@ -92,37 +95,45 @@ export function AddPlaceScreen() {
     setSearching(true)
     setSearchError(false)
     const t = setTimeout(() => {
-      searchPlaces(query, city)
+      searchPlaces(query, { lat: view.lat, lng: view.lng })
         .then(setResults)
         .catch(() => setSearchError(true))
         .finally(() => setSearching(false))
-    }, 400)
+    }, 350)
     return () => clearTimeout(t)
-  }, [query, city, linkResult.kind])
+  }, [query, view.lat, view.lng, linkResult.kind])
 
-  if (citiesLoading) return <ScreenLoading />
-  if (!city) {
-    return (
-      <ScreenMessage
-        title="No cities yet"
-        body="A place has to belong to a city, and none are set up yet."
-        actionLabel="Back to the atlas"
-      />
-    )
+  /** Fill in the locality for a point we only have coordinates for. */
+  const pickCoords = async (lat: number, lng: number, pinName: string) => {
+    setPicked({ lat, lng, name: pinName, locality: '', address: '' })
+    setName(pinName)
+    const { locality, address } = await reverseGeocode(lat, lng)
+    setPicked((prev) => (prev && prev.lat === lat && prev.lng === lng ? { ...prev, locality, address } : prev))
+  }
+
+  const useMyLocation = async () => {
+    try {
+      const { lat, lng } = await getCurrentPosition()
+      await pickCoords(lat, lng, '')
+      showToast('Using your current location')
+    } catch (e) {
+      showToast(e instanceof Error ? e.message : 'Couldn’t get your location.')
+    }
   }
 
   const submit = async () => {
     if (!picked || categories.length === 0 || !name.trim()) return
-    await mutation.mutateAsync({
-      cityId: city.id,
-      locality: `${city.name}, ${city.country}`,
+    const { place } = await mutation.mutateAsync({
+      cityId: '',
+      locality: picked.locality,
       name: name.trim(),
       categories,
       lat: picked.lat,
       lng: picked.lng,
-      address: picked.address,
+      address: picked.address || picked.locality,
       description: description.trim(),
     })
+    requestFlyTo({ lat: place.lat, lng: place.lng, zoom: 15 })
     navigate('/', { replace: true })
   }
 
@@ -132,7 +143,7 @@ export function AddPlaceScreen() {
         <button type="button" onClick={goBack} className="pressable min-h-[44px] pr-3 t-body">
           Cancel
         </button>
-        <span className="t-headline">Add to {city.name}</span>
+        <span className="t-headline">Add a place</span>
         <span className="w-[52px]" />
       </div>
 
@@ -157,18 +168,23 @@ export function AddPlaceScreen() {
                 <input
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
-                  placeholder={`Search ${city.name}, or paste a map link`}
+                  placeholder="Name or address, or paste a map link"
                   className="field"
                   aria-label="Search for a place, or paste a map link"
                 />
                 {query.trim() === '' && (
-                  <p className="ios-section-footer">
-                    Found it in Google or Apple Maps? Paste the link here and we’ll take the location from it.
-                  </p>
+                  <>
+                    <p className="ios-section-footer">
+                      Search anywhere in the world, or paste a link from Google or Apple Maps.
+                    </p>
+                    <button type="button" onClick={useMyLocation} className="pressable btn-secondary mt-4">
+                      Use my current location
+                    </button>
+                  </>
                 )}
                 {searching && <p className="ios-section-footer">Searching…</p>}
                 {searchError && (
-                  <p className="ios-section-footer text-danger">Address search is unavailable — drop a pin instead.</p>
+                  <p className="ios-section-footer text-danger">Search is unavailable — drop a pin instead.</p>
                 )}
 
                 {linkResult.kind === 'needs-expanding' && (
@@ -182,11 +198,7 @@ export function AddPlaceScreen() {
                   <div className="ios-group mt-4">
                     <button
                       type="button"
-                      onClick={() => {
-                        const { lat, lng, name: pinName } = linkResult.value
-                        setPicked({ lat, lng, name: pinName, address: city.name })
-                        setName(pinName)
-                      }}
+                      onClick={() => pickCoords(linkResult.value.lat, linkResult.value.lng, linkResult.value.name)}
                       className="pressable ios-row"
                     >
                       <span className="min-w-0 flex-1">
@@ -199,6 +211,7 @@ export function AddPlaceScreen() {
                     </button>
                   </div>
                 )}
+
                 {results.length > 0 && (
                   <div className="ios-group mt-4">
                     {results.map((r, i) => (
@@ -206,14 +219,14 @@ export function AddPlaceScreen() {
                         key={`${r.lat}-${r.lng}-${i}`}
                         type="button"
                         onClick={() => {
-                          setPicked({ lat: r.lat, lng: r.lng, name: r.name, address: r.displayName.split(',').slice(0, 2).join(',') })
+                          setPicked({ lat: r.lat, lng: r.lng, name: r.name, locality: r.locality, address: r.address })
                           setName(r.name)
                         }}
                         className="pressable ios-row"
                       >
                         <span className="min-w-0 flex-1">
                           <span className="block truncate t-body">{r.name}</span>
-                          <span className="block truncate t-footnote text-label-2">{r.displayName}</span>
+                          <span className="block truncate t-footnote text-label-2">{r.address || r.locality}</span>
                         </span>
                         <span aria-hidden className="text-label-3">›</span>
                       </button>
@@ -222,13 +235,7 @@ export function AddPlaceScreen() {
                 )}
               </div>
             ) : (
-              <PinDropMap
-                city={city}
-                onPick={(lat, lng) => {
-                  setPicked({ lat, lng, name: '', address: city.name })
-                  showToast('Spot pinned — now the details')
-                }}
-              />
+              <PinDropMap start={view} onPick={(lat, lng) => pickCoords(lat, lng, '')} />
             )}
           </>
         ) : (
@@ -245,7 +252,9 @@ export function AddPlaceScreen() {
               className="field"
               aria-label="Place name"
             />
-            <p className="ios-section-footer">{picked.address}</p>
+            <p className="ios-section-footer">
+              {picked.address || picked.locality || `${picked.lat.toFixed(4)}, ${picked.lng.toFixed(4)}`}
+            </p>
 
             <p className="ios-section-header mt-7">Categories</p>
             <div className="ios-group">
@@ -268,6 +277,9 @@ export function AddPlaceScreen() {
                 </button>
               ))}
             </div>
+            <p className="ios-section-footer">
+              Pick every category that fits — they decide what members are asked when they review it.
+            </p>
 
             <p className="ios-section-header mt-7">Why does it belong here?</p>
             <div className="ios-group">

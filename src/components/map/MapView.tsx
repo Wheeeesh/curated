@@ -1,8 +1,9 @@
 import { useEffect, useRef } from 'react'
 import maplibregl from 'maplibre-gl'
 import type { FeatureCollection, Point } from 'geojson'
-import type { City, Place } from '../../lib/api/types'
+import type { Place } from '../../lib/api/types'
 import { primaryCategory } from '../../lib/api/types'
+import type { MapView as MapViewState } from '../../lib/session'
 import { CATEGORY_META } from '../../lib/format'
 import { MAP_FONT, MAP_STYLE_URL } from '../../lib/mapStyle'
 
@@ -38,13 +39,17 @@ function toGeoJson(pins: MapPin[]): FeatureCollection {
 
 export function MapView({
   pins,
-  city,
+  initialView,
+  flyTo,
   onPinTap,
+  onMoveEnd,
   onMapReady,
 }: {
   pins: MapPin[]
-  city: City
+  initialView: MapViewState
+  flyTo: (MapViewState & { nonce: number }) | null
   onPinTap: (placeId: string) => void
+  onMoveEnd?: (v: MapViewState) => void
   onMapReady?: (map: maplibregl.Map) => void
 }) {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -54,14 +59,16 @@ export function MapView({
   pinsRef.current = pins
   const onPinTapRef = useRef(onPinTap)
   onPinTapRef.current = onPinTap
+  const onMoveEndRef = useRef(onMoveEnd)
+  onMoveEndRef.current = onMoveEnd
 
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return
     const map = new maplibregl.Map({
       container: containerRef.current,
       style: MAP_STYLE_URL,
-      center: [city.centerLng, city.centerLat],
-      zoom: city.defaultZoom,
+      center: [initialView.lng, initialView.lat],
+      zoom: initialView.zoom,
       attributionControl: { compact: true },
     })
     mapRef.current = map
@@ -178,6 +185,11 @@ export function MapView({
       onMapReady?.(map)
     })
 
+    map.on('moveend', () => {
+      const c = map.getCenter()
+      onMoveEndRef.current?.({ lat: c.lat, lng: c.lng, zoom: map.getZoom() })
+    })
+
     // The container can be resized by layout changes the window never sees
     // (route transitions, HMR) — keep the canvas in sync.
     const ro = new ResizeObserver(() => map.resize())
@@ -200,12 +212,12 @@ export function MapView({
     source?.setData(toGeoJson(pins))
   }, [pins])
 
-  // Fly on city change
+  // Fly wherever the app asks (search result, "near me", a new pin)
   useEffect(() => {
     const map = mapRef.current
-    if (!map) return
-    map.flyTo({ center: [city.centerLng, city.centerLat], zoom: city.defaultZoom, duration: 1600 })
-  }, [city.id, city.centerLat, city.centerLng, city.defaultZoom])
+    if (!map || !flyTo) return
+    map.flyTo({ center: [flyTo.lng, flyTo.lat], zoom: flyTo.zoom, duration: 1400 })
+  }, [flyTo])
 
   // Explicit sizing: maplibre-gl.css forces `position: relative` on the
   // container, which would collapse an inset-0 absolute box to zero height.

@@ -1,8 +1,9 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { CATEGORIES, overallScore } from '../lib/api/types'
-import { useAllReviews, useCities, useFollows, useMembers, useMyProfile, usePlaces, useTasteEngine } from '../lib/hooks'
+import { useAllReviews, useFollows, useMembers, useMyProfile, usePlaces, useTasteEngine } from '../lib/hooks'
 import { useUi } from '../lib/session'
+import { getCurrentPosition, searchPlaces, type GeoResult } from '../lib/geo/geocode'
 import { CategoryChip } from '../components/ui/Chip'
 import { Sheet } from '../components/ui/Sheet'
 import { MapView, type MapPin } from '../components/map/MapView'
@@ -10,7 +11,6 @@ import { PinSheet } from '../components/map/PinSheet'
 
 export function MapScreen() {
   const navigate = useNavigate()
-  const { data: cities } = useCities()
   const { data: places } = usePlaces()
   const { data: reviews } = useAllReviews()
   const { data: members } = useMembers()
@@ -18,25 +18,48 @@ export function MapScreen() {
   const { data: me } = useMyProfile()
   const engine = useTasteEngine()
 
-  const activeCity = useUi((s) => s.activeCity)
-  const setActiveCity = useUi((s) => s.setActiveCity)
+  const view = useUi((s) => s.view)
+  const setView = useUi((s) => s.setView)
+  const flyTo = useUi((s) => s.flyTo)
+  const requestFlyTo = useUi((s) => s.requestFlyTo)
   const mapMode = useUi((s) => s.mapMode)
   const setMapMode = useUi((s) => s.setMapMode)
   const filters = useUi((s) => s.categoryFilters)
   const toggleFilter = useUi((s) => s.toggleCategoryFilter)
+  const showToast = useUi((s) => s.showToast)
 
-  const [citySheetOpen, setCitySheetOpen] = useState(false)
+  const [searchOpen, setSearchOpen] = useState(false)
+  const [query, setQuery] = useState('')
+  const [results, setResults] = useState<GeoResult[]>([])
+  const [searching, setSearching] = useState(false)
+  const [locating, setLocating] = useState(false)
   const [selectedPlaceId, setSelectedPlaceId] = useState<string | null>(null)
-
-  const city = cities?.find((c) => c.id === activeCity) ?? cities?.[0]
+  // The initial view is read once; afterwards the map owns its own position.
+  const [initialView] = useState(view)
 
   const iFollow = useMemo(
     () => new Set((follows ?? []).filter((f) => f.followerId === me?.id).map((f) => f.followeeId)),
     [follows, me?.id],
   )
 
+  // Debounced place search, biased towards wherever the map is looking.
+  useEffect(() => {
+    if (query.trim().length < 2) {
+      setResults([])
+      return
+    }
+    setSearching(true)
+    const t = setTimeout(() => {
+      searchPlaces(query, { lat: view.lat, lng: view.lng })
+        .then(setResults)
+        .catch(() => setResults([]))
+        .finally(() => setSearching(false))
+    }, 350)
+    return () => clearTimeout(t)
+  }, [query, view.lat, view.lng])
+
   const pins: MapPin[] = useMemo(() => {
-    if (!places || !reviews || !city) return []
+    if (!places || !reviews) return []
     const reviewsByPlace = new Map<string, typeof reviews>()
     for (const r of reviews) {
       const arr = reviewsByPlace.get(r.placeId) ?? []
@@ -44,12 +67,9 @@ export function MapScreen() {
       reviewsByPlace.set(r.placeId, arr)
     }
     return places
-      .filter((p) => p.cityId === city.id)
       .filter((p) => filters.length === 0 || p.categories.some((c) => filters.includes(c)))
       .filter((p) => {
         if (mapMode === 'foryou') return true
-        // Circle: pinned by you or someone you follow, or warmly reviewed
-        // (overall ≥ 7) by someone you follow.
         if (p.createdBy === me?.id || iFollow.has(p.createdBy)) return true
         return (reviewsByPlace.get(p.id) ?? []).some((r) => iFollow.has(r.userId) && overallScore(r) >= 7)
       })
@@ -61,7 +81,7 @@ export function MapScreen() {
           hasWarning: (reviewsByPlace.get(p.id) ?? []).some((r) => r.isWarning),
         }
       })
-  }, [places, reviews, city, filters, mapMode, iFollow, me?.id, engine])
+  }, [places, reviews, filters, mapMode, iFollow, me?.id, engine])
 
   const selectedPlace = places?.find((p) => p.id === selectedPlaceId) ?? null
   const selectedReviews = useMemo(
@@ -69,38 +89,63 @@ export function MapScreen() {
     [reviews, selectedPlaceId],
   )
 
-  // No cities configured — explain rather than showing a blank screen.
-  if (!city) {
-    return (
-      <div className="flex h-full flex-col items-center justify-center px-8 text-center">
-        <h2 className="t-title">No cities yet</h2>
-        <p className="mt-2 t-subhead text-label-2">
-          The atlas needs at least one city before the map can open. Add them from the Supabase SQL
-          editor — see supabase/seed.sql in the repository.
-        </p>
-      </div>
-    )
+  const goToMyLocation = async () => {
+    setLocating(true)
+    try {
+      const { lat, lng } = await getCurrentPosition()
+      requestFlyTo({ lat, lng, zoom: 14 })
+    } catch (e) {
+      showToast(e instanceof Error ? e.message : 'Couldn’t get your location.')
+    } finally {
+      setLocating(false)
+    }
   }
 
   return (
     <div className="absolute inset-0">
-      <MapView pins={pins} city={city} onPinTap={setSelectedPlaceId} />
+      <MapView
+        pins={pins}
+        initialView={initialView}
+        flyTo={flyTo}
+        onPinTap={setSelectedPlaceId}
+        onMoveEnd={setView}
+      />
 
       {/* ——— floating chrome ——— */}
       <div className="pointer-events-none absolute inset-x-0 top-0 z-20 space-y-2.5 px-4 pt-4">
         <div className="flex items-center gap-2">
           <button
             type="button"
-            onClick={() => setCitySheetOpen(true)}
-            className="pressable glass pointer-events-auto flex min-h-[38px] items-center gap-1.5 rounded-full py-2 pl-4 pr-3 shadow-[0_2px_10px_rgba(0,0,0,0.1)]"
+            onClick={() => setSearchOpen(true)}
+            className="pressable glass pointer-events-auto flex min-h-[38px] flex-1 items-center gap-2 rounded-full py-2 pl-4 pr-4 text-left shadow-[0_2px_10px_rgba(0,0,0,0.1)]"
           >
-            <span className="t-headline">{city.name}</span>
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" className="text-label-3">
-              <path d="m6 9 6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="text-label-2">
+              <circle cx="11" cy="11" r="7" />
+              <path d="m20 20-3.5-3.5" strokeLinecap="round" />
             </svg>
+            <span className="t-subhead text-label-2">Search anywhere</span>
           </button>
 
-          <div className="segmented glass pointer-events-auto ml-auto shadow-[0_2px_10px_rgba(0,0,0,0.1)]">
+          <button
+            type="button"
+            onClick={goToMyLocation}
+            aria-label="Go to my location"
+            className="pressable glass pointer-events-auto flex h-[38px] w-[38px] shrink-0 items-center justify-center rounded-full shadow-[0_2px_10px_rgba(0,0,0,0.1)]"
+          >
+            {locating ? (
+              <span className="t-caption">…</span>
+            ) : (
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9">
+                <path d="M12 2v3M12 19v3M2 12h3M19 12h3" strokeLinecap="round" />
+                <circle cx="12" cy="12" r="6" />
+                <circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none" />
+              </svg>
+            )}
+          </button>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <div className="segmented glass pointer-events-auto shadow-[0_2px_10px_rgba(0,0,0,0.1)]">
             {(
               [
                 ['foryou', 'For you'],
@@ -121,16 +166,15 @@ export function MapScreen() {
         </div>
       </div>
 
-      {/* ——— nothing to show: say why, rather than an empty map ——— */}
       {pins.length === 0 && (
         <div className="pointer-events-none absolute inset-x-0 top-1/2 z-10 -translate-y-1/2 px-8">
           <div className="glass mx-auto max-w-[300px] rounded-2xl p-4 text-center shadow-[0_2px_12px_rgba(0,0,0,0.1)]">
             <p className="t-subhead font-semibold">
-              {mapMode === 'circle' ? 'Nothing from your circle here' : `No places in ${city.name} yet`}
+              {mapMode === 'circle' ? 'Nothing from your circle yet' : 'No places yet'}
             </p>
             <p className="mt-1 t-footnote text-label-2">
               {mapMode === 'circle'
-                ? 'Switch to “For you”, or follow more members from the Members tab.'
+                ? 'Switch to “For you”, or follow members from the Members tab.'
                 : filters.length > 0
                   ? 'Try clearing the category filters.'
                   : 'Tap + to pin the first one.'}
@@ -139,7 +183,6 @@ export function MapScreen() {
         </div>
       )}
 
-      {/* ——— add a place ——— */}
       <button
         type="button"
         aria-label="Add a place"
@@ -151,33 +194,50 @@ export function MapScreen() {
         </svg>
       </button>
 
-      {/* ——— sheets ——— */}
-      <Sheet open={citySheetOpen} onClose={() => setCitySheetOpen(false)}>
-        <div className="px-4 pb-6 pt-2">
-          <p className="ios-section-header">Choose a city</p>
-          <div className="ios-group">
-            {(cities ?? []).map((c) => (
-              <button
-                key={c.id}
-                type="button"
-                onClick={() => {
-                  setActiveCity(c.id)
-                  setCitySheetOpen(false)
-                }}
-                className="pressable ios-row"
-              >
-                <span className="flex-1">
-                  <span className="block t-body">{c.name}</span>
-                  <span className="block t-footnote text-label-2">{c.country}</span>
-                </span>
-                {c.id === city.id && (
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
-                    <path d="m5 12.5 4.5 4.5L19 7" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                )}
-              </button>
-            ))}
-          </div>
+      {/* ——— search anywhere ——— */}
+      <Sheet
+        open={searchOpen}
+        onClose={() => {
+          setSearchOpen(false)
+          setQuery('')
+        }}
+        tall
+      >
+        <div className="px-4 pb-8 pt-2">
+          <input
+            autoFocus
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="City, neighbourhood or venue"
+            className="field bg-bg"
+            aria-label="Search anywhere"
+          />
+          {searching && <p className="ios-section-footer">Searching…</p>}
+          {!searching && query.trim().length >= 2 && results.length === 0 && (
+            <p className="ios-section-footer">Nothing found. Try a different spelling.</p>
+          )}
+          {results.length > 0 && (
+            <div className="ios-group mt-4">
+              {results.map((r, i) => (
+                <button
+                  key={`${r.lat}-${r.lng}-${i}`}
+                  type="button"
+                  onClick={() => {
+                    requestFlyTo({ lat: r.lat, lng: r.lng, zoom: 14 })
+                    setSearchOpen(false)
+                    setQuery('')
+                  }}
+                  className="pressable ios-row"
+                >
+                  <span className="min-w-0 flex-1">
+                    <span className="block truncate t-body">{r.name}</span>
+                    <span className="block truncate t-footnote text-label-2">{r.locality || r.address}</span>
+                  </span>
+                  <span aria-hidden className="text-label-3">›</span>
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       </Sheet>
 

@@ -1,11 +1,39 @@
 import { create } from 'zustand'
 import type { Category, Session } from './api/types'
 
+export interface MapView {
+  lat: number
+  lng: number
+  zoom: number
+}
+
+/** Antwerp, only as a first-run fallback before we know anything better. */
+const DEFAULT_VIEW: MapView = { lat: 51.2172, lng: 4.4078, zoom: 12 }
+
+function loadView(): MapView {
+  try {
+    const raw = localStorage.getItem('curated-view')
+    if (raw) {
+      const v = JSON.parse(raw) as MapView
+      if (Number.isFinite(v.lat) && Number.isFinite(v.lng)) return v
+    }
+  } catch {
+    // fall through to the default
+  }
+  return DEFAULT_VIEW
+}
+
 interface UiState {
   session: Session | null | undefined // undefined = still loading
   setSession: (s: Session | null) => void
-  activeCity: string
-  setActiveCity: (c: string) => void
+
+  /** Where the map is now — persisted so the app reopens where you left it. */
+  view: MapView
+  setView: (v: MapView) => void
+  /** Bumped to ask the map to fly somewhere; null after it has. */
+  flyTo: (MapView & { nonce: number }) | null
+  requestFlyTo: (v: MapView) => void
+
   mapMode: 'foryou' | 'circle'
   setMapMode: (m: 'foryou' | 'circle') => void
   categoryFilters: Category[]
@@ -18,11 +46,15 @@ interface UiState {
 export const useUi = create<UiState>((set) => ({
   session: undefined,
   setSession: (s) => set({ session: s }),
-  activeCity: localStorage.getItem('curated-city') ?? 'antwerp',
-  setActiveCity: (c) => {
-    localStorage.setItem('curated-city', c)
-    set({ activeCity: c })
+
+  view: loadView(),
+  setView: (v) => {
+    localStorage.setItem('curated-view', JSON.stringify(v))
+    set({ view: v })
   },
+  flyTo: null,
+  requestFlyTo: (v) => set({ flyTo: { ...v, nonce: Date.now() } }),
+
   mapMode: 'foryou',
   setMapMode: (m) => set({ mapMode: m }),
   categoryFilters: [],
