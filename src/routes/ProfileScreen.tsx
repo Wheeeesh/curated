@@ -13,6 +13,7 @@ import {
 import { creditBalance, pendingConsensusBonuses } from '../lib/credits/rules'
 import { formatDate } from '../lib/format'
 import { Avatar } from '../components/ui/Avatar'
+import { ScreenLoading } from '../components/ui/ScreenMessage'
 import { Sheet } from '../components/ui/Sheet'
 import { TasteBars } from '../components/profile/TasteBars'
 
@@ -45,7 +46,7 @@ export function ProfileScreen() {
   const pendingTotal = pending.reduce((s, p) => s + p.bonus, 0)
   const placeName = (id: string | null) => (places ?? []).find((p) => p.id === id)?.name
 
-  if (!me) return null
+  if (!me) return <ScreenLoading />
 
   return (
     <div className="h-full overflow-y-auto bg-bg pb-24">

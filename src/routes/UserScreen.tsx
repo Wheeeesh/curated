@@ -1,5 +1,7 @@
 import { useMemo } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
+import { useGoBack } from '../lib/useGoBack'
+import { ScreenLoading, ScreenMessage } from '../components/ui/ScreenMessage'
 import {
   useAllReviews,
   useFollowMutation,
@@ -16,8 +18,8 @@ import { TasteBars } from '../components/profile/TasteBars'
 
 export function UserScreen() {
   const { id } = useParams()
-  const navigate = useNavigate()
-  const { data: members } = useMembers()
+  const goBack = useGoBack()
+  const { data: members, isLoading: membersLoading } = useMembers()
   const { data: me } = useMyProfile()
   const { data: follows } = useFollows()
   const { data: places } = usePlaces()
@@ -39,13 +41,16 @@ export function UserScreen() {
   )
   const placeById = useMemo(() => new Map((places ?? []).map((p) => [p.id, p])), [places])
 
-  if (!member || !me) return null
+  if (membersLoading || !me) return <ScreenLoading />
+  if (!member) {
+    return <ScreenMessage title="Member not found" actionLabel="Back to the atlas" />
+  }
   const isSelf = member.id === me.id
 
   return (
     <div className="h-full overflow-y-auto bg-bg pb-16">
       <div className="glass sticky top-0 z-20 flex items-center border-b border-separator px-2 py-2">
-        <button type="button" onClick={() => navigate(-1)} className="pressable flex min-h-[44px] items-center gap-0.5 pl-1 pr-3 t-body">
+        <button type="button" onClick={goBack} className="pressable flex min-h-[44px] items-center gap-0.5 pl-1 pr-3 t-body">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
             <path d="M15 18l-6-6 6-6" strokeLinecap="round" strokeLinejoin="round" />
           </svg>

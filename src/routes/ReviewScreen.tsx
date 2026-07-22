@@ -1,9 +1,11 @@
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { ASPECTS, type Aspect } from '../lib/api/types'
+import { ASPECTS, type Aspect, type Place, type Review } from '../lib/api/types'
 import { useAllReviews, useMyProfile, usePlaces, useReviewMutation } from '../lib/hooks'
 import { ASPECT_META } from '../lib/format'
 import { FULL_REVIEW_MIN_CHARS, WARNING_MIN_CHARS } from '../lib/credits/rules'
+import { useGoBack } from '../lib/useGoBack'
+import { ScreenLoading, ScreenMessage } from '../components/ui/ScreenMessage'
 
 function AspectSlider({ aspect, value, onChange }: { aspect: Aspect; value: number; onChange: (v: number) => void }) {
   const meta = ASPECT_META[aspect]
@@ -29,19 +31,16 @@ function AspectSlider({ aspect, value, onChange }: { aspect: Aspect; value: numb
   )
 }
 
-export function ReviewScreen() {
-  const { id } = useParams()
+/**
+ * Mounted only once reviews have loaded, so the initial slider and text
+ * values are the member's actual saved review. Initialising this state
+ * while the query was still in flight silently reset an existing review to
+ * 7/7/7/7 with empty text on a hard refresh.
+ */
+function ReviewForm({ place, existing, isOwnPlace }: { place: Place; existing: Review | undefined; isOwnPlace: boolean }) {
   const navigate = useNavigate()
-  const { data: places } = usePlaces()
-  const { data: reviews } = useAllReviews()
-  const { data: me } = useMyProfile()
+  const goBack = useGoBack()
   const mutation = useReviewMutation()
-
-  const place = places?.find((p) => p.id === id)
-  const existing = useMemo(
-    () => (reviews ?? []).find((r) => r.placeId === id && r.userId === me?.id),
-    [reviews, id, me?.id],
-  )
 
   const [scores, setScores] = useState<Record<Aspect, number>>({
     quality: existing?.quality ?? 7,
@@ -53,10 +52,8 @@ export function ReviewScreen() {
   const [isWarning, setIsWarning] = useState(existing?.isWarning ?? false)
   const [warningReason, setWarningReason] = useState(existing?.warningReason ?? '')
 
-  if (!place) return null
   const chars = text.trim().length
   const warningOk = !isWarning || warningReason.trim().length >= WARNING_MIN_CHARS
-  const isOwnPlace = place.createdBy === me?.id
 
   const submit = async () => {
     await mutation.mutateAsync({
@@ -72,7 +69,7 @@ export function ReviewScreen() {
   return (
     <div className="h-full overflow-y-auto bg-bg pb-16">
       <div className="glass sticky top-0 z-20 flex items-center justify-between border-b border-separator px-4 py-2.5">
-        <button type="button" onClick={() => navigate(-1)} className="pressable min-h-[44px] pr-3 t-body">
+        <button type="button" onClick={goBack} className="pressable min-h-[44px] pr-3 t-body">
           Cancel
         </button>
         <span className="max-w-[190px] truncate t-headline">{place.name}</span>
@@ -104,7 +101,6 @@ export function ReviewScreen() {
           {isOwnPlace && ' · You pinned this place, so it earns no credits.'}
         </p>
 
-        {/* warning */}
         <div className="mt-7">
           <div className="ios-group">
             <div className="ios-row">
@@ -159,4 +155,22 @@ export function ReviewScreen() {
       </div>
     </div>
   )
+}
+
+export function ReviewScreen() {
+  const { id } = useParams()
+  const { data: places, isLoading: placesLoading } = usePlaces()
+  const { data: reviews, isLoading: reviewsLoading } = useAllReviews()
+  const { data: me, isLoading: meLoading } = useMyProfile()
+
+  if (placesLoading || reviewsLoading || meLoading) return <ScreenLoading />
+
+  const place = places?.find((p) => p.id === id)
+  if (!place) {
+    return <ScreenMessage title="Place not found" body="It may have been removed." actionLabel="Back to the atlas" />
+  }
+
+  const existing = (reviews ?? []).find((r) => r.placeId === id && r.userId === me?.id)
+  // Remount when the saved review arrives so the form initialises from it.
+  return <ReviewForm key={existing?.id ?? 'new'} place={place} existing={existing} isOwnPlace={place.createdBy === me?.id} />
 }

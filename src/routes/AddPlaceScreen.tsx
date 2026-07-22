@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useGoBack } from '../lib/useGoBack'
+import { ScreenLoading, ScreenMessage } from '../components/ui/ScreenMessage'
 import maplibregl from 'maplibre-gl'
 import { CATEGORIES, type Category, type City } from '../lib/api/types'
 import { useAddPlaceMutation, useCities } from '../lib/hooks'
@@ -58,7 +60,8 @@ function PinDropMap({ city, onPick }: { city: City; onPick: (lat: number, lng: n
 
 export function AddPlaceScreen() {
   const navigate = useNavigate()
-  const { data: cities } = useCities()
+  const goBack = useGoBack()
+  const { data: cities, isLoading: citiesLoading } = useCities()
   const activeCity = useUi((s) => s.activeCity)
   const showToast = useUi((s) => s.showToast)
   const mutation = useAddPlaceMutation()
@@ -97,7 +100,16 @@ export function AddPlaceScreen() {
     return () => clearTimeout(t)
   }, [query, city, linkResult.kind])
 
-  if (!city) return null
+  if (citiesLoading) return <ScreenLoading />
+  if (!city) {
+    return (
+      <ScreenMessage
+        title="No cities yet"
+        body="A place has to belong to a city, and none are set up yet."
+        actionLabel="Back to the atlas"
+      />
+    )
+  }
 
   const submit = async () => {
     if (!picked || !category || !name.trim()) return
@@ -116,7 +128,7 @@ export function AddPlaceScreen() {
   return (
     <div className="h-full overflow-y-auto bg-bg pb-16">
       <div className="glass sticky top-0 z-20 flex items-center justify-between border-b border-separator px-4 py-2.5">
-        <button type="button" onClick={() => navigate(-1)} className="pressable min-h-[44px] pr-3 t-body">
+        <button type="button" onClick={goBack} className="pressable min-h-[44px] pr-3 t-body">
           Cancel
         </button>
         <span className="t-headline">Add to {city.name}</span>

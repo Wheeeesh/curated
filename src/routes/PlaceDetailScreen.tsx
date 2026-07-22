@@ -1,5 +1,7 @@
 import { useMemo } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
+import { useGoBack } from '../lib/useGoBack'
+import { ScreenLoading, ScreenMessage } from '../components/ui/ScreenMessage'
 import { useAllReviews, useMembers, useMyProfile, usePlaces, useTasteEngine } from '../lib/hooks'
 import { overallScore, type Profile, type Review } from '../lib/api/types'
 import { aggregateReviews } from '../lib/aggregate'
@@ -56,7 +58,8 @@ function ReviewCard({ review, author }: { review: Review; author: Profile | unde
 export function PlaceDetailScreen() {
   const { id } = useParams()
   const navigate = useNavigate()
-  const { data: places } = usePlaces()
+  const goBack = useGoBack()
+  const { data: places, isLoading: placesLoading } = usePlaces()
   const { data: reviews } = useAllReviews()
   const { data: members } = useMembers()
   const { data: me } = useMyProfile()
@@ -68,7 +71,10 @@ export function PlaceDetailScreen() {
     [reviews, id],
   )
 
-  if (!place) return null
+  if (placesLoading) return <ScreenLoading />
+  if (!place) {
+    return <ScreenMessage title="Place not found" body="It may have been removed." actionLabel="Back to the atlas" />
+  }
   const agg = aggregateReviews(placeReviews)
   const match = engine?.matchFor(place)
   const warnings = placeReviews.filter((r) => r.isWarning)
@@ -82,7 +88,7 @@ export function PlaceDetailScreen() {
     <div className="h-full overflow-y-auto bg-bg pb-32">
       {/* nav bar */}
       <div className="glass sticky top-0 z-20 flex items-center border-b border-separator px-2 py-2">
-        <button type="button" onClick={() => navigate(-1)} className="pressable flex min-h-[44px] items-center gap-0.5 pl-1 pr-3 t-body">
+        <button type="button" onClick={goBack} className="pressable flex min-h-[44px] items-center gap-0.5 pl-1 pr-3 t-body">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
             <path d="M15 18l-6-6 6-6" strokeLinecap="round" strokeLinejoin="round" />
           </svg>

@@ -121,6 +121,24 @@ export function MapScreen() {
         </div>
       </div>
 
+      {/* ——— nothing to show: say why, rather than an empty map ——— */}
+      {pins.length === 0 && (
+        <div className="pointer-events-none absolute inset-x-0 top-1/2 z-10 -translate-y-1/2 px-8">
+          <div className="glass mx-auto max-w-[300px] rounded-2xl p-4 text-center shadow-[0_2px_12px_rgba(0,0,0,0.1)]">
+            <p className="t-subhead font-semibold">
+              {mapMode === 'circle' ? 'Nothing from your circle here' : `No places in ${city.name} yet`}
+            </p>
+            <p className="mt-1 t-footnote text-label-2">
+              {mapMode === 'circle'
+                ? 'Switch to “For you”, or follow more members from the Members tab.'
+                : filters.length > 0
+                  ? 'Try clearing the category filters.'
+                  : 'Tap + to pin the first one.'}
+            </p>
+          </div>
+        </div>
+      )}
+
       {/* ——— add a place ——— */}
       <button
         type="button"
