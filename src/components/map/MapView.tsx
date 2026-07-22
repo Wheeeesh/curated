@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import maplibregl from 'maplibre-gl'
 import type { FeatureCollection, Point } from 'geojson'
 import type { City, Place } from '../../lib/api/types'
+import { primaryCategory } from '../../lib/api/types'
 import { CATEGORY_META } from '../../lib/format'
 import { MAP_FONT, MAP_STYLE_URL } from '../../lib/mapStyle'
 
@@ -25,7 +26,7 @@ function toGeoJson(pins: MapPin[]): FeatureCollection {
       geometry: { type: 'Point', coordinates: [p.lng, p.lat] },
       properties: {
         id: p.id,
-        category: p.category,
+        category: primaryCategory(p),
         name: p.name,
         matchLabel: p.matchPct !== null && p.matchPct >= 80 ? String(p.matchPct) : '',
         highMatch: p.matchPct !== null && p.matchPct >= 80,

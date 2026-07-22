@@ -14,6 +14,11 @@ export const CREDITS: Record<CreditReason, number> = {
   REVIEW_BASIC: 2,
   PLACE_ADDED: 3,
   PLACE_VALIDATED: 10,
+  /** Spending, not earning — always recorded as a negative amount. */
+  UNLOCK_SPEND: -20,
+  CREDITS_PURCHASED: 0,
+  /** Every review past the veteran threshold keeps earning. */
+  VETERAN_BONUS: 2,
 }
 
 export const FULL_REVIEW_MIN_CHARS = 80

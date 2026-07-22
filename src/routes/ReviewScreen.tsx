@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { ASPECTS, type Aspect, type Place, type Review } from '../lib/api/types'
+import { aspectsForCategories, type Aspect, type Place, type Review } from '../lib/api/types'
 import { useAllReviews, useMyProfile, usePlaces, useReviewMutation } from '../lib/hooks'
 import { ASPECT_META } from '../lib/format'
 import { FULL_REVIEW_MIN_CHARS, WARNING_MIN_CHARS } from '../lib/credits/rules'
@@ -42,12 +42,12 @@ function ReviewForm({ place, existing, isOwnPlace }: { place: Place; existing: R
   const goBack = useGoBack()
   const mutation = useReviewMutation()
 
-  const [scores, setScores] = useState<Record<Aspect, number>>({
-    quality: existing?.quality ?? 7,
-    vibe: existing?.vibe ?? 7,
-    service: existing?.service ?? 7,
-    value: existing?.value ?? 7,
-  })
+  // The criteria are the union of this place's categories, deduplicated —
+  // a bar that also serves food asks about both, but about atmosphere once.
+  const aspects = aspectsForCategories(place.categories)
+  const [scores, setScores] = useState<Partial<Record<Aspect, number>>>(() =>
+    Object.fromEntries(aspects.map((a) => [a, existing?.scores[a] ?? 7])),
+  )
   const [text, setText] = useState(existing?.textReview ?? '')
   const [isWarning, setIsWarning] = useState(existing?.isWarning ?? false)
   const [warningReason, setWarningReason] = useState(existing?.warningReason ?? '')
@@ -58,7 +58,7 @@ function ReviewForm({ place, existing, isOwnPlace }: { place: Place; existing: R
   const submit = async () => {
     await mutation.mutateAsync({
       placeId: place.id,
-      ...scores,
+      scores,
       textReview: text.trim(),
       isWarning,
       warningReason: isWarning ? warningReason.trim() : null,
@@ -77,10 +77,15 @@ function ReviewForm({ place, existing, isOwnPlace }: { place: Place; existing: R
       </div>
 
       <div className="px-4 pt-5">
-        <p className="ios-section-header">Your scores</p>
+        <p className="ios-section-header">Your scores · {aspects.length} questions</p>
         <div className="ios-group divide-y divide-separator">
-          {ASPECTS.map((a) => (
-            <AspectSlider key={a} aspect={a} value={scores[a]} onChange={(v) => setScores((s) => ({ ...s, [a]: v }))} />
+          {aspects.map((a) => (
+            <AspectSlider
+              key={a}
+              aspect={a}
+              value={scores[a] ?? 7}
+              onChange={(v) => setScores((s) => ({ ...s, [a]: v }))}
+            />
           ))}
         </div>
 

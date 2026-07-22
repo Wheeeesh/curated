@@ -1,11 +1,9 @@
-import type { Aspect, Category, Profile } from '../lib/api/types'
+import type { Category, Profile } from '../lib/api/types'
 import { memberId, seedDate } from './ids'
 
 export interface PersonaBias {
   /** Added to every score before clamping (generosity / harshness). */
   meanOffset: number
-  /** Per-aspect extra offset — what this person over/under-weights. */
-  aspectBias: Partial<Record<Aspect, number>>
   /** How many seed reviews this persona writes. */
   reviewCount: number
   /** Cities they review in besides their home city. */
@@ -42,7 +40,7 @@ export const SEED_MEMBERS: SeedMember[] = [
     bio: 'Eats first, asks later. Tokyo born, always hungry.',
     interests: ['food', 'bars', 'culture'], homeCity: 'tokyo',
     follows: ['jules', 'sam', 'ken', 'elif'],
-    bias: { meanOffset: 0, aspectBias: { quality: -1, vibe: 1 }, reviewCount: 18, travelsTo: ['seoul', 'paris'] },
+    bias: { meanOffset: 0, reviewCount: 18, travelsTo: ['seoul', 'paris'] },
     voice: {
       praise: [
         'The kind of place you measure everything else against afterwards.',
@@ -61,7 +59,7 @@ export const SEED_MEMBERS: SeedMember[] = [
     bio: 'Istanbul after midnight. If the sound system is bad, I leave.',
     interests: ['nightlife', 'music', 'bars'], homeCity: 'istanbul',
     follows: ['dae', 'vera', 'ken'],
-    bias: { meanOffset: 0, aspectBias: { vibe: 2, service: -1 }, reviewCount: 16, travelsTo: ['paris', 'antwerp'] },
+    bias: { meanOffset: 0, reviewCount: 16, travelsTo: ['paris', 'antwerp'] },
     voice: {
       praise: [
         'The room breathes with the music. Stayed until they turned the lights on.',
@@ -80,7 +78,7 @@ export const SEED_MEMBERS: SeedMember[] = [
     bio: 'Paris. Museums before noon, natural wine after.',
     interests: ['culture', 'food', 'shopping'], homeCity: 'paris',
     follows: ['mika', 'sam', 'nora'],
-    bias: { meanOffset: -1, aspectBias: { quality: 1, value: -1 }, reviewCount: 15, travelsTo: ['antwerp', 'tokyo'] },
+    bias: { meanOffset: -1, reviewCount: 15, travelsTo: ['antwerp', 'tokyo'] },
     voice: {
       praise: [
         'One resists the word flawless, and yet. The curation alone justifies the visit.',
@@ -99,7 +97,7 @@ export const SEED_MEMBERS: SeedMember[] = [
     bio: 'Antwerp. Parks, quiet corners, honest coffee. Allergic to tourist traps.',
     interests: ['nature', 'food', 'culture'], homeCity: 'antwerp',
     follows: ['jules', 'ken', 'mika'],
-    bias: { meanOffset: 0, aspectBias: { value: 1, vibe: -1 }, reviewCount: 14, travelsTo: ['paris', 'istanbul'] },
+    bias: { meanOffset: 0, reviewCount: 14, travelsTo: ['paris', 'istanbul'] },
     voice: {
       praise: [
         'Peaceful, unpretentious, and exactly what it says it is. I keep coming back.',
@@ -118,7 +116,7 @@ export const SEED_MEMBERS: SeedMember[] = [
     bio: 'Seoul. Basements, line-ups, records. Price is irrelevant when the lineup is right.',
     interests: ['music', 'nightlife', 'bars'], homeCity: 'seoul',
     follows: ['elif', 'vera', 'ken', 'mika'],
-    bias: { meanOffset: 0, aspectBias: { quality: 1, value: -2 }, reviewCount: 16, travelsTo: ['tokyo', 'istanbul'] },
+    bias: { meanOffset: 0, reviewCount: 16, travelsTo: ['tokyo', 'istanbul'] },
     voice: {
       praise: [
         'Booking is consistently ahead of the curve. This room has taste.',
@@ -137,7 +135,7 @@ export const SEED_MEMBERS: SeedMember[] = [
     bio: 'Paris via Lagos. Brunch strategist, vintage hunter, easily delighted.',
     interests: ['shopping', 'food', 'bars'], homeCity: 'paris',
     follows: ['jules', 'mika', 'nora', 'elif'],
-    bias: { meanOffset: 1, aspectBias: { service: 1 }, reviewCount: 15, travelsTo: ['antwerp', 'seoul'] },
+    bias: { meanOffset: 1, reviewCount: 15, travelsTo: ['antwerp', 'seoul'] },
     voice: {
       praise: [
         'An absolute joy from the first minute. The staff remembered my name on visit two!',
@@ -156,7 +154,7 @@ export const SEED_MEMBERS: SeedMember[] = [
     bio: 'Antwerp bartender. I know what a fair pour costs. Value is a skill.',
     interests: ['bars', 'nightlife', 'food'], homeCity: 'antwerp',
     follows: ['elif', 'dae', 'sam'],
-    bias: { meanOffset: 0, aspectBias: { value: 2, quality: -1 }, reviewCount: 14, travelsTo: ['istanbul', 'paris'] },
+    bias: { meanOffset: 0, reviewCount: 14, travelsTo: ['istanbul', 'paris'] },
     voice: {
       praise: [
         'Honest pours, fair prices, staff who actually taste what they serve.',
@@ -175,7 +173,7 @@ export const SEED_MEMBERS: SeedMember[] = [
     bio: 'Tokyo. A little of everything, strong opinions about nothing. The reliable second opinion.',
     interests: ['culture', 'nature', 'food', 'music'], homeCity: 'tokyo',
     follows: ['mika', 'elif', 'jules', 'nora', 'dae'],
-    bias: { meanOffset: 0, aspectBias: {}, reviewCount: 17, travelsTo: ['seoul', 'antwerp', 'paris'] },
+    bias: { meanOffset: 0, reviewCount: 17, travelsTo: ['seoul', 'antwerp', 'paris'] },
     voice: {
       praise: [
         'Does what it does very well, without needing you to notice how hard that is.',

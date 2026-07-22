@@ -45,7 +45,7 @@ export function MapScreen() {
     }
     return places
       .filter((p) => p.cityId === city.id)
-      .filter((p) => filters.length === 0 || filters.includes(p.category))
+      .filter((p) => filters.length === 0 || p.categories.some((c) => filters.includes(c)))
       .filter((p) => {
         if (mapMode === 'foryou') return true
         // Circle: pinned by you or someone you follow, or warmly reviewed

@@ -62,7 +62,7 @@ lines.push(
 
 for (const p of SEED_PLACES) {
   lines.push(
-    `insert into public.places (id, city_id, name, category, lat, lng, address, description, created_by, created_at) values (${q(p.id)}, ${q(p.cityId)}, ${q(p.name)}, ${q(p.category)}, ${p.lat}, ${p.lng}, ${q(p.address)}, ${q(p.description)}, ${q(HOUSE_ID)}, ${q(EPOCH)}) on conflict do nothing;`,
+    `insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values (${q(p.id)}, ${q(p.cityId)}, ${q(p.locality)}, ${q(p.name)}, '{${p.categories.join(',')}}', ${p.lat}, ${p.lng}, ${q(p.address)}, ${q(p.description)}, ${q(HOUSE_ID)}, ${q(EPOCH)}) on conflict do nothing;`,
   )
 }
 

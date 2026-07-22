@@ -27,12 +27,13 @@ const toProfile = (r: Row): Profile => ({
   createdAt: r.created_at,
 })
 const toPlace = (r: Row): Place => ({
-  id: r.id, cityId: r.city_id, name: r.name, category: r.category, lat: r.lat, lng: r.lng,
+  id: r.id, cityId: r.city_id ?? '', locality: r.locality ?? '', name: r.name,
+  categories: r.categories ?? [], lat: r.lat, lng: r.lng,
   address: r.address ?? '', description: r.description ?? '', createdBy: r.created_by, createdAt: r.created_at,
 })
 const toReview = (r: Row): Review => ({
   id: r.id, placeId: r.place_id, userId: r.user_id,
-  quality: r.quality, vibe: r.vibe, service: r.service, value: r.value,
+  scores: r.scores ?? {},
   textReview: r.text_review ?? '', isWarning: r.is_warning, warningReason: r.warning_reason,
   createdAt: r.created_at, updatedAt: r.updated_at,
 })
@@ -181,7 +182,8 @@ export function createSupabaseAdapter(url: string, anonKey: string): DataAdapter
       const { data, error } = await sb
         .from('places')
         .insert({
-          city_id: input.cityId, name: input.name, category: input.category,
+          city_id: input.cityId || null, locality: input.locality, name: input.name,
+          categories: input.categories,
           lat: input.lat, lng: input.lng, address: input.address, description: input.description,
           created_by: await uid(),
         })
@@ -211,7 +213,7 @@ export function createSupabaseAdapter(url: string, anonKey: string): DataAdapter
         .upsert(
           {
             place_id: input.placeId, user_id: me,
-            quality: input.quality, vibe: input.vibe, service: input.service, value: input.value,
+            scores: input.scores,
             text_review: input.textReview, is_warning: input.isWarning, warning_reason: input.warningReason,
             updated_at: new Date().toISOString(),
           },

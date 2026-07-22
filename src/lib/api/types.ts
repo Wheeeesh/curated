@@ -1,14 +1,61 @@
 export const CATEGORIES = [
   'food',
+  'coffee',
   'bars',
-  'nature',
+  'nightlife',
   'music',
   'culture',
-  'nightlife',
+  'art',
+  'nature',
   'shopping',
 ] as const
 
 export type Category = (typeof CATEGORIES)[number]
+
+/**
+ * Rating criteria. A place is rated on the union of its categories'
+ * criteria, deduplicated — so a bar that also serves food asks about the
+ * food and the drinks, but only once about atmosphere, service and value.
+ */
+export const ASPECTS = [
+  'food',
+  'coffee',
+  'drinks',
+  'sound',
+  'lineup',
+  'crowd',
+  'curation',
+  'scenery',
+  'quiet',
+  'selection',
+  'atmosphere',
+  'service',
+  'value',
+  'upkeep',
+] as const
+
+export type Aspect = (typeof ASPECTS)[number]
+
+/** Which criteria each category asks about, in the order they're shown. */
+export const CATEGORY_ASPECTS: Record<Category, Aspect[]> = {
+  food: ['food', 'atmosphere', 'service', 'value'],
+  coffee: ['coffee', 'atmosphere', 'service', 'value'],
+  bars: ['drinks', 'atmosphere', 'service', 'value'],
+  nightlife: ['sound', 'crowd', 'atmosphere', 'value'],
+  music: ['sound', 'lineup', 'atmosphere', 'value'],
+  culture: ['curation', 'atmosphere', 'value', 'upkeep'],
+  art: ['curation', 'atmosphere', 'value', 'upkeep'],
+  nature: ['scenery', 'quiet', 'upkeep', 'atmosphere'],
+  shopping: ['selection', 'service', 'value', 'atmosphere'],
+}
+
+/** The union of criteria for a set of categories, in a stable order. */
+export function aspectsForCategories(categories: Category[]): Aspect[] {
+  const wanted = new Set<Aspect>()
+  for (const c of categories) for (const a of CATEGORY_ASPECTS[c] ?? []) wanted.add(a)
+  const ordered = ASPECTS.filter((a) => wanted.has(a))
+  return ordered.length > 0 ? ordered : ['atmosphere', 'service', 'value']
+}
 
 export interface City {
   id: string
@@ -51,8 +98,10 @@ export interface Follow {
 export interface Place {
   id: string
   cityId: string
+  /** Free-text locality shown under the name, e.g. "Antwerp, Belgium". */
+  locality: string
   name: string
-  category: Category
+  categories: Category[]
   lat: number
   lng: number
   address: string
@@ -61,17 +110,15 @@ export interface Place {
   createdAt: string
 }
 
-export const ASPECTS = ['quality', 'vibe', 'service', 'value'] as const
-export type Aspect = (typeof ASPECTS)[number]
+/** Primary category — drives the pin colour and the leading badge. */
+export const primaryCategory = (p: Pick<Place, 'categories'>): Category => p.categories[0] ?? 'food'
 
 export interface Review {
   id: string
   placeId: string
   userId: string
-  quality: number
-  vibe: number
-  service: number
-  value: number
+  /** aspect key → 1–10. Only the aspects that applied to this place. */
+  scores: Partial<Record<Aspect, number>>
   textReview: string
   isWarning: boolean
   warningReason: string | null
@@ -86,6 +133,9 @@ export type CreditReason =
   | 'REVIEW_BASIC'
   | 'PLACE_ADDED'
   | 'PLACE_VALIDATED'
+  | 'UNLOCK_SPEND'
+  | 'CREDITS_PURCHASED'
+  | 'VETERAN_BONUS'
 
 export interface CreditEntry {
   id: string
@@ -103,8 +153,9 @@ export interface Session {
 
 export interface NewPlaceInput {
   cityId: string
+  locality: string
   name: string
-  category: Category
+  categories: Category[]
   lat: number
   lng: number
   address: string
@@ -113,10 +164,7 @@ export interface NewPlaceInput {
 
 export interface NewReviewInput {
   placeId: string
-  quality: number
-  vibe: number
-  service: number
-  value: number
+  scores: Partial<Record<Aspect, number>>
   textReview: string
   isWarning: boolean
   warningReason: string | null
@@ -129,7 +177,12 @@ export interface SignUpInput {
   displayName: string
 }
 
-/** Weighted overall score of a review on the 1–10 scale. */
-export function overallScore(r: Pick<Review, 'quality' | 'vibe' | 'service' | 'value'>): number {
-  return 0.4 * r.quality + 0.3 * r.vibe + 0.15 * r.service + 0.15 * r.value
+/**
+ * Overall score, 1–10: the mean of whichever criteria were rated. Reviews
+ * of different categories therefore stay comparable.
+ */
+export function overallScore(r: Pick<Review, 'scores'>): number {
+  const vals = Object.values(r.scores).filter((v): v is number => typeof v === 'number')
+  if (vals.length === 0) return 0
+  return vals.reduce((s, v) => s + v, 0) / vals.length
 }

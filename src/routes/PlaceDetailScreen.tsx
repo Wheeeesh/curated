@@ -3,7 +3,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useGoBack } from '../lib/useGoBack'
 import { ScreenLoading, ScreenMessage } from '../components/ui/ScreenMessage'
 import { useAllReviews, useMembers, useMyProfile, usePlaces, useTasteEngine } from '../lib/hooks'
-import { overallScore, type Profile, type Review } from '../lib/api/types'
+import { overallScore, type Aspect, type Profile, type Review } from '../lib/api/types'
 import { aggregateReviews } from '../lib/aggregate'
 import { ASPECT_META, formatDate, scoreColor } from '../lib/format'
 import { Avatar } from '../components/ui/Avatar'
@@ -36,9 +36,9 @@ function ReviewCard({ review, author }: { review: Review; author: Profile | unde
       </div>
 
       <div className="mt-2.5 flex flex-wrap gap-x-3 gap-y-1 t-caption text-label-2">
-        {(['quality', 'vibe', 'service', 'value'] as const).map((a) => (
-          <span key={a}>
-            {ASPECT_META[a].label} <span className="font-semibold text-label">{review[a]}</span>
+        {Object.entries(review.scores).map(([aspect, score]) => (
+          <span key={aspect}>
+            {ASPECT_META[aspect as Aspect].label} <span className="font-semibold text-label">{score}</span>
           </span>
         ))}
       </div>
@@ -100,7 +100,11 @@ export function PlaceDetailScreen() {
         {/* title block */}
         <div className="flex items-start gap-4">
           <div className="min-w-0 flex-1">
-            <CategoryBadge category={place.category} />
+            <div className="flex flex-wrap gap-1.5">
+              {place.categories.map((c) => (
+                <CategoryBadge key={c} category={c} />
+              ))}
+            </div>
             <h1 className="mt-2.5 t-large-title">{place.name}</h1>
             <p className="mt-1 t-subhead text-label-2">{place.address}</p>
           </div>
@@ -146,8 +150,8 @@ export function PlaceDetailScreen() {
               Member scores · {agg.count} {agg.count === 1 ? 'review' : 'reviews'}
             </p>
             <div className="ios-group space-y-3 p-4">
-              {(['quality', 'vibe', 'service', 'value'] as const).map((a) => (
-                <ScoreBar key={a} label={ASPECT_META[a].label} score={agg[a]} />
+              {agg.byAspect.map(({ aspect, mean }) => (
+                <ScoreBar key={aspect} label={ASPECT_META[aspect].label} score={mean} />
               ))}
             </div>
           </div>

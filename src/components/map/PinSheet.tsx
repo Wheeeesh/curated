@@ -35,7 +35,11 @@ export function PinSheet({
       <div className="px-5 pb-6 pt-1">
         <div className="flex items-start gap-4">
           <div className="min-w-0 flex-1">
-            <CategoryBadge category={place.category} />
+            <div className="flex flex-wrap gap-1.5">
+              {place.categories.map((c) => (
+                <CategoryBadge key={c} category={c} />
+              ))}
+            </div>
             <h2 className="mt-2 t-title">{place.name}</h2>
             <p className="mt-0.5 truncate t-subhead text-label-2">{place.address}</p>
           </div>
@@ -56,8 +60,8 @@ export function PinSheet({
 
         {agg ? (
           <div className="mt-4 space-y-2.5">
-            {(['quality', 'vibe', 'service', 'value'] as const).map((a) => (
-              <ScoreBar key={a} label={ASPECT_META[a].label} score={agg[a]} />
+            {agg.byAspect.slice(0, 4).map(({ aspect, mean }) => (
+              <ScoreBar key={aspect} label={ASPECT_META[aspect].label} score={mean} />
             ))}
           </div>
         ) : (

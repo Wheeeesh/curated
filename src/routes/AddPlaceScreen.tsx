@@ -76,7 +76,7 @@ export function AddPlaceScreen() {
 
   const [picked, setPicked] = useState<{ lat: number; lng: number; name: string; address: string } | null>(null)
   const [name, setName] = useState('')
-  const [category, setCategory] = useState<Category | null>(null)
+  const [categories, setCategories] = useState<Category[]>([])
   const [description, setDescription] = useState('')
 
   // A pasted map link or coordinate pair short-circuits the search entirely.
@@ -112,11 +112,12 @@ export function AddPlaceScreen() {
   }
 
   const submit = async () => {
-    if (!picked || !category || !name.trim()) return
+    if (!picked || categories.length === 0 || !name.trim()) return
     await mutation.mutateAsync({
       cityId: city.id,
+      locality: `${city.name}, ${city.country}`,
       name: name.trim(),
-      category,
+      categories,
       lat: picked.lat,
       lng: picked.lng,
       address: picked.address,
@@ -246,13 +247,20 @@ export function AddPlaceScreen() {
             />
             <p className="ios-section-footer">{picked.address}</p>
 
-            <p className="ios-section-header mt-7">Category</p>
+            <p className="ios-section-header mt-7">Categories</p>
             <div className="ios-group">
               {CATEGORIES.map((c) => (
-                <button key={c} type="button" onClick={() => setCategory(c)} className="pressable ios-row">
+                <button
+                  key={c}
+                  type="button"
+                  onClick={() =>
+                    setCategories((prev) => (prev.includes(c) ? prev.filter((x) => x !== c) : [...prev, c]))
+                  }
+                  className="pressable ios-row"
+                >
                   <span aria-hidden className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: CATEGORY_META[c].color }} />
                   <span className="flex-1 t-body">{CATEGORY_META[c].label}</span>
-                  {category === c && (
+                  {categories.includes(c) && (
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
                       <path d="m5 12.5 4.5 4.5L19 7" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
@@ -274,7 +282,7 @@ export function AddPlaceScreen() {
 
             <button
               type="button"
-              disabled={!name.trim() || !category || mutation.isPending}
+              disabled={!name.trim() || categories.length === 0 || mutation.isPending}
               onClick={submit}
               className="pressable btn-primary mt-7"
             >

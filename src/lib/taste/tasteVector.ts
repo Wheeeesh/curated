@@ -25,13 +25,13 @@ export function buildTasteVector(
     let count = PRIOR_WEIGHT
     for (const r of ownReviews) {
       const place = placeById.get(r.placeId)
-      if (place?.category === c) {
+      if (place?.categories.includes(c)) {
         sum += overallScore(r) / 10
         count += 1
       }
     }
     for (const p of ownPlaces) {
-      if (p.category === c) {
+      if (p.categories.includes(c)) {
         sum += ADDED_PLACE_SIGNAL
         count += 1
       }

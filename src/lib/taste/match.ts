@@ -78,7 +78,10 @@ export function buildTasteEngine(opts: {
   }
 
   const matchFor = (place: Place): MatchResult => {
-    const affinity = myVector[place.category]
+    // A place with several categories is judged by the one you care most
+    // about — a restaurant that also has a dancefloor still appeals to a
+    // food lover.
+    const affinity = Math.max(...place.categories.map((c) => myVector[c]), 0)
     const raters = (reviewsByPlace.get(place.id) ?? []).filter((r) => r.userId !== me.id)
     const warnings = raters.filter((r) => r.isWarning)
 

@@ -11,7 +11,7 @@ import {
   usePlaces,
   useTasteEngine,
 } from '../lib/hooks'
-import { overallScore } from '../lib/api/types'
+import { overallScore, primaryCategory } from '../lib/api/types'
 import { CATEGORY_META, scoreColor } from '../lib/format'
 import { Avatar } from '../components/ui/Avatar'
 import { TasteBars } from '../components/profile/TasteBars'
@@ -100,7 +100,7 @@ export function UserScreen() {
             <div className="ios-group">
               {theirPlaces.map((p) => (
                 <Link key={p.id} to={`/place/${p.id}`} className="pressable ios-row">
-                  <span aria-hidden className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: CATEGORY_META[p.category].color }} />
+                  <span aria-hidden className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: CATEGORY_META[primaryCategory(p)].color }} />
                   <span className="min-w-0 flex-1">
                     <span className="block truncate t-body">{p.name}</span>
                     <span className="block t-footnote capitalize text-label-2">{p.cityId}</span>
