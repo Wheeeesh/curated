@@ -10,6 +10,8 @@ import { MAP_FONT, MAP_STYLE_URL } from '../../lib/mapStyle'
 export interface MapPin extends Place {
   matchPct: number | null
   hasWarning: boolean
+  /** Not yet earned — drawn as a soft grey dot with nothing revealed. */
+  locked: boolean
 }
 
 const categoryColorExpr = [
@@ -29,9 +31,11 @@ function toGeoJson(pins: MapPin[]): FeatureCollection {
         id: p.id,
         category: primaryCategory(p),
         name: p.name,
-        matchLabel: p.matchPct !== null && p.matchPct >= 80 ? String(p.matchPct) : '',
-        highMatch: p.matchPct !== null && p.matchPct >= 80,
-        hasWarning: p.hasWarning,
+        // Locked pins reveal nothing — no name, no score, no warning.
+        matchLabel: !p.locked && p.matchPct !== null && p.matchPct >= 80 ? String(p.matchPct) : '',
+        highMatch: !p.locked && p.matchPct !== null && p.matchPct >= 80,
+        hasWarning: p.hasWarning && !p.locked,
+        locked: p.locked,
       },
     })),
   }
@@ -114,13 +118,23 @@ export function MapView({
         source: 'places',
         filter: ['!', ['has', 'point_count']],
         paint: {
-          'circle-color': categoryColorExpr,
-          'circle-radius': ['case', ['get', 'highMatch'], 9, 7],
+          // Locked places are a soft grey dot with a wide pale ring — clearly
+          // "something is here" without giving away what.
+          'circle-color': ['case', ['get', 'locked'], '#8e8e93', categoryColorExpr],
+          'circle-opacity': ['case', ['get', 'locked'], 0.4, 1],
+          'circle-radius': ['case', ['get', 'locked'], 6, ['get', 'highMatch'], 9, 7],
           // White halo keeps pins legible on the light basemap; a graphite
           // ring marks a strong personal match, red marks a warning.
-          'circle-stroke-width': ['case', ['get', 'hasWarning'], 2.5, ['get', 'highMatch'], 2.5, 2],
+          'circle-stroke-width': [
+            'case',
+            ['get', 'locked'], 4,
+            ['get', 'hasWarning'], 2.5,
+            ['get', 'highMatch'], 2.5,
+            2,
+          ],
           'circle-stroke-color': [
             'case',
+            ['get', 'locked'], 'rgba(142,142,147,0.22)',
             ['get', 'hasWarning'], '#ff3b30',
             ['get', 'highMatch'], '#1c1c1e',
             '#ffffff',
@@ -150,7 +164,8 @@ export function MapView({
         type: 'symbol',
         source: 'places',
         minzoom: 13.5,
-        filter: ['!', ['has', 'point_count']],
+        // Never name a place the member hasn't unlocked.
+        filter: ['all', ['!', ['has', 'point_count']], ['!', ['get', 'locked']]],
         layout: {
           'text-field': ['get', 'name'],
           'text-font': MAP_FONT,

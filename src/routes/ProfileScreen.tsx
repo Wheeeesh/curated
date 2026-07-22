@@ -11,6 +11,7 @@ import {
   useTasteEngine,
 } from '../lib/hooks'
 import { creditBalance, pendingConsensusBonuses } from '../lib/credits/rules'
+import { computeUnlockState, PERMANENT_AT_REVIEWS, unlockHeadline } from '../lib/unlock'
 import { formatDate } from '../lib/format'
 import { Avatar } from '../components/ui/Avatar'
 import { ScreenLoading } from '../components/ui/ScreenMessage'
@@ -45,6 +46,18 @@ export function ProfileScreen() {
   const pending = useMemo(() => (me && reviews ? pendingConsensusBonuses(me.id, reviews) : []), [me, reviews])
   const pendingTotal = pending.reduce((s, p) => s + p.bonus, 0)
   const placeName = (id: string | null) => (places ?? []).find((p) => p.id === id)?.name
+  const unlock = useMemo(() => computeUnlockState(myReviews, ledger ?? []), [myReviews, ledger])
+  const lockedCount = useMemo(() => {
+    if (!places || !me) return 0
+    const reviewed = new Set(myReviews.map((r) => r.placeId))
+    if (unlock.permanent) return 0
+    return places.filter(
+      (p) =>
+        p.createdBy !== me.id &&
+        !reviewed.has(p.id) &&
+        (!unlock.unlockedThrough || p.createdAt > unlock.unlockedThrough),
+    ).length
+  }, [places, me, myReviews, unlock])
 
   if (!me) return <ScreenLoading />
 
@@ -91,6 +104,26 @@ export function ProfileScreen() {
               <div className="t-footnote text-label-2">{label}</div>
             </div>
           ))}
+        </div>
+
+        {/* atlas access */}
+        <p className="ios-section-header mt-7">Atlas access</p>
+        <div className="ios-group p-4">
+          <p className="t-body font-medium">{unlockHeadline(unlock, lockedCount).title}</p>
+          <div className="mt-3 flex items-center gap-2">
+            {Array.from({ length: unlock.permanent ? 1 : unlock.needed }, (_, i) => (
+              <span
+                key={i}
+                aria-hidden
+                className={`h-2 flex-1 rounded-full ${unlock.permanent || i < unlock.progress ? 'bg-accent' : 'bg-fill'}`}
+              />
+            ))}
+          </div>
+          <p className="mt-2 t-footnote text-label-2">
+            {unlock.permanent
+              ? `${unlock.reviewCount} reviews — open for good`
+              : `${unlock.reviewCount} of ${PERMANENT_AT_REVIEWS} reviews towards permanent access`}
+          </p>
         </div>
 
         {/* taste */}

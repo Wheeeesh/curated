@@ -84,6 +84,12 @@ export function creditsForReview(opts: {
   return out
 }
 
+/** Members past the veteran threshold keep earning on every review. */
+export function veteranBonus(userId: string, reviewCountAfter: number, reviewId: string): PendingCredit[] {
+  if (reviewCountAfter < 100) return []
+  return [{ userId, amount: CREDITS.VETERAN_BONUS, reason: 'VETERAN_BONUS', refId: reviewId }]
+}
+
 export function creditsForPlaceAdd(opts: {
   place: Place
   ledger: CreditEntry[]

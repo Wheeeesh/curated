@@ -227,6 +227,12 @@ export function createSupabaseAdapter(url: string, anonKey: string): DataAdapter
       return { review, creditsAwarded: (credits ?? []).map(toCredit) }
     },
 
+    async spendCreditsToUnlock() {
+      const { data, error } = await sb.rpc('spend_credits_to_unlock')
+      die(error)
+      return toCredit(Array.isArray(data) ? data[0] : data)
+    },
+
     async listCreditLedger(userId) {
       const { data, error } = await sb
         .from('credit_ledger')

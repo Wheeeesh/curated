@@ -12,7 +12,8 @@ import type {
   Session,
   SignUpInput,
 } from './types'
-import { creditsForPlaceAdd, creditsForReview, creditsForSignup, type PendingCredit } from '../credits/rules'
+import { creditsForPlaceAdd, creditsForReview, creditsForSignup, veteranBonus, type PendingCredit } from '../credits/rules'
+import { UNLOCK_COST_CREDITS } from '../unlock'
 import { SEED_CITIES } from '../../seed/cities'
 import { SEED_MEMBERS, SEED_FOLLOWS } from '../../seed/members'
 import { SEED_PLACES } from '../../seed/places'
@@ -223,11 +224,24 @@ export function createDemoAdapter(): DataAdapter {
         state.reviews.push(review)
       }
       const allPlaceReviews = state.reviews.filter((r) => r.placeId === input.placeId)
-      const creditsAwarded = commitCredits(
-        creditsForReview({ review, place, allPlaceReviews, ledger: state.ledger, nowIso: now }),
-      )
+      const myReviewCount = state.reviews.filter((r) => r.userId === uid).length
+      const creditsAwarded = commitCredits([
+        ...creditsForReview({ review, place, allPlaceReviews, ledger: state.ledger, nowIso: now }),
+        ...veteranBonus(uid, myReviewCount, review.id),
+      ])
       persist()
       return { review, creditsAwarded }
+    },
+
+    async spendCreditsToUnlock() {
+      const uid = requireUser()
+      const balance = state.ledger.filter((e) => e.userId === uid).reduce((s, e) => s + e.amount, 0)
+      if (balance < UNLOCK_COST_CREDITS) throw new Error('Not enough credits yet.')
+      const [entry] = commitCredits([
+        { userId: uid, amount: -UNLOCK_COST_CREDITS, reason: 'UNLOCK_SPEND', refId: null },
+      ])
+      persist()
+      return entry
     },
 
     async listCreditLedger(userId) {

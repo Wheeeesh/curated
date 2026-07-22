@@ -1,7 +1,10 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { CATEGORIES, overallScore } from '../lib/api/types'
-import { useAllReviews, useFollows, useMembers, useMyProfile, usePlaces, useTasteEngine } from '../lib/hooks'
+import { useAllReviews, useFollows, useLedger, useMembers, useMyProfile, usePlaces, useTasteEngine } from '../lib/hooks'
+import { computeUnlockState, isPlaceUnlocked } from '../lib/unlock'
+import { creditBalance } from '../lib/credits/rules'
+import { UnlockSheet } from '../components/map/UnlockSheet'
 import { useUi } from '../lib/session'
 import { getCurrentPosition, searchPlaces, type GeoResult } from '../lib/geo/geocode'
 import { CategoryChip } from '../components/ui/Chip'
@@ -17,6 +20,7 @@ export function MapScreen() {
   const { data: follows } = useFollows()
   const { data: me } = useMyProfile()
   const engine = useTasteEngine()
+  const { data: ledger } = useLedger(me?.id)
 
   const view = useUi((s) => s.view)
   const setView = useUi((s) => s.setView)
@@ -34,8 +38,14 @@ export function MapScreen() {
   const [searching, setSearching] = useState(false)
   const [locating, setLocating] = useState(false)
   const [selectedPlaceId, setSelectedPlaceId] = useState<string | null>(null)
+  const [unlockOpen, setUnlockOpen] = useState(false)
   // The initial view is read once; afterwards the map owns its own position.
   const [initialView] = useState(view)
+
+  const myReviews = useMemo(() => (reviews ?? []).filter((r) => r.userId === me?.id), [reviews, me?.id])
+  const reviewedIds = useMemo(() => new Set(myReviews.map((r) => r.placeId)), [myReviews])
+  const unlock = useMemo(() => computeUnlockState(myReviews, ledger ?? []), [myReviews, ledger])
+  const balance = useMemo(() => creditBalance(ledger ?? [], me?.id ?? ''), [ledger, me?.id])
 
   const iFollow = useMemo(
     () => new Set((follows ?? []).filter((f) => f.followerId === me?.id).map((f) => f.followeeId)),
@@ -74,14 +84,18 @@ export function MapScreen() {
         return (reviewsByPlace.get(p.id) ?? []).some((r) => iFollow.has(r.userId) && overallScore(r) >= 7)
       })
       .map((p) => {
-        const m = engine?.matchFor(p)
+        const locked = !isPlaceUnlocked(p, unlock, me?.id ?? '', reviewedIds)
+        const m = locked ? undefined : engine?.matchFor(p)
         return {
           ...p,
           matchPct: m?.pct ?? null,
           hasWarning: (reviewsByPlace.get(p.id) ?? []).some((r) => r.isWarning),
+          locked,
         }
       })
-  }, [places, reviews, filters, mapMode, iFollow, me?.id, engine])
+  }, [places, reviews, filters, mapMode, iFollow, me?.id, engine, unlock, reviewedIds])
+
+  const lockedCount = useMemo(() => pins.filter((p) => p.locked).length, [pins])
 
   const selectedPlace = places?.find((p) => p.id === selectedPlaceId) ?? null
   const selectedReviews = useMemo(
@@ -107,7 +121,11 @@ export function MapScreen() {
         pins={pins}
         initialView={initialView}
         flyTo={flyTo}
-        onPinTap={setSelectedPlaceId}
+        onPinTap={(id) => {
+          const pin = pins.find((p) => p.id === id)
+          if (pin?.locked) setUnlockOpen(true)
+          else setSelectedPlaceId(id)
+        }}
         onMoveEnd={setView}
       />
 
@@ -183,6 +201,24 @@ export function MapScreen() {
         </div>
       )}
 
+      {lockedCount > 0 && (
+        <button
+          type="button"
+          onClick={() => setUnlockOpen(true)}
+          className="pressable glass absolute inset-x-4 bottom-[76px] z-20 mr-20 flex items-center gap-2 rounded-2xl px-4 py-3 text-left shadow-[0_2px_12px_rgba(0,0,0,0.12)]"
+        >
+          <span aria-hidden className="h-2.5 w-2.5 shrink-0 rounded-full bg-[#8e8e93] opacity-40 ring-4 ring-[rgba(142,142,147,0.22)]" />
+          <span className="min-w-0 flex-1">
+            <span className="block t-subhead font-semibold">
+              {lockedCount} {lockedCount === 1 ? 'place' : 'places'} to unlock
+            </span>
+            <span className="block t-footnote text-label-2">
+              {unlock.needed === 1 ? 'One review opens them' : `${Math.max(0, unlock.needed - unlock.progress)} reviews to open them`}
+            </span>
+          </span>
+        </button>
+      )}
+
       <button
         type="button"
         aria-label="Add a place"
@@ -240,6 +276,14 @@ export function MapScreen() {
           )}
         </div>
       </Sheet>
+
+      <UnlockSheet
+        open={unlockOpen}
+        onClose={() => setUnlockOpen(false)}
+        state={unlock}
+        lockedCount={lockedCount}
+        balance={balance}
+      />
 
       <PinSheet
         place={selectedPlace}

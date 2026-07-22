@@ -52,6 +52,8 @@ export interface DataAdapter {
 
   // credits
   listCreditLedger(userId: string): Promise<CreditEntry[]>
+  /** Spend credits to unlock everything added so far. */
+  spendCreditsToUnlock(): Promise<CreditEntry>
 
   // demo-only helper (no-op on Supabase)
   resetDemo?(): Promise<void>
