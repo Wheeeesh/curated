@@ -13,6 +13,8 @@ import type {
   SignUpInput,
 } from './types'
 
+import { IMPORTED_PLACES } from '../../seed/imported'
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 type Row = Record<string, any>
 
@@ -171,12 +173,16 @@ export function createSupabaseAdapter(url: string, anonKey: string): DataAdapter
       if (cityId) q = q.eq('city_id', cityId)
       const { data, error } = await q
       die(error)
-      return (data ?? []).map(toPlace)
+      // The imported guide locations are read-only reference data shipped in
+      // the app bundle, so they never occupy database rows — members' own
+      // pins and every review still live in Supabase.
+      return [...(data ?? []).map(toPlace), ...IMPORTED_PLACES]
     },
     async getPlace(placeId) {
       const { data, error } = await sb.from('places').select('*').eq('id', placeId).maybeSingle()
       die(error)
-      return data ? toPlace(data) : null
+      if (data) return toPlace(data)
+      return IMPORTED_PLACES.find((p) => p.id === placeId) ?? null
     },
     async addPlace(input: NewPlaceInput) {
       const { data, error } = await sb
