@@ -233,6 +233,24 @@ export function createSupabaseAdapter(url: string, anonKey: string): DataAdapter
       return toCredit(Array.isArray(data) ? data[0] : data)
     },
 
+    async listSavedPlaceIds() {
+      // RLS scopes this to the caller.
+      const { data, error } = await sb.from('saved_places').select('place_id')
+      die(error)
+      return (data ?? []).map((r: Row) => r.place_id as string)
+    },
+    async setPlaceSaved(placeId, saved) {
+      if (saved) {
+        const { error } = await sb
+          .from('saved_places')
+          .upsert([{ user_id: await uid(), place_id: placeId }], { ignoreDuplicates: true })
+        die(error)
+      } else {
+        const { error } = await sb.from('saved_places').delete().match({ user_id: await uid(), place_id: placeId })
+        die(error)
+      }
+    },
+
     async listCreditLedger(userId) {
       const { data, error } = await sb
         .from('credit_ledger')

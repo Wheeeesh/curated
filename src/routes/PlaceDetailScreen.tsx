@@ -10,6 +10,7 @@ import { Avatar } from '../components/ui/Avatar'
 import { CategoryBadge } from '../components/ui/Chip'
 import { ScoreBar } from '../components/ui/ScoreBar'
 import { MatchRing } from '../components/place/MatchBadge'
+import { SaveButton } from '../components/place/SaveButton'
 
 function ReviewCard({ review, author }: { review: Review; author: Profile | undefined }) {
   const overall = overallScore(review)
@@ -175,9 +176,16 @@ export function PlaceDetailScreen() {
       {/* sticky CTA */}
       <div className="fixed inset-x-0 bottom-0 z-30 mx-auto max-w-md">
         <div className="glass border-t border-separator p-4 pb-safe">
-          <button type="button" onClick={() => navigate(`/place/${place.id}/review`)} className="pressable btn-primary">
-            {myReview ? 'Update your score' : 'Been here? Score it'}
-          </button>
+          <div className="flex items-center gap-2.5">
+            <button
+              type="button"
+              onClick={() => navigate(`/place/${place.id}/review`)}
+              className="pressable btn-primary flex-1"
+            >
+              {myReview ? 'Update your score' : 'Been here? Score it'}
+            </button>
+            <SaveButton placeId={place.id} variant="icon" />
+          </div>
         </div>
       </div>
     </div>

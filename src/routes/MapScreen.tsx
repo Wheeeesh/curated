@@ -1,7 +1,16 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { CATEGORIES, overallScore } from '../lib/api/types'
-import { useAllReviews, useFollows, useLedger, useMembers, useMyProfile, usePlaces, useTasteEngine } from '../lib/hooks'
+import {
+  useAllReviews,
+  useFollows,
+  useLedger,
+  useMembers,
+  useMyProfile,
+  usePlaces,
+  useSavedPlaceIds,
+  useTasteEngine,
+} from '../lib/hooks'
 import { computeUnlockState, isPlaceUnlocked } from '../lib/unlock'
 import { creditBalance } from '../lib/credits/rules'
 import { UnlockSheet } from '../components/map/UnlockSheet'
@@ -21,6 +30,7 @@ export function MapScreen() {
   const { data: me } = useMyProfile()
   const engine = useTasteEngine()
   const { data: ledger } = useLedger(me?.id)
+  const { data: savedIds } = useSavedPlaceIds()
 
   const view = useUi((s) => s.view)
   const setView = useUi((s) => s.setView)
@@ -39,6 +49,7 @@ export function MapScreen() {
   const [locating, setLocating] = useState(false)
   const [selectedPlaceId, setSelectedPlaceId] = useState<string | null>(null)
   const [unlockOpen, setUnlockOpen] = useState(false)
+  const [myLocation, setMyLocation] = useState<{ lat: number; lng: number } | null>(null)
   // The initial view is read once; afterwards the map owns its own position.
   const [initialView] = useState(view)
 
@@ -46,6 +57,7 @@ export function MapScreen() {
   const reviewedIds = useMemo(() => new Set(myReviews.map((r) => r.placeId)), [myReviews])
   const unlock = useMemo(() => computeUnlockState(myReviews, ledger ?? []), [myReviews, ledger])
   const balance = useMemo(() => creditBalance(ledger ?? [], me?.id ?? ''), [ledger, me?.id])
+  const savedSet = useMemo(() => new Set(savedIds ?? []), [savedIds])
 
   const iFollow = useMemo(
     () => new Set((follows ?? []).filter((f) => f.followerId === me?.id).map((f) => f.followeeId)),
@@ -91,9 +103,10 @@ export function MapScreen() {
           matchPct: m?.pct ?? null,
           hasWarning: (reviewsByPlace.get(p.id) ?? []).some((r) => r.isWarning),
           locked,
+          saved: savedSet.has(p.id),
         }
       })
-  }, [places, reviews, filters, mapMode, iFollow, me?.id, engine, unlock, reviewedIds])
+  }, [places, reviews, filters, mapMode, iFollow, me?.id, engine, unlock, reviewedIds, savedSet])
 
   const lockedCount = useMemo(() => pins.filter((p) => p.locked).length, [pins])
 
@@ -107,6 +120,7 @@ export function MapScreen() {
     setLocating(true)
     try {
       const { lat, lng } = await getCurrentPosition()
+      setMyLocation({ lat, lng })
       requestFlyTo({ lat, lng, zoom: 14 })
     } catch (e) {
       showToast(e instanceof Error ? e.message : 'Couldn’t get your location.')
@@ -121,6 +135,7 @@ export function MapScreen() {
         pins={pins}
         initialView={initialView}
         flyTo={flyTo}
+        myLocation={myLocation}
         onPinTap={(id) => {
           const pin = pins.find((p) => p.id === id)
           if (pin?.locked) setUnlockOpen(true)

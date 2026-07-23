@@ -14,7 +14,9 @@ export const CATEGORY_META: Record<Category, { label: string; color: string }> =
   culture: { label: 'Culture', color: '#b04a78' },
   art: { label: 'Art', color: '#c2497f' },
   nature: { label: 'Nature', color: '#4a7c46' },
+  sport: { label: 'Sport', color: '#2f7d9e' },
   shopping: { label: 'Shopping', color: '#1f8478' },
+  artisan: { label: 'Artisan', color: '#9c6b3f' },
 }
 
 /** Question shown for each rating criterion. */
@@ -29,6 +31,8 @@ export const ASPECT_META: Record<Aspect, { label: string; hint: string }> = {
   scenery: { label: 'Scenery', hint: 'how it looks and feels' },
   quiet: { label: 'Peace', hint: 'calm, space, room to breathe' },
   selection: { label: 'Selection', hint: 'what you can actually find' },
+  craft: { label: 'Craft', hint: 'skill and care in the making' },
+  facilities: { label: 'Facilities', hint: 'kit, space, changing rooms' },
   atmosphere: { label: 'Atmosphere', hint: 'the room, the feel' },
   service: { label: 'Service', hint: 'how you were treated' },
   value: { label: 'Value', hint: 'worth what it costs' },

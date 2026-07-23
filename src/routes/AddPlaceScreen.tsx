@@ -134,7 +134,9 @@ export function AddPlaceScreen() {
       description: description.trim(),
     })
     requestFlyTo({ lat: place.lat, lng: place.lng, zoom: 15 })
-    navigate('/', { replace: true })
+    // Straight into reviewing it — you have just been there, so this is the
+    // moment you actually remember it. Cancel on that screen returns to the map.
+    navigate(`/place/${place.id}/review`, { replace: true })
   }
 
   return (

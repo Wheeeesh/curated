@@ -6,6 +6,7 @@ import type { MatchResult } from '../../lib/taste/match'
 import { Avatar } from '../ui/Avatar'
 import { CategoryBadge } from '../ui/Chip'
 import { Sheet } from '../ui/Sheet'
+import { SaveButton } from '../place/SaveButton'
 import { ScoreBar } from '../ui/ScoreBar'
 import { MatchRing } from '../place/MatchBadge'
 
@@ -83,13 +84,16 @@ export function PinSheet({
           )}
         </div>
 
-        <button
-          type="button"
-          onClick={() => navigate(`/place/${place.id}`)}
-          className="pressable btn-primary mt-5"
-        >
-          Open
-        </button>
+        <div className="mt-5 flex items-center gap-2.5">
+          <button
+            type="button"
+            onClick={() => navigate(`/place/${place.id}`)}
+            className="pressable btn-primary flex-1"
+          >
+            Open
+          </button>
+          <SaveButton placeId={place.id} variant="icon" />
+        </div>
       </div>
     </Sheet>
   )

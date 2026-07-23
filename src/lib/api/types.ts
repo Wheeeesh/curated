@@ -7,7 +7,9 @@ export const CATEGORIES = [
   'culture',
   'art',
   'nature',
+  'sport',
   'shopping',
+  'artisan',
 ] as const
 
 export type Category = (typeof CATEGORIES)[number]
@@ -28,6 +30,8 @@ export const ASPECTS = [
   'scenery',
   'quiet',
   'selection',
+  'craft',
+  'facilities',
   'atmosphere',
   'service',
   'value',
@@ -46,7 +50,9 @@ export const CATEGORY_ASPECTS: Record<Category, Aspect[]> = {
   culture: ['curation', 'atmosphere', 'value', 'upkeep'],
   art: ['curation', 'atmosphere', 'value', 'upkeep'],
   nature: ['scenery', 'quiet', 'upkeep', 'atmosphere'],
+  sport: ['facilities', 'upkeep', 'service', 'value'],
   shopping: ['selection', 'service', 'value', 'atmosphere'],
+  artisan: ['craft', 'selection', 'service', 'value'],
 }
 
 /** The union of criteria for a set of categories, in a stable order. */

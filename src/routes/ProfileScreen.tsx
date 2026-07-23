@@ -13,6 +13,10 @@ import {
 import { creditBalance, pendingConsensusBonuses } from '../lib/credits/rules'
 import { computeUnlockState, PERMANENT_AT_REVIEWS, unlockHeadline } from '../lib/unlock'
 import { formatDate } from '../lib/format'
+import { Link } from 'react-router-dom'
+import { CATEGORY_META } from '../lib/format'
+import { primaryCategory } from '../lib/api/types'
+import { useSavedPlaceIds } from '../lib/hooks'
 import { Avatar } from '../components/ui/Avatar'
 import { ScreenLoading } from '../components/ui/ScreenMessage'
 import { Sheet } from '../components/ui/Sheet'
@@ -36,6 +40,7 @@ export function ProfileScreen() {
   const { data: follows } = useFollows()
   const { data: ledger } = useLedger(me?.id)
   const engine = useTasteEngine()
+  const { data: savedIds } = useSavedPlaceIds()
 
   const [ledgerOpen, setLedgerOpen] = useState(false)
 
@@ -47,6 +52,10 @@ export function ProfileScreen() {
   const pendingTotal = pending.reduce((s, p) => s + p.bonus, 0)
   const placeName = (id: string | null) => (places ?? []).find((p) => p.id === id)?.name
   const unlock = useMemo(() => computeUnlockState(myReviews, ledger ?? []), [myReviews, ledger])
+  const savedPlaces = useMemo(
+    () => (places ?? []).filter((p) => (savedIds ?? []).includes(p.id)),
+    [places, savedIds],
+  )
   const lockedCount = useMemo(() => {
     if (!places || !me) return 0
     const reviewed = new Set(myReviews.map((r) => r.placeId))
@@ -105,6 +114,29 @@ export function ProfileScreen() {
             </div>
           ))}
         </div>
+
+        {/* saved */}
+        {savedPlaces.length > 0 && (
+          <>
+            <p className="ios-section-header mt-7">Want to go · {savedPlaces.length}</p>
+            <div className="ios-group">
+              {savedPlaces.map((p) => (
+                <Link key={p.id} to={`/place/${p.id}`} className="pressable ios-row">
+                  <span
+                    aria-hidden
+                    className="h-2.5 w-2.5 shrink-0 rounded-full"
+                    style={{ backgroundColor: CATEGORY_META[primaryCategory(p)].color }}
+                  />
+                  <span className="min-w-0 flex-1">
+                    <span className="block truncate t-body">{p.name}</span>
+                    <span className="block truncate t-footnote text-label-2">{p.locality || p.address}</span>
+                  </span>
+                  <span aria-hidden className="text-label-3">›</span>
+                </Link>
+              ))}
+            </div>
+          </>
+        )}
 
         {/* atlas access */}
         <p className="ios-section-header mt-7">Atlas access</p>

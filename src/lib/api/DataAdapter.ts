@@ -50,6 +50,10 @@ export interface DataAdapter {
   listAllReviews(): Promise<Review[]>
   upsertReview(input: NewReviewInput): Promise<{ review: Review; creditsAwarded: CreditEntry[] }>
 
+  // saved places ("want to go")
+  listSavedPlaceIds(): Promise<string[]>
+  setPlaceSaved(placeId: string, saved: boolean): Promise<void>
+
   // credits
   listCreditLedger(userId: string): Promise<CreditEntry[]>
   /** Spend credits to unlock everything added so far. */

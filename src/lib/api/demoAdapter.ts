@@ -29,6 +29,8 @@ interface DemoState {
   places: Place[]
   reviews: Review[]
   ledger: CreditEntry[]
+  /** userId → placeIds they saved for later */
+  saved: Record<string, string[]>
   /** email → { userId, password } for demo sign-in */
   accounts: Record<string, { userId: string; password: string }>
 }
@@ -43,6 +45,7 @@ function freshState(): DemoState {
     places,
     reviews: [...SEED_REVIEWS],
     ledger: buildSeedLedger(),
+    saved: {},
     accounts: {},
   }
 }
@@ -242,6 +245,20 @@ export function createDemoAdapter(): DataAdapter {
       ])
       persist()
       return entry
+    },
+
+    async listSavedPlaceIds() {
+      const uid = requireUser()
+      return state.saved?.[uid] ?? []
+    },
+    async setPlaceSaved(placeId, saved) {
+      const uid = requireUser()
+      if (!state.saved) state.saved = {}
+      const current = new Set(state.saved[uid] ?? [])
+      if (saved) current.add(placeId)
+      else current.delete(placeId)
+      state.saved[uid] = [...current]
+      persist()
     },
 
     async listCreditLedger(userId) {

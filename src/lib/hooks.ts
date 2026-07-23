@@ -41,6 +41,27 @@ export function useTasteEngine(): TasteEngine | null {
   }, [me, members, follows, places, reviews])
 }
 
+export const useSavedPlaceIds = () => {
+  const session = useUi((s) => s.session)
+  return useQuery({
+    queryKey: ['saved', session?.userId],
+    queryFn: () => api.listSavedPlaceIds(),
+    enabled: !!session,
+  })
+}
+
+export function useSaveMutation() {
+  const qc = useQueryClient()
+  const showToast = useUi((s) => s.showToast)
+  return useMutation({
+    mutationFn: ({ placeId, saved }: { placeId: string; saved: boolean }) => api.setPlaceSaved(placeId, saved),
+    onSuccess: (_d, { saved }) => {
+      qc.invalidateQueries({ queryKey: ['saved'] })
+      showToast(saved ? 'Saved to your list' : 'Removed from your list')
+    },
+  })
+}
+
 export function useFollowMutation() {
   const qc = useQueryClient()
   return useMutation({

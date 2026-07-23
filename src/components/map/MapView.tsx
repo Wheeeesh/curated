@@ -12,6 +12,8 @@ export interface MapPin extends Place {
   hasWarning: boolean
   /** Not yet earned — drawn as a soft grey dot with nothing revealed. */
   locked: boolean
+  /** Saved for later by this member. */
+  saved: boolean
 }
 
 const categoryColorExpr = [
@@ -36,15 +38,19 @@ function toGeoJson(pins: MapPin[]): FeatureCollection {
         highMatch: !p.locked && p.matchPct !== null && p.matchPct >= 80,
         hasWarning: p.hasWarning && !p.locked,
         locked: p.locked,
+        saved: p.saved && !p.locked,
       },
     })),
   }
 }
 
+const emptyCollection: FeatureCollection = { type: 'FeatureCollection', features: [] }
+
 export function MapView({
   pins,
   initialView,
   flyTo,
+  myLocation,
   onPinTap,
   onMoveEnd,
   onMapReady,
@@ -52,19 +58,24 @@ export function MapView({
   pins: MapPin[]
   initialView: MapViewState
   flyTo: (MapViewState & { nonce: number }) | null
+  myLocation: { lat: number; lng: number } | null
   onPinTap: (placeId: string) => void
   onMoveEnd?: (v: MapViewState) => void
   onMapReady?: (map: maplibregl.Map) => void
 }) {
   const containerRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<maplibregl.Map | null>(null)
-  const loadedRef = useRef(false)
+  const installedRef = useRef(false)
   const pinsRef = useRef(pins)
   pinsRef.current = pins
+  const myLocationRef = useRef(myLocation)
+  myLocationRef.current = myLocation
   const onPinTapRef = useRef(onPinTap)
   onPinTapRef.current = onPinTap
   const onMoveEndRef = useRef(onMoveEnd)
   onMoveEndRef.current = onMoveEnd
+  const onMapReadyRef = useRef(onMapReady)
+  onMapReadyRef.current = onMapReady
 
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return
@@ -78,14 +89,40 @@ export function MapView({
     mapRef.current = map
     if (import.meta.env.DEV) (window as unknown as { __map?: maplibregl.Map }).__map = map
 
-    map.on('load', () => {
-      loadedRef.current = true
+    /**
+     * Adding our sources and layers used to hang off the map's `load` event.
+     * That event only fires once every last sprite and glyph has settled, and
+     * when one of those stalls it never fires at all — leaving the basemap
+     * drawn but no pins on it, and category filters with nothing to filter.
+     * Installing as soon as the style spec exists, idempotently, and retrying
+     * on `styledata` makes it independent of that race.
+     */
+    const install = () => {
+      if (installedRef.current || map._removed) return
+      if (!map.getStyle()?.layers?.length) return
+      installedRef.current = true
+
       map.addSource('places', {
         type: 'geojson',
         data: toGeoJson(pinsRef.current),
         cluster: true,
         clusterRadius: 46,
         clusterMaxZoom: 15,
+      })
+      map.addSource('me', {
+        type: 'geojson',
+        data: myLocationRef.current
+          ? {
+              type: 'FeatureCollection',
+              features: [
+                {
+                  type: 'Feature',
+                  geometry: { type: 'Point', coordinates: [myLocationRef.current.lng, myLocationRef.current.lat] },
+                  properties: {},
+                },
+              ],
+            }
+          : emptyCollection,
       })
 
       map.addLayer({
@@ -95,8 +132,8 @@ export function MapView({
         filter: ['has', 'point_count'],
         paint: {
           'circle-color': '#ffffff',
-          'circle-radius': ['step', ['get', 'point_count'], 16, 8, 20, 20, 25],
-          'circle-stroke-width': 1,
+          'circle-radius': ['step', ['get', 'point_count'], 22, 8, 27, 20, 33],
+          'circle-stroke-width': 1.5,
           'circle-stroke-color': 'rgba(60,60,67,0.18)',
         },
       })
@@ -108,7 +145,7 @@ export function MapView({
         layout: {
           'text-field': ['get', 'point_count_abbreviated'],
           'text-font': MAP_FONT,
-          'text-size': 13,
+          'text-size': 15,
         },
         paint: { 'text-color': '#1c1c1e' },
       })
@@ -122,19 +159,22 @@ export function MapView({
           // "something is here" without giving away what.
           'circle-color': ['case', ['get', 'locked'], '#8e8e93', categoryColorExpr],
           'circle-opacity': ['case', ['get', 'locked'], 0.4, 1],
-          'circle-radius': ['case', ['get', 'locked'], 6, ['get', 'highMatch'], 9, 7],
+          // Generous targets: these are the primary tap targets on the map.
+          'circle-radius': ['case', ['get', 'locked'], 12, ['get', 'highMatch'], 18, 14],
           // White halo keeps pins legible on the light basemap; a graphite
           // ring marks a strong personal match, red marks a warning.
           'circle-stroke-width': [
             'case',
-            ['get', 'locked'], 4,
-            ['get', 'hasWarning'], 2.5,
-            ['get', 'highMatch'], 2.5,
-            2,
+            ['get', 'locked'], 6,
+            ['get', 'saved'], 4,
+            ['get', 'hasWarning'], 4,
+            ['get', 'highMatch'], 4,
+            3,
           ],
           'circle-stroke-color': [
             'case',
             ['get', 'locked'], 'rgba(142,142,147,0.22)',
+            ['get', 'saved'], '#1c1c1e',
             ['get', 'hasWarning'], '#ff3b30',
             ['get', 'highMatch'], '#1c1c1e',
             '#ffffff',
@@ -149,8 +189,8 @@ export function MapView({
         layout: {
           'text-field': ['get', 'matchLabel'],
           'text-font': MAP_FONT,
-          'text-size': 10,
-          'text-offset': [0, -1.6],
+          'text-size': 11,
+          'text-offset': [0, -2.2],
           'text-allow-overlap': true,
         },
         paint: {
@@ -170,7 +210,7 @@ export function MapView({
           'text-field': ['get', 'name'],
           'text-font': MAP_FONT,
           'text-size': 11,
-          'text-offset': [0, 1.3],
+          'text-offset': [0, 1.9],
           'text-anchor': 'top',
           'text-optional': true,
         },
@@ -178,6 +218,29 @@ export function MapView({
           'text-color': 'rgba(60,60,67,0.75)',
           'text-halo-color': '#ffffff',
           'text-halo-width': 1.5,
+        },
+      })
+
+      // ——— the member's own position, iOS-style ———
+      map.addLayer({
+        id: 'me-halo',
+        type: 'circle',
+        source: 'me',
+        paint: {
+          'circle-radius': 22,
+          'circle-color': '#0a84ff',
+          'circle-opacity': 0.14,
+        },
+      })
+      map.addLayer({
+        id: 'me-dot',
+        type: 'circle',
+        source: 'me',
+        paint: {
+          'circle-radius': 8,
+          'circle-color': '#0a84ff',
+          'circle-stroke-width': 3,
+          'circle-stroke-color': '#ffffff',
         },
       })
 
@@ -197,8 +260,13 @@ export function MapView({
         map.on('mouseleave', layer, () => (map.getCanvas().style.cursor = ''))
       }
 
-      onMapReady?.(map)
-    })
+      onMapReadyRef.current?.(map)
+    }
+
+    map.on('load', install)
+    map.on('styledata', install)
+    // The style may already be parsed by the time listeners attach.
+    install()
 
     map.on('moveend', () => {
       const c = map.getCenter()
@@ -214,7 +282,7 @@ export function MapView({
       ro.disconnect()
       map.remove()
       mapRef.current = null
-      loadedRef.current = false
+      installedRef.current = false
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -222,10 +290,32 @@ export function MapView({
   // Keep pins in sync
   useEffect(() => {
     const map = mapRef.current
-    if (!map || !loadedRef.current) return
+    if (!map) return
     const source = map.getSource('places') as maplibregl.GeoJSONSource | undefined
     source?.setData(toGeoJson(pins))
   }, [pins])
+
+  // Keep the "you are here" dot in sync
+  useEffect(() => {
+    const map = mapRef.current
+    if (!map) return
+    const source = map.getSource('me') as maplibregl.GeoJSONSource | undefined
+    if (!source) return
+    source.setData(
+      myLocation
+        ? {
+            type: 'FeatureCollection',
+            features: [
+              {
+                type: 'Feature',
+                geometry: { type: 'Point', coordinates: [myLocation.lng, myLocation.lat] },
+                properties: {},
+              },
+            ],
+          }
+        : emptyCollection,
+    )
+  }, [myLocation])
 
   // Fly wherever the app asks (search result, "near me", a new pin)
   useEffect(() => {
