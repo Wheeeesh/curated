@@ -19,6 +19,7 @@ import { SEED_MEMBERS, SEED_FOLLOWS } from '../../seed/members'
 import { SEED_PLACES } from '../../seed/places'
 import { SEED_REVIEWS } from '../../seed/reviews'
 import { buildSeedLedger } from '../../seed/ledger'
+import { IMPORTED_PLACES } from '../../seed/imported'
 
 const STORAGE_KEY = 'curated-demo-v1'
 
@@ -187,10 +188,13 @@ export function createDemoAdapter(): DataAdapter {
       return SEED_CITIES
     },
     async listPlaces(cityId) {
-      return cityId ? state.places.filter((p) => p.cityId === cityId) : [...state.places]
+      // Imported guide locations are read-only reference data, so they live
+      // outside the persisted state rather than being written back on save.
+      const all = [...state.places, ...IMPORTED_PLACES]
+      return cityId ? all.filter((p) => p.cityId === cityId) : all
     },
     async getPlace(placeId) {
-      return state.places.find((p) => p.id === placeId) ?? null
+      return state.places.find((p) => p.id === placeId) ?? IMPORTED_PLACES.find((p) => p.id === placeId) ?? null
     },
     async addPlace(input: NewPlaceInput) {
       const uid = requireUser()
@@ -216,7 +220,9 @@ export function createDemoAdapter(): DataAdapter {
     },
     async upsertReview(input: NewReviewInput) {
       const uid = requireUser()
-      const place = state.places.find((p) => p.id === input.placeId)
+      const place =
+        state.places.find((p) => p.id === input.placeId) ??
+        IMPORTED_PLACES.find((p) => p.id === input.placeId)
       if (!place) throw new Error('Place not found')
       const now = new Date().toISOString()
       let review = state.reviews.find((r) => r.placeId === input.placeId && r.userId === uid)
