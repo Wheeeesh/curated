@@ -11,7 +11,7 @@ import {
   useTasteEngine,
 } from '../lib/hooks'
 import { creditBalance, pendingConsensusBonuses } from '../lib/credits/rules'
-import { computeUnlockState, PERMANENT_AT_REVIEWS, unlockHeadline } from '../lib/unlock'
+import { computeUnlockState, isPlaceUnlocked, PERMANENT_AT_REVIEWS, unlockHeadline } from '../lib/unlock'
 import { formatDate } from '../lib/format'
 import { Link } from 'react-router-dom'
 import { CATEGORY_META } from '../lib/format'
@@ -61,10 +61,7 @@ export function ProfileScreen() {
     const reviewed = new Set(myReviews.map((r) => r.placeId))
     if (unlock.permanent) return 0
     return places.filter(
-      (p) =>
-        p.createdBy !== me.id &&
-        !reviewed.has(p.id) &&
-        (!unlock.unlockedThrough || p.createdAt > unlock.unlockedThrough),
+      (p) => !isPlaceUnlocked(p, unlock, me.id, reviewed, { lat: me.homeLat, lng: me.homeLng }),
     ).length
   }, [places, me, myReviews, unlock])
 

@@ -80,6 +80,9 @@ export interface Profile {
   bio: string
   interests: Category[]
   homeCity: string | null
+  /** Home city centre — everything within HOME_RADIUS_KM is always unlocked. */
+  homeLat: number | null
+  homeLng: number | null
   isAdmin: boolean
   invitedBy: string | null
   onboarded: boolean

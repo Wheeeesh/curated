@@ -25,6 +25,7 @@ const toCity = (r: Row): City => ({
 const toProfile = (r: Row): Profile => ({
   id: r.id, username: r.username, displayName: r.display_name, avatarColor: r.avatar_color,
   bio: r.bio ?? '', interests: r.interests ?? [], homeCity: r.home_city,
+  homeLat: r.home_lat, homeLng: r.home_lng,
   isAdmin: r.is_admin, invitedBy: r.invited_by, onboarded: r.onboarded, isSeed: r.is_seed,
   createdAt: r.created_at,
 })
@@ -127,11 +128,11 @@ export function createSupabaseAdapter(url: string, anonKey: string): DataAdapter
       die(error)
       return toProfile(data)
     },
-    async completeOnboarding(interests, homeCity, followIds) {
+    async completeOnboarding(interests, homeCity, homeLat, homeLng, followIds) {
       const me = await uid()
       const { error } = await sb
         .from('profiles')
-        .update({ interests, home_city: homeCity, onboarded: true })
+        .update({ interests, home_city: homeCity, home_lat: homeLat, home_lng: homeLng, onboarded: true })
         .eq('id', me)
       die(error)
       if (followIds.length) {

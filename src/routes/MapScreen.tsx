@@ -96,7 +96,10 @@ export function MapScreen() {
         return (reviewsByPlace.get(p.id) ?? []).some((r) => iFollow.has(r.userId) && overallScore(r) >= 7)
       })
       .map((p) => {
-        const locked = !isPlaceUnlocked(p, unlock, me?.id ?? '', reviewedIds)
+        const locked = !isPlaceUnlocked(p, unlock, me?.id ?? '', reviewedIds, {
+          lat: me?.homeLat ?? null,
+          lng: me?.homeLng ?? null,
+        })
         const m = locked ? undefined : engine?.matchFor(p)
         return {
           ...p,
@@ -106,7 +109,7 @@ export function MapScreen() {
           saved: savedSet.has(p.id),
         }
       })
-  }, [places, reviews, filters, mapMode, iFollow, me?.id, engine, unlock, reviewedIds, savedSet])
+  }, [places, reviews, filters, mapMode, iFollow, me?.id, me?.homeLat, me?.homeLng, engine, unlock, reviewedIds, savedSet])
 
   const lockedCount = useMemo(() => pins.filter((p) => p.locked).length, [pins])
 

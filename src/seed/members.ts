@@ -18,10 +18,15 @@ export interface SeedMember extends Profile {
   voice: { praise: string[]; mixed: string[]; short: string[] }
 }
 
-const m = (n: number, p: Omit<SeedMember, 'id' | 'isAdmin' | 'invitedBy' | 'onboarded' | 'isSeed' | 'createdAt'>): SeedMember => ({
+const m = (
+  n: number,
+  p: Omit<SeedMember, 'id' | 'isAdmin' | 'invitedBy' | 'onboarded' | 'isSeed' | 'createdAt' | 'homeLat' | 'homeLng'>,
+): SeedMember => ({
   id: memberId(n),
   isAdmin: false,
   invitedBy: null,
+  homeLat: null,
+  homeLng: null,
   onboarded: true,
   isSeed: true,
   createdAt: seedDate(200 - n * 6),

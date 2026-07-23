@@ -26,6 +26,7 @@ export function OnboardingScreen() {
   const [step, setStep] = useState(0)
   const [interests, setInterests] = useState<Category[]>([])
   const [homeCity, setHomeCity] = useState<string | null>(null)
+  const [homeCoords, setHomeCoords] = useState<{ lat: number; lng: number } | null>(null)
   const [cityQuery, setCityQuery] = useState('')
   const [cityResults, setCityResults] = useState<GeoResult[]>([])
   const [locating, setLocating] = useState(false)
@@ -64,6 +65,7 @@ export function OnboardingScreen() {
       const { lat, lng } = await getCurrentPosition()
       const { locality } = await reverseGeocode(lat, lng)
       setHomeCity(locality || `${lat.toFixed(3)}, ${lng.toFixed(3)}`)
+      setHomeCoords({ lat, lng })
       requestFlyTo({ lat, lng, zoom: 13 })
     } catch {
       // leave it to the member to type somewhere instead
@@ -75,7 +77,7 @@ export function OnboardingScreen() {
   const finish = async () => {
     setBusy(true)
     try {
-      await api.completeOnboarding(interests, homeCity, [...followIds])
+      await api.completeOnboarding(interests, homeCity, homeCoords?.lat ?? null, homeCoords?.lng ?? null, [...followIds])
       await qc.invalidateQueries()
       navigate('/', { replace: true })
     } finally {
@@ -148,6 +150,7 @@ export function OnboardingScreen() {
                   type="button"
                   onClick={() => {
                     setHomeCity(r.locality || r.name)
+                    setHomeCoords({ lat: r.lat, lng: r.lng })
                     requestFlyTo({ lat: r.lat, lng: r.lng, zoom: 13 })
                   }}
                   className="pressable ios-row"

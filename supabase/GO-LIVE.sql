@@ -10,6 +10,10 @@
 --  app rather than living as database rows.
 -- ============================================================
 
+-- ————— home-city centre (everything within 30 km is always unlocked) —————
+alter table public.profiles add column if not exists home_lat double precision;
+alter table public.profiles add column if not exists home_lng double precision;
+
 -- ————— new categories —————
 alter type public.category add value if not exists 'art';
 alter type public.category add value if not exists 'coffee';
@@ -22,6 +26,9 @@ alter table public.places add column if not exists locality text not null defaul
 update public.places set categories = array[category] where categories is null;
 alter table public.places alter column categories set not null;
 alter table public.places alter column city_id drop not null;
+-- The app now writes `categories` (plural); the original single-category
+-- column must stop being required or every new pin is rejected.
+alter table public.places alter column category drop not null;
 
 -- ————— reviews: a criterion→score map instead of four fixed columns —————
 alter table public.reviews add column if not exists scores jsonb;
@@ -40,10 +47,10 @@ alter table public.reviews alter column service drop not null;
 alter table public.reviews alter column value   drop not null;
 
 -- Guide locations live in the app bundle, not the DB, so a review or a save
--- may reference a place_id with no matching row. Drop the foreign keys and
--- keep place_id as a plain identifier the app resolves from either source.
-alter table public.reviews      drop constraint if exists reviews_place_id_fkey;
-alter table public.saved_places drop constraint if exists saved_places_place_id_fkey;
+-- may reference a place_id with no matching row. Drop the review foreign key
+-- and keep place_id as a plain identifier the app resolves from either source.
+-- (saved_places is handled where it is created, further down.)
+alter table public.reviews drop constraint if exists reviews_place_id_fkey;
 
 -- ————— overall score = mean of whatever was rated —————
 create or replace function public.review_overall_scores(p_scores jsonb)

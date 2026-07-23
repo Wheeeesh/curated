@@ -23,13 +23,12 @@ const HERE = dirname(fileURLToPath(import.meta.url))
 const OUT_DIR = join(HERE, 'data')
 const UA = 'CuratedAtlasBot/1.0 (personal map project; contact via github.com/Wheeeesh/curated)'
 
+// Only these country sites publish the machine-readable /.well-known feed;
+// the rest of Gault&Millau's ~20 national sites do not expose one.
 const COUNTRIES = [
   { host: 'www.gaultmillau.be', country: 'Belgium' },
   { host: 'www.gaultmillau.lu', country: 'Luxembourg' },
-  { host: 'www.gaultmillau.at', country: 'Austria' },
-  { host: 'www.gaultmillau.ch', country: 'Switzerland' },
-  { host: 'www.gaultmillau.it', country: 'Italy' },
-  { host: 'www.gaultmillau.ma', country: 'Morocco' },
+  { host: 'www.gault-millau.nl', country: 'Netherlands' },
 ]
 
 const FEEDS = ['places-en.json', 'places-fr.json', 'places.json']

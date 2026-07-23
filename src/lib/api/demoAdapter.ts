@@ -112,6 +112,8 @@ export function createDemoAdapter(): DataAdapter {
         bio: '',
         interests: [],
         homeCity: null,
+        homeLat: null,
+        homeLng: null,
         // Demo mode: you are the admin, so every admin surface is visible.
         isAdmin: true,
         invitedBy: null,
@@ -150,11 +152,13 @@ export function createDemoAdapter(): DataAdapter {
       persist()
       return me
     },
-    async completeOnboarding(interests: Category[], homeCity: string | null, followIds: string[]) {
+    async completeOnboarding(interests: Category[], homeCity: string | null, homeLat: number | null, homeLng: number | null, followIds: string[]) {
       const uid = requireUser()
       const me = state.profiles.find((p) => p.id === uid)!
       me.interests = interests
       me.homeCity = homeCity
+      me.homeLat = homeLat
+      me.homeLng = homeLng
       me.onboarded = true
       for (const fid of followIds) {
         if (fid !== uid && !state.follows.some((f) => f.followerId === uid && f.followeeId === fid)) {

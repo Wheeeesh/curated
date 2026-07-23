@@ -86,19 +86,45 @@ export function computeUnlockState(
 }
 
 /**
- * Whether a member can see a place. Your own pins and anything you have
- * already reviewed are always visible — you cannot be locked out of your
- * own contributions.
+ * Everything within this radius of the member's home-city centre counts as
+ * "home" and is always unlocked. Generous enough to cover a whole metro —
+ * all of Brussels' communes, greater Paris — without leaking into the next
+ * city along (Antwerp↔Brussels is ~45 km apart).
+ */
+export const HOME_RADIUS_KM = 30
+
+function distanceKm(aLat: number, aLng: number, bLat: number, bLng: number): number {
+  const R = 6371
+  const dLat = ((bLat - aLat) * Math.PI) / 180
+  const dLng = ((bLng - aLng) * Math.PI) / 180
+  const la1 = (aLat * Math.PI) / 180
+  const la2 = (bLat * Math.PI) / 180
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(la1) * Math.cos(la2) * Math.sin(dLng / 2) ** 2
+  return 2 * R * Math.asin(Math.sqrt(h))
+}
+
+/** True when a place sits within the member's home metro. */
+export function isInHomeCity(place: Place, homeLat: number | null | undefined, homeLng: number | null | undefined): boolean {
+  if (typeof homeLat !== 'number' || typeof homeLng !== 'number') return false
+  return distanceKm(homeLat, homeLng, place.lat, place.lng) <= HOME_RADIUS_KM
+}
+
+/**
+ * Whether a member can see a place. Always visible: your own pins, anything
+ * you have reviewed, and everything in your home city — locking only ever
+ * applies to places in other cities, which you earn by reviewing.
  */
 export function isPlaceUnlocked(
   place: Place,
   state: UnlockState,
   myUserId: string,
   reviewedPlaceIds: Set<string>,
+  home: { lat: number | null; lng: number | null },
 ): boolean {
   if (state.permanent) return true
   if (place.createdBy === myUserId) return true
   if (reviewedPlaceIds.has(place.id)) return true
+  if (isInHomeCity(place, home.lat, home.lng)) return true
   if (!state.unlockedThrough) return false
   return place.createdAt <= state.unlockedThrough
 }
