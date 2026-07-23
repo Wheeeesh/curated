@@ -1,1 +1,1 @@
-{"root":["./vite.config.ts","./scripts/generate-seed-sql.ts"],"version":"5.8.3"}
+{"root":["./vite.config.ts","./scripts/build-imported-seed.ts","./scripts/generate-seed-sql.ts","./scripts/import-gaultmillau.ts","./scripts/import-lefooding.ts"],"version":"5.8.3"}

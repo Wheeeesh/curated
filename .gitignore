@@ -9,3 +9,6 @@ dev-dist
 # never commit any local env file
 .env*
 !.env.example
+
+# raw scraped data — regenerate with the import scripts
+scripts/data/
