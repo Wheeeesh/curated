@@ -7,6 +7,11 @@ export interface GeoResult {
   address: string
   lat: number
   lng: number
+  /**
+   * Somewhere you could pin, or somewhere you would only ever look at. A city
+   * is not a venue, so the atlas must never offer to add one.
+   */
+  kind: 'venue' | 'area'
 }
 
 /**
@@ -31,6 +36,14 @@ interface PhotonFeature {
   geometry: { coordinates: [number, number] }
 }
 
+/** Photon's own classification of a result as a populated place or region. */
+const AREA_TYPES = new Set(['city', 'district', 'county', 'state', 'country', 'locality', 'region'])
+
+const kindOf = (p: Record<string, unknown>): 'venue' | 'area' =>
+  AREA_TYPES.has(String(p.type ?? '')) || p.osm_key === 'boundary' || p.osm_key === 'place'
+    ? 'area'
+    : 'venue'
+
 function toResults(features: PhotonFeature[]): GeoResult[] {
   const out: GeoResult[] = []
   const seen = new Set<string>()
@@ -42,7 +55,14 @@ function toResults(features: PhotonFeature[]): GeoResult[] {
     const key = `${name}|${lat.toFixed(4)}|${lng.toFixed(4)}`
     if (seen.has(key)) continue
     seen.add(key)
-    out.push({ name, locality: localityOf(p), address: addressOf(p) || localityOf(p), lat, lng })
+    out.push({
+      name,
+      locality: localityOf(p),
+      address: addressOf(p) || localityOf(p),
+      lat,
+      lng,
+      kind: kindOf(p),
+    })
   }
   return out
 }

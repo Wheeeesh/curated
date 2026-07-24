@@ -141,32 +141,39 @@ export function MapScreen() {
   }
 
   /**
-   * A search result is either somewhere already pinned — in which case take
-   * the member to it — or somewhere new, in which case start adding it with
-   * everything the geocoder already told us filled in.
+   * Tapping a result shows it, which is what searching is for — a city moves
+   * the map to the city, a venue already in the atlas opens it. Adding is a
+   * separate, optional action on the row.
    */
-  const openSearchResult = (result: GeoResult, existing: Place | null) => {
+  const showSearchResult = (result: GeoResult, existing: Place | null) => {
     closeSearch()
-    if (!existing) {
-      navigate('/add', {
-        state: {
-          lat: result.lat,
-          lng: result.lng,
-          name: result.name,
-          locality: result.locality,
-          address: result.address,
-        },
+    if (existing) {
+      requestFlyTo({ lat: existing.lat, lng: existing.lng, zoom: 16 })
+      // Same rule as tapping the pin itself: locked places reveal nothing.
+      const locked = !isPlaceUnlocked(existing, unlock, me?.id ?? '', reviewedIds, {
+        lat: me?.homeLat ?? null,
+        lng: me?.homeLng ?? null,
       })
+      if (locked) setUnlockOpen(true)
+      else setSelectedPlaceId(existing.id)
       return
     }
-    requestFlyTo({ lat: existing.lat, lng: existing.lng, zoom: 16 })
-    // Same rule as tapping the pin itself: locked places reveal nothing.
-    const locked = !isPlaceUnlocked(existing, unlock, me?.id ?? '', reviewedIds, {
-      lat: me?.homeLat ?? null,
-      lng: me?.homeLng ?? null,
+    // A city should frame the city; a venue should frame the street.
+    requestFlyTo({ lat: result.lat, lng: result.lng, zoom: result.kind === 'area' ? 12 : 16 })
+  }
+
+  /** Start pinning a searched venue, with what the geocoder found filled in. */
+  const addSearchResult = (result: GeoResult) => {
+    closeSearch()
+    navigate('/add', {
+      state: {
+        lat: result.lat,
+        lng: result.lng,
+        name: result.name,
+        locality: result.locality,
+        address: result.address,
+      },
     })
-    if (locked) setUnlockOpen(true)
-    else setSelectedPlaceId(existing.id)
   }
 
   /** Hand the spot under the crosshair to the add screen, already located. */
@@ -419,21 +426,36 @@ export function MapScreen() {
           {matchedResults.length > 0 && (
             <div className="ios-group mt-4">
               {matchedResults.map(({ result: r, existing }, i) => (
-                <button
-                  key={`${r.lat}-${r.lng}-${i}`}
-                  type="button"
-                  onClick={() => openSearchResult(r, existing)}
-                  className="pressable ios-row"
-                >
-                  <span className="min-w-0 flex-1">
-                    <span className="block truncate t-body">{r.name}</span>
-                    <span className="block truncate t-footnote text-label-2">{r.locality || r.address}</span>
-                  </span>
-                  <span className={`shrink-0 t-footnote font-semibold ${existing ? 'text-label-2' : 'text-accent'}`}>
-                    {existing ? 'In the atlas' : 'Add'}
-                  </span>
-                  <span aria-hidden className="text-label-3">›</span>
-                </button>
+                <div key={`${r.lat}-${r.lng}-${i}`} className="ios-row !p-0">
+                  {/* Showing it on the map is the default. */}
+                  <button
+                    type="button"
+                    onClick={() => showSearchResult(r, existing)}
+                    className="pressable flex min-w-0 flex-1 items-center gap-3 py-2.5 pl-4 text-left"
+                  >
+                    <span className="min-w-0 flex-1">
+                      <span className="block truncate t-body">{r.name}</span>
+                      <span className="block truncate t-footnote text-label-2">{r.locality || r.address}</span>
+                    </span>
+                    {existing && <span className="shrink-0 t-footnote text-label-2">In the atlas</span>}
+                    <span aria-hidden className="text-label-3">›</span>
+                  </button>
+
+                  {/* Pinning it is optional, and meaningless for a city. */}
+                  {!existing && r.kind === 'venue' && (
+                    <button
+                      type="button"
+                      onClick={() => addSearchResult(r)}
+                      aria-label={`Add ${r.name} to the atlas`}
+                      className="pressable flex shrink-0 items-center gap-1 self-stretch border-l border-separator px-4 t-footnote font-semibold text-accent"
+                    >
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
+                        <path d="M12 5v14M5 12h14" strokeLinecap="round" />
+                      </svg>
+                      Add
+                    </button>
+                  )}
+                </div>
               ))}
             </div>
           )}
