@@ -58,7 +58,7 @@ export function UserScreen() {
         </button>
       </div>
 
-      <div className="px-4 pt-5">
+      <div className="px-4 pt-5 land:mx-auto land:max-w-2xl">
         <div className="flex items-center gap-4 px-1">
           <Avatar profile={member} size={64} />
           <div className="min-w-0 flex-1">

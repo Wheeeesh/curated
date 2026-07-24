@@ -72,7 +72,8 @@ export default function App() {
     <QueryClientProvider client={queryClient}>
       {/* BASE_URL keeps routing correct under the /curated/ subpath on Pages. */}
       <BrowserRouter basename={import.meta.env.BASE_URL}>
-        <div className="relative mx-auto h-dvh max-w-md overflow-hidden bg-bg">
+        {/* Portrait is a phone-width column; sideways the app fills the screen. */}
+        <div className="relative mx-auto h-dvh max-w-md overflow-hidden bg-bg land:max-w-none">
           <Routes>
             <Route path="/welcome" element={<WelcomeScreen />} />
             <Route element={<Protected />}>

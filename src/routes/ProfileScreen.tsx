@@ -68,8 +68,8 @@ export function ProfileScreen() {
   if (!me) return <ScreenLoading />
 
   return (
-    <div className="h-full overflow-y-auto bg-bg pb-24">
-      <div className="px-4 pt-14">
+    <div className="h-full overflow-y-auto bg-bg pb-24 land:pb-8 land:pl-[72px]">
+      <div className="px-4 pt-14 land:mx-auto land:max-w-2xl land:pt-6">
         {/* identity */}
         <div className="flex items-center gap-4 px-1">
           <Avatar profile={me} size={64} />

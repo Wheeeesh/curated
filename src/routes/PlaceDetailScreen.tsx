@@ -97,7 +97,7 @@ export function PlaceDetailScreen() {
         </button>
       </div>
 
-      <div className="px-4 pt-4">
+      <div className="px-4 pt-4 land:mx-auto land:max-w-2xl">
         {/* title block */}
         <div className="flex items-start gap-4">
           <div className="min-w-0 flex-1">
@@ -174,9 +174,9 @@ export function PlaceDetailScreen() {
       </div>
 
       {/* sticky CTA */}
-      <div className="fixed inset-x-0 bottom-0 z-30 mx-auto max-w-md">
+      <div className="fixed inset-x-0 bottom-0 z-30 mx-auto max-w-md land:max-w-2xl">
         <div className="glass border-t border-separator p-4 pb-safe">
-          <div className="flex items-center gap-2.5">
+          <div className="mx-auto flex max-w-md items-center gap-2.5">
             <button
               type="button"
               onClick={() => navigate(`/place/${place.id}/review`)}

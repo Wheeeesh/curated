@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+/**
+ * A phone held sideways — not merely "wider than tall", which would also
+ * catch every desktop window and reshape the app there. The height bound
+ * keeps this to real handsets in landscape.
+ */
+@custom-variant land (@media (orientation: landscape) and (max-height: 600px));
+
 @theme {
   /* ——— iOS light system palette ——— */
   --color-bg: #f2f2f7;
@@ -63,6 +70,13 @@ body {
 
 .pb-safe {
   padding-bottom: env(safe-area-inset-bottom);
+}
+/* Rotated, the notch sits along one of the long edges. */
+.pl-safe {
+  padding-left: env(safe-area-inset-left);
+}
+.pr-safe {
+  padding-right: env(safe-area-inset-right);
 }
 
 /* ——— Apple type scale ——— */
@@ -276,6 +290,10 @@ input[type="range"].aspect::-moz-range-thumb {
   from { transform: translateY(100%); }
   to { transform: translateY(0); }
 }
+@keyframes panel-in {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
@@ -285,6 +303,10 @@ input[type="range"].aspect::-moz-range-thumb {
   to { opacity: 1; }
 }
 .anim-sheet { animation: sheet-up 0.28s cubic-bezier(0.32, 0.72, 0.24, 1); }
+/* Sideways, a sheet is a side panel, so it has to arrive from the side. */
+@media (orientation: landscape) and (max-height: 600px) {
+  .anim-sheet { animation: panel-in 0.28s cubic-bezier(0.32, 0.72, 0.24, 1); }
+}
 .anim-fade-up { animation: fade-up 0.4s cubic-bezier(0.22, 0.68, 0.34, 1) both; }
 .anim-fade-in { animation: fade-in 0.3s ease both; }
 

@@ -29,7 +29,7 @@ export function PeopleScreen() {
   }, [members, me?.id, tab, query, iFollow, engine])
 
   return (
-    <div className="h-full overflow-y-auto bg-bg pb-24">
+    <div className="h-full overflow-y-auto bg-bg pb-24 land:pb-8 land:pl-[72px]">
       <div className="glass sticky top-0 z-20 space-y-3 border-b border-separator px-4 pb-3 pt-12">
         <h1 className="t-large-title">Members</h1>
         <input
@@ -53,7 +53,7 @@ export function PeopleScreen() {
         </div>
       </div>
 
-      <div className="px-4 pt-4">
+      <div className="px-4 pt-4 land:mx-auto land:max-w-2xl">
         {list.length === 0 ? (
           <p className="pt-10 text-center t-subhead text-label-2">
             {tab === 'following' ? 'Nobody in your circle yet.' : 'No members found.'}

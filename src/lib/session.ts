@@ -7,6 +7,12 @@ export interface MapView {
   zoom: number
 }
 
+/**
+ * Which slice of the atlas the map is showing: everything, only the people you
+ * follow, or only the places you have saved for later.
+ */
+export type MapMode = 'foryou' | 'circle' | 'saved'
+
 /** Antwerp, only as a first-run fallback before we know anything better. */
 const DEFAULT_VIEW: MapView = { lat: 51.2172, lng: 4.4078, zoom: 12 }
 
@@ -34,8 +40,8 @@ interface UiState {
   flyTo: (MapView & { nonce: number }) | null
   requestFlyTo: (v: MapView) => void
 
-  mapMode: 'foryou' | 'circle'
-  setMapMode: (m: 'foryou' | 'circle') => void
+  mapMode: MapMode
+  setMapMode: (m: MapMode) => void
   categoryFilters: Category[]
   toggleCategoryFilter: (c: Category) => void
   clearCategoryFilters: () => void

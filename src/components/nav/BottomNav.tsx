@@ -40,12 +40,16 @@ const TABS = [
   },
 ]
 
+/**
+ * A tab bar across the bottom in portrait. Sideways, vertical space is the
+ * scarce one, so the same three tabs become a slim rail down the left edge.
+ */
 export function BottomNav() {
   const { pathname } = useLocation()
   return (
-    <nav className="fixed inset-x-0 bottom-0 z-30 mx-auto max-w-md">
-      <div className="glass border-t border-separator pb-safe">
-        <div className="flex">
+    <nav className="fixed inset-x-0 bottom-0 z-30 mx-auto max-w-md land:inset-y-0 land:right-auto land:mx-0 land:w-[72px] land:max-w-none">
+      <div className="glass border-t border-separator pb-safe land:h-full land:border-r land:border-t-0 land:pb-0 land:pl-safe">
+        <div className="flex land:h-full land:flex-col land:justify-center land:gap-3">
           {TABS.map((tab) => {
             const active = tab.to === '/' ? pathname === '/' : pathname.startsWith(tab.to)
             return (
@@ -53,7 +57,7 @@ export function BottomNav() {
                 key={tab.to}
                 to={tab.to}
                 aria-current={active ? 'page' : undefined}
-                className={`pressable flex min-h-[52px] flex-1 flex-col items-center justify-center gap-0.5 pt-1.5 ${
+                className={`pressable flex min-h-[52px] flex-1 flex-col items-center justify-center gap-0.5 pt-1.5 land:flex-none land:pt-0 ${
                   active ? 'text-accent' : 'text-label-3'
                 }`}
               >

@@ -83,7 +83,7 @@ function ReviewForm({ place, existing, isOwnPlace }: { place: Place; existing: R
         <span className="w-[52px]" />
       </div>
 
-      <div className="px-4 pt-5">
+      <div className="px-4 pt-5 land:mx-auto land:max-w-2xl">
         <p className="ios-section-header">Your scores · {aspects.length} questions</p>
         <div className="ios-group divide-y divide-separator">
           {aspects.map((a) => (
