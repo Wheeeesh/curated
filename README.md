@@ -47,6 +47,33 @@ Open http://localhost:5173 — that's it. With no backend configured the app run
 - **Map tiles** are Carto's free dark style (`src/lib/mapStyle.ts`); address search is OpenStreetMap Nominatim (debounced, with a drop-a-pin fallback that never depends on it).
 - **Scale tripwire**: taste/Match % math runs in the browser, comfortably up to a few hundred members / tens of thousands of reviews. Beyond that, move it into a Postgres function.
 
+## The imported atlas
+
+The map ships pre-populated with venue **locations** gathered from published guides and open data — names, addresses and coordinates only. No scores, rankings, reviews or editorial are imported from anyone: every rating in Curated comes from a member. Each place carries its provenance as "Listed by …", which is also how the attribution-requiring licences below are satisfied.
+
+Importers live in `scripts/import-*.ts`, one per source, each writing to `scripts/data/`. `scripts/build-imported-seed.ts` merges them, deduplicates by name and rounded coordinates (the same venue often appears in several guides), and writes `public/atlas-places.json`, which the app fetches at runtime and the service worker precaches for offline use. Regenerate with:
+
+```bash
+npx tsx scripts/build-imported-seed.ts
+```
+
+| Source | What it contributes | Licence / access |
+|---|---|---|
+| **Wikidata** | Michelin-starred restaurants worldwide, plus notable art museums and galleries | CC0, public SPARQL endpoint |
+| **Wikivoyage** | Eat/drink/see/buy listings from Star- and Guide-rated destination articles | CC BY-SA — attribution required |
+| **Le Fooding** | France and Belgium | robots.txt permits; schema.org JSON-LD |
+| **Gault&Millau** | Belgium, Luxembourg, Netherlands | published `rel="ai-knowledge"` feeds |
+| **The World's 50 Best** | Restaurants and bars, global and regional lists | robots.txt names ClaudeBot explicitly; `Crawl-delay: 1` honoured |
+| **La Liste** | Top-rated restaurants worldwide | robots.txt unrestricted; open sitemap |
+| **Eater** | City "essential" map guides | robots.txt permits wildcard agents |
+| **Time Out** | Best-of guides for major cities | robots.txt permits wildcard agents |
+
+Guides with no coordinates (50 Best, La Liste, Time Out) are resolved through `scripts/geocode.ts` — Photon over OpenStreetMap, cached to disk and rate-limited. The selection is the guide's; the coordinates are open data.
+
+**Deliberately not imported.** Michelin, Raisin, Falstaff and Resident Advisor all sit behind bot protection that returns 403 or a JS challenge to an honest crawler. Getting in would mean impersonating a browser to defeat that protection, which this project does not do — the Michelin selection is reached through Wikidata instead. Nightlife and music are consequently the atlas's thinnest categories.
+
+**If Curated ever goes public or commercial**, revisit the licences: CC0 (Wikidata) is unrestricted, but CC BY-SA (Wikivoyage) carries share-alike obligations, and in the EU a guide's *selection* can attract database rights even where the individual addresses are plain facts.
+
 ## Tech
 
 React 19 + Vite + TypeScript + Tailwind v4 · MapLibre GL (Carto Positron light basemap) · TanStack Query + Zustand · Supabase (Postgres + RLS + auth) behind a swappable data adapter (`src/lib/api/`) with a zero-setup local demo adapter · PWA via vite-plugin-pwa.

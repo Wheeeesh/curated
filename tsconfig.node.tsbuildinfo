@@ -1,1 +1,1 @@
-{"root":["./vite.config.ts","./scripts/build-imported-seed.ts","./scripts/generate-seed-sql.ts","./scripts/import-gaultmillau.ts","./scripts/import-lefooding.ts"],"version":"5.8.3"}
+{"root":["./vite.config.ts","./scripts/build-imported-seed.ts","./scripts/generate-seed-sql.ts","./scripts/geocode.ts","./scripts/import-50best.ts","./scripts/import-eater.ts","./scripts/import-gaultmillau.ts","./scripts/import-laliste.ts","./scripts/import-lefooding.ts","./scripts/import-timeout.ts","./scripts/import-wikidata.ts","./scripts/import-wikivoyage.ts"],"version":"5.8.3"}

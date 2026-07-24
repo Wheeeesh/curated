@@ -1,5 +1,5 @@
 /**
- * Merges the imported location files into one SQL seed for Supabase.
+ * Merges every imported location file into the atlas the app ships.
  *
  * Deduplicates across sources (the same venue often appears in more than one
  * guide) by name and rounded coordinates, merging their categories. Every
@@ -8,9 +8,11 @@
  *
  *   npx tsx scripts/build-imported-seed.ts
  *
- * Writes supabase/seed-imported.sql.
+ * Writes public/atlas-places.json (loaded by the app at runtime) and
+ * supabase/seed-imported.sql (only needed if the places are ever moved into
+ * the database instead).
  */
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import type { ImportedPlace } from './import-lefooding'
@@ -48,8 +50,24 @@ function load(file: string): ImportedPlace[] {
   return JSON.parse(readFileSync(path, 'utf8')) as ImportedPlace[]
 }
 
+/**
+ * Order matters: on a duplicate the first source seen keeps its name and
+ * address, so the tightly-edited guides come before the broader community
+ * sources, which are numerous but looser about naming.
+ */
+const SOURCES = [
+  'lefooding-places.json',
+  'gaultmillau-places.json',
+  'wikidata-places.json',
+  '50best-places.json',
+  'laliste-places.json',
+  'eater-places.json',
+  'timeout-places.json',
+  'wikivoyage-places.json',
+]
+
 function run() {
-  const all = [...load('lefooding-places.json'), ...load('gaultmillau-places.json')]
+  const all = SOURCES.flatMap(load)
 
   const byKey = new Map<string, ImportedPlace>()
   for (const p of all) {
@@ -106,8 +124,27 @@ function run() {
   mkdirSync(dirname(out), { recursive: true })
   writeFileSync(out, lines.join('\n') + '\n')
 
+  // The app fetches this at runtime; short keys because the file is shipped
+  // to phones and every byte is repeated once per place.
+  const atlas = places.map((p) => ({
+    n: p.name,
+    c: p.categories,
+    y: Number(p.lat.toFixed(6)),
+    x: Number(p.lng.toFixed(6)),
+    a: p.address,
+    l: p.locality,
+    s: p.source,
+  }))
+  const atlasPath = join(HERE, '..', 'public', 'atlas-places.json')
+  mkdirSync(dirname(atlasPath), { recursive: true })
+  writeFileSync(atlasPath, JSON.stringify(atlas))
+
   console.log(`merged ${all.length} → ${places.length} unique places`)
-  for (const [src, n] of Object.entries(bySource)) console.log(`  ${src}: ${n}`)
+  for (const [src, n] of Object.entries(bySource).sort((a, b) => b[1] - a[1])) {
+    console.log(`  ${src}: ${n}`)
+  }
+  const mb = (statSync(atlasPath).size / 1024 / 1024).toFixed(2)
+  console.log(`wrote ${atlasPath} (${mb} MB)`)
   console.log(`wrote ${out}`)
 }
 

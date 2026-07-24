@@ -1,14 +1,14 @@
 import type { Category, Place } from '../lib/api/types'
-import raw from './imported-places.json'
 
 /**
- * Venue locations imported from published guide data (see
+ * Venue locations imported from published guide and open-data sources (see
  * scripts/import-*.ts). Names, addresses and coordinates only — no reviews,
  * scores or editorial, so every rating in Curated still comes from a member.
  *
- * Held separately from the mutable demo state on purpose: this is read-only
- * reference data, so keeping it out of localStorage avoids re-serialising
- * thousands of records on every write.
+ * Served as a static asset rather than bundled into the JavaScript: there are
+ * tens of thousands of these, and inlining them would put several megabytes in
+ * front of first paint. The service worker precaches the file, so the atlas is
+ * still available offline. Loaded once and memoised.
  */
 interface RawPlace {
   n: string
@@ -38,7 +38,7 @@ function idFor(seed: string): string {
   return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-4${hex.slice(13, 16)}-a${hex.slice(17, 20)}-${hex.slice(20, 32)}`
 }
 
-export const IMPORTED_PLACES: Place[] = (raw as RawPlace[]).map((p) => ({
+const toPlace = (p: RawPlace): Place => ({
   id: idFor(`${p.s}|${p.n}|${p.y.toFixed(5)}|${p.x.toFixed(5)}`),
   cityId: '',
   locality: p.l,
@@ -47,8 +47,33 @@ export const IMPORTED_PLACES: Place[] = (raw as RawPlace[]).map((p) => ({
   lat: p.y,
   lng: p.x,
   address: p.a,
-  // Provenance, not the guide's words about the place.
+  // Provenance, not the source's words about the place.
   description: `Listed by ${p.s}`,
   createdBy: HOUSE_ID,
   createdAt: EPOCH,
-}))
+})
+
+let loaded: Place[] | null = null
+let inflight: Promise<Place[]> | null = null
+
+async function load(): Promise<Place[]> {
+  try {
+    // BASE_URL keeps this correct under the /curated/ subpath on Pages.
+    const res = await fetch(`${import.meta.env.BASE_URL}atlas-places.json`)
+    if (!res.ok) throw new Error(String(res.status))
+    const raw = (await res.json()) as RawPlace[]
+    return raw.map(toPlace)
+  } catch {
+    // A missing or unreadable atlas must not take the app down — members'
+    // own places and reviews still work without it.
+    return []
+  }
+}
+
+/** The imported atlas, fetched once per session and reused thereafter. */
+export async function importedPlaces(): Promise<Place[]> {
+  if (loaded) return loaded
+  if (!inflight) inflight = load()
+  loaded = await inflight
+  return loaded
+}

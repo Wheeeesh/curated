@@ -30,7 +30,9 @@ export default defineConfig({
       workbox: {
         // Precache the app shell only. Never runtime-cache map tiles or
         // geocoding responses — unbounded storage growth on mobile.
-        globPatterns: ['**/*.{js,css,html,svg,png,woff2}'],
+        // json covers atlas-places.json, so the imported atlas is available
+        // offline like the rest of the shell.
+        globPatterns: ['**/*.{js,css,html,svg,png,woff2,json}'],
         // The bundled guide locations make the main chunk exceed the 2 MiB
         // default; allow the app shell (still one modest download) to precache
         // in full so the atlas works offline.
