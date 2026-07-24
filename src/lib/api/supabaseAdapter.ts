@@ -130,10 +130,25 @@ export function createSupabaseAdapter(url: string, anonKey: string): DataAdapter
     },
     async completeOnboarding(interests, homeCity, homeLat, homeLng, followIds) {
       const me = await uid()
-      const { error } = await sb
-        .from('profiles')
-        .update({ interests, home_city: homeCity, home_lat: homeLat, home_lng: homeLng, onboarded: true })
-        .eq('id', me)
+      // Databases that have not had the latest migration applied are missing
+      // home_lat/home_lng, and still constrain home_city to the six-row cities
+      // table — which no longer holds, now that onboarding searches the whole
+      // world. Nobody should be stranded on the last onboarding step over
+      // either, so drop the offending fields and let them in; the home-city
+      // radius simply starts working once the migration lands.
+      const attempts = [
+        { interests, onboarded: true, home_city: homeCity, home_lat: homeLat, home_lng: homeLng },
+        { interests, onboarded: true, home_city: homeCity },
+        { interests, onboarded: true },
+      ]
+      let error: unknown = null
+      for (const patch of attempts) {
+        ;({ error } = await sb.from('profiles').update(patch).eq('id', me))
+        if (!error) break
+        // PGRST204 / 42703 = unknown column, 23503 = home_city is not a known city.
+        const code = (error as Row).code
+        if (code !== 'PGRST204' && code !== '42703' && code !== '23503') break
+      }
       die(error)
       if (followIds.length) {
         const { error: fe } = await sb
@@ -191,6 +206,10 @@ export function createSupabaseAdapter(url: string, anonKey: string): DataAdapter
         .insert({
           city_id: input.cityId || null, locality: input.locality, name: input.name,
           categories: input.categories,
+          // The original schema had a single required `category`. Databases that
+          // have not had the constraint dropped yet reject every insert without
+          // it, so keep writing the primary category alongside the array.
+          category: input.categories[0],
           lat: input.lat, lng: input.lng, address: input.address, description: input.description,
           created_by: await uid(),
         })

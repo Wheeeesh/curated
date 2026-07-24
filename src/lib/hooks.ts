@@ -6,6 +6,14 @@ import { useUi } from './session'
 import { buildTasteEngine, type TasteEngine } from './taste/match'
 import { CREDITS } from './credits/rules'
 
+/**
+ * Anything that writes must say so when it fails. Without this a rejected
+ * mutation left the member staring at an unchanged screen with no idea the
+ * save had been refused.
+ */
+export const errorMessage = (e: unknown): string =>
+  e instanceof Error && e.message ? e.message : 'Something went wrong. Please try again.'
+
 export const useCities = () => useQuery({ queryKey: ['cities'], queryFn: () => api.listCities() })
 export const useMembers = () => useQuery({ queryKey: ['members'], queryFn: () => api.listMembers() })
 export const useFollows = () => useQuery({ queryKey: ['follows'], queryFn: () => api.listFollows() })
@@ -59,15 +67,18 @@ export function useSaveMutation() {
       qc.invalidateQueries({ queryKey: ['saved'] })
       showToast(saved ? 'Saved to your list' : 'Removed from your list')
     },
+    onError: (e) => showToast(errorMessage(e)),
   })
 }
 
 export function useFollowMutation() {
   const qc = useQueryClient()
+  const showToast = useUi((s) => s.showToast)
   return useMutation({
     mutationFn: async ({ userId, on }: { userId: string; on: boolean }) =>
       on ? api.follow(userId) : api.unfollow(userId),
     onSettled: () => qc.invalidateQueries({ queryKey: ['follows'] }),
+    onError: (e) => showToast(errorMessage(e)),
   })
 }
 
@@ -92,6 +103,7 @@ export function useReviewMutation() {
         showToast('Review saved')
       }
     },
+    onError: (e) => showToast(errorMessage(e)),
   })
 }
 
@@ -106,5 +118,6 @@ export function useAddPlaceMutation() {
       const total = creditsAwarded.reduce((s, c) => s + c.amount, 0)
       showToast(total > 0 ? `+${total} credits — pinned to the atlas` : 'Pinned to the atlas', total > 0)
     },
+    onError: (e) => showToast(errorMessage(e)),
   })
 }

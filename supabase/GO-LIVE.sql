@@ -13,6 +13,10 @@
 -- ————— home-city centre (everything within 30 km is always unlocked) —————
 alter table public.profiles add column if not exists home_lat double precision;
 alter table public.profiles add column if not exists home_lng double precision;
+-- Onboarding now searches every city on earth, so home_city is free text and
+-- can no longer be constrained to the handful of rows in `cities`. Left in
+-- place it rejects every member who lives outside that list.
+alter table public.profiles drop constraint if exists profiles_home_city_fkey;
 
 -- ————— new categories —————
 alter type public.category add value if not exists 'art';

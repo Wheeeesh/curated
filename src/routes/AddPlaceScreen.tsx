@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import maplibregl from 'maplibre-gl'
 import { CATEGORIES, type Category } from '../lib/api/types'
-import { useAddPlaceMutation } from '../lib/hooks'
+import { errorMessage, useAddPlaceMutation } from '../lib/hooks'
 import { useUi, type MapView as MapViewState } from '../lib/session'
 import { getCurrentPosition, reverseGeocode, searchPlaces, type GeoResult } from '../lib/geo/geocode'
 import { parseLocationInput } from '../lib/geo/parseLink'
@@ -83,6 +83,7 @@ export function AddPlaceScreen() {
   const [name, setName] = useState('')
   const [categories, setCategories] = useState<Category[]>([])
   const [description, setDescription] = useState('')
+  const [submitError, setSubmitError] = useState<string | null>(null)
 
   const linkResult = useMemo(() => parseLocationInput(query), [query])
 
@@ -123,20 +124,27 @@ export function AddPlaceScreen() {
 
   const submit = async () => {
     if (!picked || categories.length === 0 || !name.trim()) return
-    const { place } = await mutation.mutateAsync({
-      cityId: '',
-      locality: picked.locality,
-      name: name.trim(),
-      categories,
-      lat: picked.lat,
-      lng: picked.lng,
-      address: picked.address || picked.locality,
-      description: description.trim(),
-    })
-    requestFlyTo({ lat: place.lat, lng: place.lng, zoom: 15 })
-    // Straight into reviewing it — you have just been there, so this is the
-    // moment you actually remember it. Cancel on that screen returns to the map.
-    navigate(`/place/${place.id}/review`, { replace: true })
+    setSubmitError(null)
+    try {
+      const { place } = await mutation.mutateAsync({
+        cityId: '',
+        locality: picked.locality,
+        name: name.trim(),
+        categories,
+        lat: picked.lat,
+        lng: picked.lng,
+        address: picked.address || picked.locality,
+        description: description.trim(),
+      })
+      requestFlyTo({ lat: place.lat, lng: place.lng, zoom: 15 })
+      // Straight into reviewing it — you have just been there, so this is the
+      // moment you actually remember it. Cancel on that screen returns to the map.
+      navigate(`/place/${place.id}/review`, { replace: true })
+    } catch (e) {
+      // The toast disappears; this stays on screen next to the button that
+      // failed, with everything the member typed still filled in.
+      setSubmitError(errorMessage(e))
+    }
   }
 
   return (
@@ -302,6 +310,11 @@ export function AddPlaceScreen() {
             >
               {mutation.isPending ? '…' : 'Add to the atlas'}
             </button>
+            {submitError && (
+              <p role="alert" className="ios-section-footer text-danger">
+                {submitError}
+              </p>
+            )}
           </div>
         )}
       </div>

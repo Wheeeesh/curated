@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useQueryClient } from '@tanstack/react-query'
 import { api } from '../lib/api'
 import { CATEGORIES, type Category, type Place } from '../lib/api/types'
-import { useMembers, useMyProfile } from '../lib/hooks'
+import { errorMessage, useMembers, useMyProfile } from '../lib/hooks'
 import { getCurrentPosition, reverseGeocode, searchPlaces, type GeoResult } from '../lib/geo/geocode'
 import { useUi } from '../lib/session'
 import { CATEGORY_META } from '../lib/format'
@@ -32,6 +32,7 @@ export function OnboardingScreen() {
   const [locating, setLocating] = useState(false)
   const [followIds, setFollowIds] = useState<Set<string>>(new Set())
   const [busy, setBusy] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const toggleInterest = (c: Category) =>
     setInterests((prev) => (prev.includes(c) ? prev.filter((x) => x !== c) : [...prev, c]))
@@ -76,10 +77,15 @@ export function OnboardingScreen() {
 
   const finish = async () => {
     setBusy(true)
+    setError(null)
     try {
       await api.completeOnboarding(interests, homeCity, homeCoords?.lat ?? null, homeCoords?.lng ?? null, [...followIds])
       await qc.invalidateQueries()
       navigate('/', { replace: true })
+    } catch (e) {
+      // Failing silently here left new members stranded on the last step with
+      // no way forward and nothing to report.
+      setError(errorMessage(e))
     } finally {
       setBusy(false)
     }
@@ -207,6 +213,11 @@ export function OnboardingScreen() {
       <button type="button" disabled={busy} onClick={finish} className="pressable btn-primary mt-7">
         {busy ? '…' : 'Enter the atlas'}
       </button>
+      {error && (
+        <p role="alert" className="ios-section-footer text-danger">
+          {error}
+        </p>
+      )}
     </div>,
   ]
 

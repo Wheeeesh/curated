@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { aspectsForCategories, type Aspect, type Place, type Review } from '../lib/api/types'
-import { useAllReviews, useMyProfile, usePlaces, useReviewMutation } from '../lib/hooks'
+import { errorMessage, useAllReviews, useMyProfile, usePlaces, useReviewMutation } from '../lib/hooks'
 import { ASPECT_META } from '../lib/format'
 import { FULL_REVIEW_MIN_CHARS, WARNING_MIN_CHARS } from '../lib/credits/rules'
 import { useGoBack } from '../lib/useGoBack'
@@ -51,19 +51,26 @@ function ReviewForm({ place, existing, isOwnPlace }: { place: Place; existing: R
   const [text, setText] = useState(existing?.textReview ?? '')
   const [isWarning, setIsWarning] = useState(existing?.isWarning ?? false)
   const [warningReason, setWarningReason] = useState(existing?.warningReason ?? '')
+  const [submitError, setSubmitError] = useState<string | null>(null)
 
   const chars = text.trim().length
   const warningOk = !isWarning || warningReason.trim().length >= WARNING_MIN_CHARS
 
   const submit = async () => {
-    await mutation.mutateAsync({
-      placeId: place.id,
-      scores,
-      textReview: text.trim(),
-      isWarning,
-      warningReason: isWarning ? warningReason.trim() : null,
-    })
-    navigate(`/place/${place.id}`, { replace: true })
+    setSubmitError(null)
+    try {
+      await mutation.mutateAsync({
+        placeId: place.id,
+        scores,
+        textReview: text.trim(),
+        isWarning,
+        warningReason: isWarning ? warningReason.trim() : null,
+      })
+      navigate(`/place/${place.id}`, { replace: true })
+    } catch (e) {
+      // Stay on the form so nothing the member wrote is lost.
+      setSubmitError(errorMessage(e))
+    }
   }
 
   return (
@@ -157,6 +164,11 @@ function ReviewForm({ place, existing, isOwnPlace }: { place: Place; existing: R
         >
           {mutation.isPending ? '…' : isWarning ? 'Post warning' : existing ? 'Update score' : 'Post score'}
         </button>
+        {submitError && (
+          <p role="alert" className="ios-section-footer text-danger">
+            {submitError}
+          </p>
+        )}
       </div>
     </div>
   )
