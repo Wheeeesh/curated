@@ -66,8 +66,39 @@ const SOURCES = [
   'wikivoyage-places.json',
 ]
 
+/** Sources spell the same country several ways; the map shows only one. */
+const COUNTRY_FIXES: [RegExp, string][] = [
+  [/^(U\.?S\.?A\.?|US|USA|United States of America)$/i, 'United States'],
+  [/^(U\.?K\.?|Great Britain|England)$/i, 'United Kingdom'],
+  [/^(UAE|U\.A\.E\.)$/i, 'United Arab Emirates'],
+  [/^(Holland|The Netherlands)$/i, 'Netherlands'],
+  [/^Czech Republic$/i, 'Czechia'],
+  // Le Fooding is a French publication and names countries in French.
+  [/^Belgi(que|ë)$/i, 'Belgium'],
+  [/^(Allemagne|Deutschland)$/i, 'Germany'],
+  [/^(Espagne|España)$/i, 'Spain'],
+  [/^(Italie|Italia)$/i, 'Italy'],
+  [/^(Pays-Bas)$/i, 'Netherlands'],
+  [/^(Suisse|Schweiz)$/i, 'Switzerland'],
+  [/^(Royaume-Uni)$/i, 'United Kingdom'],
+]
+
+function normaliseLocality(locality: string): string {
+  const parts = locality.split(',').map((s) => s.trim()).filter(Boolean)
+  if (parts.length === 0) return locality
+  const last = parts[parts.length - 1]
+  for (const [pattern, canonical] of COUNTRY_FIXES) {
+    if (pattern.test(last)) {
+      parts[parts.length - 1] = canonical
+      break
+    }
+  }
+  return parts.join(', ')
+}
+
 function run() {
   const all = SOURCES.flatMap(load)
+  for (const p of all) p.locality = normaliseLocality(p.locality)
 
   const byKey = new Map<string, ImportedPlace>()
   for (const p of all) {
