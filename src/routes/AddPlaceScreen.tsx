@@ -16,10 +16,17 @@ interface Picked {
   address: string
 }
 
-/** Coordinates handed over by the map's drop-a-pin mode. */
-interface DroppedPin {
+/**
+ * A spot chosen on the map screen — either under the drop-a-pin crosshair,
+ * which is coordinates only, or a search result, which arrives already named
+ * and addressed.
+ */
+interface IncomingSpot {
   lat: number
   lng: number
+  name?: string
+  locality?: string
+  address?: string
 }
 
 export function AddPlaceScreen() {
@@ -79,16 +86,23 @@ export function AddPlaceScreen() {
     }
   }
 
-  // Arriving from the map's drop-a-pin mode: the spot is already chosen, so
-  // skip search entirely and go straight to naming it.
-  const dropped = (routerState ?? null) as DroppedPin | null
-  const droppedRef = useRef(false)
+  // Arriving from the map with a spot already chosen: skip search entirely and
+  // go straight to naming it. A search result comes with its address, so only
+  // a dropped pin has to be looked up.
+  const incoming = (routerState ?? null) as IncomingSpot | null
+  const incomingRef = useRef(false)
   useEffect(() => {
-    if (droppedRef.current || !dropped) return
-    droppedRef.current = true
-    void pickCoords(dropped.lat, dropped.lng, '')
+    if (incomingRef.current || !incoming) return
+    incomingRef.current = true
+    const { lat, lng, name: pinName = '', locality, address } = incoming
+    if (locality !== undefined || address !== undefined) {
+      setPicked({ lat, lng, name: pinName, locality: locality ?? '', address: address ?? '' })
+      setName(pinName)
+    } else {
+      void pickCoords(lat, lng, pinName)
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dropped])
+  }, [incoming])
 
   const submit = async () => {
     if (!picked || categories.length === 0 || !name.trim()) return

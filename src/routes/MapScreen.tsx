@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import type { Map as MapLibreMap } from 'maplibre-gl'
-import { CATEGORIES, overallScore } from '../lib/api/types'
+import { CATEGORIES, overallScore, type Place } from '../lib/api/types'
 import {
   useAllReviews,
   useFollows,
@@ -17,6 +17,7 @@ import { creditBalance } from '../lib/credits/rules'
 import { UnlockSheet } from '../components/map/UnlockSheet'
 import { useUi } from '../lib/session'
 import { getCurrentPosition, searchPlaces, type GeoResult } from '../lib/geo/geocode'
+import { findExistingPlace } from '../lib/geo/matchPlace'
 import { CategoryChip } from '../components/ui/Chip'
 import { Sheet } from '../components/ui/Sheet'
 import { MapView, type MapPin } from '../components/map/MapView'
@@ -118,6 +119,16 @@ export function MapScreen() {
 
   const lockedCount = useMemo(() => pins.filter((p) => p.locked).length, [pins])
 
+  /**
+   * Whether each search result is somewhere the atlas already knows. Resolved
+   * against every place, not just the pins currently drawn, so a result is not
+   * offered as new merely because a category filter is hiding it.
+   */
+  const matchedResults = useMemo(
+    () => results.map((result) => ({ result, existing: findExistingPlace(result, places ?? []) })),
+    [results, places],
+  )
+
   const selectedPlace = places?.find((p) => p.id === selectedPlaceId) ?? null
   const selectedReviews = useMemo(
     () => (reviews ?? []).filter((r) => r.placeId === selectedPlaceId),
@@ -127,6 +138,35 @@ export function MapScreen() {
   const closeSearch = () => {
     setSearchOpen(false)
     setQuery('')
+  }
+
+  /**
+   * A search result is either somewhere already pinned — in which case take
+   * the member to it — or somewhere new, in which case start adding it with
+   * everything the geocoder already told us filled in.
+   */
+  const openSearchResult = (result: GeoResult, existing: Place | null) => {
+    closeSearch()
+    if (!existing) {
+      navigate('/add', {
+        state: {
+          lat: result.lat,
+          lng: result.lng,
+          name: result.name,
+          locality: result.locality,
+          address: result.address,
+        },
+      })
+      return
+    }
+    requestFlyTo({ lat: existing.lat, lng: existing.lng, zoom: 16 })
+    // Same rule as tapping the pin itself: locked places reveal nothing.
+    const locked = !isPlaceUnlocked(existing, unlock, me?.id ?? '', reviewedIds, {
+      lat: me?.homeLat ?? null,
+      lng: me?.homeLng ?? null,
+    })
+    if (locked) setUnlockOpen(true)
+    else setSelectedPlaceId(existing.id)
   }
 
   /** Hand the spot under the crosshair to the add screen, already located. */
@@ -326,8 +366,8 @@ export function MapScreen() {
             aria-label="Search anywhere"
           />
 
-          {/* Finding somewhere and adding somewhere start in the same place.
-              These step aside as soon as there is something to search for. */}
+          {/* Searching is also how you add: a result already in the atlas
+              takes you to it, one we do not have starts adding it. */}
           {query.trim() === '' && (
             <div className="ios-group mt-4">
               <button
@@ -344,43 +384,53 @@ export function MapScreen() {
                 <span className="flex-1 t-body">Add a place</span>
                 <span aria-hidden className="text-label-3">›</span>
               </button>
-              <button
-                type="button"
-                onClick={() => {
-                  closeSearch()
-                  setPinDropping(true)
-                }}
-                className="pressable ios-row"
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" className="shrink-0">
-                  <path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12Z" strokeLinejoin="round" />
-                  <circle cx="12" cy="9" r="2.4" />
-                </svg>
-                <span className="flex-1 t-body">Drop a pin</span>
-                <span aria-hidden className="text-label-3">›</span>
-              </button>
             </div>
           )}
 
           {searching && <p className="ios-section-footer">Searching…</p>}
+
+          {/* Dropping a pin is the fallback for somewhere no geocoder knows,
+              so it is offered exactly when the search comes back empty. */}
           {!searching && query.trim().length >= 2 && results.length === 0 && (
-            <p className="ios-section-footer">Nothing found. Try a different spelling.</p>
+            <>
+              <p className="ios-section-footer">
+                Nothing found. Check the spelling, or place it on the map yourself.
+              </p>
+              <div className="ios-group mt-4">
+                <button
+                  type="button"
+                  onClick={() => {
+                    closeSearch()
+                    setPinDropping(true)
+                  }}
+                  className="pressable ios-row"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" className="shrink-0">
+                    <path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12Z" strokeLinejoin="round" />
+                    <circle cx="12" cy="9" r="2.4" />
+                  </svg>
+                  <span className="flex-1 t-body">Drop a pin</span>
+                  <span aria-hidden className="text-label-3">›</span>
+                </button>
+              </div>
+            </>
           )}
-          {results.length > 0 && (
+
+          {matchedResults.length > 0 && (
             <div className="ios-group mt-4">
-              {results.map((r, i) => (
+              {matchedResults.map(({ result: r, existing }, i) => (
                 <button
                   key={`${r.lat}-${r.lng}-${i}`}
                   type="button"
-                  onClick={() => {
-                    requestFlyTo({ lat: r.lat, lng: r.lng, zoom: 14 })
-                    closeSearch()
-                  }}
+                  onClick={() => openSearchResult(r, existing)}
                   className="pressable ios-row"
                 >
                   <span className="min-w-0 flex-1">
                     <span className="block truncate t-body">{r.name}</span>
                     <span className="block truncate t-footnote text-label-2">{r.locality || r.address}</span>
+                  </span>
+                  <span className={`shrink-0 t-footnote font-semibold ${existing ? 'text-label-2' : 'text-accent'}`}>
+                    {existing ? 'In the atlas' : 'Add'}
                   </span>
                   <span aria-hidden className="text-label-3">›</span>
                 </button>
