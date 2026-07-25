@@ -56,6 +56,9 @@ function load(file: string): ImportedPlace[] {
  * sources, which are numerous but looser about naming.
  */
 const SOURCES = [
+  // The hand-picked editorial list first, so on a duplicate its name and
+  // "Curated" provenance win over the same venue from a scraped guide.
+  'curated-places.json',
   'lefooding-places.json',
   'gaultmillau-places.json',
   'wikidata-places.json',

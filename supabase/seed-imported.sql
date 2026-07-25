@@ -8,6 +8,49 @@ insert into public.profiles (id, username, display_name, onboarded, is_seed)
 values ('00000000-0000-4000-a000-000000000001', 'curated', 'Curated', false, true) on conflict do nothing;
 
 insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('39f1679c-dbb1-483e-a1db-fb05e15a28fd', null, 'Tinos, Greece', 'To Thalassaki', '{food}', 37.6152262, 25.0430027, 'Τήνος - Πύργος, Υστέρνια, Greece', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('ae37fe5b-bb3b-4299-a50c-8cc2697370f4', null, 'Tinos, Greece', 'San to Alati', '{food}', 37.5328003, 25.1720928, 'Ηρώων Πολυτεχνείου, Άγιος Φωκάς, Greece', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('c5db4a31-325f-477f-a87b-12b2f83af1b0', null, 'Tinos, Greece', 'Marathia', '{food}', 37.5304316, 25.1797486, 'Ηρώων Πολυτεχνείου, Άγιος Φωκάς, Greece', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('d6c51a20-6f91-44e8-a46a-bc13846563f0', null, 'Tinos, Greece', 'Pantopoleio Tereza', '{food}', 37.5829491, 25.201738, 'Tinos Regional Unit, Greece', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('e1ba5b39-bcb0-42d7-ad0a-49ee9e6a6e10', null, 'Tinos, Greece', 'Museum of Marble Crafts', '{culture,artisan}', 37.6406827, 25.0439214, 'Πύργος - Όρμος Πανόρμου, Πύργος, Greece', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('cc1959f8-ba66-4872-a67f-118a867fa26a', null, 'Tinos, Greece', 'Panagia Evangelistria', '{culture}', 37.5448, 25.1618, 'Chora, Tinos, Greece', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('5a8e2e91-9ffb-452f-a3a8-a3442fa8a13c', null, 'Tinos, Greece', 'Kolimbithra Beach', '{nature}', 37.6072, 25.144, 'Tinos, Greece', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('60c1c4e4-d269-48f8-a4d5-743e4332b3dd', null, 'Athens, Greece', 'Line', '{bars}', 37.9774, 23.733, 'Athens, Greece', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('2584dd2f-b8a3-4705-a62d-8d5d6de28d43', null, 'Athens, Greece', 'The Clumsies', '{bars,nightlife}', 37.9789715, 23.7298314, 'Πραξιτέλους 30, Athens, Greece', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('b2018fce-4e76-4208-a388-223a0077e1d6', null, 'Athens, Greece', 'Baba au Rum', '{bars,nightlife}', 37.9773986, 23.7297829, 'Klitiou 6, Athens, Greece', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('e931df9e-5b07-4152-a4dc-99134443990f', null, 'Athens, Greece', 'Taf Coffee', '{coffee}', 37.9836086, 23.7309479, 'Εμμανουήλ Μπενάκη 7-9, Athens, Greece', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('72cc3775-2f9e-42eb-ad52-159ea26a5a60', null, 'Athens, Greece', 'O Kostas', '{food}', 37.9759, 23.7316, 'Syntagma, Athens, Greece', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('2cc675aa-6cac-4a36-a06a-4f9c9972afe0', null, 'Athens, Greece', 'O Thanasis', '{food}', 37.9761723, 23.7270354, 'Μητροπόλεως, Athens, Greece', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('be9da0ac-8202-4cb8-ac9f-ac14409fad64', null, 'Athens, Greece', 'Karamanlidika tou Fani', '{food}', 37.98014, 23.7256935, 'Σωκράτους 1, Athens, Greece', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('6ca0192e-0201-49d4-aea1-a0fa6ea1d302', null, 'Athens, Greece', 'Diporto', '{food}', 37.9807336, 23.7258352, 'Σωκράτους 9, Athens, Greece', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('38f0b243-c093-46cd-a79c-7b72f983e910', null, 'Athens, Greece', 'Nolan', '{food}', 37.9748243, 23.7324082, 'Βουλής 31-33, Athens, Greece', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('4e8ca55d-3c0a-4af3-a286-ffae8a970050', null, 'Athens, Greece', 'Acropolis Museum', '{culture}', 37.9685331, 23.7284706, 'Διονυσίου Αρεοπαγίτου 15, Athens, Greece', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('d077e8cf-301d-4d4d-a1f9-50a7e0095061', null, 'Athens, Greece', 'Benaki Museum', '{culture,art}', 37.9760309, 23.7403449, 'Κουμπάρη 1, Athens, Greece', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('6499f105-227f-43a3-a6e6-d2a6871914a8', null, 'Athens, Greece', 'Stavros Niarchos Foundation Cultural Center', '{culture,nature}', 37.9410423, 23.693306, 'Συγγρού 364, Municipality of Kallithea, Greece', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('e64d1a84-910d-4b72-a740-41f6775a75f6', null, 'Athens, Greece', 'National Garden', '{nature}', 37.9735816, 23.7377926, 'Athens, Greece', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('9d810712-6244-4d6c-a-3a-2582ffc5e47e', null, 'Athens, Greece', 'Lycabettus Hill', '{nature}', 37.9806863, 23.7439015, 'Αριστίππου, Athens, Greece', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('b033bbcd-2410-43fb-a6bd-cc7cad4443fc', null, 'Madrid, Spain', 'Casa Dani', '{food}', 40.4271797, -3.6857552, 'Calle de Ayala 28, Madrid, Spain', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('f080a79b-620d-41ed-a6d7-2598a528da98', null, 'Madrid, Spain', 'Sacha', '{food}', 40.4607935, -3.6874703, 'Calle de Juan Hurtado de Mendoza, Madrid, Spain', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('c826f24e-1c65-4afe-a2bb-cf750e48ced4', null, 'Madrid, Spain', 'Bar La Campana', '{food}', 40.4148501, -3.7068326, 'Calle Botoneras 6, Madrid, Spain', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('e8c5ebb2-d15c-4bf6-a999-1044ba22e7a8', null, 'Madrid, Spain', 'Casa Julio', '{food}', 40.4243081, -3.7036592, 'Calle de la Madera 37, Madrid, Spain', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('d9962d88-fab4-41aa-a322-7c22d44a7f32', null, 'Madrid, Spain', 'Taberna La Ardosa', '{bars,food}', 40.4237686, -3.7017746, 'Calle de Colón 13, Madrid, Spain', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('0c69c7cd-d8c7-4b63-a2b5-1d352e531b33', null, 'Madrid, Spain', 'Botín', '{food,culture}', 40.4141745, -3.707981, 'Calle de Cuchilleros 17, Madrid, Spain', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('2d97e7a2-5408-4da4-a99f-5a0681a0a546', null, 'Madrid, Spain', 'Salmón Guru', '{bars}', 40.4149017, -3.6995344, 'Calle de Echegaray 21, Madrid, Spain', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('f36332fa-d944-4552-aa27-f7a8cca7f84c', null, 'Madrid, Spain', '1862 Dry Bar', '{bars}', 40.4241414, -3.7065971, 'Calle del Pez 27, Madrid, Spain', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('6801f2c3-81e1-40bd-a161-f1d82e9e3038', null, 'Madrid, Spain', 'HanSo Café', '{coffee}', 40.4238831, -3.7054987, 'Calle del Pez 20, Madrid, Spain', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('d828a22d-cb0b-4a0b-a323-b826a333bc38', null, 'Madrid, Spain', 'Toma Café', '{coffee}', 40.4264913, -3.7059638, 'Calle de la Palma 49, Madrid, Spain', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('b44a251b-fec0-404d-aa8a-b556b30ab568', null, 'Madrid, Spain', 'Corral de la Morería', '{music,food}', 40.4127418, -3.7141548, 'Calle de la Morería 17, Madrid, Spain', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('d738da4d-99c7-41cb-aeff-cb8670ffec18', null, 'Madrid, Spain', 'Casa Hernanz', '{artisan,shopping}', 40.4142151, -3.7076742, 'Calle de Toledo 18, Madrid, Spain', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('40d9f6ce-b239-4cc8-ad1f-85faf3138396', null, 'Madrid, Spain', 'Museo del Prado', '{art,culture}', 40.4137925, -3.6920407, 'Paseo del Prado, Madrid, Spain', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('794b7519-036b-4fd7-aa20-8ace7cb774f0', null, 'Madrid, Spain', 'Museo Reina Sofía', '{art,culture}', 40.4080495, -3.6944216, 'Calle de Santa Isabel 52, Madrid, Spain', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('430034dd-c74c-4313-a7bb-3e8320a4c57f', null, 'Madrid, Spain', 'Museo Thyssen-Bornemisza', '{art,culture}', 40.4162159, -3.6949317, 'Paseo del Prado 8, Madrid, Spain', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('50f80a67-15a8-42d9-a550-38be66a03d40', null, 'Madrid, Spain', 'Parque del Retiro', '{nature}', 40.414946, -3.6832845, 'Madrid, Spain', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('25b0c3de-c65b-4f78-a1c1-4e35aec0ca35', null, 'Madrid, Spain', 'El Rastro', '{shopping}', 40.4093802, -3.7071369, 'Calle Ribera de Curtidores 9, Madrid, Spain', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('d18d05c3-d60c-45f1-a781-a032a799abb4', null, 'Madrid, Spain', 'Matadero Madrid', '{art,culture}', 40.3915448, -3.6976625, 'South Bypass, Madrid, Spain', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('045338c8-ed74-446a-a16d-8f35ef1c76d3', null, 'Knokke-Heist, Belgium', 'Sel Gris', '{food}', 51.344099, 3.2563957, 'Zeedijk-Duinbergen 315, Knokke-Heist, Belgium', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('d892d846-1eb8-4a66-a39d-57de0f74b32a', null, 'Knokke-Heist, Belgium', 'Café de Paris', '{food}', 51.3524371, 3.2893477, 'Van Bunnenplein 29, Knokke-Heist, Belgium', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('9a998b2a-30d0-40be-a55b-6e46ccb6a1be', null, 'Knokke-Heist, Belgium', 'Guy Pieters Gallery', '{art}', 51.3556116, 3.3017849, 'Zeedijk-Het Zoute 775, Knokke-Heist, Belgium', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('38fbb7a0-f08d-4c9a-a378-9a4c62989a43', null, 'Knokke-Heist, Belgium', 'Zwin Nature Park', '{nature}', 51.355784, 3.3666185, 'Knokke-Heist, Belgium', 'Listed by Curated', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('12266b05-218b-4863-a3ad-436633b19368', null, 'Saint-Gilles, Belgium', 'Daily 3000', '{food}', 50.8239521, 4.3494253, '20a Rue Antoine Bréart, 1060, Saint-Gilles', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('97746261-ed61-437f-aa15-211e84d5a5e0', null, 'Guimaëc, France', 'Friko', '{food}', 48.6673937, -3.7089282, '3P lasenn an Iliz, 29620, Guimaëc', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('92485ebb-babf-410d-a8f7-dfb64d07dfc8', null, 'Ostabat-Asme, France', 'Ostavals', '{food}', 43.2542869, -1.0789318, '64120, Ostabat-Asme', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -214,7 +257,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('fec50c84-240b-4d52-a253-1fe2a22d019d', null, 'Paris, France', '19 Saint Roch', '{food}', 48.86540060000001, 2.3321869, '19R ue Saint-Roch, 75001, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('7e85441d-d74b-4ddb-a563-1e63a55d0a1f', null, 'Marseille, France', 'Bistrot Chave', '{food}', 43.2951318, 5.391553, '78B oulevard Chave, 13005, Marseille', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ed6a0e3b-c621-42bd-ab4b-9c86b38ba0f8', null, 'Paris, France', 'Le Cheval d’Or', '{food,shopping}', 48.87580060000001, 2.3873649, '21R ue de la Villette, 75019, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('adc7e36b-b062-4c99-ada5-8ff25e2a5004', null, 'Paris, France', 'Deux Gares Express', '{food,bars,shopping}', 48.8784449, 2.3582579, '2R ue des Deux Gares, 75010, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('adc7e36b-b062-4c99-ada5-8ff25e2a5004', null, 'Paris, France', 'Deux Gares Express', '{food,bars,shopping}', 48.8784449, 2.3582579, '2R ue des Deux Gares, 75010, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('310ab0a2-0dfa-4d44-acf0-2de63f054de6', null, 'Paris, France', 'Le Maquis', '{food}', 48.8931567, 2.3373588, '53R ue des Cloys, 75018, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('da7ba618-9322-4a08-a959-4c106d9e9020', null, 'Paris, France', 'ChoCho', '{food}', 48.8757409, 2.349255, '54R ue de Paradis, 75010, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('562bf90f-f0de-4881-a590-aee72470ae19', null, 'Paris, France', 'Fantine', '{food}', 48.869602, 2.3397492, '6R ue de la Bourse, 75002, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -257,10 +303,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('56be089c-5afa-416c-ac44-79f0b1b87a08', null, 'Boeschepe, France', 'Auberge du Vert Mont', '{food}', 50.7929103, 2.7033326, '1318R ue du Mont Noir, 59299, Boeschepe', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('25e5cba0-0d92-482e-a877-338e3378c3ce', null, 'Paris, France', 'Chez Carrie', '{food}', 48.8666409, 2.3460472, '14R ue Léopold Bellan, 75002, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('4be8f3f8-1792-4484-ac7a-977c637b587c', null, 'Paris, France', 'Kokoya', '{food}', 48.8832521, 2.3233971, '5R ue des Batignolles, 75017, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('8402fd12-7b27-4e5a-a-da-1cb8ff2a1b6c', null, 'Paris, France', 'Tomo', '{food}', 48.8530796, 2.337768, '16R ue Grégoire de Tours, 75006, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('8402fd12-7b27-4e5a-a-da-1cb8ff2a1b6c', null, 'Paris, France', 'Tomo', '{food}', 48.8530796, 2.337768, '16R ue Grégoire de Tours, 75006, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3854caec-532c-43fc-ab78-49108b814ee8', null, 'Paris, France', 'Pontochoux', '{food}', 48.8613226, 2.3652312, '18R ue du Pont aux Choux, 75003, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3ae0dfcf-99f9-4fb9-a5ce-6bf8ad4da7f8', null, 'Sète, France', 'Tempo', '{food}', 43.4021147, 3.6960343, '16R ue André Portes, 34200, Sète', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('05be52a6-c042-40da-a3a0-3dd84c600c38', null, 'Saint-Jean-de-Luz, France', 'Fargeot', '{food}', 43.3859093, -1.6557831, '5R ue Philippe Veyrin, 64500, Saint-Jean-de-Luz', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -467,7 +510,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('6aa9e869-a14c-4977-a341-a9ee20bf671e', null, 'Lille, France', 'Le Présentoir', '{food}', 50.6366173, 3.0650869, '24R ue Pierre Mauroy, 59800, Lille', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('4b57cff7-71fc-4505-aaab-3af2bd54c4fc', null, 'Saint-Trojan-les-Bains, France', 'Moment', '{food}', 45.8423151, -1.2083606, '76R ue de la République, 17370, Saint-Trojan-les-Bains', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('99ce6e6e-f6a2-42f6-af6c-1c989070e164', null, 'Rennes, France', 'La Petite Ourse', '{food}', 48.1083377, -1.6827275, '48B oulevard de la Liberté, 35000, Rennes', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('d3b338e9-aea7-43f7-ad14-bb1e825abce0', null, 'Rennes, France', 'Le Nabuchodonosor', '{food}', 48.11322209999999, -1.6772271, '12R ue Hoche, 35000, Rennes', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('d3b338e9-aea7-43f7-ad14-bb1e825abce0', null, 'Rennes, France', 'Le Nabuchodonosor', '{food}', 48.11322209999999, -1.6772271, '12R ue Hoche, 35000, Rennes', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('ddcc6c5c-ac6b-4214-a1a7-4e488a378e70', null, 'Rennes, France', 'Peska', '{food}', 48.1166893, -1.6809015, '19R ue Saint-Malo, 35000, Rennes', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('6b3174db-680e-49f1-a33f-2d2ad33fcecc', null, 'Marseille, France', 'Le Saint Esprit', '{food}', 43.2981192, 5.3675084, '16R ue du Refuge, 13002, Marseille', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('215e18f6-32d1-44e8-a38f-dc1e542fddde', null, 'Mouchard, France', 'Le Comptoir Kokagué', '{food}', 46.9755564, 5.797454800000001, '8R ue Léopold Alixant, 39330, Mouchard', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -510,10 +556,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('6057dd37-78af-4089-a8f8-2dbed907cdc0', null, 'Vernon, France', 'Blossom', '{food}', 49.0891314, 1.4949349, '35Q uai Anatole Camere, 27200, Vernon', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8cc7f89d-5c67-4c9b-a2f5-f9bfae92f953', null, 'Antwerpen, Belgium', 'Riku Ramen', '{food}', 51.2203958, 4.3982318, '15H aarstraat, 2000, Antwerpen', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('143c7869-67e1-4f67-a3dd-a70e7c1e57d0', null, 'Lille, France', 'Krevette', '{food}', 50.62499039999999, 3.0682271, '66B oulevard Jean-Baptiste Lebas, 59000, Lille', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('4a6504e4-7885-416c-a2e0-d588c2ead650', null, 'Marseille, France', 'La Marine des Goudes', '{food}', 43.2152134, 5.346441, '16R ue Désiré Pelaprat, 13008, Marseille', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('4a6504e4-7885-416c-a2e0-d588c2ead650', null, 'Marseille, France', 'La Marine des Goudes', '{food}', 43.2152134, 5.346441, '16R ue Désiré Pelaprat, 13008, Marseille', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a0b5b7d1-cca8-440f-ac1d-83de6d5debe0', null, 'Paris, France', 'Lissit', '{food}', 48.8638625, 2.3722196, '48R ue de la Folie Méricourt, 75011, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('fbffb830-e077-4eb2-ab88-1682dc7766e2', null, 'Paris, France', 'Pochana', '{food}', 48.8655127, 2.3665466, '1P assage du Jeu de Boules, 75011, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('596552d0-8ac7-41ca-a2c5-dbce6e42c649', null, 'Saint-André-de-Majencoules, France', 'La Mutfak', '{food}', 44.022561, 3.6793566, '30570, Saint-André-de-Majencoules', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -720,7 +763,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('85bb60de-7538-4274-af7c-3d56faf40352', null, 'Apt, France', 'Loupino', '{food}', 43.8857215, 5.3715018, '406A venue de Lançon, 84400, Apt', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('572936cd-5609-4203-a120-84cead32e8d0', null, 'Issy-les-Moulineaux, France', 'Koedo', '{food}', 48.8227578, 2.2472957, '28A venue du Bas Meudon, 92130, Issy-les-Moulineaux', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('b4cdb457-a7f5-4b05-a338-3f525cc33f5c', null, 'Maubec, France', 'Mama', '{food}', 43.84410279999999, 5.1398671, '2T raverse de l''Épicerie, 84660, Maubec', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('eb8fd644-e97a-440c-a2f5-8248d50a2a50', null, 'Montreuil, France', 'Arsène', '{food}', 48.8528516, 2.4236211, '54 TERRue Robespierre, 93100, Montreuil', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('eb8fd644-e97a-440c-a2f5-8248d50a2a50', null, 'Montreuil, France', 'Arsène', '{food}', 48.8528516, 2.4236211, '54 TERRue Robespierre, 93100, Montreuil', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('63245a20-d2e5-49bc-a4e3-e2c643609e3d', null, 'Paris, France', 'Mehmet', '{food}', 48.8895801, 2.3458757, '43R ue Ramey, 75018, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f40a2175-569a-4843-a5d6-f76ca4aa4c9b', null, 'Paris, France', 'Magma', '{food}', 48.8651114, 2.3672331, '9R ue Jean-Pierre Timbaud, 75011, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('b5e421bb-5465-4e75-a1e7-e30320a4a103', null, 'Paris, France', 'Zinga', '{food}', 48.87329010000001, 2.3533652, '10R ue des Petites Écuries, 75010, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -763,10 +809,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('b5979c93-930a-4a81-a69d-061248a23714', null, 'Paris, France', 'Dilia', '{food}', 48.8686477, 2.386202, '1R ue d''Eupatoria, 75020, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('7c0dc7fe-35cc-4c6a-a9c1-1b94b1daa468', null, 'Lectoure, France', 'Racine', '{food}', 43.9336597, 0.6229518, '6R ue Fontelie, 32700, Lectoure', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('052a2dc7-d8e0-47b9-a223-5a582de0aa58', null, 'Vannes, France', 'Partisan', '{food}', 47.6586787, -2.7537205, '13P lace du Général de Gaulle, 56000, Vannes', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('c0455204-3861-413e-a7db-0cc6f8a6f342', null, 'Saint-Méloir-des-Ondes, France', 'La Ferme du Vent', '{food}', 48.6449753, -1.8743996, '35350, Saint-Méloir-des-Ondes', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('c0455204-3861-413e-a7db-0cc6f8a6f342', null, 'Saint-Méloir-des-Ondes, France', 'La Ferme du Vent', '{food}', 48.6449753, -1.8743996, '35350, Saint-Méloir-des-Ondes', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('cc5d9ca3-51a4-4081-a620-673de1e01ad2', null, 'Tours, France', 'Dame Jeanne', '{food}', 47.39601039999999, 0.6914731000000001, '111R ue Colbert, 37000, Tours', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('08dff52f-c1c0-4791-a36e-0ad42caa09cc', null, 'Lunel, France', 'Maison Soubeiran', '{food}', 43.6750824, 4.1328288, '129C ours Gabriel Péri, 34400, Lunel', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('7497bb95-4739-4d83-a3ae-c616bbd13918', null, 'Rodelle, France', 'La Petite Auberge', '{food}', 44.4577068, 2.624676399999999, '12340, Rodelle', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -973,7 +1016,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('eca1d328-e337-4f16-af96-bc3ecfd9423e', null, 'Gent, Belgium', 'Why Not', '{food}', 51.0619585, 3.7300844, '9000, Gent', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('500f60a8-adb8-4dba-a248-e2eefdc7de62', null, 'Antwerpen, Belgium', 'Banh Mi', '{food,bars,shopping}', 51.22131479999999, 4.4023894, '8K orte Koepoortstraat, 2000, Antwerpen', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('9aa0d130-9772-4606-add2-c7363212e736', null, 'Gent, Belgium', 'Alard', '{food}', 51.0578544, 3.7424061, '28A ntwerpsesteenweg, 9040, Gent', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('99ebc936-ef01-4c70-a6ea-354688edc5a6', null, 'Paris, France', 'Trouble', '{food}', 48.8770202, 2.3400569, '15R ue Hippolyte Lebas, 75009, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('99ebc936-ef01-4c70-a6ea-354688edc5a6', null, 'Paris, France', 'Trouble', '{food}', 48.8770202, 2.3400569, '15R ue Hippolyte Lebas, 75009, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('49cbc305-9b72-498b-a2d4-66572e53e1c9', null, 'Visé, Belgium', 'Les Tchéroux', '{food}', 50.80970740000001, 5.6905841, '50R ue Collinet, 4600, Visé', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('91e365ca-0e07-4a08-a601-b903e9fea6fd', null, 'Antwerpen, Belgium', 'Taqueria Rico', '{food}', 51.2173546, 4.3963844, '29A Oever, 2000, Antwerpen', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ca1129e2-c935-4978-a324-d09a9347235a', null, 'Antwerpen, Belgium', 'Les Années Folles', '{food}', 51.1953633, 4.4109259, '31G eneraal Lemanstraat, 2018, Antwerpen', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -1016,10 +1062,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('a98e1294-9aa2-43a6-a32c-51324430563a', null, 'Paris, France', 'Crudo', '{food}', 48.88809989999999, 2.319649099999999, '107R ue de Ménilmontant, 75020, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a28214db-0978-4759-a540-56c7eabfa9c3', null, 'Habay, Belgium', 'Bistro du Châtelet', '{food}', 49.73118649999999, 5.6541469, '4R ue du Châtelet, 6720, Habay', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d72afdd4-ecb5-4070-ab9f-4da4c3e0ae44', null, 'Toulouse, France', 'Bistrot August', '{food}', 43.6060068, 1.4542361, '62R ue Pierre-Paul Riquet, 31000, Toulouse', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('1b485928-388f-4f46-a3c7-f66e53d8086e', null, 'Clermont-Ferrand, France', 'Sergio''s Deli', '{food}', 45.78526660000001, 3.0850944, '1P lace des Bughes, 63000, Clermont-Ferrand', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('1b485928-388f-4f46-a3c7-f66e53d8086e', null, 'Clermont-Ferrand, France', 'Sergio''s Deli', '{food}', 45.78526660000001, 3.0850944, '1P lace des Bughes, 63000, Clermont-Ferrand', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('6ac6f7bc-7bf0-47f4-a136-8048e6b76fb0', null, 'Marseille, France', 'À Moro', '{food}', 43.29296, 5.378180899999998, '3R ue Venture, 13001, Marseille', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('59cac34f-75d3-4225-ac19-516acf9e5574', null, 'Rouen, France', 'Artefact', '{food}', 49.4397302, 1.0977174, '3P lace Barthélémy, 76000, Rouen', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('9ecf584b-03c4-4c4d-a62f-4dbfaa293d49', null, 'Bruxelles, Belgium', 'Gazzosa', '{food}', 50.8445195, 4.3548779, '17R ue Saint-Jean, 1000, Bruxelles', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -1226,7 +1269,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('9ac9e64c-2b59-4b8e-a4e6-ff23ec623d1d', null, 'Marseille, France', 'La Relève', '{food}', 43.289493, 5.366532299999999, '41R ue d''Endoume, 13007, Marseille', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0219906e-417e-4080-a367-e0ee439800ee', null, 'Paris, France', 'Osteria Ferrara', '{food}', 48.85129, 2.3832968, '7R ue du Dahomey, 75011, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('4e1737f8-726f-43e2-ac78-741ac0867bda', null, 'Toulouse, France', 'Superette', '{food}', 43.5990143, 1.4328422, '7P lace de l''Estrapade, 31300, Toulouse', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('a83c7c4e-b4eb-4ebc-acd7-72f25d278b0a', null, 'Paris, France', 'Café du Clown', '{food,shopping}', 48.85198660000001, 2.3360266, '6R ue Lobineau, 75006, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('a83c7c4e-b4eb-4ebc-acd7-72f25d278b0a', null, 'Paris, France', 'Café du Clown', '{food,shopping}', 48.85198660000001, 2.3360266, '6R ue Lobineau, 75006, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('e6235064-14f6-4056-ad2a-2fcefb19d0ba', null, 'Paris, France', 'Juveniles', '{food}', 48.8663517, 2.3370229, '47R ue de Richelieu, 75001, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('04478ac4-857b-4b2a-a7ec-37e1289c295e', null, 'Montpellier, France', 'Augusta', '{food}', 43.6117444, 3.8768376, '34000, Montpellier', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('2ac5127c-9b43-4240-a4e7-94fc4c608b4b', null, 'Aix-en-Provence, France', 'Les Vieilles Canailles', '{food}', 43.5274151, 5.4463577, '7R ue Isolette, 13100, Aix-en-Provence', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -1269,10 +1315,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('ec6f6114-3395-4a24-a200-5f4d02004cb3', null, 'Paris, France', 'Ten Belles Bread', '{food}', 48.858005, 2.373534, '19R ue Breguet, 75011, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('12f002ae-c98d-4366-a248-2ae38dc7d561', null, 'Paris, France', 'Vantre', '{food}', 48.86854659999999, 2.3702408, '19R ue de la Fontaine au Roi, 75011, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('1bc269ce-c372-46c6-a274-fe0f8df34e09', null, 'Paris, France', 'Le Dauphin', '{food}', 48.869447, 2.3711154, '131A venue Parmentier, 75011, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('98072d98-44b0-47ba-a234-885dedcb7855', null, 'Paris, France', 'Septime', '{food}', 48.85357740000001, 2.380852, '80R ue de Charonne, 75011, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('98072d98-44b0-47ba-a234-885dedcb7855', null, 'Paris, France', 'Septime', '{food}', 48.85357740000001, 2.380852, '80R ue de Charonne, 75011, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e1613f7b-0f65-4495-a11f-b2412f0c7241', null, 'Paris, France', 'Early June', '{food}', 48.8729691, 2.3632729, '19R ue Jean Poulmarch, 75010, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('2ccd6c23-64b0-4c15-a87d-2036917db838', null, 'Paris, France', 'Le Truffaut', '{food}', 48.88868139999999, 2.3166724, '89R ue Truffaut, 75017, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('bfe3973d-45d1-496b-a5cd-51aa05b4d0a8', null, 'Paris, France', 'Chantoiseau', '{food}', 48.8878044, 2.3347482, '63R ue Lepic, 75018, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -1479,7 +1522,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('bd075b90-fe68-4b72-a36f-90e2bb702702', null, 'Namur, Belgium', 'Vino Vino', '{bars,shopping}', 50.4620358, 4.8654581, '61R ue des Brasseurs, 5000, Namur', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('520e3095-2548-455b-a746-f5ce7756f5f0', null, 'Antwerpen, Belgium', 'Billie''s Bottle Shop', '{bars,shopping}', 51.214174, 4.3997666, '38A almoezenierstraat, 2000, Antwerpen', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('6e4e8345-42da-4363-ac94-2026b12926a8', null, 'Gent, Belgium', 'Edelrot', '{bars,shopping}', 51.0548949, 3.7262607, '6B elfortstraat, 9000, Gent', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('ab0c34f3-fc98-4f85-a794-1b76a7a46478', null, 'Liège, Belgium', 'Les Vintrépides', '{bars,shopping}', 50.644927, 5.5771761, '43E n Neuvice, 4000, Liège', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('ab0c34f3-fc98-4f85-a794-1b76a7a46478', null, 'Liège, Belgium', 'Les Vintrépides', '{bars,shopping}', 50.644927, 5.5771761, '43E n Neuvice, 4000, Liège', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('1290a288-4c29-49c4-aeb9-db4c5eba1c4c', null, 'Ixelles, Belgium', 'Jane', '{bars,shopping}', 50.8234248, 4.3630438, '63R ue Washington, 1050, Ixelles', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('591f86ce-500e-4dc8-a911-fb06a92e0496', null, 'Ixelles, Belgium', 'Titulus', '{bars,shopping,food}', 50.835575, 4.3706996, '167A Chaussée de Wavre, 1050, Ixelles', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f8e35dba-5b25-4a18-a5c3-9885e540887d', null, 'Paris, France', 'La Cale', '{bars,shopping}', 48.8747646, 2.3872003, '113R ue de Belleville, 75019, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -1522,10 +1568,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('22ffaf38-da9c-4322-a79c-53e6fd9bb25a', null, 'Grenoble, France', 'Gramenon et compagnie', '{bars,shopping}', 45.1858507, 5.722903800000001, '15b isRue Lakanal, 38000, Grenoble', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8ad4f495-5856-4d1b-a2d7-da672e32ba1b', null, 'Lille, France', 'Biovino', '{bars,shopping}', 50.628711, 3.0588588, '3P lace Sébastopol, 59000, Lille', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('7e9a0ac9-b03a-4f47-a315-f4a722ed4ca1', null, 'Saint-Brieuc, France', 'Le Piano Bleu', '{bars,shopping}', 48.5147997, -2.7643049, '4R ue Fardel, 22000, Saint-Brieuc', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('f3bf2512-0f61-41a2-a321-ab50032096b4', null, 'Saint-Pierre-Quiberon, France', 'Juste', '{bars,shopping}', 47.5209609, -3.1308432, '5P lace de la Marne, 56510, Saint-Pierre-Quiberon', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('f3bf2512-0f61-41a2-a321-ab50032096b4', null, 'Saint-Pierre-Quiberon, France', 'Juste', '{bars,shopping}', 47.5209609, -3.1308432, '5P lace de la Marne, 56510, Saint-Pierre-Quiberon', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f7cbd8d3-529e-49dd-a5aa-a0ef24a6a02b', null, 'Biarritz, France', 'Retour verre le futur', '{bars,shopping}', 43.4834744, -1.5468133, '91A venue de la Marne, 64200, Biarritz', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e13419a0-6750-4498-a799-ba2c848845e3', null, 'Saint-Pée-sur-Nivelle, France', 'Mahatsa', '{bars,shopping}', 43.3561466, -1.5505145, '10C hemin Karrika, 64310, Saint-Pée-sur-Nivelle', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('1f42a986-a713-4dd0-a47a-ebbaac656975', null, 'Saverne, France', 'La Cave', '{bars,shopping}', 48.74240640000001, 7.3611003, '1Q uai du Canal, 67700, Saverne', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -1732,7 +1775,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('afd5d090-f8cd-47c0-a718-b750a8a33850', null, 'Nice, France', 'Alvin''s Café', '{food,shopping}', 43.6990456, 7.2840836, '25R ue François Guisol, 06300, Nice', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('26cfab0c-304c-4590-a683-de9c571c209c', null, 'Rennes, France', 'La Tête Enfarinée', '{food,shopping}', 48.11107630000001, -1.6783441, '3R ue de Coetquen, 35000, Rennes', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c6fc87dd-f747-474b-a1bb-6096be446f28', null, 'Guéthary, France', 'Yaoya', '{food,shopping}', 43.4223227, -1.6089881, '251A venue du Général de Gaulle, 64210, Guéthary', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('4dc0fe01-e828-431f-a5a1-782e235e9812', null, 'Rennes, France', 'Soif', '{food,shopping}', 48.1092396, -1.6794045, '2R ue Jules Simon, 35000, Rennes', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('4dc0fe01-e828-431f-a5a1-782e235e9812', null, 'Rennes, France', 'Soif', '{food,shopping}', 48.1092396, -1.6794045, '2R ue Jules Simon, 35000, Rennes', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('7eed2d74-e815-4b1a-a690-739926703188', null, 'Chamonix-Mont-Blanc, France', 'Moody Coffee Roasters', '{food,shopping}', 45.9196501, 6.8690716, '195A venue de l''Aiguille du Midi, 74400, Chamonix-Mont-Blanc', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('b01f9b90-a5bf-4d94-a5a0-660455df9924', null, 'Mons, Belgium', 'Jolicœur', '{food,shopping}', 50.4543067, 3.9515026, '3R ue d''Enghien, 7000, Mons', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0ce06043-7b30-4c25-a7d0-dc6688111c68', null, 'Toulouse, France', 'Boulangerie Maurice', '{food,shopping}', 43.5953248, 1.4458666, '8G rande Rue Nazareth, 31000, Toulouse', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -1775,10 +1821,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('fde4c878-136c-40c2-a117-797461151693', null, 'Figeac, France', 'Madame Boulange', '{food,shopping}', 44.6089512, 2.0325433, '27R ue Caviale, 46100, Figeac', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f8eb91d5-96fc-40e3-ae17-61368fe882b8', null, 'Poitiers, France', 'Fromagerie Jérémie Chosson', '{food,shopping}', 46.5828472, 0.3435869, '5R ue du Marché Notre Dame, 86000, Poitiers', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('449fd5ed-edfc-4ca3-a569-c66b2329c229', null, 'Paris, France', 'Pontochoux Café', '{food,shopping}', 48.8613182, 2.3652296, '18R ue du Pont aux Choux, 75003, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('821cb42e-04d8-45ac-a793-bfe7e86f569d', null, 'Bayonne, France', 'Laiterie Marengo', '{food,shopping}', 43.4910311, -1.4731741, '5R ue Marengo, 64100, Bayonne', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('821cb42e-04d8-45ac-a793-bfe7e86f569d', null, 'Bayonne, France', 'Laiterie Marengo', '{food,shopping}', 43.4910311, -1.4731741, '5R ue Marengo, 64100, Bayonne', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f771c107-99a9-4fed-aed8-aeea911b30f4', null, 'Marseille, France', '180°', '{food,shopping}', 43.2836527, 5.360691699999999, '39B oulevard Bompard, 13007, Marseille', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0516a586-dd1f-4f32-a27f-6554ce235b4b', null, 'Saint-Gilles, Belgium', 'El Pueblo Latino', '{food,shopping}', 50.8313857, 4.343864, '52A venue Jean Volders, 1060, Saint-Gilles', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('bf338c16-ec07-4c30-a334-d026ab3ae846', null, 'Charleroi, Belgium', 'Le Chien Vert', '{food,shopping}', 50.4111128, 4.4389012, '28A venue des Alliés, 6000, Charleroi', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -1985,7 +2028,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('d96e3826-71f3-4286-a576-2c5604b613aa', null, 'La Ciotat, France', 'Foodetoi', '{food,shopping}', 43.1731027, 5.605662100000001, '27Q uai François Mitterrand, 13600, La Ciotat', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('6503b202-d545-42ec-a4fb-90f123a48f4e', null, 'Saint-Jeannet, France', 'Racine Carrée', '{food,shopping}', 43.74761789999999, 7.142893099999998, '45R ue du Château, 06640, Saint-Jeannet', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('72ad1780-e40f-412a-a695-db95656bc68a', null, 'Nice, France', 'Blend', '{food,shopping}', 43.6969752, 7.2767083, '22R ue Benoît Bunico, 06300, Nice', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('7ed07980-bdcd-49a8-a3ce-2afd83c9da32', null, 'Paris, France', 'Mardi Café', '{food,shopping}', 48.8763156, 2.3873535, '29R ue de la Villette, 75019, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('7ed07980-bdcd-49a8-a3ce-2afd83c9da32', null, 'Paris, France', 'Mardi Café', '{food,shopping}', 48.8763156, 2.3873535, '29R ue de la Villette, 75019, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('845a3f2e-2514-4f9e-a5eb-17f50a96efec', null, 'Bruxelles, Belgium', 'Pinpin', '{food,shopping}', 50.8377011, 4.3474569, '152R ue Blaes, 1000, Bruxelles', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('fc315291-1570-4e5f-a16b-e633211a220f', null, 'Paris, France', 'Ratafia', '{food,shopping}', 48.8507972, 2.3813871, '5R ue Saint-Bernard, 75011, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('204ee3cf-eea9-45dd-a311-869ee0ef859a', null, 'Paris, France', 'Café Isaka', '{food,shopping}', 48.8659014, 2.3359324, '9R ue Thérèse, 75001, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -2028,10 +2074,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('a16686f5-fb0c-45eb-aa6a-031e9c730ce0', null, 'Saint-Rémy-de-Provence, France', 'Terre et blé', '{food,shopping}', 43.7944237, 4.8213409, '24A venue Albin Gilles, 13210, Saint-Rémy-de-Provence', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('98459b54-ea29-4622-a26c-cd76826ef176', null, 'Nice, France', 'Maison Barale', '{food,shopping}', 43.6964577, 7.275898000000002, '7R ue Sainte-Reparate, 06300, Nice', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('252401ee-65bb-4088-a09f-d1668adfd276', null, 'Montreuil, France', 'Montreuil sur mer', '{food,shopping}', 48.8639176, 2.4426662, '15R ue de l''Église, 93100, Montreuil', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('6f38fd6c-dd45-46dc-a4d8-214504c7e144', null, 'Paris, France', 'Pastificio Passerini', '{food,shopping}', 48.84941500000001, 2.3748231, '65R ue Traversière, 75012, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('6f38fd6c-dd45-46dc-a4d8-214504c7e144', null, 'Paris, France', 'Pastificio Passerini', '{food,shopping}', 48.84941500000001, 2.3748231, '65R ue Traversière, 75012, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f4c7584c-76f2-457c-a7dc-a12d06bba0dc', null, 'Marseille, France', 'Les Pissenlits', '{food,shopping}', 43.2906222, 5.367027999999999, '147R ue Sainte, 13007, Marseille', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f89e736e-7047-424e-a772-68ee068e575b', null, 'Paris, France', 'Poissons', '{food,shopping}', 48.86413639999999, 2.355821299999999, '46R ue des Gravilliers, 75003, Paris', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('14690dfe-bece-44ae-a555-8e6b0d33722a', null, 'Plouharnel, France', 'Stop andouilles', '{food,shopping}', 47.5925929, -3.0997396, '56340, Plouharnel', 'Listed by Le Fooding', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -2082,7 +2125,6 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('629a0124-679b-41b2-a501-4096ca3542d6', null, 'Genk, Belgium', 'De Kristalijn', '{food}', 50.969997, 5.555874, 'Wiemesmeerstraat 105, 3600, Genk', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e2eb7c9f-a0de-4715-a235-7b8a83c983b4', null, 'Bruxelles (Ixelles), Belgium', 'La Villa in the Sky', '{food}', 50.817059, 4.372193, 'Avenue Louise 480, 1050, Bruxelles (Ixelles)', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8866051b-12fb-49a9-a656-2434e9b61bec', null, 'Bruxelles (Woluwe-Saint-Pierre), Belgium', 'Menssa', '{food}', 50.82287, 4.4463516, '453 Avenue de Tervueren, 1150, Bruxelles (Woluwe-Saint-Pierre)', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('3a2b3a11-e437-49bf-a21e-37c521e62f3d', null, 'Knokke-Heist, Belgium', 'Sel Gris', '{food}', 51.3440632, 3.2563566, 'Zeedijk 314, 8301, Knokke-Heist', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('2ba7130b-f1c0-4a95-a259-8a6621d675da', null, 'Brugge, Belgium', 'Zet''Joe', '{food}', 51.20975242, 3.23214866, 'Langestraat 11, 8000, Brugge', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3deb8ac5-2e95-46cb-a37e-cc0e6c80d190', null, 'Bruxelles (Ixelles), Belgium', 'Humus x Hortense', '{food}', 50.82926585, 4.3713397, 'Rue de Vergnies 2, 1050, Bruxelles (Ixelles)', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('51a10c22-4975-4d10-a8d4-a1329b16b932', null, 'Zonhoven, Belgium', 'Innesto', '{food}', 50.98737779, 5.3683682, 'Kapelhof 13-15, 3520, Zonhoven', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -2239,7 +2281,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('a863f06f-7c74-4e95-a2be-8b10624d8af0', null, 'Turnhout, Belgium', 'Savoury', '{food}', 51.318516, 4.914964, 'Steenweg op Antwerpen 106, 2300, Turnhout', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0f039ef9-2da0-4097-a2a3-ae6e3ca3cf90', null, 'Hamont-Achel, Belgium', 'Stad 10', '{food}', 51.2507193, 5.5437427, 'Stad 10, 3930, Hamont-Achel', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0533ac0e-280e-473c-ad3d-7b322d42834a', null, 'Oostende, Belgium', 'Storm', '{food}', 51.233276, 2.934541, 'Hendrik Baelskaai 21, 8400, Oostende', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('7ddad76b-2c7e-4945-a1a4-4e2eaa5970b0', null, 'Antwerpen, Belgium', 'The Butcher''s Son', '{food}', 51.199493, 4.416574, 'Boomgaardstraat 1, 2000, Antwerpen', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('7ddad76b-2c7e-4945-a1a4-4e2eaa5970b0', null, 'Antwerpen, Belgium', 'The Butcher''s Son', '{food}', 51.199493, 4.416574, 'Boomgaardstraat 1, 2000, Antwerpen', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('828786b2-f884-4134-aa03-d7867b0bd7e6', null, 'Mechelen, Belgium', 'Tinèlle', '{food}', 51.033142, 4.479543, 'Goswin De Stassartstraat 90, 2800, Mechelen', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('1e858ee2-2ee6-4a3e-a063-a4dc4d6bb920', null, 'Leuven, Belgium', 'Trente', '{food}', 50.8764962, 4.6904358, 'Kapucijnenvoer 48, 3000, Leuven', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('70a23d0a-3948-4d38-a9ea-9032a9eaea42', null, 'Kortrijk (Marke), Belgium', 'Vol-Ver', '{food}', 50.79781, 3.236911, 'Watervalstraat 23, 8510, Kortrijk (Marke)', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -2281,10 +2326,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('5233515f-77fb-4515-a5c8-d44aca2ed674', null, 'Antwerpen, Belgium', 'Camionette', '{food}', 51.2035943, 4.4260349, 'Hospitaalplein 5, 2018, Antwerpen', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('9f613978-8d7e-4464-a21f-fd1c2cdffddc', null, 'Knokke-Heist, Belgium', 'Carcasse', '{food}', 51.3489647, 3.3269196, 'Oosthoekplein 1, 8300, Knokke-Heist', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f4910398-addc-4748-a94d-14d0a26d1ae0', null, 'Liège, Belgium', 'Caudalie', '{food}', 50.6421213, 5.5686201, 'Rue Saint-Jean-en-Isle 6, 4000, Liège', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('cfa9d88e-64a9-4d34-a54f-f9a46345395c', null, 'Dinant (Falmignoul), Belgium', 'CCnomie', '{food}', 50.206013, 4.894687, 'Rue haute 38, 5500, Dinant (Falmignoul)', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('cfa9d88e-64a9-4d34-a54f-f9a46345395c', null, 'Dinant (Falmignoul), Belgium', 'CCnomie', '{food}', 50.206013, 4.894687, 'Rue haute 38, 5500, Dinant (Falmignoul)', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('6a6e9f42-c1a1-4d72-a543-0add02c106cb', null, 'La Louvière, Belgium', 'Céma Passion', '{food}', 50.472996, 4.191558, 'Avenue Gambetta 63, 7100, La Louvière', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('9d7ffbfa-94eb-45ce-a994-9e34326b61c8', null, 'Bruxelles, Belgium', 'Ciao', '{food}', 50.8381748, 4.3532956, 'Place Poelaert 6, 1000, Bruxelles', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e8d843a6-0579-499a-a125-ea5c4ee515d4', null, 'Aalst (Hofstade), Belgium', 'Cloche', '{food}', 50.9605813, 4.0347515, 'Hofstade-Dorp 21, 9308, Aalst (Hofstade)', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -2492,7 +2534,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('f5e58ce6-281d-4a90-a220-7398a1e02d77', null, 'Kasterlee, Belgium', 'KAN10', '{food}', 51.23418, 4.971484, 'Geelsebaan 85A, 2460, Kasterlee', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('951cb733-9dd9-4e01-a8c5-993232f5e534', null, 'Oostende, Belgium', 'Kiss The Chef', '{food}', 51.233831, 2.921446, 'Visserskaai 41, 8400, Oostende', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8ba9c9cc-3fbc-4564-a4be-a7358cb660f3', null, 'Ieper, Belgium', 'Klei', '{food}', 50.8511517, 2.8878459, 'Grote Markt 11, 8900, Ieper', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('b1cb6420-4c13-4a02-a227-71defddf4e22', null, 'Riemst (Vlijtingen), Belgium', 'Klost''r', '{food}', 50.834988, 5.587648, 'Kloosterstraat 10, 3770, Riemst (Vlijtingen)', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('b1cb6420-4c13-4a02-a227-71defddf4e22', null, 'Riemst (Vlijtingen), Belgium', 'Klost''r', '{food}', 50.834988, 5.587648, 'Kloosterstraat 10, 3770, Riemst (Vlijtingen)', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('877707a3-a928-4f49-ae5f-68ea309f76ec', null, 'Hannut, Belgium', 'La Belva', '{food}', 50.677446, 5.113802, 'Rue des Mayeurs 9 A, 4280, Hannut', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('cb569d8b-b7c0-4305-ac96-fe8e83170090', null, 'Verviers (Petit-Rechain), Belgium', 'La Chapellerie', '{food}', 50.614477, 5.835694, 'Chaussée de la Seigneurie 13, 4800, Verviers (Petit-Rechain)', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e78aa635-aac0-4dc3-ad4a-bbf6924ac3f8', null, 'Spa, Belgium', 'La Cour de la Reine', '{food}', 50.4916, 5.8585, 'Avenue Reine Astrid 86, 4900, Spa', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -2534,10 +2579,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('13bba319-7a98-4b87-a923-b89e8e53bea0', null, 'Namur (Wépion), Belgium', 'L''O à la bouche', '{food}', 50.414219, 4.880327, 'Rue Armand de Wasseige 1, 5100, Namur (Wépion)', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('6eca6602-5895-4f50-a65f-e952c75ff552', null, 'Oostende, Belgium', 'Lusitania', '{food}', 51.233078, 2.921766, 'Visserskaai 35, 8400, Oostende', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('01b92621-6dc9-413f-ac70-071e6f824760', null, 'Maldegem (Adegem), Belgium', 'Luzt', '{food}', 51.1754714, 3.5059784, 'Appelboom 8A, 9991, Maldegem (Adegem)', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('f338e55f-c223-4225-a11b-377ab55cb784', null, 'Tongeren-Borgloon, Belgium', 'Ma Marraine', '{food}', 50.78111726, 5.46348072, 'Maastrichterstraat 2, 3700, Tongeren-Borgloon', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('f338e55f-c223-4225-a11b-377ab55cb784', null, 'Tongeren-Borgloon, Belgium', 'Ma Marraine', '{food}', 50.78111726, 5.46348072, 'Maastrichterstraat 2, 3700, Tongeren-Borgloon', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e7ce1dc3-4569-4549-a5d5-887762d37830', null, 'Braine-l''Alleud, Belgium', 'Maïnoï', '{food}', 50.68561336, 4.37937349, 'Chausée Reine Astrid 34, 1420, Braine-l''Alleud', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0c05349f-ee93-4561-a1d6-9ee02fa985a0', null, 'Spa, Belgium', 'Manoir de Lébioles', '{food}', 50.492432, 5.86432, 'Domaine de Lébioles 1/5, 4900, Spa', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('441de996-8aeb-41dc-a310-987b6cf097b7', null, 'Turnhout, Belgium', 'Marché 17', '{food}', 51.322735, 4.948032, 'Grote Markt 17, 2300, Turnhout', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -2745,7 +2787,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('375c74fa-7d8b-4b46-aad7-6fbcb4e79040', null, 'Thuin, Belgium', 'La Petite Gayole', '{food}', 50.293942, 4.329539, 'Place de Thuillies 12, 6530, Thuin', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('28546a48-772e-4186-af7a-0bce9f82cbce', null, 'Tournai, Belgium', 'La Petite Madeleine', '{food}', 50.610319, 3.382715, 'Rue de La Madeleine 19, 7500, Tournai', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ea22316f-6835-4719-a7de-8c98a5257388', null, 'Maasmechelen, Belgium', 'La Strada', '{food}', 50.939476, 5.691884, 'Rijksweg 634, 3630, Maasmechelen', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('c3bfbaa8-e252-4ae4-a1ed-104ca612658c', null, 'Silly, Belgium', 'La table de Jeanne', '{food}', 50.6499954, 3.9231055, 'Rue de la Station 8, 7830, Silly', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('c3bfbaa8-e252-4ae4-a1ed-104ca612658c', null, 'Silly, Belgium', 'La table de Jeanne', '{food}', 50.6499954, 3.9231055, 'Rue de la Station 8, 7830, Silly', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('add8271d-6157-41db-a337-0e93a0f2f58f', null, 'Wavre, Belgium', 'La Table des Templiers', '{food}', 50.743572, 4.575897, 'Chemin du Temple 10, 1300, Wavre', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('65f50ba3-9c5c-4c8d-a656-d8d202513830', null, 'Ohey, Belgium', 'La Table du Domaine', '{food}', 50.4592868, 5.169648, 'Rue Sur les Sarts 79A, 5352, Ohey', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('15369714-9906-4cb4-a73c-f3460ae3cf3c', null, 'Ottignies-Louvain-la-Neuve, Belgium', 'La Table L', '{food}', 50.6682707, 4.6201046, 'Place des Sciences 3, 1348, Ottignies-Louvain-la-Neuve', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -2787,10 +2832,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('b7fbd572-e940-437a-aebb-7608a13c78ec', null, 'Resteigne, Belgium', 'Lesse Capade', '{food}', 50.09021, 5.175723, '155 Rue de la Carrière, 6927, Resteigne', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0091cf5e-450f-4310-a59e-1c4e45a1a26e', null, 'Brasschaat, Belgium', 'L''Excelsior', '{food}', 51.294147, 4.48093, 'Armand Reussensplein 9-11, 2930, Brasschaat', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('1870ecdd-2748-4e63-af38-42be3fb99b40', null, 'Antwerpen, Belgium', 'Lima Nikkei Izakaya', '{food}', 51.2085397, 4.4084036, 'Mechelsesteenweg 76, 2018, Antwerpen', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('e93f3a62-fbde-45cc-a2e1-ffaee51e002e', null, 'Namur (Bouge), Belgium', 'L''imprimerie Gastro-Pub', '{food}', 50.477203, 4.8769326, 'Chaussée de Louvain 305, 5004, Namur (Bouge)', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('e93f3a62-fbde-45cc-a2e1-ffaee51e002e', null, 'Namur (Bouge), Belgium', 'L''imprimerie Gastro-Pub', '{food}', 50.477203, 4.8769326, 'Chaussée de Louvain 305, 5004, Namur (Bouge)', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e4d7c70a-81df-4cfe-a508-ebf466b6f408', null, 'Bruxelles (Ixelles), Belgium', 'L''Improbable', '{food}', 50.820787, 4.3866641, 'Rue Eugène Cattoir 5, 1050, Bruxelles (Ixelles)', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('76570bbd-a36c-4c83-a2ac-418c219c3f84', null, 'Bruxelles, Belgium', 'Lola', '{food}', 50.840557, 4.354778, 'Place du Grand Sablon 33, 1000, Bruxelles', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('79d38fc9-597a-4837-a0a9-d7fed34de800', null, 'Malle, Belgium', 'Lotier', '{food}', 51.2890711, 4.6719308, 'Antwerpsesteenweg 478, 2390, Malle', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -2998,7 +3040,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('53cd29a2-9264-415e-a3e5-60704e631fb0', null, 'Drongen, Belgium', 'Onglet', '{food}', 51.0751978, 3.6294861, 'Gavergrachtstraat 93, 9031, Drongen', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('81bdce47-ae19-490d-afa4-b74a2fd74754', null, 'Mons, Belgium', 'Origines by Celine', '{food}', 50.453196, 3.952192, 'Rue de la Coupe 25, 7000, Mons', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('081474bd-6781-441b-af95-b0a66f9638d8', null, 'Mons, Belgium', 'Oscar', '{food}', 50.4553462, 3.9535501, 'Rue de Nimy 14, 7000, Mons', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('35432493-68d7-4241-ad94-66d29e1a66d4', null, 'Bruxelles, Belgium', 'Osteria Romana', '{food}', 50.8156372, 4.3711988, 'Avenue Legrand 11, 1000, Bruxelles', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('35432493-68d7-4241-ad94-66d29e1a66d4', null, 'Bruxelles, Belgium', 'Osteria Romana', '{food}', 50.8156372, 4.3711988, 'Avenue Legrand 11, 1000, Bruxelles', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('c7d809ce-c40d-487e-a3d5-91b08be5a24c', null, 'Lochristi, Belgium', 'OX’E', '{food}', 51.0945235, 3.8270742, 'Dorp-West 89, 9080, Lochristi', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a7f2bb24-4d53-4858-a155-eec84f546637', null, 'Bouillon, Belgium', 'Panorama', '{food}', 49.794598, 5.072, 'Rue Au-Dessus de la Ville 25, 6830, Bouillon', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('039fb1ef-97a8-41f9-a6bc-87fea9b47e3e', null, 'Oostende, Belgium', 'Paroles Paroles', '{food}', 51.2270234, 2.9258847, 'Brandariskaai 5, 8400, Oostende', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -3040,10 +3085,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('08bc0ec5-465e-4f13-aee2-51d64f1a6dd8', null, 'Antwerpen, Belgium', 'A Tavola', '{food}', 51.1984377, 4.4072164, 'Lange Lozanastraat 282, 2018, Antwerpen', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('675c22ab-4835-499d-af69-5b36af919c48', null, 'La Hulpe, Belgium', 'Amarante', '{food}', 50.7371511, 4.4950777, 'Place Alphonse Favresse 51, 1310, La Hulpe', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('134bcbc4-b564-428e-a59d-096b6c8b06e5', null, 'Antwerpen, Belgium', 'Appelmans', '{food}', 51.219833, 4.400567, 'Papenstraatje 1, 2000, Antwerpen', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('92048ecd-7d50-485b-a10a-b896a0f55872', null, 'Deinze, Belgium', 'Au Bain Marie', '{food}', 50.990063, 3.590667, 'Emiel Clauslaan 141, 9800, Deinze', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('92048ecd-7d50-485b-a10a-b896a0f55872', null, 'Deinze, Belgium', 'Au Bain Marie', '{food}', 50.990063, 3.590667, 'Emiel Clauslaan 141, 9800, Deinze', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8ea4bd4c-bbd6-4846-a572-b50a4a7ac592', null, 'Antwerpen, Belgium', 'B23', '{food}', 51.227188, 4.403028, 'Brouwersvliet 23, 2000, Antwerpen', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('02f15152-4f94-4e44-ad65-ff165285ff96', null, 'Antwerpen, Belgium', 'Bacchus', '{food}', 51.2303511, 4.4108324, 'Napelsstraat 128, 2000, Antwerpen', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('4299d773-3d99-4201-af00-457280336974', null, 'Deinze (Bachte-Maria-Leerne), Belgium', 'Bachtecafe', '{food}', 51.000005, 3.549033, 'Leernsesteenweg 58, 9800, Deinze (Bachte-Maria-Leerne)', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -3251,7 +3293,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('262d52e8-edd1-480a-a340-3951e13fe8af', null, 'Aarschot, Belgium', 'Atelier Delvaux', '{shopping}', 50.9847983, 4.8346618, 'Jozef Tielemansstraat 51, 3200, Aarschot', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('6f04bff6-b017-4cea-a20e-cfce41f1c7ce', null, 'Menen, Belgium', 'Atelier Rosa', '{shopping}', 50.8017951, 3.1258042, 'Bruggestraat 97, 8930, Menen', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('21f21dbf-044a-4ad5-a5b8-576a263c6894', null, 'Mettet, Belgium', 'Aux douceurs d''Alexandre', '{shopping}', 50.32026478, 4.65983927, 'Rue Reine Elisabeth 23, 5640, Mettet', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('07ebc964-3149-4756-a6a2-ee323934f0ba', null, 'Sint-Martens-Latem, Belgium', 'Babette', '{food}', 50.99846, 3.607714, 'Pontstraat 2, 9831, Sint-Martens-Latem', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('07ebc964-3149-4756-a6a2-ee323934f0ba', null, 'Sint-Martens-Latem, Belgium', 'Babette', '{food}', 50.99846, 3.607714, 'Pontstraat 2, 9831, Sint-Martens-Latem', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('29c9aac2-9241-4a94-a447-7cfaabc0b455', null, 'Bruxelles (Schaerbeek), Belgium', 'Bab''s Wine to share', '{food}', 50.8590102, 4.3909525, 'Avenue Chazal 200, 1030, Bruxelles (Schaerbeek)', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('29bb3df9-cce7-48c7-a1aa-31ac2f6a316c', null, 'Gent, Belgium', 'Babu', '{food}', 51.048406, 3.727291, 'Sint-Pietersnieuwstraat 9, 9000, Gent', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('624faf75-5bae-43a3-a9e1-8cd6bdfdd318', null, 'Bruxelles (Saint-Gilles), Belgium', 'Badi', '{food}', 50.833587, 4.3505325, 'Rue Hôtel des Monnaies 80, 1060, Bruxelles (Saint-Gilles)', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -3293,10 +3338,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('ea75c2ea-879f-411c-adea-63f672156406', null, 'Zedelgem (Aartrijke), Belgium', 'Bistro Boschvogel', '{food}', 51.1208106, 3.0884018, 'Noordstraat 4, 8211, Zedelgem (Aartrijke)', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0cd171b4-fba5-4264-a88b-fc300876e418', null, 'Bruxelles (Ixelles), Belgium', 'Bistro Nazionale', '{food}', 50.82604, 4.37012, 'Rue Lannoy 2, 1050, Bruxelles (Ixelles)', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('baa9dafb-823e-4e85-a897-447e3ce87980', null, 'Habay, Belgium', 'Bistrot du Châtelet', '{food}', 49.7318616, 5.6539981, 'Rue du Châtelet 4, 6720, Habay', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('c5e3311b-56c2-4af9-a6cd-e441e1ca5bc1', null, 'Leuven, Belgium', 'Bittersweet', '{shopping}', 50.880467, 4.711312, 'Bondgenotenlaan 108, 3000, Leuven', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('c5e3311b-56c2-4af9-a6cd-e441e1ca5bc1', null, 'Leuven, Belgium', 'Bittersweet', '{shopping}', 50.880467, 4.711312, 'Bondgenotenlaan 108, 3000, Leuven', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('38dbe3bd-5cee-42c3-a435-b17e95ca3680', null, 'Hasselt, Belgium', 'Blend by Rauw', '{food}', 50.935632, 5.336601, 'Slachthuiskaai 5c, 3500, Hasselt', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('7db7992c-670c-4126-aabb-b80ae4c3ba52', null, 'Bruxelles, Belgium', 'Boemvol', '{food}', 50.8476217, 4.3499965, 'Rue Henri Maus 25, 1000, Bruxelles', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ab82d6dd-b100-4353-aa82-358e5c83ba30', null, 'Bruxelles (Ixelles), Belgium', 'Bombay BBQ', '{food}', 50.8292434, 4.3704035, 'Chaussée d''Ixelles 280, 1050, Bruxelles (Ixelles)', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -3504,7 +3546,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('0403bd5f-501c-4c71-a41f-612e542099d0', null, 'Hergenrath, Belgium', 'L''Etable 67', '{food}', 50.7104217, 6.0393162, 'Rue de la Gare 67, 4728, Hergenrath', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ee19f7c4-1add-4fbe-ab3b-878608f78782', null, 'Bruxelles, Belgium', 'Life is Beautiful', '{bars}', 50.852633, 4.343083, 'Rue Antoine Dansaert 161, 1000, Bruxelles', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d4aa5c94-f490-42ec-a03a-ce78c93aef80', null, 'Bruxelles, Belgium', 'Lila29', '{food}', 50.8620324, 4.3577123, 'Boulevard du Roi Albert II 30, 1000, Bruxelles', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('c6b51b62-afe2-4ca8-a957-a7ca7697d80a', null, 'La Louvière (Houdeng-Aimeries), Belgium', 'L''intuition', '{food}', 50.477745, 4.149588, 'Rue de l''Hospice 59, 7110, La Louvière (Houdeng-Aimeries)', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('c6b51b62-afe2-4ca8-a957-a7ca7697d80a', null, 'La Louvière (Houdeng-Aimeries), Belgium', 'L''intuition', '{food}', 50.477745, 4.149588, 'Rue de l''Hospice 59, 7110, La Louvière (Houdeng-Aimeries)', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('df82c07f-29cf-4599-a9b2-4a1a09523618', null, 'Wavre, Belgium', 'Lio', '{shopping}', 50.700006, 4.561791, 'Rue des Carmes 12, 1300, Wavre', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('37befc18-8a00-493e-a424-18adac1bf855', null, 'Lasne, Belgium', 'Lio', '{shopping}', 50.685408, 4.483263, 'Chemin du Ruisselet 1, 1380, Lasne', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f5a10269-46d9-4257-a4c8-70fc23c7af4c', null, 'Antwerpen, Belgium', 'Little BÚN', '{food}', 51.22781348, 4.40407233, 'Sint-Aldegondiskaai 44, 2000, Antwerpen', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -3546,10 +3591,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('e8024b29-551e-4da7-a42e-3a9723d2068d', null, 'Leuven, Belgium', 'Nirvana Kitchen', '{food}', 50.8783239, 4.7054749, 'Monseigneur Ladeuzeplein 32, 3000, Leuven', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3ef8e996-584f-491e-a6b7-a088974832b4', null, 'Bruxelles (Schaerbeek), Belgium', 'Nocturlabe', '{food}', 50.8616763, 4.3829077, 'Rue Josse Impens 3, 1030, Bruxelles (Schaerbeek)', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e9636923-7d5d-444d-a6bc-1429266c13d7', null, 'Kortrijk, Belgium', 'Nomma', '{food}', 50.8278407, 3.2664424, 'Grote Markt 10, 8500, Kortrijk', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('9cf64efd-bbc8-4f23-a73e-91de58bf2e20', null, 'Kortrijk, Belgium', 'Nude', '{food}', 50.8258334, 3.2623039, 'Koning Albertstraat 15, 8500, Kortrijk', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('9cf64efd-bbc8-4f23-a73e-91de58bf2e20', null, 'Kortrijk, Belgium', 'Nude', '{food}', 50.8258334, 3.2623039, 'Koning Albertstraat 15, 8500, Kortrijk', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('980fd0ae-4d8d-4d8a-a2a7-df2dce59dae3', null, 'Antwerpen, Belgium', 'Nuoc Mam', '{food}', 51.2101916, 4.3945785, 'Volkstraat 72G, 2000, Antwerpen', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ae07c59a-8adb-4cfc-a4dc-996638e32296', null, 'Koksijde (Oostduinkerke), Belgium', 'Odé', '{food}', 51.1323621, 2.6731008, 'Albert 1 laan 82, 8670, Koksijde (Oostduinkerke)', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e0ee4e6a-3f8e-4738-a209-fa6ae207c65a', null, 'Liège, Belgium', 'OGGI Bistroteca', '{food}', 50.6436938, 5.5751152, 'Rue Souverain Pont 40, 4000, Liège', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -3757,7 +3799,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('01bc7394-9ee1-412e-a60a-23d46a09e24c', null, 'Nospelt, Luxembourg', 'Bonifas', '{food}', 49.673794, 6.008633, 'Grand Rue 4, 8391, Nospelt', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('42bd40e5-cf71-4cc3-a723-3f3da122e8da', null, 'Walferdange, Luxembourg', 'Hostellerie Stafelter', '{food}', 49.658882, 6.135057, 'Rue de Dommeldange 1, 7220, Walferdange', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('37ac8e63-64f2-4511-a35e-db729c9ee374', null, 'Luxembourg, Luxembourg', 'L''Hêtre Beim Musée', '{food}', 49.6105317, 6.1338042, 'Rue du St Esprit 24, 1475, Luxembourg', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('31a8a6b8-cddf-45e8-a388-0cb0ff87fca0', null, 'Bridel, Luxembourg', 'Maison B', '{food}', 49.6463756, 6.0995774, 'Rue Biergerkräiz 31, 8120, Bridel', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('31a8a6b8-cddf-45e8-a388-0cb0ff87fca0', null, 'Bridel, Luxembourg', 'Maison B', '{food}', 49.6463756, 6.0995774, 'Rue Biergerkräiz 31, 8120, Bridel', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('38b5eed1-14b6-470f-ac03-b9de4d6c45e0', null, 'Luxembourg, Luxembourg', 'Mu', '{food}', 49.6058276, 6.1377188, 'Boulevard d’Avranches 40, 1160, Luxembourg', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('91d3ef44-8e77-4cf0-afa4-b3b4204b4c34', null, 'Luxembourg, Luxembourg', 'Nostos', '{food}', 49.6007864, 6.1404836, 'Rue de Trevires 61, 2628, Luxembourg', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('294b4c7c-e952-4f4c-a3fe-63cd0129ddbc', null, 'Bertrange, Luxembourg', 'Podenco Bodega', '{food}', 49.6132862, 6.0607138, 'Rue de l’industrie 1, 8069, Bertrange', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -3799,10 +3844,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('5cf6575b-3c3d-4b41-a0cb-fc1a9934029c', null, 'Luxembourg, Luxembourg', 'Chiche!', '{food}', 49.5981901, 6.1180913, 'Avenue Pasteur 20, 2310, Luxembourg', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('9ccfbf25-a04a-45b3-ac85-da963d1a24d8', null, 'Luxembourg, Luxembourg', 'Chocolate House', '{shopping}', 49.61075, 6.132543, 'Rue du Marché-aux-Herbes 20, 2449, Luxembourg', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('18e0bbef-0796-4d15-af76-e6fa20771904', null, 'Walferdange, Luxembourg', 'Chocolats du Cœur', '{shopping}', 49.6629, 6.1336, 'Route de Diekirch 50, 7220, Walferdange', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('78090e10-a95b-4fa4-a2ea-dfe4c21641db', null, 'Bourglinster, Luxembourg', 'Château de Bourglinster à la Distillerie', '{food}', 49.702425, 6.2170844, '8, rue du Château, 6162, Bourglinster', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('78090e10-a95b-4fa4-a2ea-dfe4c21641db', null, 'Bourglinster, Luxembourg', 'Château de Bourglinster à la Distillerie', '{food}', 49.702425, 6.2170844, '8, rue du Château, 6162, Bourglinster', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('7b04a1f3-06b0-4769-adb4-f69a81b4f95c', null, 'Bourglinster, Luxembourg', 'Côté Cour', '{food}', 49.702973, 6.216026, 'Rue du Château 8, 6162, Bourglinster', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ae9c676e-bef0-4c10-a06c-2b7e6d8cb37e', null, 'Luxemburg, Luxembourg', 'Dipso', '{bars}', 49.611126, 6.133982, 'Rue de la Loge 4, 2240, Luxemburg', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('aeec0452-0bca-4950-a5ad-972febab68da', null, 'Esch-sur-Alzette, Luxembourg', 'Drupi''s', '{bars}', 49.6148106, 6.1332188, 'Rue de l’Alzette 26, 4011, Esch-sur-Alzette', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -4010,7 +4052,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('4c7fffd7-f7c6-4875-a444-6a85e4446a84', null, 'Rhenen, Netherlands', 'Het Oude Gemeentehuis', '{food}', 51.957357, 5.568925, 'Herenstraat 47, 3911 JB, Rhenen', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('7249227c-266e-4468-a427-a61498b7a6e4', null, 'Brummen, Netherlands', 'Judith', '{food}', 52.090461, 6.134585, 'Eerbeekseweg 6, 6971 LB, Brummen', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('78eb54d1-2c76-44bf-a49d-f06ea561f990', null, 'Blokzijl, Netherlands', 'Kaatje bij de Sluis', '{food}', 52.726503, 5.960879, 'Brouwerstraat 20, 8356 DV, Blokzijl', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('17e4bb0d-1a91-4dfb-ad75-26f632765908', null, 'Arnhem, Netherlands', 'Konijnenvoer', '{food}', 51.98093, 5.90653, 'Weverstraat 40, 6811 EM, Arnhem', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('17e4bb0d-1a91-4dfb-ad75-26f632765908', null, 'Arnhem, Netherlands', 'Konijnenvoer', '{food}', 51.98093, 5.90653, 'Weverstraat 40, 6811 EM, Arnhem', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('af944524-53e1-4d64-a38a-b7c003755288', null, 'Gouda, Netherlands', 'Lizz', '{food}', 52.01056, 4.71334, 'Spieringstraat 1, 2801 ZH, Gouda', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('42fdf9b6-4455-490a-a6a8-b0bc875342c0', null, 'Doetinchem, Netherlands', 'Lokaal', '{food}', 51.972666, 6.288116, 'Ruimzichtlaan 150, 7001 KG, Doetinchem', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('06b57ad8-6c10-40d0-aaa5-ba0872c63ba8', null, 'Amersfoort, Netherlands', 'Merlot', '{food}', 52.160466, 5.383696, 'Grote Koppel 16, 3813 AA, Amersfoort', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -4052,10 +4097,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('d1c80b57-ff11-406d-aed9-6b3ad0d96bc4', null, 'Terschelling (Hoorn), Netherlands', 'AEST', '{food}', 53.3970129, 5.3428793, 'Dorpsstraat 35, 8896 JA, Terschelling (Hoorn)', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0dc4dd30-3442-4100-a986-8c3042072e30', null, 'Amstelveen, Netherlands', 'Amber Garden', '{food}', 52.302147, 4.868821, 'Van Heuven Goedhartlaan 15, 1181 LE, Amstelveen', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('608e3504-6672-4294-a6fc-4790c700a798', null, 'Breda, Netherlands', 'Amí Bistro', '{food}', 51.58383, 4.77711, 'Ginnekenstraat 88, 4811 JJ, Breda', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('be5f8231-31ff-4fff-a705-fe232f05f223', null, 'Leeuwarden, Netherlands', 'Bistro Aragosta', '{food}', 53.20227, 5.79956, 'Voorstreek 12, 8911 JN, Leeuwarden', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('be5f8231-31ff-4fff-a705-fe232f05f223', null, 'Leeuwarden, Netherlands', 'Bistro Aragosta', '{food}', 53.20227, 5.79956, 'Voorstreek 12, 8911 JN, Leeuwarden', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0e63b1ac-c955-4b14-a38c-97548d7b8ecc', null, 'Almere Haven, Netherlands', 'Bakboord', '{food}', 52.332238, 5.220664, 'Veerkade 10, 1357 PK, Almere Haven', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('b47a045b-5492-46a1-a1f1-70d06090cfaf', null, 'Middelburg, Netherlands', 'Barres', '{food}', 51.49763964, 3.61061811, 'Plein 1940 /  10, 4331 LH, Middelburg', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f1322851-3d68-4bef-a33a-58c422e9a844', null, 'Arnhem, Netherlands', 'La Belle Source', '{food}', 52.010392, 5.865344, 'Bakenbergseweg 277, 6816 VP, Arnhem', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -4263,7 +4305,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('16a77f21-587e-4bcf-aed9-b4ee6f264af0', null, 'Amsterdam, Netherlands', 'Senses', '{food}', 52.365788, 4.893322, 'Vijzelstraat 45, 1017 HE, Amsterdam', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('16e5174c-ad5d-471a-a444-7dfaac4424e6', null, 'Amsterdam, Netherlands', 'Sinck', '{food}', 52.36625, 4.88227, 'Prinsengracht 422, 1016 JC, Amsterdam', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('989382eb-564c-4641-a312-01b56eedfe92', null, 'Geldrop, Netherlands', 'Restaurant SMAEK', '{food}', 51.422479, 5.556794, 'Nieuwendijk 17, 5664HA, Geldrop', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('38ee1893-22aa-4e4d-aa44-96de5b98a6e0', null, 'Venlo (Tegelen), Netherlands', 'Sober', '{food}', 51.3479198, 6.1418143, 'Venloseweg 9, 5931 GR, Venlo (Tegelen)', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('38ee1893-22aa-4e4d-aa44-96de5b98a6e0', null, 'Venlo (Tegelen), Netherlands', 'Sober', '{food}', 51.3479198, 6.1418143, 'Venloseweg 9, 5931 GR, Venlo (Tegelen)', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('15a5d95a-93d2-4c1e-a798-85abca978557', null, 'Meppel, Netherlands', 'Sukade', '{food}', 52.695625, 6.187822, 'Stoombootkade 10, 7941 BS, Meppel', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('46f0c416-cab0-40aa-a73b-f0b4411a0f4c', null, 'Oisterwijk, Netherlands', 'De Swaen', '{food}', 51.581201, 5.197341, 'De Lind 47, 5061 HT, Oisterwijk', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('17164542-697b-46b2-ae6d-d3f08091dbf4', null, 'Rotterdam, Netherlands', 'Sānsān', '{food}', 51.919483, 4.483549, 'Hang 33, 3011 GG, Rotterdam', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -4305,10 +4350,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('5a32f24d-2a5f-49a3-a06d-cbee84922bf0', null, 'Leidschendam, Netherlands', 'Bij Erik', '{food}', 52.079829, 4.39825, 'Sluisplein 11, 2266 AV, Leidschendam', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('7cbabad2-a861-4b0c-a2b2-4de22251c55d', null, 'Linschoten, Netherlands', 'Bij Mette', '{food}', 52.061256, 4.915272, 'Dorpstraat 41, 3461 CP, Linschoten', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f68f7911-eb31-4e2f-adbe-e73ee1c11740', null, 'Leiden, Netherlands', 'Bistro Bord''o', '{food}', 52.161238, 4.485629, 'Apothekersdijk 2, 2312 DC, Leiden', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('9d26585b-368d-4a39-a545-47d9ed3b4329', null, 'Rotterdam, Netherlands', 'Bistro Eddie', '{food}', 51.906957, 4.4774946, 'Calandstraat 12A, 3016 CB, Rotterdam', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('9d26585b-368d-4a39-a545-47d9ed3b4329', null, 'Rotterdam, Netherlands', 'Bistro Eddie', '{food}', 51.906957, 4.4774946, 'Calandstraat 12A, 3016 CB, Rotterdam', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('4495508f-fdbb-4229-a46d-14d5a425132b', null, 'Oss, Netherlands', 'Bistro Louis', '{food}', 51.76946, 5.52372, 'Peperstraat 14A, 5341 CZ, Oss', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('77b9a68b-cfec-4229-a47a-a1b5e47a5e8b', null, 'Grou, Netherlands', 'Bistro Pinot', '{food}', 53.0968236, 5.8407882, 'Wijde Steeg 10, 9001 AK, Grou', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('1816c2a0-4506-429e-ad10-d03e5d1cd53e', null, 'Amsterdam, Netherlands', 'Bistrot des Alpes', '{food}', 52.3538746, 4.8862288, 'Hobbemakade 64, 1071 XM, Amsterdam', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -4516,7 +4558,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('8b396827-d4d8-45e5-afe1-ddc260121e0c', null, 'Maastricht, Netherlands', 'Danyel', '{food}', 50.83878, 5.68725, 'Observantenweg 3, 6212 EN, Maastricht', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('bc7f93c5-c0d4-4e43-acab-ed867d541208', null, 'Barchem, Netherlands', 'De Lochemse Berg', '{food}', 52.1385617, 6.4268554, 'Lochemseweg 42, 7244 RS, Barchem', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('51ab13e3-fb9b-4d75-a55c-f716a4d46b15', null, 'Den Haag, Netherlands', 'Dekxels', '{food}', 52.085903, 4.311722, 'Denneweg 130, 2514 CL, Den Haag', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('1d447912-2598-4ee4-a8dc-f7f642dd07f6', null, 'Haarlem, Netherlands', 'Deplanu', '{food}', 52.3940224, 4.630544, 'Santpoorterplein 1, 2023 DM, Haarlem', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('1d447912-2598-4ee4-a8dc-f7f642dd07f6', null, 'Haarlem, Netherlands', 'Deplanu', '{food}', 52.3940224, 4.630544, 'Santpoorterplein 1, 2023 DM, Haarlem', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('3042ac2e-be2e-4ee2-a719-35d34ee70bb1', null, 'Hapert, Netherlands', 'DiVino', '{food}', 51.3687281, 5.2532468, 'Kerkstraat 27, 5527 EE, Hapert', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('fbf1700f-1c54-4005-a185-a1ff61846001', null, 'Hilversum, Netherlands', 'Dudockx Bar & Kitchen', '{food}', 52.221041, 5.141744, 'Vreelandseweg 50, 1216 CH, Hilversum', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('180a5f1d-c55c-439b-a22a-9a37add6662b', null, 'Terschelling (Formerum), Netherlands', 'Dún', '{food}', 53.4070043, 5.2963133, 'Badweg Formerum 10, 8894 KW, Terschelling (Formerum)', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -4558,10 +4603,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('1c12ec87-f34d-4f49-a10a-0ac320f60abd', null, 'Oudendijk, Netherlands', 'La Mère Anne', '{food}', 52.601904, 5.0029695, 'Dorpsweg 110, 1631 DJ, Oudendijk', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('1c3526ee-237f-4146-af4a-a7a83fb4a834', null, 'Amsterdam, Netherlands', 'La Vallade', '{food}', 52.35425, 4.9269, 'Ringdijk 23, 1097 AB, Amsterdam', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('32b44a17-8d10-4395-a405-bb67ebfc44da', null, 'Buren, Netherlands', 'LaGrange', '{food}', 51.91147, 5.33227, 'Buitenhuizenpoort 11, 4116 CA, Buren', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('c2e02ad1-ee6a-4d9f-ac8a-274eb14a3870', null, 'Maastricht, Netherlands', 'L''Auberge', '{food}', 50.8186874, 5.6673966, 'Von Dopfflaan 10, 6213 NG, Maastricht', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('c2e02ad1-ee6a-4d9f-ac8a-274eb14a3870', null, 'Maastricht, Netherlands', 'L''Auberge', '{food}', 50.8186874, 5.6673966, 'Von Dopfflaan 10, 6213 NG, Maastricht', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('93011f6b-6c01-45c1-a-ff-8556ff02852c', null, 'Reuver, Netherlands', 'LEF', '{food}', 51.2845066, 6.0785163, 'Rijksweg 41, 5953 AA, Reuver', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8774c294-4753-4b08-a3fd-81664cec7ed9', null, 'Den Haag (Scheveningen), Netherlands', 'Lemongrass', '{food}', 52.100151, 4.270263, 'Dr. Lelykade 24, 2583 CM, Den Haag (Scheveningen)', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('075c545d-c3aa-4b63-a3b0-9b0c2cb066fc', null, 'Amsterdam, Netherlands', 'Leonardo''s Ravioli Bar', '{food}', 52.3546267, 4.8933856, 'Eerste van der Helststraat 80, 1072 NZ, Amsterdam', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -4769,7 +4811,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('6b1fbfab-ef6b-4789-a7b8-b57de5a8ad73', null, 'Bergen op Zoom, Netherlands', 'The Bar', '{bars}', 51.4944107, 4.2873137, 'Grote Markt 36, 4611 NT, Bergen op Zoom', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f5ccf908-cfe3-4a7a-aa2f-7372c5b08382', null, 'Den Haag, Netherlands', 'Five Points Cocktailbar', '{bars}', 52.07927, 4.316798, 'Korte Houtstraat 5A, 2513 CA, Den Haag', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('4d5ad4a6-b9e4-433c-ab41-d866073fc7e2', null, 'Zwolle, Netherlands', 'The Peacock Bar', '{bars}', 52.5106873, 6.0943432, 'Bethlehemkerkplein 46, 8011 PH, Zwolle', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('987e2cef-c989-44b5-a1f7-d85a620821a4', null, 'Rotterdam, Netherlands', 'The Rumah', '{bars}', 51.9176, 4.47553, 'Oude Binnenweg 110C, 3012 JG, Rotterdam', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('987e2cef-c989-44b5-a1f7-d85a620821a4', null, 'Rotterdam, Netherlands', 'The Rumah', '{bars}', 51.9176, 4.47553, 'Oude Binnenweg 110C, 3012 JG, Rotterdam', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('1a5581ab-88c3-4509-a6d6-92b5ea318d6b', null, 'Groningen, Netherlands', 'The Stockroom', '{bars}', 53.217601, 6.569634, 'Oosterstraat 24-1, 9711 NE, Groningen', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('dd63cb6d-3314-4943-a118-8fdd2107894b', null, 'Amsterdam, Netherlands', 'The Tailor', '{bars}', 52.372646, 4.894815, 'Dam 9, 1016 GB, Amsterdam', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3b456339-1fdb-4f87-a49e-fcbe5b2102c0', null, 'Den Haag, Netherlands', 'Ultramarijn', '{bars}', 52.0807, 4.30894, 'Kneuterdijk 8, 2514 EN, Den Haag', 'Listed by Gault&Millau', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -4811,10 +4856,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('119d8458-a214-4d14-a4c7-6e6b4b3b2216', null, 'Amsterdam, Netherlands', 'Flore', '{food}', 52.367467, 4.894345, 'Amsterdam, Netherlands', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3066b595-7db9-4123-addf-14b6ae2056b8', null, 'Vught, Netherlands', 'Noble Kitchen', '{food}', 51.665379, 5.22971481, 'Deutersestraat 39b, Vught, Netherlands', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a29ea222-a227-4ca4-a0b9-ae8644c5aec6', null, 'Rust, Germany', 'Eatrenalin', '{food}', 48.261, 7.7379, 'Roland-Mack-Ring 5, 77977 Rust, Rust, Germany', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('860d6608-aff6-4964-a9fb-2f6c3603af6c', null, 'Pak Kret, Thailand', 'Suan Thip', '{food}', 13.9267, 100.5032, 'Pak Kret, Thailand', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('860d6608-aff6-4964-a9fb-2f6c3603af6c', null, 'Pak Kret, Thailand', 'Suan Thip', '{food}', 13.9267, 100.5032, 'Pak Kret, Thailand', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f200e6ad-a289-4deb-a089-4b46948a9498', null, 'City of London, United Kingdom', 'City Social', '{food}', 51.515166666, -0.084055555, 'City of London, United Kingdom', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('49802d94-b5e2-4df2-a39d-7f9aff62db86', null, 'Gulpen-Wittem, Netherlands', 'Julemont', '{food}', 50.814, 5.91, 'Gulpen-Wittem, Netherlands', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('b20b0ea7-041b-4045-a49e-f611eb6269ee', null, 'Bangkok, Thailand', 'Sorn', '{food}', 13.7231, 100.5685, 'Bangkok, Thailand', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -5022,7 +5064,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('f78aad23-c242-48b9-a5c8-859ab9ccd5dc', null, 'Amsterdam, Netherlands', 'Restaurant Daalder', '{food}', 52.38052, 4.88564104, 'Lindengracht 90, Amsterdam, Netherlands', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('99df10ee-b105-44ac-a8da-84424ae4a59a', null, '1st arrondissement of Paris, France', 'Plénitude - Cheval Blanc Paris', '{food}', 48.85885, 2.34218, '1st arrondissement of Paris, France', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('15c77360-7525-4f36-a0e2-dc568aed2296', null, 'Matapozuelos, Spain', 'La Botica de Matapozuelos', '{food}', 41.414338409, -4.791548867, 'Matapozuelos, Spain', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('7b965ad8-b2fd-43b4-a369-4d6942e93ce8', null, 'Jerez de la Frontera, Spain', 'LÚ Cocina y Alma', '{food}', 36.687620626, -6.135749228, 'Jerez de la Frontera, Spain', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('7b965ad8-b2fd-43b4-a369-4d6942e93ce8', null, 'Jerez de la Frontera, Spain', 'LÚ Cocina y Alma', '{food}', 36.687620626, -6.135749228, 'Jerez de la Frontera, Spain', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('72c09c0a-b1b5-47e6-a3c8-a9414247693f', null, 'Wernigerode, Germany', 'Zeitwerk', '{food}', 51.834372, 10.789754, 'Breite Straße 53a, 38855 Wernigerode, Wernigerode, Germany', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a19faac3-1802-4411-a466-2112eb9a1eed', null, 'Beverly Hills, United States', 'Maude', '{food}', 34.064583333, -118.398888888, 'Beverly Hills, United States', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a8d101f4-79c9-48f4-a2ee-78700229a7ae', null, '', 'Acquerello', '{food}', 37.791583333, -122.421472222, '', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -5064,10 +5109,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('8b5ec06d-d330-414b-a86e-f1265e8ef1b8', null, 'Boismorand, France', 'auberge des Templiers', '{food}', 47.8004295, 2.7386379, 'Boismorand, France', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('7ad95bd8-a527-4488-a200-1b0b02000706', null, 'San Francisco, United States', 'Quince', '{food}', 37.797566, -122.403396, 'San Francisco, United States', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d65eada5-6c66-416b-a45c-7b33242c58f1', null, 'Manhattan, United States', 'Agern', '{food}', 40.752597, -73.977494, 'Manhattan, United States', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('eb380010-3b7c-491e-a2fb-b06f226b4f92', null, 'Epe, Netherlands', 'De Leest', '{food}', 52.28823889, 5.9673, 'Kerkweg 1, Epe, Netherlands', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('eb380010-3b7c-491e-a2fb-b06f226b4f92', null, 'Epe, Netherlands', 'De Leest', '{food}', 52.28823889, 5.9673, 'Kerkweg 1, Epe, Netherlands', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('fe1ba77d-f99b-4393-a780-34eef7b73b10', null, 'Fencott and Murcott, United Kingdom', 'The Nut Tree Public House', '{food}', 51.836174, -1.149952, 'Murcott, Kidlington, OX5 2RE, Fencott and Murcott, United Kingdom', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a50bb36d-1d0f-4a43-a47f-be6d2c21b5db', null, 'Manhattan, United States', 'Jean Georges', '{food}', 40.7691, -73.9814, 'Manhattan, United States', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d80b685e-2ec8-431a-a93c-14bc06d3eb78', null, 'Ireland', 'La Cascade', '{food}', 51.8735, -9.5635, 'Ireland', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -5275,7 +5317,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('898a3d59-b6b0-4c77-af3a-e12e403b19d0', null, 'Vienna, Austria', 'Meierei im Stadtpark (Vienna)', '{food}', 48.204463, 16.381378, 'Am Stadtpark 2/a, 1030 Wien, Austria, Vienna, Austria', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('88796737-89c8-4669-a1b1-315e1241bda0', null, 'Lakes, United Kingdom', 'Holbeck Ghyll', '{food}', 54.41016, -2.93958, 'Lakes, United Kingdom', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('9076152b-8756-4ce1-a720-c9ca17ccf20c', null, 'Middelburg, Netherlands', 'Het Groot Paradijs', '{food}', 51.50027222, 3.61668056, 'Middelburg, Netherlands', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('3bdc52a4-4943-48f4-a29f-0a50851fab98', null, 'City of Westminster, United Kingdom', 'Hakkasan', '{food}', 51.5171, -0.1317, 'City of Westminster, United Kingdom', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('3bdc52a4-4943-48f4-a29f-0a50851fab98', null, 'City of Westminster, United Kingdom', 'Hakkasan', '{food}', 51.5171, -0.1317, 'City of Westminster, United Kingdom', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('fd129c2f-b996-4dd1-a484-a1feb6a8da00', null, 'United Kingdom', 'Harvey''s', '{food}', 51.4456, -0.166041, 'United Kingdom', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('df092b05-06fc-4fbb-a260-a4b42e605cac', null, 'Chicago, United States', 'L2O', '{food}', 41.92411111, -87.63663889, 'Chicago, United States', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('bfae5ba9-d250-4177-adfe-7ade91fe7d20', null, '3rd arrondissement of Paris, France', 'L''Ambroisie', '{food}', 48.8554, 2.3643, '3rd arrondissement of Paris, France', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -5317,10 +5362,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('2bd3a0b5-8df2-4c4b-a59d-ea302b9c69d0', null, 'Brooklyn, United States', 'Peter Luger Steak House', '{food}', 40.7099, -73.9626, 'Brooklyn, United States', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d2dce347-5b73-4085-a765-0fc3e2e50c3c', null, 'Dublin, Ireland', 'L''Ecrivain', '{food}', 53.33619, -6.24847, '109a Lower Baggot Street, Dublin, Ireland', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('97ce92a6-7b8e-4b0e-a13b-fe658135d1db', null, 'Steenwijkerland, Netherlands', 'Hof van Sonoy', '{food}', 52.72717778, 5.96078333, 'Steenwijkerland, Netherlands', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('5c4f0e09-ed03-4657-a4eb-357a24952b46', null, 'London, United Kingdom', 'La Noisette', '{food}', 51.4987, -0.159306, 'London, United Kingdom', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('5c4f0e09-ed03-4657-a4eb-357a24952b46', null, 'London, United Kingdom', 'La Noisette', '{food}', 51.4987, -0.159306, 'London, United Kingdom', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('aeb805b8-d7e6-486e-a95e-5dd6869e5e26', null, 'Los Gatos, United States', 'Manresa', '{food}', 37.2272, -121.981, 'Los Gatos, United States', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('931274f6-4a2a-4272-a26c-7d97cdd3cc76', null, 'United Kingdom', 'Maison Novelli', '{food}', 51.5228, -0.106389, 'United Kingdom', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('68adf5b1-7867-430f-a0ca-16bee115d8c0', null, 'Valkenburg aan de Geul, Netherlands', 'Prinses Juliana', '{food}', 50.86841667, 5.82834722, 'Valkenburg aan de Geul, Netherlands', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -5528,7 +5570,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('99da3fc8-d62e-4d86-aff4-e24e70091d4e', null, 'Bray, United Kingdom', 'The Waterside Inn', '{food}', 51.5092, -0.699, 'Ferry Rd, Bray, Berkshire, England, SL6 2AT, Bray, United Kingdom', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ef4b1c07-a345-4cf5-ac0e-40f2929078fc', null, 'Washington, D.C., United States', 'Gravitas', '{food}', 38.914638888, -76.984611111, 'Washington, D.C., United States', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8a68fbab-966d-4829-ac05-238220d6d3d4', null, 'Dublin, Ireland', 'Thornton''s Restaurant', '{food}', 53.33918, -6.2615, 'Dublin, Ireland', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('d24dbd78-caf6-4afc-a8bb-07849d447874', null, 'Badia, Italy', 'St. Hubertus', '{food}', 46.5715, 11.9313, 'strada Micura de Rue 20, Badia, Italy', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('d24dbd78-caf6-4afc-a8bb-07849d447874', null, 'Badia, Italy', 'St. Hubertus', '{food}', 46.5715, 11.9313, 'strada Micura de Rue 20, Badia, Italy', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('7b5a1c84-c336-469c-a479-3e5e83e90232', null, 'London, United Kingdom', 'Yauatcha', '{food}', 51.5138, -0.135167, 'London, United Kingdom', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('2b469406-2b43-4322-a005-b7245689b728', null, 'London Borough of Islington, United Kingdom', 'St. John', '{food}', 51.5203, -0.101389, 'London Borough of Islington, United Kingdom', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0b210c1d-2a78-4853-a159-444e35995470', null, 'Washington, D.C., United States', 'Little Pearl', '{food}', 38.883361111, -76.993638888, 'Washington, D.C., United States', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -5570,10 +5615,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('8a22765d-c7d0-4cdb-adf2-6a8651f29338', null, 'Strasbourg, France', 'Le 1741', '{food}', 48.5805, 7.7536, 'Strasbourg, France', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e5578db6-e3ab-4a92-a6fc-3724c9034848', null, 'Warsaw, Poland', 'Senses', '{food}', 52.245, 21.0056, 'Warsaw, Poland', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('4b10b456-16c6-42d0-add6-a68661d6c726', null, 'Vienna, Austria', 'Shiki', '{food}', 48.204112402, 16.371005654, 'Krugerstraße 3, Vienna, Austria', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('474e2033-52be-41e5-a5f0-01d69a0c4218', null, 'Athens, Greece', 'Hytra', '{food}', 37.9579, 23.7192, 'Athens, Greece', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('474e2033-52be-41e5-a5f0-01d69a0c4218', null, 'Athens, Greece', 'Hytra', '{food}', 37.9579, 23.7192, 'Athens, Greece', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('18c334a4-7387-4248-ab44-56ec8c4a96ec', null, 'Budapest, Hungary', 'Costes', '{food}', 47.4888, 19.0623, 'Budapest, Hungary', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a2dd7747-c4b9-492d-a664-3e6a6796c074', null, 'Portimão, Portugal', 'Vista', '{food}', 37.1186, -8.5375, 'Portimão, Portugal', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0283ed29-b693-4f37-a4be-f2de2b9172c6', null, 'Budapest District V, Hungary', 'Babel', '{food}', 47.4927, 19.0522, 'Piarista Köz 2, Budapest District V, Hungary', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -5781,7 +5823,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('7b5e1923-17c4-4dd1-ac9a-94f29322a6f4', null, 'Zurich, Switzerland', 'Ornellaia', '{food}', 47.3724, 8.5377, 'Zurich, Switzerland', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d7067bfe-3bc1-4010-a133-8041212c7fc0', null, 'Monte Carlo, Monaco', 'Blue Bay', '{food}', 43.748162, 7.439065, '40 Avenue Princesse Grace, 98000 Monaco, Monte Carlo, Monaco', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a401d9ca-949b-4b4e-a09a-3284389dc518', null, 'Copenhagen Municipality, Denmark', 'Pierre André', '{food}', 55.68175556, 12.58183333, 'Ny Østergade 21, 1101 København K, Copenhagen Municipality, Denmark', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('17a0f398-298c-440a-ae2c-d792412d17a2', null, 'Zurich, Switzerland', '20/20 by Mövenpick', '{food}', 47.3711, 8.5374, 'Zurich, Switzerland', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('17a0f398-298c-440a-ae2c-d792412d17a2', null, 'Zurich, Switzerland', '20/20 by Mövenpick', '{food}', 47.3711, 8.5374, 'Zurich, Switzerland', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('f668b0e0-0960-46a8-a-f7-49b8ffc8b788', null, 'Newcastle upon Tyne, United Kingdom', 'House of Tides', '{food}', 54.968, -1.6102, '28-30 Close, Newcastle upon Tyne, United Kingdom', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ed5703c3-9f39-4a15-a26e-59d68c905dd8', null, 'Ascona, Switzerland', 'Locanda Barbarossa', '{food}', 46.1516, 8.7916, 'via Muraccio 142, Ascona, Switzerland', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('b96d458e-d2d7-4f1a-abba-fa948c4504a8', null, 'North Ayrshire, United Kingdom', 'Braidwoods', '{food}', 55.6948, -4.7424, 'North Ayrshire, United Kingdom', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -5823,10 +5868,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('857612a1-9aea-4b9f-af9c-e93e20610e40', null, 'Cameron, United Kingdom', 'The Peat Inn', '{food}', 56.2783, -2.8846, 'Cameron, United Kingdom', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a4b7b51d-b56f-473b-a1d8-42265a27ac58', null, 'Menai Bridge, United Kingdom', 'Sosban & The Old Butchers', '{food}', 53.2261, -4.163, '1a High Street, Menai Bridge, United Kingdom', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('948f9591-5ba2-42af-a30d-2e8c2f032184', null, 'Weggis, Switzerland', 'Regina Montium', '{food}', 47.0483, 8.4641, 'Staffelhöhenweg 61, Weggis, Switzerland', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('d58babf0-ddc1-4c34-a84a-97c4b34ce824', null, 'Horsham, United Kingdom', 'Restaurant Tristan', '{food}', 51.0617, -0.3269, '3 Stans Way, East Street, Horsham, United Kingdom', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('d58babf0-ddc1-4c34-a84a-97c4b34ce824', null, 'Horsham, United Kingdom', 'Restaurant Tristan', '{food}', 51.0617, -0.3269, '3 Stans Way, East Street, Horsham, United Kingdom', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('2b7c9b5a-5b3f-417e-a043-fa2486bbfcd8', null, 'Ascot, United Kingdom', 'Coworth Park', '{food}', 51.4047, -0.6164, 'Blacknest Road, Ascot, United Kingdom', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('bf6f97d4-68ea-411c-a287-aa938285a58f', null, 'Enford, United Kingdom', 'Red Lion Freehouse', '{food}', 51.2727, -1.8006, 'East Chisenbury, Enford, United Kingdom', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('6e15c9c9-d7d2-4547-a463-8437245e83f1', null, 'Häggenschwil, Switzerland', 'Neue Blumenau', '{food}', 47.4942, 9.3532, 'Romanshornerstrasse 2, Häggenschwil, Switzerland', 'Listed by Michelin Guide (via Wikidata)', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -6034,7 +6076,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('266d2c90-568c-44be-a0e1-e82e7cf9f14e', null, 'Shimo-Renjaku, Japan', 'Ghibli Museum', '{art,culture}', 35.696233, 139.570431, 'Shimo-Renjaku, Japan', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('9cc891c5-f243-4313-ae8b-32d68f0c34d8', null, 'City of Edinburgh, United Kingdom', 'Scottish National Gallery', '{art,culture}', 55.950902, -3.195686, 'Belford Road, City of Edinburgh, United Kingdom', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f808e516-b24c-4024-aa44-5532aa55953a', null, '8th arrondissement of Paris, France', 'Pinacothèque de Paris', '{art,culture}', 48.87069444, 2.32575, '8th arrondissement of Paris, France', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('4dcc00aa-39b7-4ba6-a47b-fb0c8783fc50', null, 'Taranto, Italy', 'National Archaeological Museum of Taranto', '{art,culture}', 40.473705, 17.23888, 'Via Conte Camillo Benso di Cavour 10, 74123 Taranto, Taranto, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('4dcc00aa-39b7-4ba6-a47b-fb0c8783fc50', null, 'Taranto, Italy', 'National Archaeological Museum of Taranto', '{art,culture}', 40.473705, 17.23888, 'Via Conte Camillo Benso di Cavour 10, 74123 Taranto, Taranto, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('df2ff4ee-dd8c-43dc-a2a3-5732bcbc98ca', null, 'Stadtbezirk Bonn, Germany', 'August-Macke-Haus', '{art,culture}', 50.73745, 7.086314, 'Stadtbezirk Bonn, Germany', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('9b4efb8f-3f90-4cb5-a5b2-1b8c6dadfb84', null, 'Vienna, Austria', 'Albertina', '{art,culture}', 48.204561111, 16.368319444, 'Vienna, Austria', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('850b600f-92c2-43e9-a7c9-f3e617cdf3f8', null, 'Linz, Austria', 'Atelierhaus Salzamt', '{art,culture}', 48.3064, 14.2832, 'Obere Donaulände 15, 4020 Linz, Linz, Austria', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -6076,10 +6121,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('a177a242-8a6d-49ac-ab1a-9bee2be4dbee', null, 'Oldenburg, Germany', 'Augusteum', '{art,culture}', 53.1362, 8.21659, 'Elisabethstraße 1, 26135 Oldenburg, Oldenburg, Germany', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('be705f0a-42d9-4516-a356-e5e40149a420', null, 'Louisiana, United States', 'Alexandria Museum of Art', '{art,culture}', 31.3122, -92.4442, 'Louisiana, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d580ecdd-4857-4e2b-a622-89d0a1dd87b0', null, 'London Borough of Camden, United Kingdom', 'Kenwood House', '{art,culture}', 51.571388888, -0.1675, 'Hampstead Lane, London NW3 7JR, London Borough of Camden, United Kingdom', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('b7e4c4f5-e368-42db-a48c-962e9b4d17d0', null, 'Gentofte Municipality, Denmark', 'Ordrupgaard', '{art,culture}', 55.766944, 12.563333, 'Vilvordevej 110, 2920 Charlottenlund, Danmark, Gentofte Municipality, Denmark', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('b7e4c4f5-e368-42db-a48c-962e9b4d17d0', null, 'Gentofte Municipality, Denmark', 'Ordrupgaard', '{art,culture}', 55.766944, 12.563333, 'Vilvordevej 110, 2920 Charlottenlund, Danmark, Gentofte Municipality, Denmark', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a64a123b-256d-47c9-a7cd-8ca0ecbb73a0', null, 'Haifa, Israel', 'Hecht Museum', '{art,culture}', 32.763477777, 35.017977777, 'Haifa, Israel', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('054962b1-ea58-43ef-a10e-eeea2efa1d6a', null, 'Avignon, France', 'Palais des Papes', '{art,culture}', 43.9508, 4.8075, 'Plaça dau Palais, 84000 Avinhon, Avignon, France', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('48328e76-64ef-4a3e-acdd-3448ad2248b4', null, 'Bogotá, Colombia', 'Bogotá Museum of Modern Art', '{art,culture}', 4.610222222, -74.069333333, 'CL 24  6 00, Bogotá, Colombia', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -6152,7 +6194,6 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('5e8ff93e-7275-4834-acfa-810ad1057172', null, 'Naples, Italy', 'Pietrarsa railway museum', '{art,culture}', 40.8217, 14.3205, 'Via Pietrarsa 44, 80146 Napoli, Naples, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('93433641-584a-47af-a34f-61e12eb8e0df', null, 'Weimar, Germany', 'Bauhaus Museum, Weimar', '{art,culture}', 50.985, 11.32416667, 'Stéphane-Hessel-Platz 1, 99423 Weimar, Weimar, Germany', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('36851949-f0b0-4f47-a39c-ae9f22735289', null, 'Bezirk Mitte, Germany', 'James Simon Gallery', '{art,culture}', 52.52, 13.39701, 'Bezirk Mitte, Germany', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('fb062268-5d28-46ac-a59d-18b3c582e791', null, 'Athens Municipality, Greece', 'Benaki Museum', '{art,culture}', 37.97593889, 23.74040833, 'Коумбари 1, Атина, Athens Municipality, Greece', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('46ed9081-0598-4b3f-a375-abbe4c85cbc0', null, 'Turin, Italy', 'Pinacoteca Giovanni e Marella Agnelli', '{art,culture}', 45.03243, 7.665732, 'Lingotto  Via Nizza, 230 - Torino, Turin, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('129730ec-c99f-4196-a24f-7fe86dc36628', null, 'Lübeck''s Old City, Germany', 'Museum Behnhaus Drägerhaus', '{art,culture}', 53.8701, 10.6896, 'Lübeck''s Old City, Germany', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ec0a1142-07f6-4e34-a140-3e08af4001f7', null, 'California, United States', 'Charles M. Schulz Museum and Research Center', '{art,culture}', 38.46, -122.735, '2301 Hardies Lane, California, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -6184,7 +6225,6 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('847a9d91-cb6b-4f8f-af11-921e4fe5ad20', null, 'Ambérieu-en-Bugey, France', 'château des Allymes', '{art,culture}', 45.973611, 5.410278, 'Ambérieu-en-Bugey, France', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('5af4bb3a-3666-4132-ac92-aa08915acc6c', null, 'Zentrum, Germany', 'Gunzenhauser Museum', '{art,culture}', 50.82861111, 12.91527778, 'Stollberger Straße 2, 2a, Zentrum, Germany', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('7d008936-4d01-4bf6-a001-22c0ca02352c', null, 'Ceredigion, United Kingdom', 'National Library of Wales', '{art,culture}', 52.414384, -4.068469, 'National Library of Wales, Penglais Road, Aberystwyth, SY23 3BU, Ceredigion, United Kingdom', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('ab87c297-c57c-4efd-aefb-ec6a7103f194', null, 'Madrid, Spain', 'Museo del Prado', '{art,culture}', 40.413888888, -3.692222222, 'Paseo del Prado, 28014 Madrid, Madrid, Spain', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c943a499-6145-4787-a57f-97ce22a88cc2', null, 'Cambridge, United States', 'Fogg Museum', '{art,culture}', 42.37409, -71.114358, 'Cambridge, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('908a4b83-c449-4c75-a4c3-17f654d3a7f8', null, 'Salford, United Kingdom', 'The Lowry', '{art,culture}', 53.4707, -2.2964, 'The Lowry, Pier 8, Salford Quays, Salford, Greater Manchester, M5 2AZ, Salford, United Kingdom', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('80f3355c-9aca-4cd2-aa39-d98e1bbe222e', null, 'Copenhagen Municipality, Denmark', 'Statens Museum for Kunst', '{art,culture}', 55.68889, 12.57861, 'Sølvgade 48-50, 1307 København K, Copenhagen Municipality, Denmark', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -6289,7 +6329,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('8aaf5651-3ea8-4a3f-a4bf-8d392c957d09', null, 'Sorø Municipality, Denmark', 'Sorø Art Museum', '{art,culture}', 55.4327, 11.5558, 'Storgade 9, 4180 Sorø, Sorø Municipality, Denmark', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('24ec0391-fac0-4cff-a21d-300921fad009', null, 'Hempstead, United States', 'African American Museum', '{art,culture}', 40.7095, -73.6277, 'Hempstead, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c35521d7-26c4-49c5-a1a6-ee7eeea195b9', null, 'Nara, Japan', 'Neiraku Museum', '{art,culture}', 34.686, 135.837139, 'Nara, Japan', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('8aa294a7-8b68-444d-a1ca-b0ea160ab8f4', null, 'Onomichi, Japan', 'Onomichi City Museum of Art', '{art,culture}', 34.409917, 133.1958, '〒722-0032 広島県尾道市西土堂町17-19, Onomichi, Japan', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('8aa294a7-8b68-444d-a1ca-b0ea160ab8f4', null, 'Onomichi, Japan', 'Onomichi City Museum of Art', '{art,culture}', 34.409917, 133.1958, '〒722-0032 広島県尾道市西土堂町17-19, Onomichi, Japan', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('1abab7db-432c-4d45-a996-3a9e5de74520', null, 'Anacapri, Italy', 'Villa San Michele', '{art,culture}', 40.557222222, 14.225, 'Viale Axel Munthe 34 80071 Anacapri, Anacapri, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f5fb8ee7-c215-4ebd-a7ee-605ab8117da4', null, 'Frankfurt-Innenstadt I, Germany', 'Schirn Kunsthalle Frankfurt', '{art,culture}', 50.110278, 8.683611, 'Frankfurt-Innenstadt I, Germany', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('765507d8-3b2b-4334-ad7e-b4ecb180bb0c', null, 'Utsunomiya, Japan', 'Utsunomiya Museum of Art', '{art,culture}', 36.607166666, 139.873972222, 'Utsunomiya, Japan', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -6329,10 +6372,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('d27cebae-8fc4-4f8e-adb8-24206241bb3c', null, 'Pennsylvania, United States', 'American Jewish Museum', '{art,culture}', 40.4377, -79.924, 'Pennsylvania, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ef2a19dc-47b5-43f6-a576-075d636dfadd', null, 'Naoshima, Japan', 'Lee Ufan Museum', '{art,culture}', 34.448889, 133.988889, 'Naoshima, Japan', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('772cc869-1c4d-4b47-ab61-332e937ac3b0', null, 'Sakata, Japan', 'Homma Museum of Art', '{art,culture}', 38.92338943, 139.84205627, '〒998-0024　山形県酒田市御成町7-7, Sakata, Japan', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('79688767-87f2-477d-a165-4fe6015abee4', null, 'Mihama, Japan', 'Sugimoto Art Museum', '{art,culture}', 34.801936, 136.866272, '愛知県知多郡美浜町美浜緑苑1-12-1, Mihama, Japan', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('79688767-87f2-477d-a165-4fe6015abee4', null, 'Mihama, Japan', 'Sugimoto Art Museum', '{art,culture}', 34.801936, 136.866272, '愛知県知多郡美浜町美浜緑苑1-12-1, Mihama, Japan', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('83490041-743b-452f-a88d-8a92f7847570', null, 'Marunouchi, Japan', 'Hayashibara Museum of Art', '{art,culture}', 34.66361111, 133.93333333, '〒700-0823 岡山市北区丸の内2-7-15, Marunouchi, Japan', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('281f973e-6eeb-4798-a6f4-c0a6970aeed6', null, 'Islamabad, Pakistan', 'Lok Virsa Museum', '{art,culture}', 33.68333333, 73.06666667, 'Islamabad, Pakistan', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('57cfc4ce-14e1-4468-a32e-00a66cb18936', null, 'Ontario, Canada', 'Art Gallery of Peterborough', '{art,culture}', 44.2947, -78.3176, 'Ontario, Canada', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -6542,7 +6582,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('dcc1d828-cf86-4970-a347-5158ac486198', null, 'Naples, Italy', 'Museum of the Treasure of St. Gennaro', '{art,culture}', 40.8522, 14.2594, 'Via Duomo, 149/a,  - Napoli, Naples, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('b7d92e83-f21e-4065-a5c7-dee6a9f81ee8', null, 'Beirut, Lebanon', 'Beirut Art Center', '{art,culture}', 33.879976, 35.530477, 'Beirut, Lebanon', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('5bc51d48-9601-4c6c-a323-bdedcf1c659b', null, 'Havana, Cuba', 'National Museum of Fine Arts of Cuba', '{art,culture}', 23.1314788, -82.354984, 'Havana, Cuba', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('dbb55baf-fab4-4741-a101-aceed66a52f0', null, 'Gushan District, Taiwan', 'Kaohsiung Museum of Fine Arts', '{art,culture}', 22.6565, 120.2863, '高雄市鼓山區美術館路80號, Gushan District, Taiwan', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('dbb55baf-fab4-4741-a101-aceed66a52f0', null, 'Gushan District, Taiwan', 'Kaohsiung Museum of Fine Arts', '{art,culture}', 22.6565, 120.2863, '高雄市鼓山區美術館路80號, Gushan District, Taiwan', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('12e89d4e-d871-4ecc-a356-6ec7eeb5a2c1', null, 'Skopje, North Macedonia', 'Čifte Hammam', '{art,culture}', 42.001111111, 21.437222222, 'Skopje, North Macedonia', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('af36a18c-85d0-458c-aae6-340035073718', null, 'Wolfsburg, Germany', 'Kunstmuseum Wolfsburg', '{art,culture}', 52.4187, 10.7853, 'Wolfsburg, Germany', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ede803ad-c33a-417b-aed2-f2d6b122f528', null, 'Bellevue, United States', 'Bellevue Arts Museum', '{art,culture}', 47.61537, -122.20119, 'Bellevue, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -6582,10 +6625,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('410d8143-d559-4c89-a6ba-b623616669dc', null, 'St Ives, United Kingdom', 'Barbara Hepworth Museum and Sculpture Garden', '{art,culture}', 50.213611111, -5.481388888, 'Barnoon Hill, St Ives TR26 1AD, St Ives, United Kingdom', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('5a3e4aa7-9169-453d-a34a-85066eba82fe', null, 'Düsseldorf, Germany', 'Kunst im Tunnel', '{art,culture}', 51.2199, 6.76678, 'Mannesmannufer 1b, 40213 Düsseldorf, Düsseldorf, Germany', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('dfac0d84-4f08-4400-a6f5-b067c2eb5018', null, 'Chieti, Italy', 'National Archaeological Museum of Abruzzo', '{art,culture}', 42.343, 14.1645, 'Via Guido Costanzi 2, 66100 Chieti, Chieti, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('a271d7a4-e7bd-4418-a5cc-63bc8a2f8bbc', null, 'Bezirk Mitte, Germany', 'KW Institute for Contemporary Art', '{art,culture}', 52.527, 13.3948, 'Bezirk Mitte, Germany', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('a271d7a4-e7bd-4418-a5cc-63bc8a2f8bbc', null, 'Bezirk Mitte, Germany', 'KW Institute for Contemporary Art', '{art,culture}', 52.527, 13.3948, 'Bezirk Mitte, Germany', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a6fb1896-2627-4d3c-a7f2-3ba56cd2275d', null, 'Sakyō-ku, Japan', 'Nomura Art Museum', '{art,culture}', 35.012917, 135.793333, 'Sakyō-ku, Japan', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('1b2f5f8d-5c4a-4063-a765-7fee77797ff0', null, 'Massachusetts, United States', 'Berkshire Museum', '{art,culture}', 42.447222222, -73.253611111, 'Massachusetts, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('fc64be48-4cfd-4da8-a4f6-6dc2049625bf', null, 'Southend-on-Sea, United Kingdom', 'Beecroft Art Gallery', '{art,culture}', 51.54223, 0.71066, 'Victoria Avenue, Southend-on-Sea SS2 6EX, Southend-on-Sea, United Kingdom', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -6795,7 +6835,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('33b172a1-869c-4a6f-a4ad-21732ba4e0d1', null, 'East Lansing, United States', 'Eli and Edythe Broad Art Museum', '{art,culture}', 42.7327, -84.4768, 'East Lansing, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('5562e706-313f-431c-a45d-b41a86a23a22', null, 'Florence, Italy', 'Brancacci Chapel', '{art,culture}', 43.768448, 11.24403, 'Piazza del Carmine 14, Florence, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('33f6b241-de1a-436f-a121-3aed2121195b', null, 'Sakyō-ku, Japan', 'National Museum of Modern Art, Kyoto', '{art,culture}', 35.012389, 135.781943, 'Sakyō-ku, Japan', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('291af4a5-ae20-4103-a78c-59a5ad73b85a', null, 'Helsinki, Finland', 'Sinebrychoff Art Museum', '{art,culture}', 60.1717, 24.9369, 'Bulevardi 40, 00120 Helsinki, Helsinki, Finland', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('291af4a5-ae20-4103-a78c-59a5ad73b85a', null, 'Helsinki, Finland', 'Sinebrychoff Art Museum', '{art,culture}', 60.1717, 24.9369, 'Bulevardi 40, 00120 Helsinki, Helsinki, Finland', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('27d70147-6019-4f7d-a7ce-ae3a87f0b0c4', null, 'Arrecife, Spain', 'Castillo de San José', '{art,culture}', 28.970941666, -13.533244444, 'Arrecife, Spain', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('70e190e0-a6ff-41d6-a29e-16eca17e092b', null, 'Milan, Italy', 'Triennale di Milano', '{art,culture}', 45.471813, 9.173708, 'Viale Emilio Alemagna 6, 20121 Milano, Milan, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('b9ee887d-5ecf-40ab-a18d-e172a18bde92', null, 'Bayonne, France', 'Musée Bonnat-Helleu', '{art,culture}', 43.4922, -1.4722, '5, rue Jacques-Laffitte, Bayonne, France', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -6835,10 +6878,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('1dd97705-5766-4b23-aabf-4c26753fb228', null, 'City of Edinburgh, United Kingdom', 'Modern Two', '{art,culture}', 55.9518, -3.2242, 'Belford Road, City of Edinburgh, United Kingdom', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('020de5b2-958b-41b4-a687-99bfa9799676', null, 'Manchester, United Kingdom', 'Manchester Art Gallery', '{art,culture}', 53.478611111, -2.241388888, 'Galleries and Museums Department, Mosley Street, Manchester M2 3JL, Manchester, United Kingdom', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('08e2d525-c3d4-49b3-a34c-9a36accb75ed', null, 'Rome, Italy', 'Museum of Contemporary Art of Rome', '{art,culture}', 41.912825, 12.50221667, 'Via Nizza, 138 - Roma, Rome, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('3451f09e-56c4-4e46-a295-9ed88b165ee4', null, 'Houston, United States', 'Menil Collection', '{art,culture}', 29.73734, -95.39851, 'Houston, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('3451f09e-56c4-4e46-a295-9ed88b165ee4', null, 'Houston, United States', 'Menil Collection', '{art,culture}', 29.73734, -95.39851, 'Houston, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('6337e86c-eecb-4a08-a720-3cd9c5203c27', null, 'San Diego, United States', 'San Diego Museum of Art', '{art,culture}', 32.732158, -117.15043, '1450 El Prado, Balboa Park, San Diego, CA 92101, San Diego, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c640fe38-a454-4138-a214-7f006a957f70', null, 'Tampere, Finland', 'Moomin Museum', '{art,culture}', 61.495833333, 23.781666666, 'Yliopistonkatu 55, 33100 Tampere, Tampere, Finland', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('cf93bc02-8e8a-48f2-a119-d4f05e1e24f4', null, 'Ueno-kōen, Japan', 'National Museum of Western Art', '{art,culture}', 35.7153567, 139.7758498, '7-7 Ueno-koen, Taito-ku, Ueno-kōen, Japan', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -7048,7 +7088,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('82bd2ec1-e0cb-489f-a276-765e63888760', null, 'Winona, United States', 'Minnesota Marine Art Museum', '{art,culture}', 44.059, -91.657, 'Winona, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('24ae04fa-3d02-4cc6-a9ac-e83c61b0f1c0', null, 'Memphis, United States', 'Memphis Brooks Museum of Art', '{art,culture}', 35.1462, -89.9954, 'Memphis, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('2d9dcef1-b03f-40df-a625-d21d2dddcdfd', null, 'Saint Paul, United States', 'Minnesota Museum of American Art', '{art,culture}', 44.94725, -93.089519, 'Saint Paul, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('c8611b32-4764-4ba2-a70f-a9f700fc596d', null, 'Kifisia Municipality, Greece', 'Mihalarias Art Center', '{art,culture}', 38.07613, 23.81255, 'Κηφισίας 260 & Δηληγιάννη, 145 62, Κηφισιά, Kifisia Municipality, Greece', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('c8611b32-4764-4ba2-a70f-a9f700fc596d', null, 'Kifisia Municipality, Greece', 'Mihalarias Art Center', '{art,culture}', 38.07613, 23.81255, 'Κηφισίας 260 & Δηληγιάννη, 145 62, Κηφισιά, Kifisia Municipality, Greece', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('b7895b06-545b-4b54-a1c2-d8fae0be4865', null, 'Manitoba, Canada', 'Gallery One One One', '{art,culture}', 49.8099, -97.1345, 'Manitoba, Canada', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f578c974-2764-40ba-a2de-396321cdd6a2', null, 'Delaware, United States', 'Delaware Art Museum', '{art,culture}', 39.765365, -75.564696, 'Delaware, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('46ed0486-c643-4504-a7f5-11e7e0d30e98', null, 'Charlotte, United States', 'Mint Museum', '{art,culture}', 35.22442, -80.84831, 'Charlotte, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -7088,10 +7131,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('464fbac8-4513-41cc-a35c-3b048b633c94', null, 'Wang Mai, Thailand', 'Bangkok Art and Culture Centre', '{art,culture}', 13.74670111, 100.53022385, 'Wang Mai, Thailand', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ab65e4cc-edc8-43ec-a6ad-b720992e38b8', null, 'Ninotaira, Japan', 'Hakone Open-Air Museum', '{art,culture}', 35.24471944, 139.05150556, 'Ninotaira, Japan', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('764b73bb-0739-4865-a172-2bde7d84cc20', null, 'Cuauhtémoc, Mexico', 'Museo Nacional de Arte', '{art,culture}', 19.43638889, -99.13944444, 'Tacuba 8, Centro Histórico, 6010, Cuauhtémoc, Mexico', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('f8aea9fa-ca75-475e-a2db-4ea4c3249158', null, 'Tours, France', 'château de Tours', '{art,culture}', 47.3971, 0.6936, 'rue Lavoisier, Tours, France', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('f8aea9fa-ca75-475e-a2db-4ea4c3249158', null, 'Tours, France', 'château de Tours', '{art,culture}', 47.3971, 0.6936, 'rue Lavoisier, Tours, France', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('2782f97b-9109-4845-a497-4dec2b88cd1c', null, 'Saint-Paul-de-Vence, France', 'Fondation Maeght', '{art,culture}', 43.70059, 7.115085, 'Saint-Paul-de-Vence, France', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('9f8d76a6-6587-4702-a5f5-ae5c05149da8', null, '5th arrondissement of Paris, France', 'Musée de Cluny', '{art,culture}', 48.850555555, 2.343333333, '5th arrondissement of Paris, France', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f42cd69e-71cc-4b08-a7a1-fe26a65f9a1a', null, 'Massachusetts, United States', 'Eric Carle Museum of Picture Book Art', '{art,culture}', 42.3211, -72.533, 'Massachusetts, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -7301,7 +7341,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('2196167d-4a8d-4ae3-ab1b-ac9e6c23d160', null, 'Palermo, Italy', 'Villa Malfitano Whitaker', '{art,culture}', 38.1233, 13.3414, 'Via Dante, 167 - Palermo, Palermo, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('382f1c25-210f-4cab-a920-408e593e78d0', null, 'Rome, Italy', 'museo di Roma in Trastevere', '{art,culture}', 41.88986, 12.46897, 'Piazza di Sant''egidio 10, 00153 Roma, Rome, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('fffe959e-e8a8-4db8-a756-2826e8a75356', null, 'Malá Strana, Czechia', 'The Josef Sudek Studio', '{art,culture}', 50.0824444, 14.4052564, 'Malá Strana, Czech Republic', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('6f573c81-787b-483f-a72c-e4bee7d314c0', null, 'Rome, Italy', 'Museo di Roma', '{art,culture}', 41.897288784, 12.472850122, 'Piazza di San Pantaleo 10, 00186 Roma, Rome, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('6f573c81-787b-483f-a72c-e4bee7d314c0', null, 'Rome, Italy', 'Museo di Roma', '{art,culture}', 41.897288784, 12.472850122, 'Piazza di San Pantaleo 10, 00186 Roma, Rome, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('de183563-41bb-4221-a605-c68be1fd3d78', null, 'Brescia, Italy', 'Museo Diocesano', '{art,culture}', 45.541241348, 10.220615589, 'Via Gasparo da Salò, 13 - Brescia, Brescia, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c79e74b2-2e23-4272-a164-21940f5c2072', null, 'Cesena, Italy', 'Pinacoteca Comunale di Cesena', '{art,culture}', 44.13746, 12.24808, 'Via Aldini 26, 47521 Cesena, Cesena, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('28277fd5-90a0-4ddb-a477-84df2b8c84db', null, 'Florence, Italy', 'Villa Corsini in Castello', '{art,culture}', 43.816265, 11.232361, 'Via della Petraia 38, Florence, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -7341,10 +7384,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('e0b83a0e-2408-4308-a3b4-f26fa04c11d1', null, 'Lukang Township, Taiwan', 'Lukang Folks Art Museum', '{art,culture}', 24.05388889, 120.43611111, 'Lukang Township, Taiwan', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('837b7c3a-cf08-44ca-ac73-a8f052845104', null, 'Shiroyama-chō, Japan', 'Kagoshima City Museum of Art', '{art,culture}', 31.595806, 130.553361, '鹿児島県鹿児島市城山町4番36号, Shiroyama-chō, Japan', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('51d087ec-4d63-46f2-acb3-611e9f346ede', null, 'Belém, Brazil', 'Art Museum of Belém', '{art,culture}', -1.4557156, -48.5023357, 'Praça D. Pedro II s/n, ao lado do Palácio Lauro Sodré, Cidade Velha, Belém-PA, Belém, Brazil', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('69a26ff2-63d4-4c96-aa76-1364cd76ec88', null, 'Penn State University Park, United States', 'Palmer Museum of Art', '{art,culture}', 40.8005, -77.8657, 'Penn State University Park, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('69a26ff2-63d4-4c96-aa76-1364cd76ec88', null, 'Penn State University Park, United States', 'Palmer Museum of Art', '{art,culture}', 40.8005, -77.8657, 'Penn State University Park, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ed941912-50d4-4408-a42b-f92e63e688d1', null, 'Certaldo, Italy', 'Museo di arte sacra (Certaldo)', '{art,culture}', 43.547657, 11.041546, 'Piazza Santi Jacopo e Filippo 2, Certaldo, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('60c55406-d251-4664-a4d6-b7d9e33172a6', null, 'Providencia, Chile', 'Museo Histórico Carabineros de Chile', '{art,culture}', -33.442871111, -70.611666111, 'Antonio Varas 1690, Providencia, Chile', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a66c032f-38fa-4229-a616-92efadf66d55', null, 'Nangang District, Taiwan', 'Lingnan Fine Arts Museum', '{art,culture}', 25.04027778, 121.615, 'Nangang District, Taiwan', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -7554,7 +7594,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('93750cb4-7250-426c-a1ed-aa12805c55f2', null, 'Giza Governorate, Egypt', 'Mohamed Mahmoud Khalil Museum', '{art,culture}', 30.0356, 31.2197, '١ شارع كافور ، الدقي ، الجيزة, Giza Governorate, Egypt', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ee2ea50d-a465-43e3-aa4b-56ee929498f0', null, 'Penza, Russia', 'The Museum of One Painting named after G. V. Myasnikov', '{art,culture}', 53.1836, 45.0161, 'Penza, Russia', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('5797db7f-9329-49a1-a3b4-1cd22eac1c52', null, 'Newark, United States', 'The Newark Museum of Art', '{art,culture}', 40.7427, -74.1718, 'Newark, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('3998b341-9ab6-482f-a5cd-1c492d44f3b7', null, 'Yerevan, Armenia', 'National Gallery of Armenia', '{art,culture}', 40.17875, 44.514167, '375010, Արամի փողոց 1 (մուտքը Հանրապետության հրապարակից), Yerevan, Armenia', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('3998b341-9ab6-482f-a5cd-1c492d44f3b7', null, 'Yerevan, Armenia', 'National Gallery of Armenia', '{art,culture}', 40.17875, 44.514167, '375010, Արամի փողոց 1 (մուտքը Հանրապետության հրապարակից), Yerevan, Armenia', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('68ec60e2-60d5-400a-a839-d0e8c9c210ec', null, 'Vågan Municipality, Norway', 'Espolin Gallery', '{art,culture}', 68.20805556, 14.45138889, 'Vågan Municipality, Norway', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('99088e0a-c888-4722-a180-d9286190e52c', null, 'Mersin, Turkey', 'Mersin State Art and Sculpture Museum', '{art,culture}', 36.7989, 34.6297, 'Mersin, Turkey', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3f3454f8-27a2-4a76-a896-2e8e66d6cf6e', null, 'Trapani, Italy', 'San Rocco Museum of Contemporary Art', '{art,culture}', 38.015075022, 12.508979104, 'Via Antonino Turretta 12, 91100 Trapani, Trapani, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -7594,10 +7637,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('2ff77727-13c9-48d9-ac3e-8ffe43c17000', null, 'Nogent-sur-Seine, France', 'Musée Camille Claudel', '{art,culture}', 48.494027777, 3.501777777, 'Nogent-sur-Seine, France', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('4c542138-e78d-4c8a-a542-6324e33e20dc', null, 'Petworth, United Kingdom', 'Petworth House', '{art,culture}', 50.9881, -0.611, 'Church Street, Petworth GU28 0AE, Petworth, United Kingdom', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('7aa2f437-2edc-402d-a47e-a41aa97f4464', null, 'San Francisco, United States', 'Museo ItaloAmericano', '{art,culture}', 37.8069, -122.431, 'San Francisco, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('ed4b80b1-fd0a-472f-a041-c79eea55c7e0', null, 'Ateneo de Manila University, Philippines', 'Ateneo Art Gallery', '{art,culture}', 14.64, 121.077222, 'Ateneo de Manila University, Philippines', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('ed4b80b1-fd0a-472f-a041-c79eea55c7e0', null, 'Ateneo de Manila University, Philippines', 'Ateneo Art Gallery', '{art,culture}', 14.64, 121.077222, 'Ateneo de Manila University, Philippines', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('765531ec-910d-4c40-a18a-752540762ce2', null, 'Lausanne, Switzerland', 'Cantonal Museum of Fine Arts', '{art,culture}', 46.5179913, 6.6254402, 'Place de la Gare 16, 1003 Lausanne, Lausanne, Switzerland', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('172ba337-1562-456d-a249-e65a2c8de8a4', null, 'City of Westminster, United Kingdom', 'Portland Gallery', '{art,culture}', 51.5075, -0.140833333, '3 BENNET STREET, LONDON SW1A 1RP, City of Westminster, United Kingdom', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('efbf798d-684e-4b4b-a780-e2d3a580e24d', null, 'Douai, France', 'Musée de la Chartreuse de Douai', '{art,culture}', 50.37472222, 3.07555556, 'Douai, France', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -7807,7 +7847,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('2e5684b9-a579-43e7-a74d-038a2d3cfc8a', null, 'Marunouchi, Japan', 'Idemitsu Museum of Arts', '{art,culture}', 35.6763721, 139.7609079, 'Marunouchi, Japan', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8e1150a3-ad25-4089-a334-c02a3b36e12c', null, 'Aix-en-Provence, France', 'fondation Vasarely', '{art,culture}', 43.521154, 5.424693, '1, avenue Marcel-Pagnol, Aix-en-Provence, France', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('956ceea1-6271-417f-a8e2-6022f7de6020', null, 'United Kingdom', 'BFI Gallery', '{art,culture}', 51.5072, -0.1157, 'United Kingdom', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('c14cbaf3-6d85-4c11-a533-6591e2ed1d70', null, 'Nîmes, France', 'Musée des beaux-arts de Nîmes', '{art,culture}', 43.8319, 4.3606, 'Nîmes, France', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('c14cbaf3-6d85-4c11-a533-6591e2ed1d70', null, 'Nîmes, France', 'Musée des beaux-arts de Nîmes', '{art,culture}', 43.8319, 4.3606, 'Nîmes, France', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('037a4820-7f8a-4a6c-acf0-424c8304528c', null, 'Nara, Japan', 'Nakano Museum of Art', '{art,culture}', 34.694278, 135.755944, 'Nara, Japan', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('003dd341-4404-45df-a439-669e44428920', null, 'Tsu, Japan', 'Mie Prefectural Art Museum', '{art,culture}', 34.734833, 136.501889, '三重県津市大谷町11番地, Tsu, Japan', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('1a94db81-e338-46bf-a653-e2c2fdcda240', null, 'Wrexham County Borough, United Kingdom', 'Tŷ Pawb', '{art,culture}', 53.0465, -2.9909, '11 Chester St, Wrexham LL13 8BB, Wrexham County Borough, United Kingdom', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -7847,10 +7890,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('3468a4ba-26e0-41d8-a288-f5625b48f692', null, 'Colchester, United Kingdom', 'Albert Hall', '{art,culture}', 51.88991, 0.897137, 'Colchester, United Kingdom', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('6899d839-d4ed-43a7-a438-bd4623d87cbe', null, 'Gáldar, Spain', 'Painted Cave, Galdar', '{art,culture}', 28.144145, -15.655185, 'Gáldar, Spain', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d855d333-aa93-4ca9-a2c6-1f9a82e99fdc', null, 'Los Angeles County, United States', 'Bhagavad-gita Museum', '{art,culture}', 34.025332, -118.397112, 'Los Angeles County, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('9a1b6687-9142-4a21-ab59-6ca62b5d70a8', null, 'Bradford, United Kingdom', 'Cartwright Hall Art Gallery', '{art,culture}', 53.812153, -1.771704, 'Lister Park, Bradford BD9 4NS, Bradford, United Kingdom', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('9a1b6687-9142-4a21-ab59-6ca62b5d70a8', null, 'Bradford, United Kingdom', 'Cartwright Hall Art Gallery', '{art,culture}', 53.812153, -1.771704, 'Lister Park, Bradford BD9 4NS, Bradford, United Kingdom', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a01cab00-4cbf-47c4-a135-cd33cecdc32c', null, 'Florida, United States', 'Frost Art Museum', '{art,culture}', 25.7537, -80.3731, 'Florida, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('aaf84cb4-8847-4cfe-a2bf-f04a334009b2', null, 'Athens Municipality, Greece', 'Basil & Elise Goulandris Foundation Museum, Athens', '{art,culture}', 37.969722222, 23.742777777, 'Ερατοσθένους 13, Αθήνα 116 35, Athens Municipality, Greece', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('bd5c30f5-d69e-401b-abc2-80ee93fae110', null, 'Rouen, France', 'Musée des Beaux-Arts de Rouen', '{art,culture}', 49.444722, 1.094722, 'esplanade Marcel-Duchamp, Rouen, France', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -8060,7 +8100,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('f8482c48-110f-4b24-a16b-898940957776', null, 'Victoria, Canada', 'University of Victoria Legacy Art Galleries', '{art,culture}', 48.426666666, -123.366111111, 'Victoria, Canada', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('da7cf535-79e4-4803-a5c6-792ca54618d3', null, 'Kasumigaoka, Japan', 'Meiji Memorial Picture Gallery', '{art,culture}', 35.67877778, 139.71763889, '東京都新宿区霞ヶ丘町1-1, Kasumigaoka, Japan', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('785e1376-5692-4292-aecc-a1e4cef0c608', null, 'Oklahoma, United States', 'Mabee-Gerrer Museum of Art', '{art,culture}', 35.3668, -96.9537, 'Oklahoma, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('4d70d44d-4e9c-4633-a3ec-e27e9c0d0a80', null, 'ノーフォーク, United States', 'Chrysler Museum of Art', '{art,culture}', 36.857, -76.2924, 'ノーフォーク, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('4d70d44d-4e9c-4633-a3ec-e27e9c0d0a80', null, 'ノーフォーク, United States', 'Chrysler Museum of Art', '{art,culture}', 36.857, -76.2924, 'ノーフォーク, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('bf8e8e60-bb05-4f56-a48b-e1367a93fdb6', null, 'Gentilly, France', 'maison de la photographie Robert Doisneau', '{art,culture}', 48.81409, 2.34755, 'Gentilly, France', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('5f0a4bf0-884e-4c64-a28b-bc86ce758c85', null, 'Madison, United States', 'Madison Museum of Fine Art', '{art,culture}', 33.595242, -83.466633, '300 Hancock Street, Madison, GA 30650, Madison, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('2c97c004-4c4e-4b06-a0d9-3b0278e6bb0a', null, 'Missouri, United States', 'Contemporary Art Museum St. Louis', '{art,culture}', 38.6405, -90.235, 'Missouri, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -8100,10 +8143,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('50784765-094f-43fb-a937-449e59c74b60', null, 'Nara, Japan', 'Nara Prefectural Museum of Art', '{art,culture}', 34.685861, 135.832583, 'Nara, Japan', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('1f6a8ac1-a20c-468f-a429-913b2c176f15', null, 'Piran, Slovenia', 'Piran Coastal Galleries', '{art,culture}', 45.52884722, 13.56840833, 'Piran, Slovenia', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0e251f0c-1d7b-437c-a35e-cc702ba0f288', null, 'Gahoe-dong, South Korea', 'Bukchon Art Museum', '{art,culture}', 37.5803, 126.9846, 'Gahoe-dong, South Korea', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('5c71d6fe-dc21-45a0-a7fa-feca238939c9', null, 'San Severino Marche, Italy', 'Pinacoteca civica Tacchi-Venturi', '{art,culture}', 43.228294, 13.173883, 'Via Salimbeni 39, 62027 San Severino Marche, San Severino Marche, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('5c71d6fe-dc21-45a0-a7fa-feca238939c9', null, 'San Severino Marche, Italy', 'Pinacoteca civica Tacchi-Venturi', '{art,culture}', 43.228294, 13.173883, 'Via Salimbeni 39, 62027 San Severino Marche, San Severino Marche, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('b5708e98-e95b-4304-ac2b-ed9c9ecbf19c', null, 'Bury, United Kingdom', 'Bury Art Museum', '{art,culture}', 53.591733, -2.298854, 'Moss Street, Bury, BL9 0DR, Bury, United Kingdom', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('2aadb5dc-eaf3-41e6-a3fa-15bc615a0c7c', null, 'Ferrara, Italy', 'Pinacoteca Nazionale', '{art,culture}', 44.84232, 11.62097, 'corso Ercole I d’Este, 21 - Ferrara, Ferrara, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('86b2a8eb-7cf9-4bf9-a5b4-2cee03ac24e4', null, 'Brattleboro, United States', 'Brattleboro Museum and Art Center', '{art,culture}', 42.8509, -72.5567, 'Brattleboro, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -8313,7 +8353,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('52138fa4-a684-4ef8-ab68-aea4f8986e9c', null, 'Victoria, Australia', 'Shepparton Art Museum', '{art,culture}', -36.3912, 145.396583333, '530 Wyndham St Shepparton, VIC, Australia, Victoria, Australia', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('158b05fb-93a8-412d-a79d-cfb2aa933072', null, 'Yakimanka District, Russia', 'New Tretyakov Gallery', '{art,culture}', 55.735003, 37.605631, 'Yakimanka District, Russia', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('85b37ab8-d7d2-48a8-a261-d2105d862360', null, 'Mirandola, Italy', 'Museo civico di Mirandola', '{art,culture}', 44.888493, 11.064934, 'Piazza G. Marconi, 23 (c/o Castello dei Pico),  - Mirandola, Mirandola, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('bb6ea1f8-bed8-4bac-a5b6-da547a471da4', null, 'Mondavio, Italy', 'Civic Museum and Pinacoteca, Mondavio', '{art,culture}', 43.674629324, 12.96933219, 'Piazza Giacomo Matteotti 3, 61040 Mondavio, Mondavio, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('bb6ea1f8-bed8-4bac-a5b6-da547a471da4', null, 'Mondavio, Italy', 'Civic Museum and Pinacoteca, Mondavio', '{art,culture}', 43.674629324, 12.96933219, 'Piazza Giacomo Matteotti 3, 61040 Mondavio, Mondavio, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('9770d972-c66c-47ee-a11c-de9c5ddce160', null, 'Taxila, Pakistan', 'Taxila Museum', '{art,culture}', 33.7464332, 72.8172326, 'Taxila, Pakistan', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('b4333a87-8821-4c41-ac12-26c63c5456c8', null, 'Panama City, Panama', 'Panama Museum of Contemporary Art', '{art,culture}', 8.96092, -79.54304, 'Panama City, Panama', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('6947880a-45ae-4db0-ace9-f5baaef605ba', null, 'Thessaloniki Municipality, Greece', 'Telloglion Foundation of Art', '{art,culture}', 40.6326, 22.9607, 'Αγίου Δημητρίου 159Α, Thessaloniki Municipality, Greece', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -8353,10 +8396,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('bdc8fdf2-19e7-4072-a5bd-01280d7b00e6', null, 'College Park, United States', 'University of Maryland Art Gallery', '{art,culture}', 38.9853, -76.9475, 'College Park, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('9dcdfe5e-d29c-4b68-af51-6536706a99c6', null, 'Roanoke, United States', 'Taubman Museum of Art', '{art,culture}', 37.2728, -79.9383, 'Roanoke, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('cfad2d76-c0be-42fe-af13-5f88906ba074', null, 'Matsuyama, Japan', 'Seki Art Gallery', '{art,culture}', 33.8508735, 132.7817135, '〒790-0848　愛媛県松山市道後喜多町4-42, Matsuyama, Japan', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('8de28c53-bc85-4e85-a167-52d64a686ad8', null, 'Venice, Israel', 'Israeli pavilion at the Venice Biennale', '{art,culture}', 45.428888888, 12.358861111, 'Venice, Israel', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('8de28c53-bc85-4e85-a167-52d64a686ad8', null, 'Venice, Israel', 'Israeli pavilion at the Venice Biennale', '{art,culture}', 45.428888888, 12.358861111, 'Venice, Israel', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('2f7b3458-a9d4-47f8-a795-05c60d94fcc5', null, 'Dunedin City, New Zealand', 'Museum of Natural Mystery', '{art,culture}', -45.86561, 170.50445, '61 Royal Terrace, Dunedin, Dunedin City, New Zealand', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('77a81597-c709-4aa9-a4f5-ea0c23eb1604', null, 'South Australia, Australia', 'Flinders University Art Museum', '{art,culture}', -34.920871, 138.602153, 'South Australia, Australia', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('88dd2183-8985-44fd-a158-657e12626680', null, 'Novi Sad City Municipality, Serbia', 'The Gallery of Fine Arts – Gift Collection of Rajko Mamuzić', '{art,culture}', 45.2521, 19.8453, 'Васе Стајића 1, Novi Sad City Municipality, Serbia', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -8566,7 +8606,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('bc6a8fb4-d9f9-4d74-a593-12c096642d28', null, 'Vejen Municipality, Denmark', 'Vejen Art Museum', '{art,culture}', 55.47714, 9.13985, 'Østergade 4, 6500 Vojens, Vejen Municipality, Denmark', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('bb77a909-ac77-4a97-a700-839e67eed3a0', null, 'Southland Region, New Zealand', 'Southland Museum and Art Gallery', '{art,culture}', -46.4052, 168.353, '108 Gala Street, Invercargill, Southland Region, New Zealand', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('148791b4-f94b-4f84-a123-371d00dd2b13', null, 'Cento, Italy', 'Galleria d''arte moderna Aroldo Bonzagni', '{art,culture}', 44.7271, 11.2904, 'Via Guercino, 39, Cento, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('738b9bb1-c8f0-4aff-a448-40eb23c7c06b', null, 'London Borough of Bromley, United Kingdom', 'Bethlem Gallery', '{art,culture}', 51.3809, -0.0296944, 'London Borough of Bromley, United Kingdom', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('738b9bb1-c8f0-4aff-a448-40eb23c7c06b', null, 'London Borough of Bromley, United Kingdom', 'Bethlem Gallery', '{art,culture}', 51.3809, -0.0296944, 'London Borough of Bromley, United Kingdom', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('9846c343-01dc-4de5-a666-5515a9a23312', null, 'Texas, United States', 'Stark Museum of Art', '{art,culture}', 30.0935, -93.7362, 'Texas, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0ed51bd5-f6fe-4913-a7d4-6d3a05d3a4e8', null, 'Varenna, Italy', 'Villa Monastero', '{art,culture}', 46.0076, 9.288, 'Via Giovanni Polvani, 2-4, Varenna, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('fcaf49a1-f76c-41df-abc3-387ef41bbb80', null, 'Saverne, France', 'Municipal museum (Saverne)', '{art,culture}', 48.741999, 7.363757, 'Saverne, France', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -8606,10 +8649,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('9466fe1d-98ed-40d3-ac8b-4ece2d54aef0', null, 'Bibbiena, Italy', 'Archaeological Museum of Casentino "Piero Albertoni"', '{art,culture}', 43.694189, 11.818175, 'Via Berni 21, Bibbiena, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f3489edc-2af3-49be-a264-4789e1e3bb89', null, 'Rochdale, United Kingdom', 'Rochdale Pioneers Museum', '{art,culture}', 53.6187, -2.1594, '31 Toad Lane, Rochdale OL12 0NU, Rochdale, United Kingdom', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f97b80f6-e841-479e-a13a-f768e1bcf894', null, 'Caulfield East, Australia', 'Monash University Museum of Art', '{art,culture}', -37.8772, 145.0462, 'Caulfield East, Australia', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('850caebe-98b6-4d96-adba-d3281dc32c54', null, 'Los Angeles, United States', 'Marciano Art Foundation', '{art,culture}', 34.06219167, -118.32363333, 'Los Angeles, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('850caebe-98b6-4d96-adba-d3281dc32c54', null, 'Los Angeles, United States', 'Marciano Art Foundation', '{art,culture}', 34.06219167, -118.32363333, 'Los Angeles, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('370c85e0-350e-4582-a202-e0626c1aeb62', null, 'Palermo, Italy', 'Palazzo Riso', '{art,culture}', 38.11633, 13.363147, 'Corso Vittorio Emanuele - Palermo, Palermo, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('1c06b0e9-a15d-4f07-a42a-4a012bd649ff', null, 'Guatemala City, Guatemala', 'Museo Nacional de Arte Moderno "Carlos Mérida"', '{art,culture}', 14.5975, -90.52888889, 'Guatemala City, Guatemala', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('b1451e87-b583-4acd-a4c6-544a66c86954', null, 'Prata d''Ansidonia, Italy', 'Peltuinum', '{art,culture}', 42.286929, 13.62261, 'Via Principe Umberto, Prata d''Ansidonia, Prata d''Ansidonia, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -8819,7 +8859,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('3fa8403f-cc9b-4b75-accc-14b60c43ebb4', null, 'Nelson City, New Zealand', 'World of Wearable Art', '{art,culture}', -41.2983, 173.24, 'Nelson City, New Zealand', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('b492545b-85ce-4c55-a15c-480e3a6070b0', null, 'Pennsylvania, United States', 'Wharton Esherick Studio', '{art,culture}', 40.083611, -75.493333, 'Pennsylvania, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8623c6b1-d2c8-400f-a4eb-56be58ec56c0', null, 'City of Wolverhampton, United Kingdom', 'Wolverhampton Art Gallery', '{art,culture}', 52.5868, -2.12704, 'Lichfield Street, Wolverhampton WV1 1DU, City of Wolverhampton, United Kingdom', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('28678e0e-94b9-4da8-a432-1fc5abd211bb', null, 'Illinois, United States', 'William and Florence Schmidt Art Center', '{art,culture}', 38.5172, -89.9222, 'Illinois, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('28678e0e-94b9-4da8-a432-1fc5abd211bb', null, 'Illinois, United States', 'William and Florence Schmidt Art Center', '{art,culture}', 38.5172, -89.9222, 'Illinois, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('164e89b9-92a8-4317-a7b1-93552a8f6ccd', null, 'Gotha, Germany', 'Ducal Museum Gotha', '{art,culture}', 50.94354, 10.70572, 'Schlossplatz 2, 99867 Gotha, Gotha, Germany', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a9f8be71-6674-49cf-a307-33842106d384', null, 'Louisiana, United States', 'Zigler Art Museum', '{art,culture}', 30.2255, -92.6618, 'Louisiana, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('b130f7e4-2629-4f2c-a68e-69738d75a971', null, 'Budapest District VI, Hungary', 'Zelnik István Southeast Asian Gold Museum', '{art,culture}', 47.512180016, 19.072927841, 'Andrássy út 110., Budapest District VI, Hungary', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -8859,10 +8902,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('a78d0e3f-2dc3-4991-a75b-1a852d55067d', null, 'Kozani Municipality, Greece', 'Archaeological Museum of Kozani', '{art,culture}', 40.30229, 21.78553, 'Δημοκρατίας 8, Άγιος Νικόλαος, 501 31 Κοζάνη, Kozani Municipality, Greece', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('7ce09c90-adcf-42e8-a2ed-071882aafaf7', null, 'Yunusemre, Turkey', 'Manisa Museum', '{art,culture}', 38.614753923, 27.40077771, 'Akmescit Mahallesi, Mimar Sinan Bulvarı No:159 Yunusemre/Manisa, Yunusemre, Turkey', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c9e1e4ac-7139-45a8-a472-72efc3b1b1a5', null, 'Catania, Italy', 'Terme della Rotonda', '{art,culture}', 37.50405556, 15.08275, 'Via della Mecca 226, 95124 Catania, Catania, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('8b631e8f-56be-4925-a222-2b856e22177b', null, 'Naxos and Lesser Cyclades Municipality, Greece', 'Archaeological Museum of Naxos', '{art,culture}', 37.10558333, 25.37725, 'Naxos and Lesser Cyclades Municipality, Greece', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('8b631e8f-56be-4925-a222-2b856e22177b', null, 'Naxos and Lesser Cyclades Municipality, Greece', 'Archaeological Museum of Naxos', '{art,culture}', 37.10558333, 25.37725, 'Naxos and Lesser Cyclades Municipality, Greece', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8a604c63-998a-4211-a3ea-5e7223ea5e74', null, 'Granada, Spain', 'Archaeological Museum of Granada', '{art,culture}', 37.17865, -3.5915833, 'Carrera del Darro 41-43, 18010 Granada, Granada, Spain', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('5c57b954-c1d7-4cf2-a627-f4a5a1e2ec64', null, 'Sabaudia, Italy', 'Villa di Domiziano al Circeo', '{art,culture}', 41.26845, 13.03933, 'Strada Palazzo 1052, 04016 Sabaudia, Sabaudia, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('248ae74d-e2c8-43db-a39b-d0b6a0752fb2', null, 'Tekirdağ, Turkey', 'Tekirdağ Museum of Archaeology and Ethnography', '{art,culture}', 40.975555555, 27.5125, 'Tekirdağ, Turkey', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -9072,7 +9112,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('4f626aa5-369d-4c13-a9ff-86b6860056b8', null, 'Malatya, Turkey', 'Malatya Museum', '{art,culture}', 38.34277778, 38.32444444, 'Malatya, Turkey', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('497d1795-df0f-4d7b-a698-d5512288cd51', null, 'Shreveport, United States', 'Meadows Museum of Art', '{art,culture}', 32.48361, -93.73358, 'Shreveport, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('119a9075-0348-421b-a2d2-b26e14e2b290', null, 'Tel Aviv-Yafo Municipality, Israel', 'CCA Tel Aviv-Yafo', '{art,culture}', 32.06713, 34.76794, 'צדוק הכהן 2א׳, תל אביב-יפו, ישראל, Tel Aviv-Yafo Municipality, Israel', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('e50fadde-2df4-4532-a370-427141304231', null, 'Salt Lake City, United States', 'Utah Museum of Contemporary Art', '{art,culture}', 40.769294, -111.894929, '20 S. West Temple, Salt Lake City, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('e50fadde-2df4-4532-a370-427141304231', null, 'Salt Lake City, United States', 'Utah Museum of Contemporary Art', '{art,culture}', 40.769294, -111.894929, '20 S. West Temple, Salt Lake City, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('cf33fe2a-d007-4d4a-af34-73609f3b8b74', null, 'New York City, United States', 'Microscope Gallery', '{art,culture}', 40.706291, -73.921167, '525 West 29th Street, New York, NY 10001, New York City, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('088d967f-d5dd-4e05-a22a-f4786de6ac48', null, 'Pavia, Italy', 'Diocesan Museum of Pavia', '{art,culture}', 45.184444444, 9.152777777, 'Piazza Duomo 2, Pavia, Pavia, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('222695f6-c9b2-4fbc-a146-b15b6ebd915b', null, 'Kilgore, United States', 'Anne Dean Turk Fine Arts Center', '{art,culture}', 32.377994444, -94.869247222, 'Kilgore, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -9112,10 +9155,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('bf65e891-64dd-4daf-a244-7eac22443e64', null, 'Kitashiobara, Japan', 'Morohashi Museum of Modern Art', '{art,culture}', 37.65361111, 140.09638889, 'Kitashiobara, Japan', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c3c1c939-39e3-4297-a5dd-0452fda4fbd0', null, 'Karatsu, Japan', 'Kawamura Art Museum', '{art,culture}', 33.453246, 129.971675, 'Karatsu, Japan', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('acc2f0fd-b799-414b-ab5b-21b6645cc248', null, 'Amasya, Turkey', 'Amasya Museum', '{art,culture}', 40.649444444, 35.824722222, 'Amasya, Turkey', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('80b7b7fe-b11c-4412-a1ab-53ec31d49c10', null, 'Annandale-on-Hudson, United States', 'Hessel Museum of Art', '{art,culture}', 42.0201, -73.9141, '33 Garden Rd, Annandale-On-Hudson, NY 12504, Annandale-on-Hudson, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('80b7b7fe-b11c-4412-a1ab-53ec31d49c10', null, 'Annandale-on-Hudson, United States', 'Hessel Museum of Art', '{art,culture}', 42.0201, -73.9141, '33 Garden Rd, Annandale-On-Hudson, NY 12504, Annandale-on-Hudson, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d9d26d47-8a29-49dd-a3fb-249a63fbb724', null, 'Santa Fe, United States', 'Museum of Contemporary Native Arts', '{art,culture}', 35.687058729, -105.937038324, 'Santa Fe, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('21a62628-ba86-4874-a64d-f71a4dc2cce9', null, 'Long Beach, United States', 'Carolyn Campanga Kleefeld Contemporary Art Museum', '{art,culture}', 33.7835, -118.1147, 'Long Beach, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('2435c585-537d-4fcb-a748-2a4e77b3b550', null, 'Vadnagar Taluka, India', 'Vadnagar Archaeological Experiential Museum', '{art,culture}', 23.786048222, 72.644600037, 'Vadnagar Taluka, India', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -9325,7 +9365,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('657639c1-6ae9-4f5f-af9f-169ed05f6920', null, 'Giza Governorate, Egypt', 'Grand Egyptian Museum', '{art,culture}', 29.993611, 31.119722, 'ميدان الرماية ، طريق القاهرة الإسكندرية الصحراوي ، الجيزة, Giza Governorate, Egypt', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('b2087c29-dcb1-4727-aeb9-fb0e8eba0350', null, 'Nuoro, Italy', 'Museum of art of the province of Nuoro', '{art,culture}', 40.321537, 9.333627, 'Via Satta, 27 - Nuoro, Nuoro, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3e777be5-a3cd-4ca3-a624-568bae245688', null, 'Thessaloniki Municipality, Greece', 'Archaeological Museum of Thessaloniki', '{art,culture}', 40.625, 22.953888888, 'Thessaloniki Municipality, Greece', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('a9327f3b-48a1-4fe5-a1e6-c3f22f1d43f2', null, 'Pescara, Italy', 'Vittoria Colonna Modern Art Museum', '{art,culture}', 42.472266, 14.212335, 'Via Gramsci, 1 - Pescara, Pescara, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('a9327f3b-48a1-4fe5-a1e6-c3f22f1d43f2', null, 'Pescara, Italy', 'Vittoria Colonna Modern Art Museum', '{art,culture}', 42.472266, 14.212335, 'Via Gramsci, 1 - Pescara, Pescara, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('06b72fe8-daca-490e-a238-2b91ae18198f', null, 'Athens Municipality, Greece', 'Kerameikos Archaeological Museum', '{art,culture}', 37.967, 23.717, '148 Ermou street, Athens Municipality, Greece', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('bc5cc07a-fac9-48e2-a695-1898b726995c', null, 'Nesebar, Bulgaria', 'Nesebar Archaeological Museum', '{art,culture}', 42.658333333, 27.730555555, 'Стария Град, ул. „Месембрия“ 2, 8231 Несебър, Nesebar, Bulgaria', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('dc19e224-86c0-43ec-aad9-f1c862d9f610', null, 'Niğde, Turkey', 'Niğde Archaeological Museum', '{art,culture}', 37.96833333, 34.6725, 'Niğde, Turkey', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -9365,10 +9408,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('b429c1c0-fe8b-425e-aaa2-b39eb2b5341e', null, 'Piombino, Italy', 'Archaeological Museum of Populonia', '{art,culture}', 42.923363, 10.521454, 'Piazza Cittadella 8, Piombino, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c7efcf61-84af-46df-a340-c9be4c9ed640', null, 'Iwaki, Japan', 'Picture Book Museum, Iwaki City', '{art,culture}', 36.97372222, 140.96641667, 'Iwaki, Japan', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d1ebe5d4-cae4-44bc-ab0f-b1689cd03a90', null, 'Kashihara, Japan', 'The Museum, Archaeological Institute of Kashihara, Nara Prefecture', '{art,culture}', 34.49222565, 135.7913271, '〒634-0065　奈良県橿原市畝傍町50-2, Kashihara, Japan', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('6a8b0289-da5b-4b87-a4f2-fc6f244e63e1', null, 'Vieux, France', 'Vieux-la-Romaine Museum', '{art,culture}', 49.106, -0.429703, '13, chemin Haussé 14930 Vieux, Vieux, France', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('6a8b0289-da5b-4b87-a4f2-fc6f244e63e1', null, 'Vieux, France', 'Vieux-la-Romaine Museum', '{art,culture}', 49.106, -0.429703, '13, chemin Haussé 14930 Vieux, Vieux, France', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('28b77e66-2fb7-4ef6-a700-3090586ecd5c', null, 'Gaza Strip, Palestine', 'Al Qarara Cultural Museum', '{art,culture}', 31.369833333, 34.341333333, 'Gaza Strip, Palestine', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c537030f-1b5a-4f15-a219-293e6e091722', null, 'São João das Lampas e Terrugem, Portugal', 'Archaeological Museum of São Miguel de Odrinhas', '{art,culture}', 38.8862143, -9.366303, 'São João das Lampas e Terrugem, Portugal', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('40ccd8a1-371c-4d0f-a7d0-d5ae77e8e5b0', null, 'Cividate Camuno, Italy', 'National Museum of Valcamonica', '{art,culture}', 45.942932, 10.269491, 'Piazzale Giacomini 2, 25040 Cividate Camuno, Cividate Camuno, Italy', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -9578,7 +9618,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('ca33cc69-d01b-4fe7-aa28-538e9a4f6c50', null, 'Paris, France', 'Galerie Thaddaeus Ropac', '{art}', 47.804281, 13.043099, 'Paris, France', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e52c8f56-df61-4a54-aa4d-f502c48e09aa', null, 'United States', 'Tony Shafrazi Gallery', '{art}', 40.750277777, -74.004722222, 'United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c46a2459-603e-41d7-a5ba-b0a7224a8f63', null, 'Auckland Region, New Zealand', 'Petar/James Gallery', '{art}', -36.8469, 174.7685, 'Law Society Building, 56 Shortland Street, Auckland, New Zealand, Auckland Region, New Zealand', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('da72d577-4574-422d-a60f-978a61fe727a', null, 'Janów-Nikiszowiec, Poland', 'Galeria Szyb Wilson', '{art}', 50.2507, 19.0835, 'ul. Oswobodzenia 1, 40 - 403 Katowice, Janów-Nikiszowiec, Poland', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('da72d577-4574-422d-a60f-978a61fe727a', null, 'Janów-Nikiszowiec, Poland', 'Galeria Szyb Wilson', '{art}', 50.2507, 19.0835, 'ul. Oswobodzenia 1, 40 - 403 Katowice, Janów-Nikiszowiec, Poland', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('1eb17ac1-7a64-4f4f-a4d5-e58e99161a10', null, 'United Kingdom', 'Stuckism International Gallery', '{art}', 51.5264, -0.0811111, 'United Kingdom', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('b42fdfa5-85ff-41f3-a1d0-7e563a2f8198', null, 'Ireland', 'Kerlin Gallery', '{art}', 53.340689, -6.259553, 'Ireland', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('63489e46-9551-4404-a9e6-35bef899f24a', null, 'United States', 'Macbeth Gallery', '{art}', 40.75201, -73.982223, 'United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -9618,10 +9661,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('d71bd061-4ee9-4d2f-a660-db2b226056d9', null, 'Amsterdam, Netherlands', 'Art & Project', '{art}', 52.346306, 4.8800449, 'Amsterdam, Netherlands', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('7bb22f09-5ceb-4497-a759-0b9ed89d53a0', null, 'United States', 'Fort Gansevoort', '{art}', 40.739583333, -74.006611111, 'United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ac8b529b-c633-468d-aab8-441672be6928', null, 'City of Westminster, United Kingdom', 'Messum''s', '{art}', 51.5102, -0.1417, 'City of Westminster, United Kingdom', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('0f72a46c-eca3-4c14-a1c2-e2788fc16208', null, 'Mexico', 'Galería de Arte Mexicano', '{art}', 19.413186, -99.187004, 'Mexico', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('0f72a46c-eca3-4c14-a1c2-e2788fc16208', null, 'Mexico', 'Galería de Arte Mexicano', '{art}', 19.413186, -99.187004, 'Mexico', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('9a77e967-3b6e-45f1-a5ee-6336ad5e60f5', null, 'Hillerød Municipality, Denmark', 'Annaborg', '{art}', 55.93511, 12.2965, 'Frederiksværksgade 2A, 3400 Hillerød, Hillerød Municipality, Denmark', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c533fa7f-19e6-4e0d-a232-abb8edf1ab88', null, 'Glasgow City, United Kingdom', 'Tramway', '{art}', 55.8407, -4.26711, 'Glasgow City, United Kingdom', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('67f46610-5e38-4408-a9cc-9218c62d5a18', null, 'Helsinki, Finland', 'Kunsthalle Helsinki', '{art}', 60.172098, 24.931295, 'Nervanderinkatu 3, 00100 Helsinki, Helsinki, Finland', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -9831,7 +9871,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('49f44b41-909a-419f-a269-11522da8eece', null, 'Brussels, Belgium', 'Office Baroque', '{art}', 50.848406, 4.343225, 'Brussels, Belgium', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3ff67c38-a9b8-401a-a69b-193dee9ae8c5', null, 'Jakarta, Indonesia', 'Jakarta Cultural Festival', '{art}', -6.210263529, 106.795500796, 'Jl. Palmerah Sel. No.17, RW.2, Gelora, Kecamatan Tanah Abang, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta, Jakarta, Indonesia', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a5f56c89-cfe7-4f67-aa12-33ee75dccbf0', null, 'Glasgow City, United Kingdom', 'Transmission Gallery', '{art}', 55.856944444, -4.246944444, 'Glasgow City, United Kingdom', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('a0979cbf-b3e4-4971-a373-95ce547ba630', null, 'United Kingdom', 'Piccadilly Gallery', '{art}', 51.5082, -0.1421, 'United Kingdom', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('a0979cbf-b3e4-4971-a373-95ce547ba630', null, 'United Kingdom', 'Piccadilly Gallery', '{art}', 51.5082, -0.1421, 'United Kingdom', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('4bef3aad-fe7c-4cf3-a4a6-cc9a24a6b47a', null, 'Nashville, United States', 'Plaza Mariachi Music City', '{art}', 36.0844, -86.7304, '3955 Nolensville Pike, Nashville, TN 3721, Nashville, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('cab712a8-e5bc-4fd8-af0b-2d70b0735280', null, 'Berlin, Germany', 'Konrad Fischer Galerie', '{art}', 51.227768, 6.806835, 'Berlin, Germany', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('10bbd8dc-d6c8-45ec-a398-c12d0e7840ec', null, 'London, United Kingdom', 'Mayor Gallery', '{art}', 51.5101, -0.1411, 'London, United Kingdom', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -9871,10 +9914,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('e086da24-cf31-4584-afb7-5fa0afb85fa8', null, 'United Kingdom', 'Cristea Roberts Gallery', '{art}', 51.506, -0.1361, 'United Kingdom', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('84e2235c-82e8-4e26-a60a-8d7a07cad182', null, 'United Kingdom', 'Forest of Dean Sculpture Trail', '{art}', 51.80652778, -2.5525, 'United Kingdom', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0529dfbe-b861-451c-a42b-7955ebd8b94d', null, 'Mohammadpur Thana, Bangladesh', 'Studio 6/6', '{art}', 23.76732, 90.36086, '6/6 Aziz Moholla, Joint Quarter Lane Number 6, Mohammadpur, Mohammadpur Thana, Bangladesh', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('0acff84b-282f-4e89-a2e0-d6c232ff26d4', null, 'New York, United States', 'Mandeville Gallery', '{art}', 42.817321, -73.929961, 'New York, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('0acff84b-282f-4e89-a2e0-d6c232ff26d4', null, 'New York, United States', 'Mandeville Gallery', '{art}', 42.817321, -73.929961, 'New York, United States', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3e798ce5-5e37-4a73-a04e-56969cb16758', null, 'United Kingdom', 'Goldsmiths CCA', '{art}', 51.4751, -0.0377, 'United Kingdom', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e350143a-6bb7-4814-a771-893d24f078c4', null, 'London Borough of Wandsworth, United Kingdom', 'Putney Sculpture Trail', '{art}', 51.4704, -0.2221, 'London Borough of Wandsworth, United Kingdom', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('850ee6d6-f500-47c4-a00e-51127a0f9e9a', null, 'New Zealand', 'Barry Lett Galleries', '{art}', -36.8485, 174.764, 'New Zealand', 'Listed by Wikidata', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -10084,7 +10124,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('c472595e-59f0-4f42-a627-d79e41e6338a', null, 'Colchester, United Kingdom', 'Three X Co', '{bars,nightlife}', 51.8886427, 0.9003481, 'Culver Walk 12, Colchester, United Kingdom', 'Listed by The World''s 50 Best Bars', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('fa7dec58-0c5c-4174-a9de-72d406da4dcc', null, 'Seoul, South Korea', 'Bar Cham', '{bars,nightlife}', 37.5801527, 126.9689694, '34 Jahamun-ro 7-gil, Tongin-dong, Jongno-gu, Seoul, Seoul', 'Listed by The World''s 50 Best Bars', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c885444d-724c-4ec3-a453-635723ad1d31', null, 'Bangkok, Thailand', 'GOD', '{bars,nightlife}', 13.7411584, 100.5117552, '25, 27 Soi Rammaitree, Pom Prap, Pom Prap Sattru Phai, Bangkok 10100, Bangkok', 'Listed by The World''s 50 Best Bars', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('87e10a0d-a435-431b-a3d4-69162c166d28', null, 'Nara, Japan', 'Lamp Bar', '{bars,nightlife}', 34.6824335, 135.8270278, '26 Tsunofuricho, Nara, 630-8224, Japan, Nara', 'Listed by The World''s 50 Best Bars', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('87e10a0d-a435-431b-a3d4-69162c166d28', null, 'Nara, Japan', 'Lamp Bar', '{bars,nightlife}', 34.6824335, 135.8270278, '26 Tsunofuricho, Nara, 630-8224, Japan, Nara', 'Listed by The World''s 50 Best Bars', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('2b6be6be-f0e6-45b4-a247-21cf61c51ec7', null, 'Hong Kong, China', 'Coa', '{bars,nightlife}', 22.2840215, 114.1520554, '6-10 Shin Hing Street, Central, Hong Kong, Hong Kong', 'Listed by The World''s 50 Best Bars', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('73306836-a763-405a-a2ba-c07941a93f89', null, 'Hong Kong, China', 'Penicillin', '{bars,nightlife}', 22.2821043, 114.1539895, 'L/G Amber Lodge, 23 Hollywood Road, Central, Hong Kong, Hong Kong', 'Listed by The World''s 50 Best Bars', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('bde35496-e0f6-44e4-ad15-20729ed9c97a', null, 'Bengaluru, India', 'Bar Spirit Forward', '{bars,nightlife}', 12.9747462, 77.599422, 'Ground Floor, Hotel Southern Star, 40/2, Lavelle Road, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560001, India, Bengaluru', 'Listed by The World''s 50 Best Bars', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -10124,10 +10167,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('718f65d9-a8f2-40e7-a268-29ac21a8166c', null, 'New York, United States', 'Clemente Bar', '{bars,nightlife}', 40.742203, -73.9879655, '11 Madison Ave, New York, NY 10010, United States, New York', 'Listed by The World''s 50 Best Bars', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c0a8c3de-98fe-48f6-a856-6b2859a76cd4', null, 'New Orleans, United States', 'Jewel of the South', '{bars,nightlife}', 29.9585553, -90.0694844, '1026 St Louis St, New Orleans, Louisiana, 70112, New Orleans', 'Listed by The World''s 50 Best Bars', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3d747645-4503-471b-a877-f15e8277fd60', null, 'San Juan, United States', 'La Factoria', '{bars,nightlife}', 18.4672429, -66.1173999, '148 C. de San Sebastián, San Juan, Puerto Rico, 00901, San Juan', 'Listed by The World''s 50 Best Bars', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('26e9e9da-3386-4a9c-a56f-e3465a6ff476', null, 'Chicago, United States', 'Best Intentions', '{bars,nightlife}', 41.917247, -87.7101436, '3281 W Armitage Ave, Chicago, IL 60647, United States, Chicago', 'Listed by The World''s 50 Best Bars', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('26e9e9da-3386-4a9c-a56f-e3465a6ff476', null, 'Chicago, United States', 'Best Intentions', '{bars,nightlife}', 41.917247, -87.7101436, '3281 W Armitage Ave, Chicago, IL 60647, United States, Chicago', 'Listed by The World''s 50 Best Bars', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('35d420ae-7456-4298-a182-b236aa2ab346', null, 'New York, United States', 'Bar Madonna', '{bars,nightlife}', 40.7142542, -73.9556698, '367 Metropolitan Ave, Brooklyn, NY 11211, United States, New York', 'Listed by The World''s 50 Best Bars', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('dc4801ca-0a86-4090-a293-1bea6e6ce425', null, 'Miami, United States', 'Viceversa', '{bars,nightlife}', 25.7787928, -80.1892498, '398 NE 5th St, Miami, FL 33132, United States, Miami', 'Listed by The World''s 50 Best Bars', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('02c888a5-7378-4c23-a1b0-1486764124c8', null, 'Vancouver, Canada', 'The Keefer Bar', '{bars,nightlife}', 49.2796198, -123.101326, '135 Keefer St, Vancouver, BC V6A 1X3, Canada, Vancouver', 'Listed by The World''s 50 Best Bars', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -10160,7 +10200,6 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('969045cf-4862-450d-a210-d5f3edef32ad', null, 'Thessaloniki, Greece', 'Gorilla', '{bars,nightlife}', 40.5981941, 22.9521491, 'Veroias 3, Thessaloniki 546 25, Greece, Thessaloniki', 'Listed by The World''s 50 Best Bars', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a990833e-7635-46f6-a205-a7a381fc58a3', null, 'Stockholm, Sweden', 'Rda Huset', '{bars,nightlife,food}', 59.3326849, 18.0661748, 'Malmskillnadsgatan 9, 111 47 Stockholm, Sweden, Stockholm', 'Listed by The World''s 50 Best Bars', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8eb109c0-5f3b-4512-a2e7-5032eedecfed', null, 'Oslo, Norway', 'Himkok', '{bars,nightlife}', 59.9139426, 10.7514151, 'Storgata 27, 0184 Oslo, Norway, Oslo', 'Listed by The World''s 50 Best Bars', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('98a89e6c-630e-43fc-a459-f270fbb73268', null, 'Athens, Greece', 'Baba au Rum', '{bars,nightlife}', 37.9773986, 23.7297829, 'Klitiou 6, 105 60 Athens, Greece, Athens', 'Listed by The World''s 50 Best Bars', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('dba615b9-b972-4707-a2d4-d2be9518dcc0', null, 'Copenhagen, Denmark', 'Bird', '{bars,nightlife}', 55.6768048, 12.5394373, 'Gl. Kongevej 102, 1850 Frederiksberg, Denmark, Copenhagen', 'Listed by The World''s 50 Best Bars', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('4a03b91b-8f91-485d-a3a6-d3ebad995317', null, 'Paris, France', 'De Vie', '{bars,nightlife}', 48.8662194, 2.3479244, '22-24 Rue Saint-Sauveur, 75002 Paris, France, Paris', 'Listed by The World''s 50 Best Bars', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('1c99e699-78e6-4277-a47f-f4ee957ff910', null, 'Zurich, Switzerland', 'Late Bloomers', '{bars,nightlife}', 47.3777927, 8.5285273, 'Dienerstrasse 20, 8004 Zürich, Switzerland, Zurich', 'Listed by The World''s 50 Best Bars', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -10190,7 +10229,6 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('4f360646-3839-4d46-a70f-5b00876f638c', null, 'Milan, Italy', 'Rita', '{bars,nightlife}', 45.4504143, 9.1698507, 'Via Angelo Fumagalli, 1, 20143 Milano MI, Italy, Milan', 'Listed by The World''s 50 Best Bars', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3d4825d7-143d-4b39-a975-feee51860110', null, 'London, United Kingdom', 'Connaught Bar', '{bars,nightlife}', 51.5101816, -0.1502153, 'Connaught, Carlos Pl, London W1K 2A, UK, London', 'Listed by The World''s 50 Best Bars', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c34baf4e-6075-4b16-a5cc-14ba823c0ca6', null, 'Edinburgh, United Kingdom', 'Panda  Sons', '{bars,nightlife}', 55.9532068, -3.2069716, '79 Queen St, Edinburgh EH2 4NF, Edinburgh', 'Listed by The World''s 50 Best Bars', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('89a78262-5d19-4f08-a2b4-10296e6c1016', null, 'Athens, Greece', 'The Clumsies', '{bars,nightlife}', 37.9786435, 23.7300558, 'Praxitelous 30, Athina 105 61, Greece, Athens', 'Listed by The World''s 50 Best Bars', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('31b94601-bd33-436f-a737-5ca92eeecb97', null, 'London, United Kingdom', 'Kwnt Mayfair', '{bars,nightlife}', 51.5071851, -0.143285, '52 Stratton St, London W1J 8LN, London', 'Listed by The World''s 50 Best Bars', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('de7a084f-694b-4e11-a48c-e99a247c5766', null, 'Innsbruck, Austria', 'Dunlin', '{bars,nightlife}', 47.264879, 11.3963004, 'Meraner Str. 6, 6020 Innsbruck, Austria, Innsbruck', 'Listed by The World''s 50 Best Bars', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('565d8374-f507-4ec8-a5ca-532444b64d23', null, 'Tokyo, Japan', 'Sazenka', '{food}', 35.6489552, 139.736526, '4 Chome-7-5 Minamiazabu, Minato City, Tokyo 106-0047, Japan, Tokyo', 'Listed by The World''s 50 Best Restaurants', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -10339,7 +10377,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('2df40c39-2d6b-4297-a09f-aeae5b5faed0', null, 'Vancouver, Canada', 'Published on Main', '{food}', 49.2528469, -123.1011732, '3593 Main St. Vancouver, BC V5V 3N4, Canada, Vancouver', 'Listed by The World''s 50 Best Restaurants', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('2a062351-926f-463f-a479-62a92bc76199', null, 'Washington DC, United States', 'Dgon by Kwame Onwuachi', '{food}', 38.8834116, -77.0310193, '1330 Maryland Ave. SW. Washington, DC 20024, United States, Washington DC', 'Listed by The World''s 50 Best Restaurants', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('dc57fc8d-cd7c-4753-a12b-fbdea9d403e0', null, 'Montreal, Canada', 'Beba', '{food}', 45.4648639, -73.567749, '3900 Rue Éthel, Verdun, QC H4G 1S4, Canada, Montreal', 'Listed by The World''s 50 Best Restaurants', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('00399233-3b98-4491-aba1-a6a23bd1c6c4', null, 'Whistler, Canada', 'Wild Blue', '{food}', 50.1135929, -122.9582203, '4005 Whistler Way, Whistler, BC V8B 1J1, Canada, Whistler', 'Listed by The World''s 50 Best Restaurants', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('00399233-3b98-4491-aba1-a6a23bd1c6c4', null, 'Whistler, Canada', 'Wild Blue', '{food}', 50.1135929, -122.9582203, '4005 Whistler Way, Whistler, BC V8B 1J1, Canada, Whistler', 'Listed by The World''s 50 Best Restaurants', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('feb79e76-5249-45ce-a530-1d4485101544', null, 'Toronto, Canada', 'Quetzal', '{food}', 43.6564704, -79.406875, '419 College St. Kensington Market, Toronto, ON, M5T 1T1, Toronto', 'Listed by The World''s 50 Best Restaurants', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8e949ea0-34c4-42f4-a45a-fd3acc359519', null, 'New York, United States', 'Jungsik', '{food}', 40.7187884, -74.0090911, '2 Harrison St. New York, NY 10013, United States, New York', 'Listed by The World''s 50 Best Restaurants', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0a46d024-c34a-409a-a36f-32f42cd90d0b', null, 'Toronto, Canada', 'Mhel', '{food}', 43.66018, -79.43243, '276 Havelock St. Toronto, ON M6H 3B9, Canada, Toronto', 'Listed by The World''s 50 Best Restaurants', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -10377,10 +10418,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('c9228e29-8d13-4f27-a431-010e56361d50', null, 'Roma, Italy', 'Acquolina', '{food}', 41.9086556, 12.4755908, 'Via del Vantaggio, 14, Roma, Roma, Italy', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('bab4e111-1d2a-4f1f-a586-1e1f2d7dfe03', null, 'Stockholm, Sweden', 'Adam/Albin', '{food}', 59.3429875, 18.0661267, 'Rådmansgatan 16, Stockholm, Stockholm, Sweden', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('588c65ba-2578-48c6-adf4-2d7c7e04ae80', null, 'San Diego, United States', 'Addison', '{food}', 32.938623, -117.1974149, '5200 Grand Del Mar Way, San Diego, San Diego, U.S.A.', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('b634fd8b-f1e4-487d-a7d0-25f6a819d608', null, 'Udine, Italy', 'Agli Amici dal 1887', '{food}', 46.1022358, 13.2661054, 'Via Liguria, 252, Udine, Udine, Italy', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('b634fd8b-f1e4-487d-a7d0-25f6a819d608', null, 'Udine, Italy', 'Agli Amici dal 1887', '{food}', 46.1022358, 13.2661054, 'Via Liguria, 252, Udine, Udine, Italy', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('72a97b6d-dc39-4883-a516-f7c124ee373f', null, 'Rovinj, Croatia', 'Agli Amici Rovinj', '{food}', 45.074369, 13.6354781, 'Šetalište Vijeća Europe 1-2, Rovinj, Rovinj, Croatia', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('2f6d5245-0a8e-442b-a5e3-466e39fb6670', null, 'Kuala Lumpur, Malaysia', 'Akâr dining', '{food}', 3.1527392, 101.620807, '109, Jln Aminuddin Baki, Taman Tun Dr Ismail, Kuala Lumpur, Kuala Lumpur, Malaysia', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('78c06152-83e5-4eac-a4da-e002fca5dffe', null, 'Donostia, Spain', 'Akelarre', '{food}', 43.3077826, -2.0431538, 'Padre Orkolaga Ibilbidea, 56, Donostia, Donostia, Spain', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -10533,7 +10571,6 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('d83eaedb-e62a-4dad-ae14-8376be68dc88', null, 'Milano, Italy', 'Contraste', '{food}', 45.446115, 9.1792595, 'Via Giuseppe Meda, 2, Milano, Milano, Italy', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('694c953d-1378-48ab-aa34-5d967cc55de8', null, 'Madrid, Spain', 'Coque', '{food}', 40.4306865, -3.6905135, 'Calle del Marqués del Riscal, 11, Madrid, Madrid, Spain', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a5e55114-3c8e-4bee-a669-4d506e273cd0', null, 'London, United Kingdom', 'Cornus', '{food}', 51.494148, -0.1479415, '27c Eccleston Place, London, London, United Kingdom', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('0115ca4b-f135-4e35-afdf-3b82f24ad880', null, 'Madrid, Spain', 'Corral de la Morería', '{food}', 40.4127418, -3.7141548, 'Calle de la Moreria, 17, Madrid, Madrid, Spain', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('635bbbd9-b5c7-40c7-a296-364e21922dca', null, 'New York, United States', 'Cosme', '{food}', 40.7395503, -73.9883884, '35 East 21st Street, New York, New York, U.S.A.', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d063f678-8131-40d4-a152-36ac5195b74c', null, 'Miami, United States', 'COTE Miami', '{food}', 25.8129145, -80.1915756, '3900 Northeast 2nd Avenue, Miami, Miami, U.S.A.', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('46470834-a0d6-40dc-a196-ec718e71d391', null, 'Milano, Italy', 'Cracco', '{food}', 45.464759, 9.1930823, 'Corso Vittorio Emanuele II, Milano, Milano, Italy', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -10593,7 +10630,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('b54ef711-0c4d-4baf-a46f-c7342c19c72c', null, 'Edinbane, United Kingdom', 'Edinbane Lodge', '{food}', 57.4690645, -6.4320356, 'Old Dunvegan Road, Edinbane, Edinbane, United Kingdom', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('42076ca4-add9-4cac-a102-18ff8efe0895', null, 'Minato-ku, Japan', 'エディション・コウジ シモムラ - Edition Koji Shimomura', '{food}', 35.6618, 139.7369227, '六本木ティーキューブ1F, 3 Chome-1−1 Roppongi, Minato, Minato-ku, Japan', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a440f2af-9914-43a9-ad54-c1063d552658', null, 'Bratislava, Slovakia', 'Edomae Sushi Matsuki', '{food}', 48.1433347, 17.1066385, 'Ventúrska 18, Bratislava, Slovakia', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('63eb2de8-ba8a-4014-a269-e32041e760df', null, 'San Francisco, United States', 'Eight Tables by George Chen', '{food}', 37.7981996, -122.4078796, '8 Kenneth Rexroth Place, San Francisco, San Francisco, U.S.A.', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('63eb2de8-ba8a-4014-a269-e32041e760df', null, 'San Francisco, United States', 'Eight Tables by George Chen', '{food}', 37.7981996, -122.4078796, '8 Kenneth Rexroth Place, San Francisco, San Francisco, U.S.A.', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('76e11c88-f700-4980-a7e1-efaf86de1360', null, 'St. Gallen, Switzerland', 'Einstein Gourmet', '{food}', 47.4214822, 9.3755558, 'Berneggstrasse 2, St. Gallen, St. Gallen, Switzerland', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('797358d7-99fd-4f99-a1f7-188b21370887', null, 'Neunburg vorm Wald, Germany', 'Eisvogel', '{food}', 49.3385551, 12.2616809, 'Hofenstetten 55, Neunburg vorm Wald, Neunburg vorm Wald, Germany', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a951598c-22aa-4cc0-a740-47ab4cbfc364', null, 'Ciboure, France', 'Ekaitza', '{food}', 43.3852118, -1.6674947, '15 Quai Maurice Ravel, Ciboure, Ciboure, France', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -10630,10 +10670,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('bddbf355-731c-491b-a313-8c5b230f8bc7', null, 'Hong Kong, China, Hong Kong, China', 'Feuille', '{food}', 22.2848394, 114.1529709, '5/F, The Wellington, 198 Wellington Street, Central, Hong Kong, China, Hong Kong, China', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('19702600-f9ed-4ccc-a1f6-24534135dc2c', null, 'Sandweiler, Luxembourg', 'Fields', '{food}', 49.629082, 6.2039234, '6 Rue de Trèves, Findel Sandweiler, Sandweiler, Luxembourg', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('27fb4eb7-2899-4c31-af62-32865094cae8', null, 'Lisboa, Portugal', 'Fifty Seconds Martin Berasategui', '{food}', 38.7747285, -9.0910707, 'Rua Cais das Naus Lote 2.21.01, Lisboa, Lisboa, Portugal', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('b21a6820-d880-4000-aa9a-98208a9b5820', null, 'Macao, China, Macao, China', 'Five Foot Road', '{food}', 22.1465444, 113.5689843, 'MGM Cotai, Avenida da Nave Desportiva, Macao, China, Macao, China', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('b21a6820-d880-4000-aa9a-98208a9b5820', null, 'Macao, China, Macao, China', 'Five Foot Road', '{food}', 22.1465444, 113.5689843, 'MGM Cotai, Avenida da Nave Desportiva, Macao, China, Macao, China', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f0db9189-5472-4687-a5b5-628f2454dd81', null, 'Nice, France', 'Flaveur', '{food}', 43.7013005, 7.2718374, '25 Rue Gubernatis, Nice, Nice, France', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('5a4710c0-789b-4366-a2dc-f3a6d2e2f426', null, 'Novi Slankamen, Serbia', 'Fleur de Sel - Atelje vina Šapat', '{food}', 45.1257668, 20.2390854, 'Počenta bb, Novi Slankamen, Novi Slankamen, Serbia', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('37cf99a4-2eaa-4122-a965-f8866679fac6', null, 'Melbourne, Australia', 'Florentino', '{food}', -37.8117868, 144.9708939, '80 Bourke Street, Melbourne, Melbourne, Australia', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -10846,7 +10883,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('f69d724a-f033-4c8c-a6ae-9ec6e6d15ed6', null, 'Saint Lucia, Saint Lucia', 'Cap Maison Resort & Spa', '{food}', 14.0981299, -60.9505874, 'Building 1, Smuggler&#x27;s Cove, Saint Lucia, Saint Lucia', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('66bf4ab2-19fe-49a6-af41-031480bd9458', null, 'Cape Town, South Africa', 'Cape Grace, A Fairmont Managed Hotel', '{food}', -33.9051339, 18.41939, 'V&A Waterfront, W Quay Rd, Victoria & Alfred Waterfront, Cape Town, Cape Town, South Africa', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f8d79481-b063-4d6f-a8b4-e9eea93b11f0', null, 'Weligama, Sri Lanka', 'Cape Weligama - Relais & Chateaux', '{food}', 5.9585784, 80.4102893, 'Abimanagama Rd, Weligama, Weligama, Sri Lanka', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('4b70c1ec-abd5-475e-a1f5-a394ef745c94', null, 'Viet Nam, Viet Nam', 'Capella Hanoi', '{food}', 21.0257147, 105.8568102, '11 P. Lê Phụng Hiểu, French Quarter, Hoàn Kiếm, Viet Nam, Viet Nam', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('4b70c1ec-abd5-475e-a1f5-a394ef745c94', null, 'Viet Nam, Viet Nam', 'Capella Hanoi', '{food}', 21.0257147, 105.8568102, '11 P. Lê Phụng Hiểu, French Quarter, Hoàn Kiếm, Viet Nam, Viet Nam', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('a3e36e65-24b5-4ef3-a78a-94f6ac8994d5', null, 'Singapore, Singapore', 'Capella Singapore', '{food}', 1.2496982, 103.8244312, '1 The Knolls, Sentosa Island, Singapore, Singapore, Singapore', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('dacd3911-dd0b-41af-a7c6-78beb7d87ac0', null, 'Sydney, Australia', 'Capella Sydney', '{food}', -33.863648, 151.2106852, '24 Loftus St, Sydney, Sydney, Australia', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('80addfd1-05ae-4e4f-a7af-c4e62865c4e2', null, 'Capri, Italy', 'Capri Tiberio Palace', '{food}', 45.5143981, 11.5655492, 'Via Croce, 11-15, Capri, Capri, Italy', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -10883,10 +10923,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('279b8f7c-55a8-4ade-a233-a5a27d43ba5a', null, 'Chatham, United States', 'Chatham Inn Relais & Châteaux', '{food}', 41.6782515, -69.9527567, '359 Main St, Chatham, Chatham, U.S.A.', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('4e06d0d9-a88d-4dd7-a197-4f2f2f694aeb', null, 'Weggis, Switzerland', 'Chenot Palace Weggis', '{food}', 47.0295507, 8.4212204, 'Hertensteinstrasse 34, Weggis, Weggis, Switzerland', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('1aa33ee4-7041-46de-aae2-683a8ae495c2', null, 'Courchevel, France', 'Cheval Blanc Courchevel', '{food}', 45.4094995, 6.6336316, 'Rue du Jardin Alpin, Courchevel, Courchevel, France', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('60f9effc-ad95-47d0-a329-337d40e8f17c', null, 'Paris, France', 'Cheval Blanc Paris', '{food}', 48.8532484, 2.3713374, 'La Samaritaine, 8 Quai du Louvre, Paris, Paris, France', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('60f9effc-ad95-47d0-a329-337d40e8f17c', null, 'Paris, France', 'Cheval Blanc Paris', '{food}', 48.8532484, 2.3713374, 'La Samaritaine, 8 Quai du Louvre, Paris, Paris, France', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('abd93bb7-117a-4141-a455-c150abd540cf', null, 'Maldives, Maldives', 'Cheval Blanc Randheli', '{food}', 5.6988971, 73.3354558, 'Randheli Island, Maldives, Maldives', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('14a957d8-67f0-4d62-a359-caba7c99f53a', null, 'Saint-Barthélemy, Saint Barthélemy', 'Cheval Blanc St-Barth', '{food}', 17.9191396, -62.8544915, 'Baie des Flamands, Saint-Barthélemy, Saint-Barthélemy, Saint Barthélemy', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('4959c1b0-9f1b-4460-a29b-dca30e875b61', null, 'Saint-Tropez, France', 'Cheval Blanc St-Tropez', '{food}', 43.2662294, 6.6248643, 'Plage de la Bouillabaisse, Saint-Tropez, Saint-Tropez, France', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -11099,7 +11136,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('3206f160-41e5-4d62-a3e3-4c0273ecaec2', null, 'Honolulu, United States', 'Halekulani Hotel', '{food}', 21.2779627, -157.8323674, '2199 Kālia Rd, Honolulu, Honolulu, U.S.A.', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('9007a9ea-1d20-4fca-a72d-849e0ad27c9b', null, 'Onna, Japan', 'Halekulani Okinawa', '{food}', 26.5266077, 127.923088, '1967-1 Nakama, Onna, Onna, Japan', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('44b86ec2-5f72-4838-abca-e6faa42af6fa', null, 'Montego Bay, Jamaica', 'Half Moon', '{food}', 18.5177891, -77.8811612, 'Rose Hall St James Jamaica WI, Montego Bay, Montego Bay, Jamaica', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('06d2e507-6c3e-4029-aaec-b52e73113530', null, 'London, United Kingdom', 'Ham Yard Hotel', '{food}', 51.5111373, -0.1350791, '1 Ham Yard, London, London, United Kingdom', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('06d2e507-6c3e-4029-aaec-b52e73113530', null, 'London, United Kingdom', 'Ham Yard Hotel', '{food}', 51.5111373, -0.1350791, '1 Ham Yard, London, London, United Kingdom', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('ac3b5de3-7824-47f1-a2be-025ee245fe5d', null, 'Solihull, United Kingdom', 'Hampton Manor', '{food}', 52.4257337, -1.7057947, 'Shadowbrook Ln, Hampton in Arden, Solihull, Solihull, United Kingdom', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a68122c7-8876-4d89-aef7-ff4e2ef80050', null, 'Hapuku, New Zealand', 'Hapuku Lodge + Tree Houses', '{food}', -42.3191224, 173.7438062, '8 Station Rd, Hapuku, Hapuku, New Zealand', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('121c0122-9426-48b8-a79c-54666a642b9d', null, 'Bad Gastein, Austria', 'Haus Hirt - Alpine Spa Designhotel', '{food}', 47.1223197, 13.142867, 'Kaiserhofstraße 14, Bad Gastein, Bad Gastein, Austria', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -11136,10 +11176,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('a8fb0c2c-9182-4f72-a979-135e3a7d2b9e', null, 'Crillon-le-Brave, France', 'Hôtel Crillon le Brave - Provence', '{food}', 44.1181842, 5.1437424, 'Place de l&#x27;Eglise, Crillon-le-Brave, Crillon-le-Brave, France', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('369ead59-9789-4b67-a5ee-8e9c2ce2868c', null, 'Ljubljana, Slovenia', 'Hotel Cubo', '{food}', 46.0492243, 14.5018692, 'Slovenska cesta 15, Ljubljana, Ljubljana, Slovenia', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3a416e0a-1bc1-47ea-a180-59e05602a5f4', null, 'København, Denmark', 'Hotel D&#x27;Angleterre', '{food}', 55.680596, 12.584668, 'Kongens Nytorv 34, København, København, Denmark', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('7d658144-9cef-4e40-a1e7-530fc1a54cf8', null, 'Brazil, Brazil', 'Hotel das Cataratas, A Belmond Hotel, Iguassu Falls', '{food}', -25.5979832, -54.4881907, 'Iguassu National Park - Rodovia Br 469, Km 32 - s/n - Foz do Iguaçu, Brazil, Brazil', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('7d658144-9cef-4e40-a1e7-530fc1a54cf8', null, 'Brazil, Brazil', 'Hotel das Cataratas, A Belmond Hotel, Iguassu Falls', '{food}', -25.5979832, -54.4881907, 'Iguassu National Park - Rodovia Br 469, Km 32 - s/n - Foz do Iguaçu, Brazil, Brazil', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('da46b263-5756-4701-a72e-f5a9e319cc96', null, 'Sölden, Austria', 'Hotel Das Central - Alpine . Luxury . Life', '{food}', 46.9669248, 11.0089855, 'Auweg 3, Sölden, Sölden, Austria', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('6035b83e-13a7-4122-a392-491c73dda960', null, 'Paris, France', 'Hôtel de Crillon, A Rosewood Hotel', '{food}', 48.8676219, 2.3213665, '10 Pl. de la Concorde, Paris, Paris, France', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('893b188a-56fd-48de-a203-93face038f16', null, 'Roma, Italy', 'Hotel de la Ville', '{food}', 41.905707, 12.4842099, 'Via Sistina, 69, Roma, Roma, Italy', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -11352,7 +11389,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('c4cc645a-743b-40e2-a4f0-8eb483907d53', null, 'Doha, Qatar', 'Mandarin Oriental, Doha', '{food}', 25.2862097, 51.5258347, 'Barahat Msheireb St, Doha, Doha, Qatar', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('2fe7ac6b-7a88-4021-a56f-0c4aaa704c8c', null, 'Genève, Switzerland', 'Mandarin Oriental, Geneva', '{food}', 46.2058148, 6.1409769, 'Quai Turrettini 1, Genève, Genève, Switzerland', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('eea7be65-2c77-4de3-a3d2-f4c7a1b1ecc4', null, 'Hong Kong, China, Hong Kong, China', 'Mandarin Oriental, Hong Kong', '{food}', 22.2818858, 114.1593965, '5 Connaught Road, Central, Hong Kong, China, Hong Kong, China', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('3e574fb8-aa25-41ec-a6b8-d41ace87d41a', null, 'London, United Kingdom', 'Mandarin Oriental Hyde Park, London', '{food}', 51.5022168, -0.1599884, 'Hyde Park, 66 Knightsbridge, London, London, United Kingdom', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('3e574fb8-aa25-41ec-a6b8-d41ace87d41a', null, 'London, United Kingdom', 'Mandarin Oriental Hyde Park, London', '{food}', 51.5022168, -0.1599884, 'Hyde Park, 66 Knightsbridge, London, London, United Kingdom', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('02085636-39c1-440e-abc9-42383bc96a44', null, 'Indonesia, Indonesia', 'Mandarin Oriental, Jakarta', '{food}', -6.1960325, 106.8236526, 'Mandarin Oriental Hotel, Jl. Imam Bonjol, RT.1/RW.5, Menteng, Central Jakarta City, Indonesia, Indonesia', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8747cfea-5efe-4fec-a264-6fffae6469fd', null, 'Dubai, United Arab Emirates', 'Mandarin Oriental Jumeira, Dubai', '{food}', 25.216972, 55.2506577, 'Jumeirah Beach Road, Dubai, United Arab Emirates', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a144411a-175d-4712-a49e-6b9f8b8a1482', null, 'Kuala Lumpur, Malaysia', 'Mandarin Oriental, Kuala Lumpur', '{food}', 3.1559992, 101.7116181, 'Kuala Lumpur City Centre, Kuala Lumpur, Kuala Lumpur, Malaysia', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -11389,10 +11429,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('a2ef686a-7e46-490c-a235-6be9a2135917', null, 'Budapest, Hungary', 'Matild Palace, a Luxury Collection Hotel, Budapest', '{food}', 47.4923593, 19.0540551, 'Budapest, Váci u 36, Budapest, Hungary', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3a09f853-96c3-42d5-a533-5357ad0cd2b2', null, 'Miami, United States', 'Mayfair House Hotel & Garden', '{food}', 25.7286823, -80.2408052, '3000 Florida Ave, Miami, Miami, U.S.A.', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('593acc00-9288-46fa-a344-dc506ebc3c2f', null, 'Washington, United States', 'Mayflower Inn & Spa, Auberge Resorts Collection', '{food}', 41.6290062, -73.3066599, '118 Woodbury Rd, CT-47, Washington, Washington, U.S.A.', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('64faf297-260d-432d-a2f7-b1ba8b0835c4', null, 'St. Helena, United States', 'Meadowood Napa Valley', '{food}', 53.2249321, 0.2010338, '900 Meadowood Ln, St Helena, St. Helena, U.S.A.', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('64faf297-260d-432d-a2f7-b1ba8b0835c4', null, 'St. Helena, United States', 'Meadowood Napa Valley', '{food}', 53.2249321, 0.2010338, '900 Meadowood Ln, St Helena, St. Helena, U.S.A.', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('81303c03-6a57-4761-a149-8849eeb87836', null, 'Lisboa, Portugal', 'Memmo Príncipe Real', '{food}', 38.7159123, -9.1459351, 'R. Dom Pedro V 56 J, Lisboa, Lisboa, Portugal', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('18457f91-27f9-4b8f-afbc-541e403eab20', null, 'Bale, Croatia', 'Meneghetti Wine Hotel & Winery', '{food}', 45.0080799, 13.7447017, 'Stancija Meneghetti 1, Bale, Bale, Croatia', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e2a9ee3d-17de-4063-aa88-a1a2fa889ea0', null, 'Barcelona, Spain', 'METT Barcelona', '{food}', 41.4256525, 2.1212427, 'Ctra. de Vallvidrera al Tibidabo, 83-93, Barcelona, Barcelona, Spain', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -11605,7 +11642,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('c053e782-933d-4394-a36e-541653919b16', null, 'Kruger Park, South Africa', 'Singita Sweni', '{food}', -24.0727778, 31.625, 'Sweni River, Kruger National Park, Mpumalanga, Kruger Park, Kruger Park, South Africa', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('cbc9604c-e78e-4892-ac47-a8deb35828de', null, 'Healdsburg, United States', 'SingleThread Farm - Restaurant - Inn', '{food}', 38.6123379, -122.8696919, '131 North St, Healdsburg, Healdsburg, U.S.A.', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d1d79eac-d32e-493c-a2f9-e790a50617e8', null, 'Samodães, Portugal', 'Six Senses Douro Valley', '{food}', 41.1441716, -7.8127621, 'Quinta Vale de Abraão, Samodães, Samodães, Portugal', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('a258c0b6-ed6e-4fba-af36-7f0c8fc78070', null, 'Chauth Ka Barwara, India', 'Six Senses Fort Barwara', '{food}', 26.050543, 76.1579764, 'Chauth Ka Barwara, Chauth Ka Barwara, India', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('a258c0b6-ed6e-4fba-af36-7f0c8fc78070', null, 'Chauth Ka Barwara, India', 'Six Senses Fort Barwara', '{food}', 26.050543, 76.1579764, 'Chauth Ka Barwara, Chauth Ka Barwara, India', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('4878e773-f052-43dd-a47d-54b5238cb3b5', null, 'Maldives, Maldives', 'Six Senses Kanuhura', '{food}', 5.5337054, 73.5061178, 'Kanuhura, Maldives, Maldives', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e6c84d0e-5eac-42c2-a479-b20344574dfd', null, 'Türkiye, Türkiye', 'Six Senses Kaplankaya', '{food}', 37.3114938, 27.4102708, 'Bozbük, Merkez Sokak No:198, Milas, Türkiye, Türkiye', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('2dd23482-3362-4232-aeb0-c6b0613526b4', null, 'London, United Kingdom', 'Six Senses London', '{food}', 51.5152269, -0.1885512, '1 Redan Pl, London, London, United Kingdom', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -11642,10 +11682,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('08879aa3-b16b-4d39-a461-3e866b9f327d', null, 'Macao, China, Macao, China', 'Star Tower - Studio City Macao', '{food}', 22.1412465, 113.5605386, 'Star Tower, Studio City, Estr. do Istmo, Macao, China, Macao, China', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('355ce893-260c-4e6d-a350-e6fe5b68f700', null, 'Park City, United States', 'Stein Eriksen Lodge Deer Valley', '{food}', 39.8059455, -104.8919219, '7700 Stein Way, Park City, Park City, U.S.A.', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('93ce2905-1067-49eb-a7c5-6df12a43532f', null, 'Lisboa, Portugal', 'Sublime Lisboa', '{food}', 38.7266911, -9.1548395, 'R. Marquês de Subserra 10, Lisboa, Lisboa, Portugal', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('c20a804b-4b89-4039-a767-cbf8e0d94408', null, 'Kyoto, Japan', 'Suiran, a Luxury Collection Hotel, Kyoto', '{food}', 35.015144, 135.675153, 'Kyoto, Ukyo Ward, Sagatenryūji Susukinobabachō, 翠嵐ラグジュアリーコレクションホテル京都, Kyoto, Japan', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('c20a804b-4b89-4039-a767-cbf8e0d94408', null, 'Kyoto, Japan', 'Suiran, a Luxury Collection Hotel, Kyoto', '{food}', 35.015144, 135.675153, 'Kyoto, Ukyo Ward, Sagatenryūji Susukinobabachō, 翠嵐ラグジュアリーコレクションホテル京都, Kyoto, Japan', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('4ee12a7c-1195-4a2c-af74-2050607634a8', null, 'Kutalpura Maliyan, India', 'SUJÁN Sher Bagh, Ranthambhore', '{food}', 26.065168, 76.4281779, 'Sherpur, Khiljipur, Kutalpura Maliyan, Kutalpura Maliyan, India', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d4e2332f-8c30-402d-a8d2-23026112435c', null, 'Mozambique, Mozambique', 'Sussurro', '{food}', -18.6643244, 40.3065964, 'Mozambique, Mozambique, Mozambique', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('099eed16-64cb-4770-ad55-da666e6a2486', null, 'Vancouver, Canada', 'Sutton Place Hotel Vancouver', '{food}', 49.282958, -123.124276, 'The Sutton Place, 845 Burrard St, Vancouver, Vancouver, Canada', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -11858,7 +11895,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('6e6aee22-214e-4d72-af24-f3508fb90b94', null, 'New York, United States', 'The Whitby Hotel', '{food}', 40.762613, -73.9758253, '18 W 56th St, New York, New York, U.S.A.', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('6b29403c-6e27-4ea8-a50e-ce94d950cee4', null, 'Genève, Switzerland', 'The Woodward, Auberge Resorts Collection', '{food}', 46.2121214, 6.1523986, 'Quai Wilson 37, Genève, Genève, Switzerland', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('70f92ce9-5ad4-4877-aa2d-d49ecbce2560', null, 'Vila Nova de Gaia, Portugal', 'The Yeatman Hotel', '{food}', 41.1339187, -8.6129183, 'Rua do Choupelo, Vila Nova de Gaia, Vila Nova de Gaia, Portugal', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('f6eb7f78-196d-48d6-a107-998521058984', null, 'Gloucestershire, United Kingdom', 'Thyme – Hotel, Restaurant, Spa', '{food}', 51.7263748, -1.7218518, 'Southrop Manor, Thyme, Gloucestershire, Gloucestershire, United Kingdom', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('f6eb7f78-196d-48d6-a107-998521058984', null, 'Gloucestershire, United Kingdom', 'Thyme – Hotel, Restaurant, Spa', '{food}', 51.7263748, -1.7218518, 'Southrop Manor, Thyme, Gloucestershire, Gloucestershire, United Kingdom', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('f885154c-5a0e-4d2c-a5d7-487a05293827', null, 'Matei, Fiji', 'Tides Reach Resort', '{food}', -16.6905391, -179.877515, 'Matei, Matei, Fiji', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('96dde0a8-9ac5-492c-ac18-c98431a309d4', null, 'Hout Bay, South Africa', 'Tintswalo Atlantic', '{food}', -34.0651453, 18.3680676, 'Chapmans Peak Dr, Hout Bay, Hout Bay, South Africa', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8acd3a58-cd03-4018-a7ce-5a4057d09a70', null, 'Carvoeiro, Portugal', 'Tivoli Carvoeiro Algarve Resort', '{food}', 37.0963948, -8.4673073, 'Praia do Vale Covo, Carvoeiro, Carvoeiro, Portugal', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -11895,10 +11935,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('5b359d20-5bca-491a-a0ff-e43ab700163a', null, 'Dubrovnik, Croatia', 'Villa Orsula Dubrovnik', '{food}', 42.642144, 18.113907, 'Ul. Frana Supila 14, Dubrovnik, Dubrovnik, Croatia', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('9fa83ab0-7446-4776-a141-1423a13eec22', null, 'Fiesole, Italy', 'Villa San Michele, A Belmond Hotel, Florence', '{food}', 43.8027487, 11.2981262, 'Via Doccia, 4, Fiesole, Fiesole, Italy', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('eb344fc6-d503-46a0-ae37-7966c0378666', null, 'Taormina, Italy', 'Villa Sant&#x27;Andrea, A Belmond Hotel, Taormina Mare', '{food}', 37.8453997, 15.2827301, 'Via Nazionale, 137, Taormina, Taormina, Italy', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('ac18c6a7-67fa-4a99-a341-d53c21413314', null, 'Roma, Italy', 'Villa Spalletti Trivelli Dimora d&#x27;Epoca', '{food}', 45.017364, 9.4469185, 'Via Piacenza, 4, Roma, Roma, Italy', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('ac18c6a7-67fa-4a99-a341-d53c21413314', null, 'Roma, Italy', 'Villa Spalletti Trivelli Dimora d&#x27;Epoca', '{food}', 45.017364, 9.4469185, 'Via Piacenza, 4, Roma, Roma, Italy', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('dbbded6c-19bb-497e-a3df-9abeef579a6e', null, 'Bogotá, Colombia', 'W Bogota', '{food}', 4.6931913, -74.0344968, 'Ak 9 #115 - 30, Usaquén, Bogotá, Colombia', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('31d4f3c9-9278-4e57-a5c5-39262c44d922', null, 'Dubai, United Arab Emirates', 'W Dubai - The Palm', '{food}', 25.1067761, 55.1113544, 'West Crescent, Dubai, United Arab Emirates', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('325f87d7-3f91-4c91-adce-0b4671f11468', null, 'Hong Kong, China, Hong Kong, China', 'W Hong Kong', '{food}', 22.3050959, 114.1618744, '1 Austin Road West Kowloon Station, Hong Kong, China, Hong Kong, China', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -12111,7 +12148,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('712b9bd7-a6a0-40a9-a287-4348217cbec8', null, 'Marrakech, Morocco', 'Le Marocain - La Mamounia', '{food}', 31.6259653, -8.0018529, 'Avenue Bab Jdid, Marrakech, Morocco', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('191b62c3-55bc-4889-aca7-fa4a6ed7fb4c', null, 'Bonnieux, France', 'Le Mas Les Eydins - Christophe Bacquié', '{food}', 43.8436098, 5.3012829, '2420 Chemin du Four, Bonnieux, Bonnieux, France', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f11670a6-171d-4752-a19f-4a80c083397f', null, 'Paris, France', 'Le Meurice - Alain Ducasse', '{food}', 48.8651359, 2.3282657, '228 Rue de Rivoli, Paris, Paris, France', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('acc996cf-99de-4805-a517-0eca46a82ed4', null, 'Porto, Portugal', 'Le Monument', '{food}', 41.148444, -8.6115185, 'Avenida dos Aliados 151, Porto, Porto, Portugal', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('acc996cf-99de-4805-a517-0eca46a82ed4', null, 'Porto, Portugal', 'Le Monument', '{food}', 41.148444, -8.6115185, 'Avenida dos Aliados 151, Porto, Porto, Portugal', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('a41a1511-4fa4-4acf-a144-14022f3bebfe', null, 'Reims, France', 'Le Parc - Les Crayères', '{food}', 49.2411629, 4.051815, '64 Boulevard Henry Vasnier, Reims, Reims, France', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d20ca9c0-7940-4096-a54b-3e6aa4b4d5a5', null, 'Bad Peterstal-Griesbach, Germany', 'Le Pavillon', '{food}', 48.4573868, 8.250818, 'Dollenberg 3, Bad Peterstal-Griesbach, Bad Peterstal-Griesbach, Germany', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8bde1c47-2ab8-4741-a5e9-904fab697038', null, 'New York, United States', 'Le Pavillon', '{food}', 40.7529739, -73.9785396, 'One Vanderbilt Avenue, New York, New York, U.S.A.', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -12148,10 +12188,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('c6df141d-8b4b-4edb-ad94-bac6522ac2f8', null, 'Paris, France', 'L&#x27;Orangerie', '{food}', 48.8686738, 2.3007762, '31 Avenue George V, Paris, Paris, France', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('54f3cd57-9fff-4b81-a34f-3a92af4f368d', null, 'Berlin, Germany', 'Lorenz Adlon Esszimmer', '{food}', 52.5159555, 13.3799024, 'Unter den Linden 77, Berlin, Berlin, Germany', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8051d792-157f-429a-a6ad-10af895d0fa2', null, 'Forte dei Marmi, Italy', 'Lorenzo', '{food}', 43.9587165, 10.1696963, 'Via G. Carducci, 61, Forte dei Marmi, Forte dei Marmi, Italy', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('4ca956ba-b805-40be-ab53-29fc04aed778', null, 'Chūō-ku, Japan', 'L&#x27;Osier', '{food}', 34.668885, 135.5057633, '7 Chome-5-5 Ginza, Chuo City, Chūō-ku, Japan', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('4ca956ba-b805-40be-ab53-29fc04aed778', null, 'Chūō-ku, Japan', 'L&#x27;Osier', '{food}', 34.668885, 135.5057633, '7 Chome-5-5 Ginza, Chuo City, Chūō-ku, Japan', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('546bd138-d8f2-4f0e-a736-611ca2d5e104', null, 'Saarlouis, Germany', 'Louis - La Maison', '{food}', 49.3172955, 6.7555744, 'Prälat-Subtil-Ring 22, Saarlouis, Saarlouis, Germany', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('206b0a3e-f5ee-4af0-a2a7-a6f321659a52', null, 'Les Baux-de-Provence, France', 'L&#x27;Oustaù de Baumanière', '{food}', 43.7401362, 4.7885263, 'D27, Les Baux-de-Provence, Les Baux-de-Provence, France', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('5bdff786-1cf6-4684-a729-610278d68e0a', null, 'Jerez de la Frontera, Spain', 'LÚ Cocina y Alma', '{food}', 36.6883893, -6.1337759, 'Calle Zaragoza, 2, Jerez de la Frontera, Jerez de la Frontera, Spain', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -12352,7 +12389,6 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('6487dc93-fb03-47f9-a607-b74965f8b348', null, 'Hong Kong, China, Hong Kong, China', '潤 - Rùn', '{food}', 22.2801557, 114.1748252, '1 Harbour Drive, Wan Chai, Hong Kong, China, Hong Kong, China', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a2928715-6fa2-4bab-a32c-fb342123552c', null, 'Berlin, Germany', 'Rutz', '{food}', 52.5282228, 13.3862164, 'Chausseestraße 8, Berlin, Berlin, Germany', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('bf53171a-10bc-4622-a501-04ec8d00fbd3', null, 'Stavanger, Norway', 'Sabi Omakase', '{food}', 58.9700011, 5.7432728, 'Pedersgata 38, Stavanger, Stavanger, Norway', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('8510cb60-4492-4ed0-a3e7-d5a50c9a33a3', null, 'Madrid, Spain', 'Sacha', '{food}', 40.4605417, -3.6865878, 'Calle de Juan Ramón Jiménez, 39, Madrid, Madrid, Spain', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('b9c93f48-caa8-4d92-a361-42da8471bcda', null, 'Madrid, Spain', 'Saddle', '{food}', 40.427537, -3.6911125, 'Calle Amador de los Ríos, 6, Madrid, Madrid, Spain', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ced4083d-db6f-4c13-a5bb-c42eaa43d450', null, 'New York, United States', 'SAGA', '{food}', 40.7064733, -74.0077415, '70 Pine Street 63rd Floor, New York, New York, U.S.A.', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('9f64702f-e5ea-44d9-aa8e-44f6854ea508', null, 'Moskva, Russian Federation', 'SAGE', '{food}', 55.7728466, 37.5960678, '1-Ya Tverskaya-Yamskaya Ulitsa, 21, Moskva, Moskva, Russian Federation', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -12365,7 +12401,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('8ab76334-7a15-4e0e-af5d-32c604cd1142', null, 'Imola, Italy', 'San Domenico', '{food}', 44.355605, 11.7123718, 'Via Sacchi, 1, Imola, Imola, Italy', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d684c934-c2c5-4aa2-a441-4396994a53d6', null, 'Firenze, Italy', 'Santa Elisabetta', '{food}', 43.7717566, 11.2558968, 'Piazza Sant&#x27;Elisabetta, 3, Firenze, Firenze, Italy', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f02818d9-0655-4a27-a982-9d02f67d9300', null, 'Nottingham, United Kingdom', 'Sat Bains', '{food}', 52.9250098, -1.167494, 'Lenton Lane, Nottingham, Nottingham, United Kingdom', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('34b6914c-fab6-4662-a31f-fd8d22f6d47a', null, 'Pathum Wan District, Thailand', 'Savelberg', '{food}', 13.7382107, 100.5463558, 'ORIENTAL RESIDENCE BANGKOK, 110 Witthayu Road, Lumphini, Pathum Wan District, Thailand', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('34b6914c-fab6-4662-a31f-fd8d22f6d47a', null, 'Pathum Wan District, Thailand', 'Savelberg', '{food}', 13.7382107, 100.5463558, 'ORIENTAL RESIDENCE BANGKOK, 110 Witthayu Road, Lumphini, Pathum Wan District, Thailand', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('fa95d68f-a529-41a5-afbc-672a9fbf8834', null, 'Piesport, Germany', 'schanz. restaurant.', '{food}', 49.8778542, 6.9264713, 'Bahnhofstraße 8A, Piesport, Piesport, Germany', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('bdf35612-5db4-4126-a1fb-878cc1ba8273', null, 'Fürstenau, Switzerland', 'Schloss Schauenstein', '{food}', 46.7213293, 9.446272, 'Schlossgass 77, Fürstenau, Fürstenau, Switzerland', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('cbbf22e3-3736-43c1-a376-1ede02f5e6a4', null, 'Hall in Tirol, Austria', 'Schwarzer Adler', '{food}', 47.281193, 11.5082554, 'Eugenstraße 3, Hall in Tirol, Hall in Tirol, Austria', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -12401,10 +12440,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('ea763397-a0b6-413d-aac0-c2aa8b2d24d4', null, 'Menai Bridge, United Kingdom', 'Sosban and the old Butchers', '{food}', 53.2261551, -4.1630298, 'Trinity House, 1 High Street, Menai Bridge, Menai Bridge, United Kingdom', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a5d6bcac-0003-401a-a5a2-a934aa5da8cc', null, 'Pachuca de Soto, Mexico', 'Sotero Cocina de Oficio', '{food}', 20.1175128, -98.733857, 'Doctor Manuel del Corral 101, Real de Minas, Pachuca de Soto, Pachuca de Soto, Mexico', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d011d795-30f5-446b-a1f1-bbc0201076c0', null, 'Windermere, United Kingdom', 'SOURCE at Gilpin Hotel', '{food}', 54.3554572, -2.8805923, 'Crook Road, Windermere, Windermere, United Kingdom', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('b5e33d98-883d-447c-adde-99e43e20e214', null, 'Beverly Hills, United States', 'Spago Beverly Hills', '{food}', 34.0676099, -118.3976059, '176 North Canon Drive, Beverly Hills, Beverly Hills, U.S.A.', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('b5e33d98-883d-447c-adde-99e43e20e214', null, 'Beverly Hills, United States', 'Spago Beverly Hills', '{food}', 34.0676099, -118.3976059, '176 North Canon Drive, Beverly Hills, Beverly Hills, U.S.A.', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3c5cbd0f-81c6-4921-a426-54bd2be22c63', null, 'Stuttgart, Germany', 'Speisemeisterei', '{food}', 48.7126553, 9.2137039, 'Schloss Hohenheim, 1B, Stuttgart, Stuttgart, Germany', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('de00c62b-7b04-404d-a5af-b899a5905767', null, 'الدوحة, Qatar', 'Spice Market', '{food}', 25.328749, 51.5301125, 'W Doha Hotel & Residences West Bay, الدوحة, الدوحة, Qatar', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ab5eacb4-7bd8-4220-a2f7-9d16c27372ed', null, 'Athina, Greece', 'Σπονδή - Spondi', '{food}', 37.9755648, 23.7348324, 'Pirronos 5, Athina, Athina, Greece', 'Listed by La Liste', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -12618,7 +12654,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('4325a445-68be-487b-ab9b-6c3eabe46cc0', null, 'Paris, France', 'Le Cornichon', '{food}', 48.869042, 2.372662, '2 Rue Des Goncourt, 75011 Paris, France', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('71a5d321-f7a7-469f-a79f-d9a42694d89c', null, 'Paris', 'Recoin', '{food}', 48.856899, 2.368794, '60 rue Saint Sabin, 75011 Paris', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('50c68ef2-ff13-4458-a502-a25564fd9e34', null, 'Paris, France', 'Vaisseau', '{food}', 48.853195, 2.382643, '35 Rue Faidherbe, 75011 Paris, France', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('d3af5dd8-db89-47c4-a826-8a1caf39359c', null, 'Paris', 'Table', '{food}', 48.84879, 2.375829, '3 rue de Prague 75012, 75012 Paris', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('d3af5dd8-db89-47c4-a826-8a1caf39359c', null, 'Paris', 'Table', '{food}', 48.84879, 2.375829, '3 rue de Prague 75012, 75012 Paris', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('10dfae76-818f-48b6-a6ea-f7940926ed72', null, 'Paris', 'Le Quincy', '{food}', 48.847089, 2.370154, '28 avenue Ledru Rollin, 75012 Paris', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('6f9d117b-0e20-44b1-a1bd-b5ca7dbdb62c', null, 'Paris, France', 'Phở Tài', '{food}', 48.822135, 2.361389, '13 Rue Philibert Lucot, 75013 Paris, France', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('cb3c1a5c-9294-465a-a9a8-dc065dd0e0b6', null, 'Île-de-France', 'Comice', '{food}', 48.849384, 2.275946, '31 Avenue de Versailles, Île-de-France, 75016', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -12654,10 +12693,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('afa23354-3287-4646-a62d-a1aeee22a099', null, 'EC1V 4JP', 'Sushi Tetsu', '{food}', 51.523232, -0.103985, '12 Jerusalem Passage, England, EC1V 4JP', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f2a3a3d0-201f-42d2-a2d4-3befe12c386a', null, 'E1 6LZ', 'St. John Bread and Wine', '{food}', 51.519737, -0.074217, '94-96 Commercial St, Spitalfields, Greater London, E1 6LZ', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d9a8fe87-3d62-4f29-a1b3-5ce52170bcdb', null, 'W1U 7AJ', 'Royal China Club', '{food}', 51.518402, -0.155579, '40 Baker St, London, Greater London, W1U 7AJ', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('a1c2fbee-90e1-40be-a123-eb5032a40cac', null, 'W1W 8AX', 'Chishuru', '{food}', 51.516683931071114, -0.13992279579468914, '3 Great Titchfield St, London, Greater London, W1W 8AX', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('a1c2fbee-90e1-40be-a123-eb5032a40cac', null, 'W1W 8AX', 'Chishuru', '{food}', 51.516683931071114, -0.13992279579468914, '3 Great Titchfield St, London, Greater London, W1W 8AX', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('95cd266d-9b95-4eab-ae58-18c631626518', null, 'W1D 3RS, United Kingdom', 'Impala', '{food}', 51.51481, -0.13313, '13-14 Dean Street, Westminster, London, W1D 3RS, United Kingdom', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a9225711-af47-425f-a665-c54e5869e970', null, 'England W1D 4SQ', 'Koya Soho', '{food}', 51.513641, -0.131701, '50 Frith Street, England W1D 4SQ', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e1c32707-15aa-491d-ab96-a1e6f76da024', null, 'W1D 4RF', 'Bar Italia', '{food}', 51.513401, -0.131252, '22 Frith Street, England, W1D 4RF', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -12871,7 +12907,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('27cf1b75-967f-44ab-a4e4-f4022be4ec02', null, 'Oklahoma City, United States', 'Pizzeria Gusto', '{food}', 35.493999, -97.521255, '2415 N Walker Ave, Oklahoma City, OK, 73103, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('83ff9043-d620-4275-a5df-52365a2052b8', null, 'Oklahoma City, United States', 'Maht', '{food}', 35.493575, -97.521993, '519 NW 23rd St, Oklahoma City, OK, 73103, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e7bfb942-c34b-4f46-a4f4-8604ab0af888', null, 'OK 73111', 'Florence’s Restaurant', '{food}', 35.493401, -97.486656, '1437 Northeast 23rd Street, OK 73111', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('d28cec95-f2fd-40eb-a071-3c7ec58abd80', null, 'Oklahoma City, United States', 'Bar Sen', '{food}', 35.485758, -97.538632, '1630 N Blackwelder Ave, Oklahoma City, OK, 73106, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('d28cec95-f2fd-40eb-a071-3c7ec58abd80', null, 'Oklahoma City, United States', 'Bar Sen', '{food}', 35.485758, -97.538632, '1630 N Blackwelder Ave, Oklahoma City, OK, 73106, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('44a6f888-ba4c-4cee-a115-db9afef3d576', null, 'Oklahoma City, United States', 'Sedalia’s Oyster & Seafood', '{food}', 35.478962, -97.562514, '2727 NW 10th St, Oklahoma City, OK, 73107, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0dc60aa5-d951-45bb-a2b6-8c0e2e717406', null, 'Oklahoma City, United States', 'Nonesuch', '{food}', 35.475399, -97.5196, '803 N Hudson Ave, Oklahoma City, OK, 73102, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('4fcfcb84-a776-4210-a174-6966cf7466d9', null, 'Oklahoma City, United States', 'Edge Craft Barbecue', '{food}', 35.474415, -97.54418, '1920 Linwood Blvd, Oklahoma City, OK, 73106, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -12907,10 +12946,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('7919a64c-f951-45ea-a7fb-79c5a726b6c3', null, 'Saint Louis, United States', 'Esca', '{food}', 38.65215, -90.266952, '5095 Delmar Blvd, Saint Louis, MO, 63108, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ae65b263-ce1c-4f45-a079-3d267c8241a8', null, 'Saint Louis, United States', 'Bowood by Niche', '{food}', 38.649387, -90.25721, '4605 Olive St, Saint Louis, MO, 63108, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('66bb0a98-5ad1-4ca8-ac6a-d630c18ce740', null, 'Saint Louis, United States', 'Yellowbelly', '{food}', 38.643552, -90.261544, '4659 Lindell Blvd, Saint Louis, MO, 63108, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('033da6ba-45c8-426a-a6f5-e4d04905e924', null, 'MO 63105', 'Bistro La Floraison', '{food}', 38.643261, -90.334473, '7637 Wydown Boulevard, MO 63105', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('033da6ba-45c8-426a-a6f5-e4d04905e924', null, 'MO 63105', 'Bistro La Floraison', '{food}', 38.643261, -90.334473, '7637 Wydown Boulevard, MO 63105', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('45f58a25-4180-4d43-a475-c7668775d768', null, 'Clayton, United States', 'Wright’s Tavern', '{food}', 38.642806, -90.334482, '7624 Wydown Blvd, Clayton, MO, 63105, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('700b6cef-f6c9-4b19-a793-da80a66d4a80', null, 'Saint Louis, United States', 'Brasserie by Niche', '{food}', 38.640068, -90.261841, '4580 Laclede Ave, Saint Louis, MO, 63108, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('fab3cc76-569f-4a78-a53d-3b9f2515356e', null, 'Central West End, United States', 'Havana’s Cuisine', '{food}', 38.639831, -90.26212, '12 S Euclid Central West End, Central West End, MO, 63108, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -13124,7 +13160,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('1067c05f-4622-4315-a645-434a568a4374', null, 'Causeway Bay, Hong Kong', 'Kamcentre Roast Goose', '{food}', 22.27546716122066, 114.18649226939948, '1/F, South China Athletic Association, 88 Caroline Hill Road, Causeway Bay, Hong Kong', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('efff801b-4004-4b91-a500-4f47630040ba', null, 'Kowloon City, Hong Kong', 'Islam Food', '{food}', 22.32921545270338, 114.19139635154386, 'Shun King Building, 33-35 Tak Ku Ling Rd, Kowloon City, Hong Kong', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0f61d9ad-0f87-4393-a0e6-da3e1ee8dd40', null, 'Shau Kei Wan, Hong Kong', 'Master Low Key Food Shop', '{food}', 22.27961087015376, 114.22983694435152, 'Shop B3, Kwong Shun Building, 76 Shau Kei Wan Main Street East, Shau Kei Wan, Hong Kong', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('8fc9c736-23d6-47d4-a53e-04f1eb3a03f0', null, 'Chai Wan, Hong Kong', 'Sun Kwai Heung', '{food}', 22.264531667993836, 114.24018085275742, 'Shop 17, G/F, Block C, Goldmine Building, 345 Chai Wan Road, Chai Wan, Hong Kong', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('8fc9c736-23d6-47d4-a53e-04f1eb3a03f0', null, 'Chai Wan, Hong Kong', 'Sun Kwai Heung', '{food}', 22.264531667993836, 114.24018085275742, 'Shop 17, G/F, Block C, Goldmine Building, 345 Chai Wan Road, Chai Wan, Hong Kong', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('bc409767-9b6e-4599-a72e-32fe57af3d00', null, 'Crescent Rd - Nakhlat Jumeira - Dubai - United Arab Emirates', 'FZN by Björn Frantzén', '{food}', 25.132180561601416, 55.117782562947724, 'Crescent Rd - Nakhlat Jumeira - Dubai - United Arab Emirates', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('4748778e-d1cc-42f6-a697-b6a8819155a8', null, 'Dubai, United Arab Emirates', 'The Maine Oyster Bar & Grill', '{food}', 25.072846613319385, 55.12813075074044, 'Ground Floor, The DoubleTree by Hilton, Dubai, United Arab Emirates', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('bbe328c4-0339-476c-a472-52058bf1d203', null, 'Dubai, United Arab Emirates', 'Chez Wam', '{food}', 25.114661130867788, 55.13855239408821, 'St Regis Gardens Palm, Nakhlat Jumeira, Jumeirah, Dubai, United Arab Emirates', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -13160,10 +13199,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('b18deb2b-3419-4ef5-a7a6-bea22e5a7ea2', null, 'Kansas, United States', 'Terrebonne Po’ Boys', '{food}', 38.967731, -95.236233, '845 Massachusetts Street, Lawrence, Kansas 66044, United States', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('614781c1-5b52-440f-aa15-15cebc9a15d0', null, 'Lawrence, United States', 'Culinaria', '{food}', 38.967703, -95.230541, '512 E 9th St, Lawrence, KS, 66044, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('970bf838-ca6e-4c14-ad65-942c617a644c', null, 'Lawrence, United States', 'The Bourgeois Pig', '{food}', 38.967645, -95.235421, '6 E 9th St, Lawrence, KS, 66044, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('91c1262c-cfda-496a-ae1b-0f46619b4f96', null, 'Lawrence, United States', 'Big Mill', '{food}', 38.967351, -95.243895, '900 Mississippi St, Lawrence, KS, 66044, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('91c1262c-cfda-496a-ae1b-0f46619b4f96', null, 'Lawrence, United States', 'Big Mill', '{food}', 38.967351, -95.243895, '900 Mississippi St, Lawrence, KS, 66044, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('bf250023-c369-4b9d-ac4c-ebbe828eebc0', null, 'Kansas, United States', 'Ramen Bowls', '{food}', 38.967175, -95.234397, '900 New Hampshire Street, Lawrence, Kansas 66044, United States', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('28a8e80e-a75c-4624-a700-be1d6d005de3', null, 'KS 66044', 'Sylas and Maddy’s Homemade Ice Cream', '{food}', 38.963602, -95.236189, '1101 Massachusetts Street, KS 66044', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('4a13b326-55de-4214-afcd-21329ff2453a', null, 'Lawrence, United States', 'Cellar Door Cafe', '{food}', 38.963596, -95.236293, '7 W 11th St, Lawrence, KS, 66044, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -13377,7 +13413,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('7452dd44-39fd-465c-adaf-4b18ae5073a0', null, 'Osaka, Japan', 'Houzenji Sanpei', '{food}', 34.66826, 135.502669, '1 Chome-7-10 Dotonbori, Chuo Ward, Osaka, 542-0071, Japan', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('28322cf2-b27b-4b3a-a65b-62838daae282', null, 'Ōsaka-fu, Japan', 'Akagakiya Namba', '{food}', 34.666321, 135.502197, '3 Chome-1-32 Nanba, Chūō-ku, Ōsaka-shi, Ōsaka-fu 542-0076, Japan', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f898f661-c26e-4f3f-aaf6-095ebb07f5a0', null, 'Ōsaka-fu, Japan', 'Matsuyoshi', '{food}', 34.665005, 135.530045, '5-6 下味原 Tennōji-ku, Ōsaka-shi, Ōsaka-fu 543-0025, Japan', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('28f5484d-0a9d-472b-a268-8f6633930f78', null, 'Nanbasennichimae, 中央区難波千日前６−１６', 'Menya Jouroku', '{food}', 34.66367, 135.504852, 'Japan, 〒542-0075 Ōsaka-fu, Ōsaka-shi, Chūō-ku, Nanbasennichimae, 6, 中央区難波千日前６−１６', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('28f5484d-0a9d-472b-a268-8f6633930f78', null, 'Nanbasennichimae, 中央区難波千日前６−１６', 'Menya Jouroku', '{food}', 34.66367, 135.504852, 'Japan, 〒542-0075 Ōsaka-fu, Ōsaka-shi, Chūō-ku, Nanbasennichimae, 6, 中央区難波千日前６−１６', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('027f7890-d017-4d6a-a2d9-7aa06d296a5f', null, 'Ōsaka-fu, Japan', 'Ajihei', '{food}', 34.656123, 135.555716, '4 Chome-3-25 Shōjihigashi, Ikuno-ku, Ōsaka-shi, Ōsaka-fu 544-0003, Japan', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ca35a11c-af68-4c80-a55d-0d9c799e4d9c', null, 'Ōsaka-fu, Japan', 'Echigen', '{food}', 34.651581, 135.506271, '２丁目-3-9 Ebisuhigashi, Naniwa-ku, Ōsaka-shi, Ōsaka-fu 556-0002, Japan', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f5e6a26a-4ddf-4c18-a47c-6f18e43c64e8', null, 'Ōsaka-fu, Japan', 'Itamae Yakiniku Itto', '{food}', 34.642273, 135.502243, '1 Chome-23-18 Tengachayahigashi, Nishinari-ku, Ōsaka-shi, Ōsaka-fu 557-0011, Japan', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -13413,10 +13452,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('1fcb9b4e-e073-4fe4-a-47-8b56003f8b32', null, 'Porto', 'Cervejaria Gazela', '{food}', 41.1448907, -8.607628100000001, '4 Travessa Cimo de Vila, Porto 4000-171', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e6db5930-87d4-429c-a10f-4bac6eaf6bcc', null, 'Porto', 'Rogério do Redondo', '{food}', 41.1445695, -8.599073700000002, '19 Rua Joaquim António de Aguiar, Porto, 4000-311', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c8e6bb01-ae47-4aaf-a6a1-91ae772de5b0', null, 'Porto', 'Musa das Virtudes', '{food}', 41.1439774, -8.618144700000002, '28 Passeio das Virtudes, Porto, 4050-629', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('a4365aca-ce6a-41ce-aa5c-1b0472a09c98', null, 'Porto', 'Cozinha das Flores', '{food}', 41.1432454, -8.6148266, '62 Largo São Domingos, Porto, 4050-545', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('a4365aca-ce6a-41ce-aa5c-1b0472a09c98', null, 'Porto', 'Cozinha das Flores', '{food}', 41.1432454, -8.6148266, '62 Largo São Domingos, Porto, 4050-545', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0748daae-55c2-48b0-a28a-621e5d0b935e', null, 'Porto', 'Adega São Nicolau', '{food}', 41.140428, -8.614715, 'Rua São Nicolau 1, 4050-561 Porto', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('4b1e4c0e-7b62-44dc-a07c-98d2c68120ea', null, 'Porto', 'The Yeatman', '{food}', 41.133346, -8.613011, 'Rua do Choupelo, Porto, 4400-088', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('57e72899-245d-4327-a3ba-8bbe7c44cbc0', null, 'Louisville, United States', 'Vietnam Kitchen', '{food}', 38.170601, -85.769997, '5339 Mitscher Ave, Louisville, KY, 40214, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -13630,7 +13666,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('1920661d-aabb-451b-a4c6-4bcfac3db8b3', null, 'Georgia', 'Castleberry Ale House', '{bars}', 34.17338, -84.18907, '5446 Bethelview Road, Cumming, Georgia 30040', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('54a513f6-0af4-48c2-ae51-eb345f9a0cb8', null, 'Georgia', 'Atlanta Eagle', '{bars}', 33.79589, -84.370945, '1492 Piedmont Avenue Northeast, Atlanta, Georgia 30309', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('131a3ad2-1cfb-45f0-afe1-2f22301550c2', null, 'Atlanta, United States', 'The Albert', '{bars}', 33.762034, -84.357497, '918 Austin Ave NE, Atlanta, GA, 30307, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('e61d3a6a-98cb-4376-aed6-f91c7ee8fde0', null, 'Georgia', 'V12', '{bars}', 33.7709, -84.389297, '610 Spring Street Northwest, Atlanta, Georgia 30308', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('e61d3a6a-98cb-4376-aed6-f91c7ee8fde0', null, 'Georgia', 'V12', '{bars}', 33.7709, -84.389297, '610 Spring Street Northwest, Atlanta, Georgia 30308', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('c4d971a2-e5c7-436a-a11e-22c8aaa0c50c', null, 'Georgia', 'Rock Steady', '{bars}', 33.777195, -84.407768, '907 Marietta Street Northwest, Atlanta, Georgia 30318', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8cc44d98-c92f-419a-a5eb-8c0255f40f32', null, 'California', 'Las Hadas', '{food}', 32.71111, -117.16112, '558 4th Avenue, San Diego, California 92101', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c251a806-f815-4816-aa44-9010ba66e01c', null, 'California', 'El Chingon', '{food}', 32.711184, -117.160384, '560 Fifth Avenue, San Diego, California 92101', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -13666,10 +13705,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('33d00252-0f33-44c8-ace3-f69a4303f71a', null, 'Denver, United States', 'Jax Fish House & Oyster Bar', '{food}', 39.752124, -104.99858, '1539 17th St, Denver, CO, 80202, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('67c2138a-ca8b-4490-a52b-6b8e6324d681', null, 'Colorado', 'Caddy Shack Cantina', '{food}', 39.554839, -104.878966, '9535 Park Meadows Drive, Lone Tree, Colorado 80124', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('bd7db7de-ef58-4c0c-a225-8bd2acd5f3ea', null, 'Lafayette, United States', 'Ghost Box Pizza', '{food}', 39.997952, -105.090853, '103 S Public Rd, Lafayette, CO, 80026, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('b6002fa4-a53d-4d98-a33d-123c5b3d6d3c', null, 'Greenwood Village, United States', 'JING', '{food}', 39.619277, -104.900738, '5370 Greenwood Plaza Blvd, Greenwood Village, CO, 80111, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('b6002fa4-a53d-4d98-a33d-123c5b3d6d3c', null, 'Greenwood Village, United States', 'JING', '{food}', 39.619277, -104.900738, '5370 Greenwood Plaza Blvd, Greenwood Village, CO, 80111, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('1c4bafc6-ea65-41ae-a9d1-619806b0e174', null, 'Denver, United States', '54thirty', '{food,bars}', 39.744252, -104.993932, '1475 California St, Denver, CO, 80202, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('60f238d5-adc6-43c3-a32c-b84ea0eb87c9', null, 'Denver', 'The Passport', '{food}', 39.748657, -105.000108, '1437 Market St, Denver, CO 80202', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d4b9a86b-12d1-4ca5-a399-71b32e78af51', null, 'Aurora, United States', 'Scooters', '{food}', 39.710083, -104.828647, '13698 E Alameda Ave, Aurora, CO, 80012, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -13883,7 +13919,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('d7fc92b2-067e-43c8-a2e7-dbe86de7b667', null, 'Seoul, South Korea', 'Bar Cham', '{food}', 37.579121, 126.970383, '34 Jahamun-ro 7-gil, Jongno District, Seoul, South Korea', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('6e87c1e6-3f62-481c-a1e5-c9faade9ca02', null, 'Seoul, South Korea', 'Anju Maeul', '{food}', 37.576462, 126.972137, '3 Jahamun-ro 1-gil, Jongno District, Seoul, South Korea', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f2c8c4f8-83c0-4ca8-a108-d8507688e1a0', null, 'Seoul, South Korea', 'Charles H', '{food}', 37.570412, 126.975517, '97 Saemunan-ro, Jongno District, Seoul, South Korea', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('c8829554-17f8-448a-a208-5de22e07b49d', null, 'Seoul, South Korea', 'Gwangjang Market', '{food,shopping}', 37.570202, 126.999001, '88 Changgyeonggung-ro, Jongno District, Seoul, South Korea', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('c8829554-17f8-448a-a208-5de22e07b49d', null, 'Seoul, South Korea', 'Gwangjang Market', '{food,shopping}', 37.570202, 126.999001, '88 Changgyeonggung-ro, Jongno District, Seoul, South Korea', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('c0f9f1a8-4181-42a6-a7e8-78cf2027b744', null, 'Seoul, South Korea', 'Eunjujeong', '{food}', 37.568642, 126.999741, '32 Changgyeonggung-ro 8-gil, Jung District, Seoul, South Korea', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('1d9c433b-b255-4891-a503-62456cff1dbc', null, '서울특별시', 'Wooraeok', '{food}', 37.5681851, 126.9987092, 'Nodeul-ro, 서울특별시 156-800', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('11aacfdb-a3f6-4ec5-a4da-35ee2b5a13ea', null, 'Seoul', 'Born and Bred', '{food}', 37.566727, 127.044525, 'Majangno 42(sasibi)-gil, Seoul 133-050', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -13919,10 +13958,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('39602270-22b3-420c-abd3-907c5c13d47c', null, '87508', 'Santa Fe Brewing Company', '{food}', 35.596565, -106.051575, '35 Fire Place, NM, 87508', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0021b35f-dbf7-403d-a242-9fc9edc19639', null, 'Santa Fe, United States', 'Arroyo Vino', '{food}', 35.713715, -106.017487, '218 Camino La Tierra, Santa Fe, NM, 87506, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('6b135ffb-3a5e-4355-a14d-ccaea571f350', null, '87507', 'Second Street Brewery', '{food}', 35.655735, -105.99601, '2920 Rufina Street, NM, 87507', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('b1ad0d7d-56f2-46eb-a18a-0a46a089f646', null, '87505', 'Rowley Farmhouse Ales', '{food}', 35.660896, -105.983528, '1405 Maclovia Street, NM, 87505', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('b1ad0d7d-56f2-46eb-a18a-0a46a089f646', null, '87505', 'Rowley Farmhouse Ales', '{food}', 35.660896, -105.983528, '1405 Maclovia Street, NM, 87505', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('41f72bfa-8869-449c-a366-1709aca60d09', null, 'Santa Fe, United States', 'India House', '{food}', 35.660262, -105.982893, '2501 Cerrillos Rd, Santa Fe, NM, 87505, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('2f530ec0-38cd-439c-a79e-7d5c6820825c', null, 'Santa Fe, United States', 'Jambo Cafe', '{food}', 35.660393, -105.977913, '2010 Cerrillos Rd, Santa Fe, NM, 87505, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('bdfca01d-7547-4b23-a374-494c233446b4', null, 'Santa Fe, United States', 'Maria’s New Mexican Kitchen', '{food}', 35.674301, -105.952614, '555 W Cordova Rd, Santa Fe, NM, 87505, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -13946,7 +13982,6 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('711fe8a5-bcbd-42bb-a325-dc5e22dddbb6', null, 'Madrid, Spain', 'Bar Trafalgar', '{food}', 40.431072, -3.701068, 'Esquina con Palafox, Calle de Alburquerque, 14, 28010 Madrid, Spain', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('50bba998-147f-4b5a-a4c4-72c2653b84f2', null, 'Madrid, Spain', 'Alex Cordobés', '{food}', 40.428061, -3.683714, 'Calle De Velázquez 60, 28001 Madrid, Madrid, Spain', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f463e3d7-bd87-4b9d-a9e4-684ab1eb6f74', null, 'Madrid Madrid', 'StreetXo', '{food}', 40.427601, -3.68709, 'Calle Serrano, 52, 28001 Madrid Madrid', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('2c717c8a-f964-4148-a2ae-ac23e25d5bdd', null, 'Madrid Comunidad de Madrid', 'Casa Dani', '{food}', 40.427112, -3.685708, 'Calle Ayala, 28, 28001 Madrid Comunidad de Madrid', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('6f216ab1-1aac-411f-a58d-6bae89cd6bd0', null, 'Madrid, Spain', 'Cuenllas Salesas', '{food}', 40.426689, -3.69574, 'Calle De Orellana 4, 28004 Madrid, Madrid, Spain', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e1f8b1d0-dc01-404e-adf9-719ebdfa721e', null, 'Madrid Comunidad de Madrid', 'Tres Por Cuatro', '{food}', 40.425855, -3.676839, '9 Calle de Montesa, 28006 Madrid Comunidad de Madrid', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('edc3c223-b37f-4a69-aebc-a84aa1432c8c', null, 'Madrid Comunidad de Madrid', 'La Duquesita', '{food}', 40.42565, -3.696967, 'Calle de Fernando VI, 2, 28004 Madrid Comunidad de Madrid', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -14137,7 +14172,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('563a3873-5cc7-44d5-aafd-dca6b3021d48', null, 'Cleveland, United States', 'Il Rione', '{food}', 41.486704, -81.729939, '1303 W 65th St, Cleveland, OH, 44102, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('56441716-64b8-4afa-a2fc-0decbafc3210', null, 'Cleveland, United States', 'Astoria Cafe & Market', '{food}', 41.4853541, -81.72465179999999, '5417 Detroit Ave, Cleveland, OH, 44102, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e4b5ea63-9f66-4589-abd3-1fea841cdfec', null, 'OH 44102', 'Cent’s Pizza', '{food}', 41.477751, -81.7216569, '5010 Lorain Avenue, OH 44102', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('d3637d24-1298-4082-a3e0-4c25ae5fbbda', null, 'Cleveland, United States', 'Mason’s Creamery', '{food}', 41.4805, -81.716752, '4401 Bridge Ave, Cleveland, OH, 44113, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('d3637d24-1298-4082-a3e0-4c25ae5fbbda', null, 'Cleveland, United States', 'Mason’s Creamery', '{food}', 41.4805, -81.716752, '4401 Bridge Ave, Cleveland, OH, 44113, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('262db02a-fff5-4602-a262-7d9d82623462', null, 'Cleveland, United States', 'Tripi Italian Specialties', '{food}', 41.480571, -81.713126, '3928 Lorain Ave, Cleveland, OH, 44113, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('1958d937-89f3-458d-a6f5-47346a34c2ec', null, 'OH 44113', 'Juneberry Table', '{food}', 41.4807443, -81.71262840000001, '3900 Lorain Avenue, OH 44113', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('9d9ac463-0f5e-4965-a6d3-b62faacf91dc', null, 'OH 44113', 'Patron Saint', '{food}', 41.4894646, -81.7112713, '2915 Detroit Avenue, OH 44113', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -14172,10 +14210,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('30a4e383-f8a2-4465-a37f-9f81a2947c7e', null, 'Texas', 'Botonica', '{bars}', 29.745666, -95.454661, '2031 Westcreek Lane, Houston, Texas 77027', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('78e58665-501a-4deb-a8ff-cb8ec8ffd450', null, 'Texas', 'Street to Kitchen', '{bars}', 29.748452, -95.340839, '3401 Harrisburg Boulevard Suite G Houston, Texas 77003', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('fe5e1b09-18bf-4787-a191-e8372171d829', null, 'Houston, United States', 'Two Headed Dog', '{bars}', 29.741516, -95.376298, '3100 Fannin St Ste 115, Houston, TX, 77004, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('74f83754-9dc8-4c10-a16c-fe4bc12c0636', null, 'Houston, United States', 'Angel Share', '{bars}', 29.762301, -95.361367, '924 Congress St, Houston, TX, 77002, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('74f83754-9dc8-4c10-a16c-fe4bc12c0636', null, 'Houston, United States', 'Angel Share', '{bars}', 29.762301, -95.361367, '924 Congress St, Houston, TX, 77002, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('89d26b72-fd7e-49b2-a4ac-42c087509524', null, 'Houston, United States', 'Eight Row Flint Heights', '{bars}', 29.790408, -95.399258, '1039 Yale St, Houston, TX, 77008, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ea61c34b-33d0-46d5-a264-eba621e324a2', null, 'Houston, United States', 'The New Potato', '{bars}', 29.76499, -95.333925, '3519 Clinton Dr # 5, Houston, TX, 77020, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('51b4663c-960c-4ed2-a384-74712e7c1450', null, 'Houston', 'Eight Row Flint East End', '{bars}', 29.747838, -95.340053, '3501 Harrisburg Blvd Suite A, Houston, TX 77003', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -14390,7 +14425,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('a9deedce-4412-4824-a123-35a16edf135f', null, 'Virginia Beach', 'Back Bay Farmhouse Brewing', '{food}', 36.7838, -76.190534, '1805 Kempsville Rd, Virginia Beach, VA 23464', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('b7c14189-28d2-42e7-a60e-c6c92e094147', null, 'Virginia Beach, United States', 'Lolly’s Creamery', '{food}', 36.857156, -75.977118, '2809 Atlantic Ave, Virginia Beach, VA, 23451, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('bcfcb6d5-f004-484b-acf8-fe9ead00ff20', null, 'Virginia Beach, United States', 'The Shack on 8th', '{food}', 36.83643, -75.972119, '712 Atlantic Ave, Virginia Beach, VA, 23451, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('9bc08df9-7510-4b77-a112-f797210d0997', null, 'Virginia Beach, United States', 'Prosperity Kitchen and Pantry', '{food}', 36.844616, -75.980512, '532 Virginia Beach Blvd, Virginia Beach, VA, 23451, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('9bc08df9-7510-4b77-a112-f797210d0997', null, 'Virginia Beach, United States', 'Prosperity Kitchen and Pantry', '{food}', 36.844616, -75.980512, '532 Virginia Beach Blvd, Virginia Beach, VA, 23451, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('3562f31b-09f5-4265-ac97-117e3f58d580', null, 'Virginia', 'Harvest VB', '{food}', 36.846021, -75.974727, '1718 Atlantic Avenue, Virginia Beach, Virginia 23451', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0d2c6b18-6bdc-423a-a6f0-892279094d52', null, 'Virginia', 'Bubba’s Seafood Restaurant', '{food}', 36.906637, -76.087579, '3323 Shore Drive, Virginia Beach, Virginia 23451', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('56650ceb-e7d6-4c55-a4e4-c4f423e3bc94', null, 'Virginia', 'Voo Doo Brewing', '{food}', 36.844497, -76.129704, '300 Constitution Drive, Virginia Beach, Virginia 23462', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -14425,10 +14463,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('c19bfd14-dfba-4804-ae21-9510a1566518', null, 'Park City, United States', 'Fletcher’s', '{food}', 40.645315, -111.496577, '562 Main St, Park City, UT, 84060, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d280c1b8-6fdf-4f00-a42a-05148426030b', null, 'Park City, United States', 'Riverhorse on Main', '{food}', 40.644788, -111.496191, '540 Main St, Park City, UT, 84060, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('120fedb1-ace2-4c6f-a411-2ae22bef2aa2', null, 'Park City, United States', 'The Eating Establishment', '{food}', 40.642232, -111.495264, '317 Main St, Park City, UT, 84060, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('e9a12394-9cc2-40e4-a563-737086637478', null, 'Park City, United States', 'Firewood', '{food}', 40.642185, -111.49469, '306 Main St, Park City, UT, 84060, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('e9a12394-9cc2-40e4-a563-737086637478', null, 'Park City, United States', 'Firewood', '{food}', 40.642185, -111.49469, '306 Main St, Park City, UT, 84060, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('43b3889c-04ac-48fc-a71f-506048606198', null, 'Park City, United States', 'The Goldener Hirsch Restaurant', '{food}', 40.622469, -111.488953, '7570 Royal St E, Park City, UT, 84060, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('72b2539e-86c1-41b0-ab8c-1dd2f974054e', null, 'Park City, United States', 'Burgers & Bourbon', '{food}', 40.615488, -111.511156, '9100 Marsac Ave, Park City, UT, 84060, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f8199087-41eb-43d9-a460-d1ca23a05046', null, 'Lomas de Chapultepec, B.C.S.', 'Mariscos El Compa Chava', '{food}', 23.445465, -110.219578, 'Calle Del Huerto, Lomas de Chapultepec, B.C.S.', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -14643,7 +14678,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('990ef4f3-735c-471d-a15a-d8c120c6b7c1', null, 'Illinois', 'Uncle D’s', '{bars}', 42.256273, -88.144616, '380 West Liberty Street, Wauconda, Illinois 60084', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0de8509a-4fca-4baa-a222-4b305db26c44', null, 'Florida', 'Matador Room at The Miami Beach EDITION', '{bars}', 25.80537, -80.12427, '2901 Collins Avenue, Miami Beach, Florida 33140', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('03f041b7-e53c-477d-a193-32936e92cd93', null, 'Florida', 'The National Hotel Miami Beach', '{bars}', 25.791869, -80.129224, '1677 Collins Avenue, Miami Beach, Florida 33139', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('7ee91cb0-1c4a-4ef2-a2a3-52429b336ba2', null, 'Miami, United States', 'Le Jardinier', '{bars}', 25.814422, -80.192059, '151 NE 41st St Ste 135, Miami, FL, 33137, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('7ee91cb0-1c4a-4ef2-a2a3-52429b336ba2', null, 'Miami, United States', 'Le Jardinier', '{bars}', 25.814422, -80.192059, '151 NE 41st St Ste 135, Miami, FL, 33137, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('1d55699d-d743-4703-a35e-94162f49940a', null, 'Miami Beach, United States', 'Baia Beach Club', '{bars}', 25.781808, -80.142834, '1100 West Ave, Miami Beach, FL, 33139, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('25d3ce1b-b21f-4e59-a683-3efbed7f3ac7', null, 'Miami Beach, United States', 'Queen Miami Beach', '{bars}', 25.775588, -80.134147, '550 Washington Ave, Miami Beach, FL, 33139, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('cfddbc38-22e8-4490-a12c-a5758f2c5d0c', null, 'Florida', 'Rao’s', '{bars}', 25.789305, -80.129473, '1601 Collins Avenue, Miami Beach, Florida 33139', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -14678,10 +14716,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('c64b9c28-e31f-4d40-a554-6168a96b9968', null, 'California', 'The Champion Cheese at Truly Pizza', '{food}', 33.46528, -117.703924, '24402 Del Prado Avenue, Dana Point, California 92629', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ea65fb9c-b51e-4b32-af7b-a0ae9f8456ce', null, 'California', 'Xiao Long Bao at Dan Modern Chinese', '{food}', 34.143095, -118.13183, '146 South Lake Avenue, Pasadena, California 91101', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('083c1ac2-5bc0-4754-a3fc-bd9663fcc216', null, 'California', 'Tlayuda at Cenaduría Oaxaqueña Donají', '{food}', 33.997226, -117.354128, '1608 La Cadena Drive, Riverside, California 92507', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('fb9369d3-965d-43f9-adce-2a2a91f0adcc', null, 'Baker', 'Baklava at The Mad Greek Cafe', '{food}', 35.265845, -116.074738, '72112 Baker Blvd (at Death Valley Rd.), Baker, CA 92309', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('fb9369d3-965d-43f9-adce-2a2a91f0adcc', null, 'Baker', 'Baklava at The Mad Greek Cafe', '{food}', 35.265845, -116.074738, '72112 Baker Blvd (at Death Valley Rd.), Baker, CA 92309', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('43a25c18-053d-47ec-a69f-2bf448dfd404', null, 'California', 'Tri-tip at The Swiss', '{food}', 34.958207, -120.435402, '516 North Broadway, Santa Maria, California 93454', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('852a15a1-fbd2-452f-aef8-808e80fcaad0', null, 'San Francisco, United States', 'Mission-style burrito at El Farolito', '{food}', 37.752641, -122.418321, '2779 Mission St, San Francisco, CA, 94110, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('9b344429-66bc-4c47-a277-179201f0f070', null, 'San Francisco, United States', 'Garlic noodles at Thanh Long', '{food}', 37.760163, -122.506115, '4101 Judah St, San Francisco, CA, 94122, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -14896,7 +14931,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('f616b84f-f311-4b01-a507-534ee928a350', null, 'Nashville, United States', 'Bag Lady’s Fry Joint', '{bars,food}', 36.18027, -86.808152, '1402 Buchanan St, Nashville, TN, 37208, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('2e468f30-a634-40f8-a778-dd038d47b302', null, 'Nashville, United States', 'Bavarian Bierhaus', '{bars}', 36.203763, -86.69338, '121 Opry Mills Dr, Nashville, TN, 37214, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a02ff2d5-2999-4ab3-a764-9779ac9c96d8', null, 'Nashville', 'TailGate Brewery', '{bars}', 36.119954, -86.920038, '7300 Charlotte Pike, Nashville, TN 37209', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('71c90f7b-fb18-498d-a752-e590a6ce1b90', null, 'Tennessee', 'Music City Gyros', '{bars}', 36.178313, -86.752253, '975 Main Street, Nashville, Tennessee 37206', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('71c90f7b-fb18-498d-a752-e590a6ce1b90', null, 'Tennessee', 'Music City Gyros', '{bars}', 36.178313, -86.752253, '975 Main Street, Nashville, Tennessee 37206', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('cbbd359c-fd38-4d56-a685-88cac8f5f2f2', null, 'California', 'Ayce Gogi', '{food}', 34.1919, -118.623829, '6705 Fallbrook Avenue, West Hills, California 91307', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('7feedfcb-1e94-41b1-a17a-ae7a9e83517c', null, 'Los Angeles, United States', 'Qusqo Bistro and Gallery', '{food}', 34.044462, -118.455036, '11633 Santa Monica Blvd, Los Angeles, CA, 90025, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3b5964af-0a9f-40f1-a1c6-745e45f875a0', null, 'Los Angeles, United States', 'Casita Del Campo', '{food}', 34.097404, -118.275175, '1920 Hyperion Ave, Los Angeles, CA, 90027, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -14931,10 +14969,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('a69f47ca-e9ca-447e-af55-c3b49069cc48', null, 'Waterloo, United States', 'Salted Edge', '{food}', 41.260961, -96.29616, '110 S 243rd St, Waterloo, NE, 68069, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('92ee3c07-76bb-4a89-a1ba-ab97209a9b69', null, 'Cambridge, United States', 'Dante', '{food}', 41.2325508, -96.1782679, '40 Edwin H Land Blvd, Cambridge, MA, 02142, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d6b2ca0d-a9f0-469b-af42-ec9680a2f0a8', null, 'Omaha, United States', 'Khao Niao', '{food}', 41.295932, -96.15741, '15505 Ruggles St, Omaha, NE, 68116, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('1991197d-e469-4823-a207-9ea2fdfa91a0', null, 'Nebraska', 'The Bagel Bin', '{food}', 41.24695, -96.09835, '1215 South 119th Street, Omaha, Nebraska 68144', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('1991197d-e469-4823-a207-9ea2fdfa91a0', null, 'Nebraska', 'The Bagel Bin', '{food}', 41.24695, -96.09835, '1215 South 119th Street, Omaha, Nebraska 68144', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('34e4407b-7bcc-4ed9-af28-eea2b0b0ef54', null, 'Nebraska', 'Kinaara', '{food}', 41.259353, -96.071758, '120 Regency Parkway, Omaha, Nebraska 68114', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8e6941e1-82d8-49bf-acb1-c85e1141cba0', null, 'Omaha, United States', 'Everett’s', '{food}', 41.284593, -96.049637, '8807 Maple St, Omaha, NE, 68134, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('cd0e11c1-f44e-49bf-a940-287ec15c4b80', null, 'Nebraska', 'Saddle Creek Breakfast Club', '{food}', 41.249153, -96.048206, '8734 Pacific Street, Omaha, Nebraska 68114', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -15149,7 +15184,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('864a4cfb-ba99-43c1-acd3-ef3a40e3f0bc', null, 'Charlotte, United States', 'Vinyl', '{bars}', 35.216616, -80.856534, '1440 S Tryon St, Charlotte, NC, 28203, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a15624c4-3303-4336-a6da-aa80ed45997f', null, 'Charlotte, United States', 'Aura Rooftop', '{bars}', 35.222498, -80.847999, '600 S College St, Charlotte, NC, 28202, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('171ba12d-85a5-4a03-a6d4-1f4d29cc14b3', null, 'Charlotte, United States', 'Broken Promises', '{bars}', 35.21098, -80.862648, '214 W Tremont Ave, Charlotte, NC, 28203, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('03bda95b-8417-4015-a785-536b287d5097', null, 'North Carolina', 'Grand Bohemian Hotel Charlotte', '{bars}', 35.228102, -80.844663, '201 West Trade Street, Charlotte, North Carolina 28202', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('03bda95b-8417-4015-a785-536b287d5097', null, 'North Carolina', 'Grand Bohemian Hotel Charlotte', '{bars}', 35.228102, -80.844663, '201 West Trade Street, Charlotte, North Carolina 28202', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('a19f3a4c-02ae-4030-a5cc-e7584a44dea7', null, 'Charlotte, United States', 'Tremont', '{bars}', 35.209649, -80.860678, '2000 South Blvd, Charlotte, NC, 28203, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('899e6588-3f82-4208-a49e-3e880c920d79', null, 'Charlotte, United States', 'Clutch Kitchen & Pour House', '{bars}', 35.228435, -80.854755, '601 S Cedar St, Charlotte, NC, 28202, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3b97640f-6b9c-43f1-a00b-67fea7336800', null, 'Charlotte', 'Char Bar 7', '{bars}', 35.091337, -80.845844, '6300 Carmel Rd, Charlotte, NC 28226', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -15184,10 +15222,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('08ddfc00-348b-403c-ac56-ec3c3d690c3c', null, 'Edgewater, United States', 'Roger’s Liquid Oasis', '{bars}', 39.749237, -105.057384, '5505 W 20th Ave, Edgewater, CO, 80214, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('1c039aff-3d7a-4c95-a179-966a597da794', null, 'Essex, United States', 'The Farm Bar and Grille', '{bars}', 42.622436, -70.815563, '233 Western Ave, Essex, MA, 01929, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('df863712-f8e2-4dee-a764-aafcd868d500', null, 'Boston, United States', 'Doña Habana', '{bars}', 42.33231, -71.073253, '811 Massachusetts Ave, Boston, MA, 02118, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('7f5b45f0-bd02-46b0-a3da-65cc03c5e2ca', null, 'Boston, United States', 'Alibi', '{bars}', 42.361943, -71.070636, '215 Charles St, Boston, MA, 02114, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('7f5b45f0-bd02-46b0-a3da-65cc03c5e2ca', null, 'Boston, United States', 'Alibi', '{bars}', 42.361943, -71.070636, '215 Charles St, Boston, MA, 02114, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3ccfaf79-bc7f-4bd7-a7f4-fdb52f94f3b5', null, 'Chelmsford, United States', 'Fishbones', '{bars}', 42.595865, -71.351679, '34 Central Sq, Chelmsford, MA, 01824, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('5ea291ea-1ed2-4130-a070-10da7d75131a', null, 'Massachusetts', 'The Autograph Tavern', '{bars}', 42.653902, -71.139245, '89 Main Street, Andover, Massachusetts 01810', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e2eb279d-2e5b-4df3-a334-fe5921146659', null, 'Hingham, United States', 'Alma Nove', '{bars}', 42.252388, -70.922058, '22 Shipyard Dr, Hingham, MA, 02043, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -15402,7 +15437,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('d7443ce0-5d87-4416-a753-c670a34cbe0f', null, 'Sok No:12 Ukuf Mevkii Kuşçular Köyü, Urla', 'Urla Şarapçılık', '{food}', 38.252839, 26.736664, '8028 Sok No:12 Ukuf Mevkii Kuşçular Köyü, Urla', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('6307eeb1-003b-420f-a33c-acbe634330c0', null, 'Sok No:7 Içmeler Mah Urla, İzmir', 'Urlice Vineyards', '{food}', 38.320598, 26.736569, '1168 Sok No:7 Içmeler Mah Urla, İzmir', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8e08e8a0-c407-4db2-aa0f-35125210c652', null, '/1 Sok No:39 Kuşçular, İzmir', 'Hus Wines', '{food}', 38.274256, 26.733319, '8018/1 Sok No:39 Kuşçular, İzmir', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('41e2df86-8301-45c6-a3d1-cc5c0c4e4c54', null, 'Özbek Akkum, Urla', 'Akın’ın Yeri', '{food}', 38.375163, 26.68245, 'Özbek Akkum, Urla', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('41e2df86-8301-45c6-a3d1-cc5c0c4e4c54', null, 'Özbek Akkum, Urla', 'Akın’ın Yeri', '{food}', 38.375163, 26.68245, 'Özbek Akkum, Urla', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('31adc944-4468-4306-a5c5-6a4276166c4a', null, 'Izmir, Türkiye', 'Amavi', '{food}', 38.284233, 26.376569, 'Alaçatı Mahallesi, 13003. Sokak No:1, Çeşme, Izmir, 35937, Türkiye', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('287975fe-7c1f-4a76-a466-8f88a4997074', null, 'Alaçatı', 'Asma Yaprağı Alaçatı', '{food}', 38.283176, 26.374559, 'Alaçatı Mahallesi 13003 Sokak no :1, 35930 Alaçatı', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('545b0a74-78f3-4b7e-aca8-110acd4e25f2', null, 'İzmir, Türkiye', 'Horasan Balık', '{food}', 38.32383, 26.306002, '2022. Sokak, 35930, Çesme, İzmir, Türkiye', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -15437,10 +15475,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('34e60e65-3a89-410b-ae6f-ff6e6f6fff70', null, 'Paris, France', 'Dreamin’ Man', '{coffee}', 48.865267, 2.366453, '140 Rue Amelot, 75011 Paris, France', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('964ce2fc-35b1-4de2-a5c0-2a0e2cbfea0d', null, 'Paris', 'Hardware Société', '{coffee}', 48.88688, 2.344651, '10 rue Lamarck, 18e, 75018 Paris', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('92f2e9af-20cb-44cd-a4dc-6929eb3be6e7', null, 'Paris', 'Café Lomi', '{coffee}', 48.890312, 2.355427, '3ter rue Marcadet, 18e, 75018 Paris', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('2e786c36-c978-4154-a18f-fd29ef7f0ad8', null, 'Saint-Ouen-sur-Seine, France', 'Noir', '{coffee}', 48.902336, 2.34199, '132 Rue Des Rosiers, 93400 Saint-Ouen-sur-Seine, France', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('2e786c36-c978-4154-a18f-fd29ef7f0ad8', null, 'Saint-Ouen-sur-Seine, France', 'Noir', '{coffee}', 48.902336, 2.34199, '132 Rue Des Rosiers, 93400 Saint-Ouen-sur-Seine, France', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f195275f-c8a0-4079-a935-7726ba3577d8', null, 'Paris', 'La Guinguette d’Angèle', '{food}', 48.864352, 2.341486, '34 rue Coquillière, 75001 Paris', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('b6031c95-0122-4f8b-a48d-efce2b7253c2', null, 'Paris', 'Wild and the Moon', '{food}', 48.866593, 2.330885, '19 place du Marché Saint-Honoré, 75001 Paris', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('21bea43a-778c-45b6-a632-018c994b49f0', null, 'Paris', 'Boneshaker Donuts', '{food}', 48.867932, 2.347786, '86 rue d''Aboukir, 75002 Paris', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -15655,7 +15690,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('0d217137-099d-4c8d-a4bc-adba16bf4dc4', null, 'Oregon', 'Hayward', '{food}', 45.214648, -123.1866, 'Northeast Alpine Avenue, McMinnville, Oregon 97128', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d6873486-6944-41a8-a403-ccad23fcb362', null, 'Florida', 'Kaya', '{food}', 28.552033, -81.365721, '618 Thornton Avenue, Orlando, Florida 32803', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d5843c41-f708-4abf-a28c-06fecc8c7700', null, 'Tennessee', 'Kisser', '{food}', 36.193969, -86.753985, '747 Douglas Avenue, Nashville, Tennessee 37207', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('45b24581-c4b0-461f-a7ef-d5c620a632ba', null, 'Minnesota', 'Oro by Nixta', '{food}', 45.000639, -93.266424, '1222 Northeast 2nd Street, Minneapolis, Minnesota 55413', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('45b24581-c4b0-461f-a7ef-d5c620a632ba', null, 'Minnesota', 'Oro by Nixta', '{food}', 45.000639, -93.266424, '1222 Northeast 2nd Street, Minneapolis, Minnesota 55413', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('110bf613-dba9-4c39-a355-de5d6ecb5e24', null, 'Montana', 'Shan', '{food}', 45.693085, -111.034481, '109 East Oak Street, Bozeman, Montana 59715', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('4b540c82-7ff2-4c26-a4a6-90a4cb46a8a8', null, 'Illinois', 'Viceroy Chicago', '{bars}', 41.902417, -87.628904, '1112 North State Street, Chicago, Illinois 60610', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('4ed61864-bf3c-48a2-ae15-ef3a0e122106', null, 'Illinois', 'Blind Barber', '{bars}', 41.886985, -87.651819, '948 West Fulton Market, Chicago, Illinois 60607', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -15690,10 +15728,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('24ec10fa-7ecb-44f6-aa27-e40ca3b805f0', null, 'San Diego', 'Little Italy Food Hall', '{food}', 32.723187, -117.167896, '550 W Date St (Columbia St), San Diego, CA 92101', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('92d1466a-37f5-4d4c-a5ad-bc4dacac6c3b', null, 'California', 'Bay Hill Tavern', '{food}', 32.794561, -117.194647, '3010 Clairemont Drive, San Diego, California 92117', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('7738b539-5b79-4d27-ac41-181ed2b26260', null, 'San Diego', 'Luce Bar & Kitchen', '{food}', 32.781523, -117.206944, '1959 Morena Boulevard, San Diego, CA 92110', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('b666d117-94cd-489d-a2ab-198a4b3499b4', null, 'San Diego, United States', 'Ketch Grill & Taps', '{food}', 32.720741, -117.227399, '2614 Shelter Island Dr, San Diego, CA, 92106, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('b666d117-94cd-489d-a2ab-198a4b3499b4', null, 'San Diego, United States', 'Ketch Grill & Taps', '{food}', 32.720741, -117.227399, '2614 Shelter Island Dr, San Diego, CA, 92106, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0715ab29-8785-4047-a7f6-f34928e9b0b7', null, 'Georgia', 'Marlow’s Tavern - Roswell', '{food}', 34.059875, -84.380972, '625 West Crossville Road, Roswell, Georgia 30075', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8e09f9b6-914e-442c-af47-6d9a1f588de2', null, 'Marietta, United States', 'Marlow’s Tavern - Marietta', '{food}', 33.978972, -84.42706, '1311 Johnson Ferry Rd Ste 208, Marietta, GA, 30068, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c4f3fa0b-2fa7-4fc9-a14a-b6a3ef49b69d', null, 'Athens, United States', 'Last Resort Grill', '{food}', 33.958201, -83.3784, '174 W Clayton St # 184, Athens, GA, 30601, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -15908,7 +15943,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('5101d2a5-8b80-445b-a257-ea902dc82570', null, 'Lázaro Cárdenas', 'Ocho Tostadas', '{food}', 20.623457, -105.22702, '413 Río Guayaquil, Lázaro Cárdenas, Jal., 48330', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f5374c4b-06ee-47e9-ac26-a45efc256434', null, '5 de Diciembre', 'El Solar', '{food}', 20.619698, -105.23204, '1294 Paraguay, 5 de Diciembre, Jal., 48350', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('5c982e84-47de-44fa-ab46-aa7ea476b37e', null, 'Puerto Vallarta, Mexico', 'Tacón de Marlín', '{food}', 20.618971, -105.230637, 'C. Honduras 145-Int. E, 5 de Diciembre, 48350 Puerto Vallarta, Jal., Mexico', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('d5300a2c-758a-48c4-a5f4-55d184abab2f', null, 'Puerto Vallarta, Mexico', 'Birrieria y Taquería Liz', '{food}', 20.618088, -105.230896, 'Panamá 199, 5 de Diciembre, 48350 Puerto Vallarta, Jal., Mexico', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('d5300a2c-758a-48c4-a5f4-55d184abab2f', null, 'Puerto Vallarta, Mexico', 'Birrieria y Taquería Liz', '{food}', 20.618088, -105.230896, 'Panamá 199, 5 de Diciembre, 48350 Puerto Vallarta, Jal., Mexico', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('85012285-0222-402b-a78d-c5d528723a2b', null, 'Puerto Vallarta, Mexico', 'Julio’s Churros', '{food}', 20.617311, -105.231055, 'Uruguay 206-248, 5 de Diciembre, 48350 Puerto Vallarta, Jal., Mexico', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a12812b1-33d2-452f-a6d0-50862d4faf7e', null, 'Jal.', 'Tuba El Muelas', '{food}', 20.611074, -105.234573, 'S/N Paseo Díaz Ordaz, Centro, Jal. 48300', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('cc619464-99f5-4c50-a594-1834665720b4', null, 'Centro', 'El Colibrí', '{food}', 20.610903, -105.234161, '582 Morelos, Centro, Jal., 48300', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -15943,10 +15981,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('9913e9cd-c6eb-4a93-aff8-735e5fff8460', null, 'Chicago, United States', 'Timothy O''Toole''s Pub', '{food}', 41.89325210000001, -87.6204905, '622 N Fairbanks Ct, Chicago, IL, 60611, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('b9a8295b-a29c-4085-ab34-89de5c44c9e0', null, 'Chicago, United States', 'O''Callaghan''s', '{food}', 41.8899333, -87.62921109999999, '1068 W Taylor St, Chicago, IL, 60607, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('99a05ea9-569e-4c37-a30c-12d62f03eeae', null, 'Chicago, United States', 'Reggie''s Pizza Express', '{food}', 41.8763756, -87.63315639999999, '411 S Wells St, Chicago, IL, 60607, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('f8900931-eec5-489f-a655-a1aee755b1d0', null, 'Boston', 'The Bell In Hand Tavern', '{food}', 42.3616626, -71.0571259, '45 Union St (at Hanover St), Boston, MA 02108', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('f8900931-eec5-489f-a655-a1aee755b1d0', null, 'Boston', 'The Bell In Hand Tavern', '{food}', 42.3616626, -71.0571259, '45 Union St (at Hanover St), Boston, MA 02108', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('7e015da1-4725-43df-a924-fe7ec5270180', null, 'Boston, United States', 'Lincoln Tavern & Restaurant', '{food}', 42.33631500000001, -71.047597, '425 W Broadway, Boston, MA, 02127, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8a3db587-a6a7-4799-ac9a-a21e30e4cd20', null, 'Sharon, United States', 'Mick Morgan''s Irish Pub & Restaurant', '{food}', 42.1245806, -71.2309471, '973 Providence Hwy, Sharon, MA, 02067, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('6830c7aa-f091-4926-a675-e717458c210d', null, 'Boston, United States', 'Biddy Early''s', '{food,bars}', 42.3547303, -71.0537111, '141 Pearl St, Boston, MA, 02110, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -16161,7 +16196,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('7a8f2a6b-9aa5-43f5-a1fd-566621534de6', null, 'Mumbai, Mahārāshtra', 'Seefah', '{food}', 19.054515, 72.828161, 'Khan House, Bandra West, Mumbai 400050, Mahārāshtra', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('78c36d83-f7fe-4f01-a70c-2bd7e70c19c8', null, 'Mumbai, Mahārāshtra', 'Yacht', '{food}', 19.054851, 72.825586, 'St Andrews Church (Bandra West), Mumbai, Mahārāshtra', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8f6965da-1aa7-4306-a6a3-19924aa1068e', null, 'Mumbai, Mahārāshtra', 'Guru Kripa', '{food}', 19.042902, 72.861895, 'Sion West (Rd No 24), Mumbai 400022, Mahārāshtra', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('88fc4b77-0a14-4819-a7d1-76c929311239', null, 'Mumbai, Mahārāshtra', 'Cafe Irani Chaii', '{food}', 19.03895, 72.842685, '9 Rosary Chawl, Mangireesh Chs Ltd, Mmc Road, Mahim, Mumbai 400016, Mahārāshtra', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('88fc4b77-0a14-4819-a7d1-76c929311239', null, 'Mumbai, Mahārāshtra', 'Cafe Irani Chaii', '{food}', 19.03895, 72.842685, '9 Rosary Chawl, Mangireesh Chs Ltd, Mmc Road, Mahim, Mumbai 400016, Mahārāshtra', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('21591cda-a906-4c18-a77a-06f3eca5fa8f', null, 'Mumbai, Mahārāshtra', 'Cafe Madras', '{food}', 19.027611, 72.855036, '391/B, Ground Floor, Kamakshi Building, Kings Circle, Ambedkar Road, Matunga, Mumbai 400019, Mahārāshtra', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('63313197-a675-461d-a3ab-bb87609a6a7b', null, 'Mumbai, Mahārāshtra', 'Aaswad', '{food}', 19.025627, 72.840502, 'L J Road, Shivaji Park, Gadkari Chowk, Dadar West (Gokhale Road, Dadar West), Mumbai 400028, Mahārāshtra', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('65647441-a51b-420f-a3f8-029b20a80165', null, 'Mumbai, Mahārāshtra', 'Prakash Shakahari Upahar Kendra', '{food}', 19.023334, 72.838837, 'Horizon Towers Gokhale Road (Ranade Rd.), Mumbai 400028, Mahārāshtra', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -16196,10 +16234,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('1e0740a8-747d-4b36-aa7a-6b9e92846bde', null, 'C1428APE', 'El Pobre Luis', '{food}', -34.555401, -58.452202, '2393 Arribeños, Belgrano, CABA, C1428APE', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('89945b0a-3ce9-4f40-a4a8-2bbb6c67d7a4', null, 'C1426', 'Strange Brewing', '{food}', -34.579636, -58.451321, '658 Delgado, Colegiales, CABA, C1426', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('1a029810-3347-41b2-a945-99a24d4999c2', null, 'C1428', 'Corte Comedor', '{food}', -34.55407, -58.448181, '1395 Avenida Olazábal, CABA, C1428', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('c5c3ef0b-6134-4a6d-a5b0-8da9a26f8b97', null, 'C1426', 'Catalino', '{food}', -34.578104, -58.447218, '3126 Maure, Colegiales, CABA, C1426', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('c5c3ef0b-6134-4a6d-a5b0-8da9a26f8b97', null, 'C1426', 'Catalino', '{food}', -34.578104, -58.447218, '3126 Maure, Colegiales, CABA, C1426', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('fcb6d1eb-cf53-46d1-a3e5-373acc0ab8bc', null, 'Buenos Aires, Buenos Aires C.F.', 'Picaron', '{food}', -34.59139, -58.447211, 'Avenida Dorrego 866, 1414 Buenos Aires, Buenos Aires C.F.', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('5dad927d-2a5c-4f8b-a7f1-3df6880a4208', null, 'C1406', 'Una Canción Coreana', '{food}', -34.641903, -58.446068, '1549 Avenida Carabobo, Flores, CABA, C1406', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('2b28b3cb-abec-4d65-a7f3-b6152d714e13', null, 'Juan Ramirez de Velasco, CABA', 'Anchoíta', '{food}', -34.589478, -58.445415, '1520 Juan Ramirez de Velasco, CABA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -16414,7 +16449,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('005f0eaa-d590-44a0-a2a3-095f6d5ef734', null, 'Los Angeles, United States', 'The Dresden Restaurant & Lounge', '{bars}', 34.1030898, -118.2915462, '1760 N Vermont Ave, Los Angeles, CA, 90027, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('4e2d21b0-0291-4a0c-acbc-dbbc50bf1bbc', null, 'Pasadena, United States', 'Mijares Mexican Restaurant', '{bars}', 34.1375884, -118.1534934, '145 Palmetto Dr, Pasadena, CA, 91105, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('7a989e26-4369-4c34-a9f1-e212be021a5a', null, 'Culver City, United States', 'Ugo Culver City', '{bars}', 34.0235838, -118.3951473, '3865 Cardiff Ave, Culver City, CA 90232, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('2263da0e-5729-423c-a54a-e832798d0c4a', null, 'Los Angeles, United States', 'The Red Lion Tavern', '{bars}', 34.0992197, -118.2589248, '2366 Glendale Blvd, Los Angeles, CA, 90039, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('2263da0e-5729-423c-a54a-e832798d0c4a', null, 'Los Angeles, United States', 'The Red Lion Tavern', '{bars}', 34.0992197, -118.2589248, '2366 Glendale Blvd, Los Angeles, CA, 90039, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('f7237c26-f04d-492e-a76e-1508e770e554', null, 'Los Angeles, United States', 'Encanto Restaurant', '{bars}', 34.1106391, -118.2877096, '2121 Hillhurst Ave, Los Angeles, CA, 90027, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('7a4e4c5b-4f9c-49b1-a5d2-e5eac9eaf60c', null, 'Los Angeles, United States', 'Nativo', '{bars}', 34.1210263, -118.2033913, '5137 York Blvd, Los Angeles, CA, 90042, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ab061d7a-f03d-4b1e-ab3b-06649b433898', null, 'CA 90017', 'NIKU X', '{bars}', 34.0500335, -118.2604064, '900 Wilshire Boulevard, CA 90017', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -16449,10 +16487,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('460967b6-4b65-4980-ad6c-ee36916ef136', null, 'Charlotte, United States', 'Brigid''s Irish Pub', '{bars}', 35.2163619, -80.8561189, '1440 S Tryon St Ste 102, Charlotte, NC, 28203, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('7ca44095-1b66-492b-a7c2-99be980b19c0', null, 'Raleigh, United States', 'Raleigh Beer Garden', '{bars}', 35.78807620000001, -78.6468743, '614 Glenwood Ave, Raleigh, NC, 27603, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('7a3befa7-ec77-4c4d-a69b-30c1666b30bf', null, 'Raleigh, United States', 'Dos Taquitos', '{bars}', 35.85498179999999, -78.7019212, '6101 Glenwood Ave, Raleigh, NC, 27612, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('5a50f129-b1f3-4ed7-a145-c20020c44200', null, 'Raleigh, United States', 'Rosewater Kitchen & Bar', '{bars}', 35.8374724, -78.64025480000001, '110 Park At North Hills St, Raleigh, NC, 27609, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('5a50f129-b1f3-4ed7-a145-c20020c44200', null, 'Raleigh, United States', 'Rosewater Kitchen & Bar', '{bars}', 35.8374724, -78.64025480000001, '110 Park At North Hills St, Raleigh, NC, 27609, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('2c816679-c9ff-4457-a1a8-12dd2f6811ad', null, 'Boston, United States', 'Yard House', '{bars}', 35.83721, -78.63986, '126 Brookline Ave, Boston, MA, 02215, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f8de7ae1-13a8-4e7f-a148-91b620c87196', null, 'Raleigh, United States', 'High Park Bar & Grill', '{bars}', 35.80719320000001, -78.6306642, '625 E Whitaker Mill Rd, Raleigh, NC, 27608, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a53031d0-0eec-41a6-a542-34f8ab41cb37', null, 'Austin, United States', 'Eberly', '{bars}', 30.2585895, -97.7588646, '615 S Lamar Blvd, Austin, TX, 78704, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -16667,7 +16702,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('2234ebc4-0e74-498a-ac40-724e30a9854e', null, 'Manhattan', 'Dive Bar', '{food}', 40.7939548, -73.97069479999999, '732 Amsterdam Avenue, Manhattan, NY, 10025', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8c2b3c21-7430-486f-a7e4-7bb2005bf490', null, 'New York, United States', 'Vic''s', '{food}', 40.7268643, -73.9932413, '31 Great Jones St, New York, NY, 10012, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3fd8db5b-f8bd-4379-a389-ac7de3896bed', null, 'Brooklyn, United States', 'Le Crocodile', '{food}', 40.72196399999999, -73.9580438, '80 Wythe Ave Side, Brooklyn, NY, 11249, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('d9769ffd-db94-4113-a2e2-9eeeb50aa110', null, 'Manhattan', 'One Fifth', '{food}', 40.7319815, -73.996208, '1 5th Avenue, Manhattan, NY 10003', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('d9769ffd-db94-4113-a2e2-9eeeb50aa110', null, 'Manhattan', 'One Fifth', '{food}', 40.7319815, -73.996208, '1 5th Avenue, Manhattan, NY 10003', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('a5a3d0be-9bdb-45ca-ae78-9574417f1688', null, 'Manhattan', 'Dante NYC', '{food}', 40.7288417, -74.0016444, '79-81 MacDougal Street, Manhattan, NY 10012', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('6c427775-e8b3-4cf3-a7b0-e847a54f5846', null, 'Manhattan', 'The Bar Room at The Modern', '{food}', 40.7609475, -73.9768318, '9 West 53rd Street, Manhattan, NY 10019', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('31e705aa-a5b7-46c8-a6ba-ffc9ed79e0c7', null, 'New York, United States', 'The Owl''s Tail', '{food}', 40.7809794, -73.98088589999999, '215 W 75th St Uppr Side, New York, NY, 10023, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -16702,10 +16740,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('d604cb4e-e688-47a4-a08c-8ceabc8d12f2', null, 'San Diego, United States', 'Mitch''s Seafood', '{food}', 32.7240944, -117.2272568, '1403 Scott St, San Diego, CA, 92106, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e3f90c80-fd3a-4546-aec3-f9c6e13401c6', null, 'San Diego, United States', 'Alforon Mediterranean', '{food}', 32.7601349, -117.0690336, '5965 El Cajon Blvd, San Diego, CA 92115, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d3ccc039-b64e-4757-a582-876e8a1b0790', null, 'San Diego, United States', 'Ed Fernandez Restaurant', '{food}', 32.5756601, -117.0847968, '2265 Flower Ave, San Diego, CA, 92154, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('93a30602-40d7-468a-a2c8-b4f78d47abc8', null, 'San Diego', 'Farmers Table Little Italy', '{food}', 32.723188, -117.1681197, '550 W Date St (India St), San Diego, CA 92101', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('93a30602-40d7-468a-a2c8-b4f78d47abc8', null, 'San Diego', 'Farmers Table Little Italy', '{food}', 32.723188, -117.1681197, '550 W Date St (India St), San Diego, CA 92101', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('04903066-8b66-4728-a700-9b8b28ff6a78', null, 'Murrells Inlet, United States', 'Hoskins Restaurant', '{food}', 33.8220726, -78.6743327, '4031 Highway 17 Business, Murrells Inlet, SC, 29576, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('1c5b6a6c-3005-432c-ac5e-c9404c610d98', null, 'Myrtle Beach, United States', 'Sea Captain''s House', '{food}', 33.7082783, -78.8604235, '3002 N Ocean Blvd, Myrtle Beach, SC, 29577, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('94dbd742-b2af-4724-a674-e066478b0e66', null, 'Myrtle Beach', 'Polynesian Fire Luau & Fire Show', '{food}', 33.7389057, -78.8223546, '3401 N Kings Hwy (Hwy. 17), Myrtle Beach, SC 29577', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -16920,7 +16955,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('b5e2d186-8ebd-439c-ab5f-021a44a0a522', null, 'Brooklyn, United States', 'Peaches HotHouse', '{food}', 40.6833818, -73.9437578, '415 Tompkins Ave, Brooklyn, NY, 11216, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3862484c-561a-4356-ae78-5b1a8e7c5ba2', null, 'Brooklyn, United States', 'Cafe Erzulie', '{food}', 40.6978593, -73.937206, '894 Broadway, Brooklyn, NY, 11206, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0e4fd124-e0de-4428-a116-e4af4ef2e354', null, 'Brooklyn, United States', 'The Islands', '{food}', 40.677064, -73.963421, '671 Washington Ave, Brooklyn, NY, 11238, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('c2e20ac1-b295-4a5f-a077-309e75774520', null, 'Nashville, United States', 'Riddim N Spice', '{food}', 36.1679316, -86.81066919999999, '2116 Meharry Blvd, Nashville, TN, 37208, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('c2e20ac1-b295-4a5f-a077-309e75774520', null, 'Nashville, United States', 'Riddim N Spice', '{food}', 36.1679316, -86.81066919999999, '2116 Meharry Blvd, Nashville, TN, 37208, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('dd32e961-b00c-449f-ad3e-5dfe8d3f9e00', null, 'Nashville, United States', 'Slim & Husky''s Pizza Beeria', '{food}', 36.1604016, -86.77970529999999, '5056 Broadway Pl, Nashville, TN, 37203, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e35be3d3-3e34-4c9d-a229-030b22190107', null, 'TN 37211', 'StrikeOut Wingz', '{food}', 36.0845104, -86.73002389999999, '3961 Nolensville Pike, TN 37211', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('b57c806a-424a-4a5a-a8c9-35d0f7c6cac4', null, 'TN 37208', 'Silver Sands Cafe', '{food}', 36.1699354, -86.7929657, '937 Locklayer Street, TN 37208', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -16955,10 +16993,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('f2adbae0-3153-46dc-a3c0-103c4240101b', null, 'IL 60642', 'Joe''s on Weed St.', '{bars}', 41.9099108, -87.6521578, '940 West Weed Street, IL 60642', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c5ee8d3c-c186-4b7a-a468-e6468774f8b6', null, 'Chicago', 'Sluggers World Class Sports Bar and Grill & Dueling Pianos', '{bars}', 41.94659559999999, -87.6562208, '3540 N Clark St (at Eddy St), Chicago, IL 60657', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('529201c3-35a8-4b4d-a73a-4a8e883a4d10', null, 'Bedford Park, United States', 'El Nuevo Vallarta Sports Bar & Grill', '{bars}', 41.8503668, -87.7935814, '6624 S Cicero Ave, Bedford Park, IL, 60638, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('deb1f937-48dd-432d-a699-315e6278f0c6', null, 'Saint-Fiacre-sur-Maine', 'Muscadet at Château du Coing', '{bars}', 47.1495718, -1.4445749, 'Château du Coing, 44690 Saint-Fiacre-sur-Maine', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('deb1f937-48dd-432d-a699-315e6278f0c6', null, 'Saint-Fiacre-sur-Maine', 'Muscadet at Château du Coing', '{bars}', 47.1495718, -1.4445749, 'Château du Coing, 44690 Saint-Fiacre-sur-Maine', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('fd710bc5-46c4-421b-a444-ac62244353de', null, 'Gorges, France', 'Muscadet at Domaine Brégeon', '{bars}', 47.1182638, -1.3127341, '5 Les Guisseaux, 44190 Gorges, France', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('335bb64a-3655-406a-a50e-062069b166b4', null, 'Val-du-Layon, France', 'Quarts-de-Chaume at Domaine des Forges', '{bars}', 47.3332156, -0.6812165, '6 Les Barres, 49190 Val-du-Layon, France', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('2da24023-3e66-4bb1-a3c4-bb926c093bd4', null, 'Savennières', 'Savennières at Domaine du Closel', '{bars}', 47.3836117, -0.6550250999999999, '1 place du Mail, 49170 Savennières', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -17173,7 +17208,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('b919441d-906e-497b-a977-5d6649875d98', null, 'Wayland, United States', 'The Local, Wayland', '{bars}', 42.3639592, -71.3699361, '400 Boston Post Rd, Wayland, MA, 01778, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3aa2dca0-2fd8-4092-a57a-0c326a7bad32', null, 'Waltham, United States', 'The Local, Waltham', '{bars}', 42.3942629, -71.261237, '99 3rd Ave Ste 3, Waltham, MA, 02451, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('df64a4b2-e442-4b22-ab26-df90c3a71fd4', null, 'Newbury, United States', 'Plum Island Beachcoma', '{bars}', 42.7987876, -70.8102677, '23 Plum Island Blvd, Newbury, MA, 01951, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('12ec769e-6180-44d8-a36c-f246746cfb76', null, 'Wellesley Hills, United States', 'The Local, Wellesley Hills', '{bars}', 42.3073148, -71.2788159, '11 Forest St, Wellesley Hills, MA, 02481, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('12ec769e-6180-44d8-a36c-f246746cfb76', null, 'Wellesley Hills, United States', 'The Local, Wellesley Hills', '{bars}', 42.3073148, -71.2788159, '11 Forest St, Wellesley Hills, MA, 02481, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('d14eb297-fd05-4d0d-ac4b-0f9ace546fa4', null, 'Boston, United States', '42 Degrees North', '{bars}', 42.3144912, -71.1040039, '284 Amory St, Boston, MA 02130, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('5506b46e-b06f-4744-a1a9-62cd605761bb', null, 'Boston, United States', 'La Famiglia Giorgio''s Restaurant', '{bars}', 42.36455969999999, -71.0555835, '112 Salem St, Boston, MA, 02113, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('84b3c5a1-e153-4d7f-a5e0-78de66078320', null, 'Andover, United States', 'Andiamo Restaurant Bar + Cafe', '{bars}', 42.6889254, -71.2135201, '159 River Rd, Andover, MA, 01810, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -17208,10 +17246,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('0e892628-e2d2-449e-a13a-4fd4af15b4ac', null, 'K2B 7E8', 'Golden Palace Restaurant', '{food}', 45.36995, -75.7716666, '2195 Carling Avenue, ON, K2B 7E8', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('7f04409f-6294-4861-ad90-08fee1988900', null, 'K1V 0T7', 'Semsem', '{food}', 45.353268, -75.64878, '2430 Bank Street, ON, K1V 0T7', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('7befbc83-3a00-4625-a1ef-2aa6b5f052a8', null, 'Nashville, United States', 'The Eastern Peak - Gulch', '{food}', 36.15799270000001, -86.7888888, '133 12th Ave N, Nashville, TN, 37203, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('8ee9cd95-c1cb-49b3-af22-942650b52748', null, 'Nashville, United States', 'Burger Up', '{food}', 36.1216031, -86.7905846, '2901 12th Ave S # 12, Nashville, TN, 37204, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('8ee9cd95-c1cb-49b3-af22-942650b52748', null, 'Nashville, United States', 'Burger Up', '{food}', 36.1216031, -86.7905846, '2901 12th Ave S # 12, Nashville, TN, 37204, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('9a3eaef3-cc84-482d-a6ba-d6de66c32720', null, 'Nashville, United States', 'Rock n Roll Sushi - Vanderbilt', '{food}', 36.13827199999999, -86.80051, '1610 21st Ave S, Nashville, TN, 37212, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('60a7730f-19fd-4155-a95a-125a7aa4d464', null, 'Nashville, United States', 'Five Points Pizza West', '{food}', 36.1525742, -86.8358299, '4100 Charlotte Ave, Nashville, TN, 37209, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c3953a8f-9a49-4b65-a9dc-81ea5ddef5f4', null, 'Nashville, United States', '51st Deli', '{food}', 36.1619153, -86.8488668, '1314 51st Ave N, Nashville, TN, 37209, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -17426,7 +17461,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('fbd622c4-7e0e-401a-a7a2-75d2279e4a2d', null, '200027', 'Sungei Road Laksa', '{food}', 1.3067259915483764, 103.85778039693832, '27 Jln Berseh, 200027', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8390fd24-fd5d-4826-aecd-b50280ee454a', null, '249676', 'Candlenut', '{food}', 1.3059001, 103.8101446, '17A Dempsey Road, 249676', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('4eb706d3-7e63-456d-a0d4-d3becd1adc40', null, '248819', 'Open Farm Community', '{food}', 1.3056274620241344, 103.81558544377742, '130E Minden Rd, 248819', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('1f141017-0f19-491d-a00d-f90a2e2df934', null, '15 Dempsey Road 249675', 'Culina at Como Dempsey', '{food}', 1.3052041, 103.8104064, '15 Dempsey Road 249675', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('1f141017-0f19-491d-a00d-f90a2e2df934', null, '15 Dempsey Road 249675', 'Culina at Como Dempsey', '{food}', 1.3052041, 103.8104064, '15 Dempsey Road 249675', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('4f5af483-9a6d-47d1-a2ac-8ccaee9c8bc5', null, 'Dempsey Road 247698', 'Canchita', '{food}', 1.3029342, 103.8098103, 'Dempsey Road 247698', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('23a1224b-149b-48c5-a73a-5a8e383c9b10', null, '238896', 'Tanuki Raw', '{food}', 1.3010121, 103.8392074, '181 Orchard Rd (181 Orchard Rd.), 238896', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('1803ea2c-fa2b-477e-a1dd-712ae122ef1a', null, 'Atlanta, United States', 'Atlas Grand Lobby & Bar', '{food}', 1.3002083, 103.857719, '88 W Paces Ferry Rd NW, Atlanta, GA, 30305, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -17461,10 +17499,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('f74f379d-92cc-4403-a583-f39e8a1bfba0', null, 'Los Angeles, United States', 'Horses', '{bars}', 34.0982805, -118.3557224, '7617 W Sunset Blvd, Los Angeles, CA, 90046, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('4e2c11da-a65f-4c80-a178-cf2a6f48b2e5', null, 'Los Angeles, United States', 'Desert 5 Spot', '{bars}', 34.09964869999999, -118.3317056, '6516 Selma Ave, Los Angeles, CA, 90028, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('7f687e1f-553e-4315-aa56-9d0ad4a76134', null, 'Los Angeles, United States', 'Bar Lis', '{bars}', 34.09897979999999, -118.3312255, '1541 Wilcox Ave, Los Angeles, CA, 90028, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('d62ae201-ea12-47af-ac38-e5aec03ce9b0', null, 'Los Angeles, United States', 'TAO', '{bars}', 34.0999524, -118.3303843, '6421 Selma Ave, Los Angeles, CA, 90028, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('d62ae201-ea12-47af-ac38-e5aec03ce9b0', null, 'Los Angeles, United States', 'TAO', '{bars}', 34.0999524, -118.3303843, '6421 Selma Ave, Los Angeles, CA, 90028, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('63c07b8e-3d10-4d66-aed0-06e8a0d0f8f4', null, 'Los Angeles, United States', 'Beauty & Essex', '{bars}', 34.1001997, -118.3297411, '1615 N Cahuenga Blvd, Los Angeles, CA, 90028, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0f07c2f2-e65f-4710-a16a-74a1ef5673a0', null, 'Los Angeles, United States', 'Cha Cha Chá', '{bars}', 34.0457315, -118.2358282, '812 E 3rd St, Los Angeles, CA, 90013, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('cf703f3c-b153-4a72-ae23-854e80c3f9ae', null, 'Departamento de Montevideo', 'El Palenque', '{food}', -34.90560019999999, -56.2115334, '1579 Pérez Castellano, Departamento de Montevideo, 11000', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -17679,7 +17714,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('0f3777cd-7df3-40e3-a2c4-b72e8d2b38b0', null, 'Thành phố Hồ Chí Minh', '7 Bridges Brewing', '{food}', 10.7802418, 106.7046589, '15B/12 Lê Thánh Tôn, Thành phố Hồ Chí Minh 700000', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('65856b34-1dae-4e8c-a82b-a5b8833439c0', null, 'Thành phố Hồ Chí Minh', 'Hum', '{food}', 10.7787591, 106.6921103, '32 Võ Văn Tần, Thành phố Hồ Chí Minh, 70000', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8bef57b6-52ae-44c0-a26b-e9c8ade9d8c7', null, '45 Lý Tự Trọng, Thành phố Hồ Chí Minh', 'Bornga', '{food}', 10.7786477, 106.7019699, '45 Lý Tự Trọng, Thành phố Hồ Chí Minh', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('01aa5697-a225-4105-a5c7-0086ea3cff79', null, '26 Lý Tự Trọng, Thành phố Hồ Chí Minh', 'Cộng Cà Phê', '{food}', 10.7782326, 106.70098, '26 Lý Tự Trọng, Thành phố Hồ Chí Minh', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('01aa5697-a225-4105-a5c7-0086ea3cff79', null, '26 Lý Tự Trọng, Thành phố Hồ Chí Minh', 'Cộng Cà Phê', '{food}', 10.7782326, 106.70098, '26 Lý Tự Trọng, Thành phố Hồ Chí Minh', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('dc965a95-1b4d-4c13-a382-4797af7e436a', null, '3-5 Hồ Xuân Hương, Thành phố Hồ Chí Minh', 'Chả Cá Lã Vọng', '{food}', 10.7779612, 106.6890273, '3-5 Hồ Xuân Hương, Thành phố Hồ Chí Minh', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('fb3c1705-5645-4553-a528-62daa5181dc5', null, 'Thành phố Hồ Chí Minh', 'Làng Nướng Nam Bộ', '{food}', 10.7768158, 106.6638003, '302A Tô Hiến Thành, Thành phố Hồ Chí Minh, 700000', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('52bcbe24-6aac-45ac-a810-4b88bd69b3d0', null, 'Thành phố Hồ Chí Minh', 'Maguro Studio', '{food}', 10.77618, 106.704937, '19 Đông Du, Thành phố Hồ Chí Minh 700000', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -17714,10 +17752,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('ffa06e87-505c-4dc1-a500-3bcba4ffc9c4', null, '77072', 'Kim Son', '{food}', 29.63664819999999, -95.5860138, '10603 Bellaire Boulevard, TX, 77072', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('505b2e17-193d-46e5-a966-e8f26998f4fc', null, 'Texas', 'Aya Sushi', '{food}', 29.70514, -95.4748445, '5407 Bellaire Boulevard, Bellaire, Texas 77401', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ec760a8e-9d9a-4e0c-a1ec-f4828a11089a', null, 'Houston, United States', 'GiAu Bar n Bites', '{food}', 29.7042966, -95.5535566, '9889 Bellaire Blvd, Houston, TX, 77036, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('a5cccc47-a3f1-4141-a63d-1d0649be9d88', null, 'Houston, United States', 'KA Sushi', '{food}', 29.8030368, -95.4104896, '1901 N Shepherd Dr, Houston, TX, 77008, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('a5cccc47-a3f1-4141-a63d-1d0649be9d88', null, 'Houston, United States', 'KA Sushi', '{food}', 29.8030368, -95.4104896, '1901 N Shepherd Dr, Houston, TX, 77008, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('5a49c5ff-d1fc-4b29-a744-ad12a2c46b12', null, 'TX 77006', 'Kau Ba', '{food}', 29.7436163, -95.40229920000002, '2502 Dunlavy Street, TX 77006', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f4bd1356-bc72-41dc-a8cf-428ab12f6532', null, 'Katy, United States', 'Sing Karaoke', '{food}', 29.7895454, -95.7707221, '1223 Grand West Blvd, Katy, TX, 77449, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d24763aa-3844-410a-a15f-c2d600a8c14b', null, 'Houston, United States', '5Kinokawa', '{food}', 29.78138730000001, -95.3916852, '3119 White Oak Dr, Houston, TX, 77007, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -17932,7 +17967,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('ee9efd99-8143-4577-afdd-c8ee6fe23310', null, 'VIC', 'Siglo Bar', '{food}', -37.810894342656674, 144.97262209653854, '161 Spring St, Melbourne, VIC, VIC 3000', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('27b4032b-97d8-486d-a4f9-324babf8cdb9', null, 'VIC', 'Pellegrini''s Espresso Bar', '{food}', -37.8117263, 144.9711928, '66 Bourke Street, VIC, 3000', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e0c6703c-010b-48c0-a1e3-2f704e1d1e8f', null, 'VIC', 'Flower Drum Restaurant Melbourne', '{food}', -37.81191539999999, 144.9691713, '17 Market Lane, VIC 3000', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('270b8af5-e3b9-4fbb-a3b4-d1ab20ac4fab', null, 'VIC', 'Shandong MaMa', '{food}', -37.81224839999999, 144.9671843, '7/200 Bourke Street, VIC, 3000', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('270b8af5-e3b9-4fbb-a3b4-d1ab20ac4fab', null, 'VIC', 'Shandong MaMa', '{food}', -37.81224839999999, 144.9671843, '7/200 Bourke Street, VIC, 3000', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('8502696b-8400-4e55-a102-773e090287c0', null, 'District of Columbia', 'Soi 38', '{food}', -37.8124884, 144.9719348, '2101 L Street Northwest, Washington, District of Columbia 20037', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('9c831e04-6257-4b3a-a12b-8ac2feda893e', null, 'VIC', 'Embla', '{food}', -37.81351852031434, 144.96835501089245, '122 Russell Street, Melbourne, VIC, 3000', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3df0160b-560b-4655-abfb-405e93fb6c60', null, 'VIC', 'Tipo 00', '{food}', -37.813562, 144.96197, '361 Little Bourke St, Melbourne, VIC, 3000', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -17967,10 +18005,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('b5cca3bc-9351-4c56-a69d-dfea491e2012', null, 'İstanbul', 'Üç yıldız Şekerleme', '{food}', 41.0342933, 28.9770387, 'Duduodaları Sok, No: 7, 34435 İstanbul', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('fef110d6-9ad1-4158-a420-118e99c2122e', null, 'İstanbul 34435', 'Petek Turşuları', '{food}', 41.0341756, 28.9770412, 'İstanbul 34435', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3efb32be-ccd8-45f0-addc-08b20bd3f8ae', null, 'Beyoğlu', 'Mikla', '{food}', 41.031009, 28.97414999999999, 'Meşrutiyet Cad 15 (Meşrutiyet Cad. Tepebaşı), 34430 Beyoğlu', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('5cc8ec77-edd7-4a91-a4ee-0291a4aa0270', null, 'İstanbul', 'Şahin Lokantası', '{food}', 41.0305667, 28.97468839999999, '11/A Orhan Adlı Apaydın Sokak, İstanbul, 34430', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('5cc8ec77-edd7-4a91-a4ee-0291a4aa0270', null, 'İstanbul', 'Şahin Lokantası', '{food}', 41.0305667, 28.97468839999999, '11/A Orhan Adlı Apaydın Sokak, İstanbul, 34430', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('aeb32271-7f77-47df-a2e3-b5a522e2aaa5', null, 'İstanbul', 'Asmalı Cavit', '{food}', 41.030199, 28.974609, '16/D Asmalı Mescit Caddesi, İstanbul, 34430', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a5f5f1e1-320f-4a7f-a680-5f462d805ec6', null, 'İstanbul', 'Yeni Lokanta', '{food}', 41.02950419999999, 28.9755911, '66 Kumbaracı Yokuşu, İstanbul, 34433', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('cef9062f-7b0c-44b9-a4a0-a0d6a4a05fae', null, 'İstanbul', 'Restaurant Mabou', '{food}', 41.0290745, 28.9739693, '8b General Yazgan Sokak, İstanbul 34430', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -18185,7 +18220,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('d62a88df-eb12-44d9-ad38-cc06c13ccdb8', null, '96816', 'Tamura’s Fine Wine & Liquors Waialae', '{food}', 21.2841979, -157.8012476, '3496 Waialae Avenue, HI, 96816', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('7a3b2405-47fc-408b-adc7-e48ec237e490', null, 'Honolulu, United States', 'Ono Seafood', '{food}', 21.281097, -157.8138549, '747 Kapahulu Ave, Honolulu, HI, 96816, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8367708d-3699-4d23-a4a0-1c252ba00bdb', null, 'Hawaii', 'Maguro Brothers', '{food}', 21.2795145, -157.8250497, '2250 Kalākaua Avenue, Honolulu, Hawaii 96815', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('903e9a00-e373-4a6e-a34d-006e73b2346e', null, 'Honolulu, United States', 'Fort Ruger Market', '{food}', 21.271777, -157.80501, '3585 Alohea Ave, Honolulu, HI, 96816, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('903e9a00-e373-4a6e-a34d-006e73b2346e', null, 'Honolulu, United States', 'Fort Ruger Market', '{food}', 21.271777, -157.80501, '3585 Alohea Ave, Honolulu, HI, 96816, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('7dc8cff0-d6af-4174-a549-8c17c5478c16', null, 'OH 45140', 'The Chili Hut', '{food}', 39.2657916, -84.2678171, '390 Loveland Madeira Road, OH 45140', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('00915368-63d4-4b92-a345-78fa64657efa', null, 'Blue Ash, United States', 'Blue Ash Chili', '{food}', 39.2310164, -84.37844369999999, '9525 Kenwood Rd, Blue Ash, OH, 45242, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('1b1d1535-b1a7-465b-a554-5cc92ccc43b9', null, 'Cincinnati, United States', 'Pleasant Ridge Chili Restaurant', '{food}', 39.1812414, -84.43010869999999, '6032 Montgomery Rd, Cincinnati, OH, 45213, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -18220,10 +18258,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('9c38b986-2198-48f2-a425-fde8cbdd1527', null, 'New Delhi, Delhi', 'Daulat ki Chaat in Chandni Chowk', '{food}', 28.65037179999999, 77.2303105, '112 Chowk Barshahbulla, New Delhi 110006, Delhi', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('9dd9225d-4f23-46ab-a2d0-58b0aecfc790', null, 'Chawri Bazar', 'Hira Lal Chat Corner', '{food}', 28.6500424, 77.2287312, '3636 Gali Lohe Wali, Chawri Bazar, DL, 110006', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('9f56fdf9-01a9-47f7-a610-055f2a10055f', null, 'Chawri Bazar', 'Ashok Chat Corner', '{food}', 28.6493666, 77.22669049999999, '3488 Hauz Qazi Chowk, Chawri Bazar, DL 110006', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('85efc6fa-f9b1-42be-ac5e-54447fa159b8', null, 'Miami Beach', 'Bittoo Tikki Waale (BTW)', '{food}', 28.6298091, 77.0796853, '1439 Alton Rd, Miami Beach, FL 33139', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('85efc6fa-f9b1-42be-ac5e-54447fa159b8', null, 'Miami Beach', 'Bittoo Tikki Waale (BTW)', '{food}', 28.6298091, 77.0796853, '1439 Alton Rd, Miami Beach, FL 33139', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('884dda56-3e22-417a-a499-0a4d4c6705bd', null, 'DL 110001', 'Bengali Market', '{food}', 28.628811, 77.2332297, 'Todermal Road Area, DL 110001', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('985923cf-6f9f-4bed-a839-07de07f8ffbc', null, 'DL 110091', 'Mangala Chat Wale', '{food}', 28.6070387, 77.2941824, 'Mayur Vihar, DL 110091', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('b72bdf11-d866-43df-af4d-acce8f9252f0', null, 'Sector 29', 'Bombay Bhel Puri', '{food}', 28.5700738, 77.3326091, '865 Maharishi Dayanand Marg, Sector 29, UP 201303', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -18438,7 +18473,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('28f1c329-874f-4647-a504-12a92b040d97', null, 'T2N 0E6', 'Vendome', '{food}', 51.05521499999999, -114.083225, '940 2 Avenue Northwest, AB, T2N 0E6', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('7959dad9-0b29-4e67-a270-e4be84831940', null, 'T2P 0R1', 'River Café', '{food}', 51.05485328572506, -114.07162964344025, '25 Prince''s Island Park, Calgary, AB, T2P 0R1', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('dc7e01fc-7a7a-4b1e-a59f-b851e56f87d1', null, 'T2N 1V5', 'Vero Bistro Moderne', '{food}', 51.05310600000001, -114.0861085, '209 10 Street Northwest, AB, T2N 1V5', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('c237017a-eb70-45a6-a947-f4dcada7f720', null, 'T2N 4M7', 'Winebar Kensington', '{food}', 51.052493, -114.087797, '1121 Kensington Rd NW, Calgary, AB, T2N 4M7', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('c237017a-eb70-45a6-a947-f4dcada7f720', null, 'T2N 4M7', 'Winebar Kensington', '{food}', 51.052493, -114.087797, '1121 Kensington Rd NW, Calgary, AB, T2N 4M7', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('b1413e82-6eda-44ee-a206-46594201be37', null, 'AB T2E 3R7', 'Jinbar', '{food}', 51.05206949999999, -114.0514524, '24 4 Street Northeast, AB T2E 3R7', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('1dc046ff-1c21-4951-a1e1-ffae39e20050', null, 'Calgary AB T2G 0B2', 'Paper Lantern', '{food}', 51.05107109999999, -114.0616836, '115 2 Ave SE (Center Street), Calgary AB T2G 0B2', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('36c9d85c-d224-4c36-a1b1-27b9608ee349', null, 'T2P 0J6', 'Caesar''s Steak House & Lounge', '{food}', 51.0497889, -114.0723722, '512 4 Avenue Southwest, AB, T2P 0J6', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -18473,10 +18511,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('ae9aa338-8a00-440e-a49a-5736389b9746', null, 'T2V 1K8', 'Empire Provisions', '{food}', 50.9790183, -114.0837946, '8409 Elbow Drive Southwest, AB, T2V 1K8', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c56627e9-093d-4097-a33a-44882cea3b88', null, 'Austin, United States', 'Revelry on the Boulevard', '{bars}', 30.3307338, -97.7230027, '6215 N Lamar Blvd, Austin, TX, 78752, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8d72f870-efd8-4354-a2aa-bb247d4b3bc4', null, 'Texas', 'Nickel City', '{bars}', 30.2685947, -97.7280829, '1133 East 11th Street, Austin, Texas 78702', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('d1cafe65-7868-4523-a565-d24ba4a33238', null, 'Austin, United States', 'The Cavalier', '{bars}', 30.2629229, -97.7146757, '2400 Webberville Rd Ste A, Austin, TX, 78702, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('d1cafe65-7868-4523-a565-d24ba4a33238', null, 'Austin, United States', 'The Cavalier', '{bars}', 30.2629229, -97.7146757, '2400 Webberville Rd Ste A, Austin, TX, 78702, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('dc54cb4c-2e12-4e84-adb9-5a380a6739d0', null, 'Austin, United States', 'The Grackle', '{bars}', 30.26267399999999, -97.724146, '1700 E 6th St, Austin, TX, 78702, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d32cec55-4489-4afb-a685-aa95217b6a75', null, 'Austin, United States', 'Long Play Lounge', '{bars}', 30.2571042, -97.7236576, '1910 E Cesar Chavez St, Austin, TX, 78702, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('4424c578-2a17-49d4-ae33-acac6e3c2f4c', null, 'Roseville, United States', 'Goldfield Trading Post', '{bars}', 38.7495422, -121.2839381, '238 Vernon St, Roseville, CA 95678, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -18691,7 +18726,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('10723289-0dc2-4aa7-adb0-f82e1e34fd30', null, '07179', 'Restaurant Nama', '{food}', 39.7469315, 2.6490956, '22 Carrer Arxiduc Luís Salvador, IB, 07179', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e2f57ac8-2e29-4f4c-a332-39a7c111e9a1', null, 'IB 07170', 'Es Taller Valldemossa', '{food}', 39.7103126, 2.6189126, '1 Carrer de Santiago Russiñol, IB 07170', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3267b51c-473f-4e3a-a558-bb2679a6c356', null, 'IB 07430', 'Brut', '{food}', 39.70075, 3.0080306, '37 Carrer la Carretera, IB 07430', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('99236f52-a731-4442-ae12-4b1040549394', null, 'IB 07003', 'Es Rebost', '{food}', 39.5782297, 2.649228, '29 Avinguda del Comte de Sallent, IB 07003', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('99236f52-a731-4442-ae12-4b1040549394', null, 'IB 07003', 'Es Rebost', '{food}', 39.5782297, 2.649228, '29 Avinguda del Comte de Sallent, IB 07003', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('9981d2af-059b-4961-a63e-504329f1cfc1', null, '07012', 'Adrián Quetglas', '{food}', 39.5732696, 2.6431839, '20 Passeig de Mallorca, IB, 07012', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('db896921-9fb7-4e3f-a43e-f71e7b410760', null, 'Balearic Islands, Spain', 'Ca n’Ignasi', '{food}', 39.72091, 2.912218, 'Carrer De L''aigua, 07300 Inca, Balearic Islands, Spain', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3ca3a7c5-2ea2-487b-a201-efbe6b45f040', null, '07012', 'Fera', '{food}', 39.571933, 2.6465996, '4 Carrer de la Concepció, IB, 07012', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -18726,10 +18764,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('6233fa88-3686-4f18-a4b5-959098ba69a0', null, 'Villaseñor', 'Tortas Ahogadas El Profe Jimenez', '{food}', 20.6896962, -103.3680441, '841 Calle Andrés Terán, Villaseñor, Jal., 44600', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f9d50942-ab09-445e-a2dc-fd1ca4defda0', null, 'Santa Teresita', 'Ponte Trucha Negro', '{food}', 20.6863439, -103.3635729, '646 Calle Ignacio Ramírez, Santa Teresita, Jal., 44600', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('09d97055-d6a4-4993-a208-2d63ae07dc9e', null, 'Lomas de Guevara', 'Tacos Providencia', '{food}', 20.685301, -103.384999, '534 Avenida Rubén Darío, Lomas de Guevara, Jal., 44657', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('a9265b69-fd4c-4d37-a46a-765ea67288a0', null, 'Santa Teresita', 'Birrieria la Victoria', '{food}', 20.6841474, -103.3683933, '1511 Calle Manuel Acuña, Santa Teresita, Jal., 44600', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('a9265b69-fd4c-4d37-a46a-765ea67288a0', null, 'Santa Teresita', 'Birrieria la Victoria', '{food}', 20.6841474, -103.3683933, '1511 Calle Manuel Acuña, Santa Teresita, Jal., 44600', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('7e20abbe-0c4e-4e10-a26e-55ae8a6fa9ce', null, 'Jal.', 'Xokol', '{food}', 20.6831396, -103.3656781, '1392 Calle Ignacio Herrera y Cairo, Santa Teresita, Jal. 44600', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('9107e627-4635-426d-a28c-dcbb6d73db89', null, 'Santa Teresita', 'Kamilos 333', '{food}', 20.6815791, -103.3663279, '333 Calle José Clemente Orozco, Santa Teresita, Jal., 44600', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('7bb56123-7c7f-4a51-a7ca-eb72f834eb74', null, 'Vallarta Norte', 'Restaurante Alcalde', '{food}', 20.6793278, -103.3898, '2903 Avenida México, Vallarta Norte, Jal., 44690', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -18913,7 +18948,6 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('6689ccf8-ef91-469c-a76e-7859c561b839', null, '115 24', 'Myrtillo', '{food}', 37.99623559999999, 23.7637815, '115 24', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('5933daa3-35df-4495-acec-de368f12df38', null, '27 Mnisikleous 105 56', 'Geros tou Moria', '{food}', 37.9733, 23.7278, '27 Mnisikleous 105 56', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0fdcd000-a1a4-4c62-a518-7339eb180ec6', null, '3 Athinaidos 105 63', 'Zisis', '{food}', 37.9767588, 23.729127, '3 Athinaidos 105 63', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('24d03eda-f8c8-4548-a23e-7946e1d98942', null, 'QC H3J 1M3', 'Nolan', '{food}', 37.974897, 23.732388, '1752 Rue Notre-Dame Ouest, Le Sud-Ouest, QC H3J 1M3', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('aee1baf5-a015-48f3-aef4-02064ef773e8', null, '114 73', 'Anadolu', '{food}', 37.99122440000001, 23.7380896, '2 Mpousgou, 114 73', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('6fa56f7f-248d-4b1d-ab28-646294327a9c', null, '105 54', 'Nancy''s Sweet Home', '{food}', 37.978332, 23.724852, '1 Platia Iroon, 105 54', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('480a0b9d-c87e-4433-a7f8-b30521088cfd', null, '4 Apollonos 105 57', 'Ovio', '{food}', 37.97478150000001, 23.732726, '4 Apollonos 105 57', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -18945,7 +18979,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('95fceaf0-94da-4a3c-a126-30cc2ad7c52c', null, 'Albany, United States', '677 Prime', '{food}', 42.6533094, -73.7486674, '677 Broadway, Albany, NY 12207, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('73e936d9-cfc3-4457-a43d-5ed7243ac5b3', null, 'Round Top, United States', 'Trotwood at Glen Falls House', '{food}', 42.2540413, -74.0266058, '230 Winter Clove Rd, Round Top, NY 12473, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f6a6f6b0-8a26-4884-ac80-9e3480cd5f34', null, 'Elmira, United States', 'McClure''s NY Deli', '{food}', 42.11187899999999, -76.82099699999999, '1335 College Ave, Elmira, NY 14901, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('f4d39ef5-0317-4743-a83b-664af7eaa638', null, 'Binghamton, United States', 'Strange Brew Cafe', '{food}', 42.098225, -75.9137433, '137 Washington St, Binghamton, NY 13901, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('f4d39ef5-0317-4743-a83b-664af7eaa638', null, 'Binghamton, United States', 'Strange Brew Cafe', '{food}', 42.098225, -75.9137433, '137 Washington St, Binghamton, NY 13901, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('bf2b72d7-15e2-4325-a553-63e0ed50e25f', null, 'Elmira, United States', 'Light''s Bakery & Coffee Shop', '{food}', 42.090955, -76.81001700000002, '211 W 2nd St, Elmira, NY 14901, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('257abd33-f245-441d-a28c-0f6d217c0715', null, 'Greenport, United States', 'Bruce & Son', '{food}', 41.102707, -72.358949, '208 Main St, Greenport, NY 11944, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('db6514e1-be69-494f-a50c-edae99cf0e30', null, 'Sea Cliff, United States', 'Maldon & Mignonette', '{food}', 40.8462298, -73.63587509999999, '243 Glen Cove Ave, Sea Cliff, NY 11579, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -18979,10 +19016,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('64b8dae9-ac74-4f57-a373-39a42112d9a4', null, 'Inglewood, United States', 'Little Belize Restaurant', '{food}', 33.9606872, -118.3525134, '217 E Nutwood St, Inglewood, CA, 90301, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3801c9eb-847f-44d5-a438-142c2bc813ec', null, 'Inglewood, United States', 'Rusty Pot Cafe', '{food}', 33.9599279, -118.3516982, '324 S Market St, Inglewood, CA, 90301, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c1707dcb-cb54-4ad9-aa24-57128cc4a8a4', null, 'Inglewood, United States', 'Ms. B''s M & M Soul Food', '{food}', 33.9311431, -118.356536, '4549 W Imperial Hwy, Inglewood, CA, 90304, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('2e317546-e54d-414a-a348-3ebf4137ed69', null, 'Inglewood, United States', 'Coni’Seafood', '{food}', 33.9306902, -118.3348748, '3544 W Imperial Hwy, Inglewood, CA, 90303, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('2e317546-e54d-414a-a348-3ebf4137ed69', null, 'Inglewood, United States', 'Coni’Seafood', '{food}', 33.9306902, -118.3348748, '3544 W Imperial Hwy, Inglewood, CA, 90303, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('680cc49a-972f-4eb6-a-dc-a5d4ff3c6350', null, 'New York, United States', 'Baar Baar', '{food}', 40.7244269, -73.9915532, '13 E 1st St, New York, NY, 10003, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('435e623b-096f-4215-aa31-502e4ccd9450', null, 'Brooklyn', 'Vinegar Hill House', '{food}', 40.7027648, -73.9812524, '72 Hudson Avenue, Brooklyn, NY, 11201', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a3ed4570-37b5-4e26-a6ba-7d4aadba2b39', null, 'Brooklyn, United States', 'Montesacro', '{food}', 40.7133875, -73.95126069999999, '432 Union Ave, Brooklyn, NY, 11211, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -19198,7 +19232,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('7a560285-ba18-41fb-a3fb-1bc82346e448', null, 'Rockaway Beach, United States', 'Kelly''s Brighton Marina LLC', '{food}', 45.6686746, -123.9250283, '29200 US-101, Rockaway Beach, OR 97136, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('bf1b632d-8aba-4873-a5a1-3b5e49d5bba0', null, 'Tillamook, United States', 'Tillamook Creamery', '{food}', 45.48458129999999, -123.8427291, '4165 N Hwy 101, Tillamook, OR 97141, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('9a593932-aa0f-46a6-a056-3f9444683fd8', null, 'Corvallis, United States', '4 Spirits Distillery', '{food}', 44.53078069999999, -123.2688305, '3405 SW Deschutes St, Corvallis, OR 97333, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('23b34868-3ef8-436a-ad4b-eb0262abebd2', null, 'Corvallis, United States', 'Peoria Road Farm Market', '{food}', 44.5467542, -123.2135713, '33269 Peoria Rd SW, Corvallis, OR 97333, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('23b34868-3ef8-436a-ad4b-eb0262abebd2', null, 'Corvallis, United States', 'Peoria Road Farm Market', '{food}', 44.5467542, -123.2135713, '33269 Peoria Rd SW, Corvallis, OR 97333, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('7423e160-80fd-478a-ab21-1916f520e8ea', null, 'Albany, United States', 'Midway Farms | Fresh Goods | Albany', '{food}', 44.6366441, -123.1796225, '6980 US-20, Albany, OR 97321, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('bc683e7f-5f24-40d5-a1cb-391561b8c8f5', null, 'Albany, United States', 'Springhill Cellars Winery (Open May-December)', '{food}', 44.67100999999999, -123.146152, '2920 NW Scenic Dr, Albany, OR 97321, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d5fda8ee-cfd8-4a38-aa25-b2d6a5d5c326', null, 'Carlton, United States', 'Soter Vineyards', '{food}', 45.29535239999999, -123.1348772, '10880 NE Mineral Springs Rd, Carlton, OR 97111, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -19232,10 +19269,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('4869aaea-7312-4ea2-ab7b-5448bb7ca98c', null, 'Queens', 'Bar Marseille', '{bars}', 40.59025390000001, -73.7969806, '190 Beach 69th Street, Queens, NY 11692', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('efe6908a-eb9f-4980-a479-f90adb85fa0a', null, 'Manhattan', 'Kyma', '{bars}', 40.8023337, -73.6467758, '445 West 35th Street, Manhattan, NY 10001', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c9c66239-80db-48a7-a91d-fa9e4aa1fae0', null, 'Melville, United States', 'One10', '{bars}', 40.76248159999999, -73.4223489, '569 Broadhollow Rd, Melville, NY 11747, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('b356e813-5145-48e1-a1de-ccf0e049cc0f', null, 'Ocean Beach, United States', 'Fire Island Beach House', '{bars}', 40.6493159, -73.13603669999999, '25 Cayuga St, Ocean Beach, NY 11770, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('b356e813-5145-48e1-a1de-ccf0e049cc0f', null, 'Ocean Beach, United States', 'Fire Island Beach House', '{bars}', 40.6493159, -73.13603669999999, '25 Cayuga St, Ocean Beach, NY 11770, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('4e6aa62a-3aae-44ac-a4c4-f2868918fad6', null, 'Port Jefferson, United States', 'Danford''s Hotel & Marina', '{bars}', 40.94777, -73.0686946, '25 E Broadway, Port Jefferson, NY 11777, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('1eed0811-8879-4acf-a696-b0d22a76702e', null, 'Southampton, United States', '75 Main', '{bars}', 40.886275, -72.38976029999999, '75 Main St, Southampton, NY, 11968, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('76ed0933-0bf4-4481-ad19-adb282e1adb4', null, 'Washington, United States', 'Southampton Social Club', '{bars}', 40.894904, -72.3895747, '1915 I St NW, Washington, DC, 20006, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -19451,7 +19485,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('34f55e1e-752a-45d8-a1df-9bc6aa2023f6', null, 'Aurora, United States', 'Scooters Sports Bar & Grill', '{bars}', 39.7099914, -104.8287051, '13698 E Alameda Ave, Aurora, CO 80012, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('69aa8053-6327-4295-aa8d-f2c6ccd1f2e8', null, 'Denver, United States', 'Reiver''s Bar and Grill', '{bars}', 39.6968644, -104.9619578, '1085 S Gaylord St, Denver, CO, 80209, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('b373c791-fd0c-4e5f-ae7f-f9ceb08005f0', null, 'Denver, United States', 'The Pioneer Bar', '{bars}', 39.67278400000001, -104.959839, '2401 S University Blvd, Denver, CO 80210, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('a19c6008-fbf0-4a88-aa6c-9a809d8d5a90', null, 'Littleton, United States', 'Platte River Bar & Grill', '{bars}', 39.6078682, -105.0214462, '5995 S Santa Fe Dr, Littleton, CO 80120, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('a19c6008-fbf0-4a88-aa6c-9a809d8d5a90', null, 'Littleton, United States', 'Platte River Bar & Grill', '{bars}', 39.6078682, -105.0214462, '5995 S Santa Fe Dr, Littleton, CO 80120, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('4d6a8f42-f350-4690-a41c-5562e40bab5d', null, 'Parker, United States', '20 Mile Tap House', '{bars}', 39.5447473, -104.773106, '12543 N Hwy 83, Parker, CO 80134, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('1272257c-b45d-4106-a59d-0cb86c6cf368', null, 'Parker, United States', 'Tailgate Tavern & Grill', '{bars}', 39.51839710000001, -104.7626172, '19552 Mainstreet, Parker, CO 80138, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('b8c612fe-aa9c-4f78-a25a-2d8663625276', null, 'Parker, United States', 'Takoda Tavern', '{bars}', 39.4917215, -104.7571903, '12365 Pine Bluffs Way, Parker, CO 80134, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -19485,10 +19522,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('8712fa8b-fb96-4f05-ac84-a58e82a95990', null, 'Metairie, United States', 'Swamp Room Bar and Grill', '{bars}', 30.0053059, -90.201014, '5400 Veterans Blvd, Metairie, LA 70003, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ff0c0f6e-966f-40aa-a963-9fc4957ba018', null, 'Metairie, United States', 'Shenanigans Kitchen & Cocktails', '{bars}', 30.00374619999999, -90.1860985, '4612 Quincy St, Metairie, LA 70006, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a1b79e1f-47cc-4825-a198-479c6e983b64', null, 'New Orleans, United States', 'Mid City Yacht Club', '{bars}', 29.9752886, -90.1097734, '440 S St Patrick St, New Orleans, LA 70119, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('2f9bfbd3-d9da-4e01-a9be-da2e0976d9d4', null, 'New Orleans, United States', 'Bayou Beer Garden', '{bars}', 29.9719666, -90.0915976, '326 N Jefferson Davis Pkwy, New Orleans, LA 70119, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('2f9bfbd3-d9da-4e01-a9be-da2e0976d9d4', null, 'New Orleans, United States', 'Bayou Beer Garden', '{bars}', 29.9719666, -90.0915976, '326 N Jefferson Davis Pkwy, New Orleans, LA 70119, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8258150b-e8b7-4359-aaef-e6526b100864', null, 'New Orleans, United States', 'MRB Bar & Kitchen', '{bars}', 29.9595007, -90.06092790000001, '515 St Philip St, New Orleans, LA 70116, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f51e4417-c0d8-4cd9-a5c6-88ceb5f710f0', null, 'New Orleans, United States', 'Bourbon Street Drinkery', '{bars}', 29.9550988, -90.0689518, '217 Bourbon St, New Orleans, LA 70130, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('6e2c94e9-548e-4027-aaa2-d4cec2bad510', null, 'New Orleans, United States', 'Barcadia', '{bars}', 29.94738509999999, -90.0675966, '601 Tchoupitoulas St, New Orleans, LA 70130, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -19704,7 +19738,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('23ed3c1e-b208-46e8-a6e1-ad50ad5f5530', null, 'Dallas, United States', 'Katy Trail Ice House', '{bars}', 32.8007683, -96.807511, '3127 Routh St, Dallas, TX, 75201, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0abb2949-f7f5-4447-a2b1-92f202b06d90', null, 'Plano, United States', 'Katy Trail Ice House Outpost', '{bars}', 33.026469, -96.788891, '4700 W Park Blvd, Plano, TX 75093, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0d5044db-1b3b-4ded-a66b-d936288be2c8', null, 'Dallas, United States', 'Primo''s MX Kitchen & Lounge', '{bars}', 32.8048109, -96.799309, '3309 McKinney Ave, Dallas, TX, 75204, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('0c452361-b107-4e1f-a42b-d2282bd4d218', null, 'Dallas, United States', 'Chelsea Corner', '{bars}', 32.8266351, -96.7851702, '4830 McKinney Ave, Dallas, TX, 75205, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('0c452361-b107-4e1f-a42b-d2282bd4d218', null, 'Dallas, United States', 'Chelsea Corner', '{bars}', 32.8266351, -96.7851702, '4830 McKinney Ave, Dallas, TX, 75205, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('3cd0e83a-f6ad-489a-a358-25f60337e30d', null, '75024', 'Legacy Hall', '{bars}', 33.0835033, -96.8260023, '7800 Windrose Avenue, TX, 75024', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('90055171-3a9e-45af-a556-49b22caa3872', null, 'Houston, United States', 'The Rustic', '{bars}', 32.804919, -96.794219, '1836 Polk St, Houston, TX, 77003, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c6d71231-78e8-49df-a41c-004123fbffc1', null, 'Dallas, United States', 'Vidorra', '{bars}', 32.7835468, -96.784747, '2642 Main St, Dallas, TX, 75226, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -19738,10 +19775,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('81759cb3-341e-4b35-a4a9-4687ab593a7e', null, 'Los Angeles, United States', 'Woon', '{food}', 34.0741838, -118.2793993, '2920 W Temple St, Los Angeles, CA 90026, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f6c00c55-c60a-4143-a0ca-5d16bcca5d98', null, 'Los Angeles, United States', 'Philippe The Original', '{food}', 34.0596704, -118.2371407, '1001 N Alameda St, Los Angeles, CA, 90012, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('38e014f1-dde2-4b0f-a1af-d000216c3000', null, 'Los Angeles, United States', 'Maharaja Cuisine Of India', '{food}', 34.05649220000001, -118.4427131, '1321 Westwood Blvd, Los Angeles, CA 90024, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('4b5fc0ac-7dc3-4b44-a69c-7be8c9237bf0', null, 'Los Angeles, United States', 'Lucky Bird', '{food}', 34.0508171, -118.2487075, '317 S Broadway, Los Angeles, CA, 90013, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('4b5fc0ac-7dc3-4b44-a69c-7be8c9237bf0', null, 'Los Angeles, United States', 'Lucky Bird', '{food}', 34.0508171, -118.2487075, '317 S Broadway, Los Angeles, CA, 90013, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0ebcbffe-7784-4fba-a938-104486416fb8', null, 'Los Angeles, United States', 'Hide Sushi', '{food}', 34.0401528, -118.4427861, '2040 Sawtelle Blvd, Los Angeles, CA 90025, USA', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('09793d36-6644-45d8-af3d-68ee6fbd930e', null, 'Brooklyn, United States', 'Roberta''s', '{food}', 34.0274806, -118.3871861, '261 Moore St, Brooklyn, NY, 11206, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('28012b27-112d-4285-a92c-19a2392e5dac', null, 'Los Angeles, United States', 'Mariscos Jalisco', '{food}', 34.0210411, -118.2128088, '3040 E Olympic Blvd, Los Angeles, CA, 90023, US', 'Listed by Eater', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -19957,7 +19991,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('76f344d7-7a21-4791-acd2-c346f114cc68', null, 'Tokyo, Japan', 'Izumoya', '{food}', 35.6912006, 139.7678387, 'Kandaeki Nishiguchi-dori, Tokyo, Japan', 'Listed by Time Out', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('9972ef3c-4c0f-4db0-a2a8-2dd74e582bce', null, 'Tokyo, Japan', 'Nodaya', '{food}', 35.5895432, 139.4847085, 'Tokyo, Japan', 'Listed by Time Out', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('7853aa23-58d7-4a61-a084-1042d12b6484', null, 'Tokyo, Japan', 'Makino', '{food}', 35.7151746, 139.7860088, 'Kappabashi Hon-dori, Tokyo, Japan', 'Listed by Time Out', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('dee9c331-f1f7-4a4f-af1e-597ed0e15d80', null, 'Tokyo, Japan', 'Tamai', '{food}', 35.6868452, 139.7747438, '3 1, Tokyo, Japan', 'Listed by Time Out', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('dee9c331-f1f7-4a4f-af1e-597ed0e15d80', null, 'Tokyo, Japan', 'Tamai', '{food}', 35.6868452, 139.7747438, '3 1, Tokyo, Japan', 'Listed by Time Out', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('4c3c8f32-0aff-4286-a6c3-9db4573ba1b8', null, 'Tokyo, Japan', 'Kamata', '{food}', 35.5637235, 139.7216959, 'Tokyo, Japan', 'Listed by Time Out', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c7542ced-c84d-4cbb-af19-00568fa159a8', null, 'Tokyo, Japan', 'Ajifuku Asano', '{food}', 35.7510571, 139.6338238, 'Fuji-kaido Avenue, Tokyo, Japan', 'Listed by Time Out', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a9cd92f5-e12b-42fb-a8e6-d00e8af8d5f0', null, 'Tokyo, Japan', 'Chanko Kuroshio', '{food}', 34.6975929, 139.3946315, '大島循環線, Tokyo, Japan', 'Listed by Time Out', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -19991,10 +20028,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('9cc1876e-6527-41ba-a619-e92c01e91928', null, 'Tokyo, Japan', 'Ethiopia', '{food}', 35.6988165, 139.7659763, 'Hongo-dori, Tokyo, Japan', 'Listed by Time Out', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('58706f5e-ee63-41f4-a49e-cc15646d3c15', null, 'Tokyo, Japan', 'Spoon', '{food}', 35.7819462, 139.7192461, '旧 中十条赤羽線, Tokyo, Japan', 'Listed by Time Out', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('10f9dd55-c0e2-4eeb-a2fe-41c42d1dc1c4', null, 'Tokyo, Japan', 'Rojiura Curry Samurai', '{food}', 35.6646847, 139.6670168, '鎌倉通り, Tokyo, Japan', 'Listed by Time Out', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('f3ec6f9a-fbbf-44e4-a853-ab7eefac347e', null, 'Yerevan, Armenia', 'Ponchi-ken', '{food}', 40.1634245, 44.5096393, 'Kristapor street, Yerevan, Armenia', 'Listed by Time Out', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('f3ec6f9a-fbbf-44e4-a853-ab7eefac347e', null, 'Yerevan, Armenia', 'Ponchi-ken', '{food}', 40.1634245, 44.5096393, 'Kristapor street, Yerevan, Armenia', 'Listed by Time Out', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('9a9ff904-20a5-49fc-a45c-58f08bb45830', null, 'Tokyo, Japan', 'Katsuman', '{food}', 35.7045119, 139.5856615, 'Itsukaichi kaido, Tokyo, Japan', 'Listed by Time Out', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('dbf4e479-6445-4767-a404-e0ce24039fbe', null, 'Tokyo, Japan', 'Enraku', '{food}', 35.6604679, 139.7546523, 'Shiba Shimmei Shopping Street, Tokyo, Japan', 'Listed by Time Out', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('58dec648-924f-4dae-a356-ee41aeb2ea3f', null, 'Tokyo, Japan', 'Ton-kyu', '{food}', 35.7128123, 139.7051384, 'Waseda-dori, Tokyo, Japan', 'Listed by Time Out', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -20210,7 +20244,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('4cbf7ab4-738b-400a-af34-0abec04aeabe', null, 'Vienna, Austria', 'Café Hawelka', '{coffee}', 48.2079556, 16.3698053, 'Dorotheergasse 6, Vienna, Austria', 'Listed by Time Out', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('9827114a-3bbd-4d1a-a5c6-543b0d3e4be6', null, 'Vienna, Austria', 'Café Sacher', '{coffee}', 48.203939, 16.3696603, 'Philharmonikerstraße, Vienna, Austria', 'Listed by Time Out', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('4acdf7d2-0ce2-441a-a62f-03c857b0ebec', null, 'Vienna, Austria', 'Demel', '{coffee}', 48.2086051, 16.367211, 'Kohlmarkt 14, Vienna, Austria', 'Listed by Time Out', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('eb0d0477-8f75-4cc9-a478-b8be7a82c140', null, 'Prague, Czechia', 'Field', '{food}', 50.1271766, 14.3761913, 'Prague, Czechia', 'Listed by Time Out', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('eb0d0477-8f75-4cc9-a478-b8be7a82c140', null, 'Prague, Czechia', 'Field', '{food}', 50.1271766, 14.3761913, 'Prague, Czechia', 'Listed by Time Out', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('e6c209e1-043e-484f-a1d0-31e52eb00f23', null, 'Prague, Czechia', 'Taro', '{food}', 50.0815383, 14.4167349, 'Národní 10, Prague, Czechia', 'Listed by Time Out', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('14cc86cf-9120-442d-a7a1-31d1ea5eceaf', null, 'Prague, Czechia', 'Kro Karlín', '{food}', 50.0955731, 14.4582948, 'Prague, Czechia', 'Listed by Time Out', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('db59f0b8-7e43-4908-a5ae-54650599d39c', null, 'Prague, Czechia', 'Cafefin', '{food}', 50.078163, 14.4483946, 'náměstí Jiřího z Poděbrad 4, Prague, Czechia', 'Listed by Time Out', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -20244,10 +20281,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('1adc4e49-a3f5-4577-a46d-624c2bed1e3c', null, 'Stockholm, Sweden', 'AG', '{food}', 59.3345299, 18.0963774, 'Linnégatan, Stockholm, Sweden', 'Listed by Time Out', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('71c72228-871b-4df4-a923-c024f8e2401c', null, 'Stockholm, Sweden', 'Tosto', '{food}', 59.2733517, 18.0706658, 'Stockholm, Sweden', 'Listed by Time Out', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('1e69a5ee-45fb-482a-ab92-4dc464658e18', null, 'Rio de Janeiro, Brazil', 'Bistro Zissou', '{food}', -22.9541835, -43.1867636, 'Rua Paulo Barreto 63, Rio de Janeiro, Brazil', 'Listed by Time Out', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('1b9435b2-d71e-462a-a337-5dc68f2b24bd', null, 'Stockholm, Sweden', 'Liv', '{food}', 59.2587648, 18.0281929, 'Hagsätravägen, Stockholm, Sweden', 'Listed by Time Out', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('1b9435b2-d71e-462a-a337-5dc68f2b24bd', null, 'Stockholm, Sweden', 'Liv', '{food}', 59.2587648, 18.0281929, 'Hagsätravägen, Stockholm, Sweden', 'Listed by Time Out', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('415ab9a6-f5fa-44ec-a4b5-f82b637557e9', null, 'Stockholm, Sweden', 'Nektar', '{food}', 59.3400798, 18.0339782, 'Rörstrandsgatan, Stockholm, Sweden', 'Listed by Time Out', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('357a25ce-7b67-4522-ae1d-30ecb0e13af0', null, 'Stockholm, Sweden', 'Lilla Ego', '{food}', 59.3436602, 18.0454747, 'Västmannagatan, Stockholm, Sweden', 'Listed by Time Out', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c92920c0-03fc-4cc0-a352-a6400cd25dd8', null, 'Stockholm, Sweden', 'Mancini', '{food}', 59.3368715, 18.0639517, 'Tunnelgatan, Stockholm, Sweden', 'Listed by Time Out', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -20463,7 +20497,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('bde84282-b159-4496-acb1-a6146f422718', null, 'Buffalo', 'Colored Musicians'' Club Museum', '{culture}', 42.88651, -78.86788, '145 Broadway', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('92ac148a-fc17-4028-aebb-04a28ec324b2', null, 'Buffalo', 'Nash House Museum', '{culture}', 42.88587, -78.86657, '36 Nash St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d9a7b95c-5165-47d4-a773-d71782b0cf13', null, 'Buffalo', 'Buffalo Transportation Pierce-Arrow Museum', '{culture}', 42.878987, -78.869579, '263 Michigan Ave.', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('b296ef10-6f6a-4374-a220-3839c2201828', null, 'Buffalo', 'Buffalo Fire Historical Society Museum', '{culture}', 42.885041, -78.802256, '1850 William St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('b296ef10-6f6a-4374-a220-3839c2201828', null, 'Buffalo', 'Buffalo Fire Historical Society Museum', '{culture}', 42.885041, -78.802256, '1850 William St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('0ef1b3b9-d3c3-4bd7-a22c-d7792e2b4ef9', null, 'Buffalo', 'Albright-Knox Art Gallery', '{culture}', 42.932245, -78.875627, '1285 Elmwood Ave.', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('7834c592-c745-44b4-a408-e2eda3f79da4', null, 'Buffalo', 'Buffalo Religious Arts Center', '{culture}', 42.936062, -78.900714, '157 East St.', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a9cef754-2b35-4ada-a7d0-4e272d504e22', null, 'Buffalo', 'Delaware Park', '{culture}', 42.934401, -78.865062, 'North end of Lincoln Pkwy., behind Albright-Knox Art Gallery', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -20497,10 +20534,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('d7d3686b-dfaf-4451-a87c-1c3ab782dcbc', null, 'Caldas da Rainha', 'Bar 120', '{bars}', 39.4032, -9.1366, 'Praça 5 de Outubro 33 (Antiga Praça do Peixe)', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('5c76f788-9da9-4a3c-a3e2-0d24cfa20d1c', null, 'Caldas da Rainha', 'Bar Déjà Vu', '{bars}', 39.4034, -9.136, 'Praça 5 de Outubro 12B (Antiga Praça do Peixe)', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('b81deba0-5ca7-4d8a-a1b4-569d614c5692', null, 'Caldas da Rainha', 'Caldas Bar', '{bars}', 39.4062, -9.1343, 'Rua Coronel Soeiro de Brito 26', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('370c62c0-6d0c-4212-aa00-a0d2a41924d2', null, 'Caldas da Rainha', 'Central Bar Caldas', '{bars}', 39.4024, -9.1388, 'Rua Filinto Elísio s/n, Edifício Moagem Ceres (SILOS Contentor Criativo)', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('370c62c0-6d0c-4212-aa00-a0d2a41924d2', null, 'Caldas da Rainha', 'Central Bar Caldas', '{bars}', 39.4024, -9.1388, 'Rua Filinto Elísio s/n, Edifício Moagem Ceres (SILOS Contentor Criativo)', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ce4158c9-b9db-4dd7-a79a-151e881ca6a0', null, 'Caldas da Rainha', 'Daiquiri Bar', '{bars}', 39.4037, -9.136, 'Praça 5 de Outubro 5 (Antiga Praça do Peixe)', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('faf6071c-d2ea-49f8-a81c-5ee4cde06114', null, 'Caldas da Rainha', 'Pateo do Baco', '{bars}', 39.404, -9.1376, 'Rua Sebastião de Lima 26', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('cee2b893-d5ab-4bb5-ab49-1326a48e6448', null, 'Charlotte', 'Discovery Place', '{culture}', 35.2294, -80.8408, '301 N Tryon St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -20716,7 +20750,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('169c97c2-b568-4336-a5c0-bcb0ccc053af', null, 'Churchill', 'The Reef', '{food}', 58.769, -94.1713, '299 Kelsey Blvd', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('5206784d-3adc-4e63-a8da-862e8ce376b0', null, 'Churchill', 'Tundra Inn Pub & Lounge', '{food}', 58.7706, -94.1737, '23 Franklin St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('bd3cf9b4-f84e-45dc-a572-9c68b58b5f90', null, 'Churchill', 'Lazy Bear Café', '{food}', 58.7659, -94.1648, 'Churchill', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('ff7c7bfc-5c04-451a-a5c8-7511a5b81511', null, 'Churchill', 'Liquor Mart', '{bars}', 58.7704, -94.1697, '203 Laverendrye Ave', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('ff7c7bfc-5c04-451a-a5c8-7511a5b81511', null, 'Churchill', 'Liquor Mart', '{bars}', 58.7704, -94.1697, '203 Laverendrye Ave', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('1f292301-4283-4cff-adaa-cffe61ad1000', null, 'Churchill', 'Royal Canadian Legion Branch #227', '{bars}', 58.771994, -94.170983, '23 Hudson Sq', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('783a77b7-b109-437d-a36c-ccb362943bb3', null, 'Copenhagen', 'Den Blå Planet', '{culture}', 55.638, 12.656, 'Jacob Fortlingsvej 1, Kastrup', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('7e5afdf0-93e2-415c-a124-7b354123daf4', null, 'Copenhagen', 'Kalvebod Fælled', '{culture}', 55.608, 12.5483, 'Granatvej', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -20750,10 +20787,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('ee779d38-e183-4150-aff4-9c68cffa9e88', null, 'Farnborough', 'Farnborough Craft Fayre', '{shopping}', 51.29178, -0.75608, 'Queensmead', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('6f32a30f-ba5f-4f61-a2a9-2f3922992527', null, 'Farnborough', 'ASDA', '{shopping}', 51.29101, -0.75815, 'Westmead, GU14 7LT', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0f70f8a4-5fd2-4b20-a0a2-33846f43c3c4', null, 'Farnborough', 'Morrisons', '{shopping}', 51.29157, -0.78822, 'Summit Avenue, Southwood, GU14 0NA', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('742239f2-073a-4f4e-a318-86bc7b5cf940', null, 'Farnborough', 'Sainsbury''s', '{shopping}', 51.29285, -0.75573, '6 Queensmead, GU14 7GL', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('742239f2-073a-4f4e-a318-86bc7b5cf940', null, 'Farnborough', 'Sainsbury''s', '{shopping}', 51.29285, -0.75573, '6 Queensmead, GU14 7GL', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('272132dd-b254-4dd3-a6a8-a20f2d97620b', null, 'Farnborough', 'Daisy''s Cafe', '{food}', 51.277151, -0.744751, '86 Queens Road, GU14 6JR', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('cd62695e-09b6-4be0-a3b2-b3d42d719153', null, 'Farnborough', 'Good Taste', '{food}', 51.29147, -0.75589, '76 Queensmead, GU14 7SB', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e016e692-e99a-45be-a98c-e32cc9b0ec50', null, 'Farnborough', 'The Gallery', '{food}', 51.2852, -0.7501, 'Farnborough College of Technology, Boundary Road, GU14 6SB', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -20969,7 +21003,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('a09f2a0e-5d60-4830-a200-edc2fdff623e', null, 'San Francisco', 'Ha-Ra Club', '{bars}', 37.786, -122.4176, '875 Geary St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('fee4eaf9-78de-46a7-a79c-553a277c331a', null, 'San Francisco', 'The Owl Tree', '{bars}', 37.7877, -122.4119, '601 Post St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('120df49f-7a3f-41d9-a832-95468c4d5678', null, 'San Francisco', 'Exploratorium', '{culture}', 37.8012, -122.3981, 'Pier 15, 698 The Embarcadero', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('a4af60af-69ff-4f69-a32a-f203a0eaf201', null, 'San Francisco', 'Pier 39', '{culture}', 37.809992, -122.410357, 'the Embarcadero at Beach St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('a4af60af-69ff-4f69-a32a-f203a0eaf201', null, 'San Francisco', 'Pier 39', '{culture}', 37.809992, -122.410357, 'the Embarcadero at Beach St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('dcb60844-b2f3-4b0c-ae45-93488fa9a350', null, 'San Francisco', 'Aquarium of the Bay', '{culture}', 37.808626, -122.409473, 'Pier 39', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('1cc807cd-8b9c-4753-a68a-bff62a8640f2', null, 'San Francisco', 'Sea lions', '{culture}', 37.8106, -122.4116, 'Pier 39''s West Marina', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('6c883614-a55d-4de4-a362-a541011e5d3f', null, 'San Francisco', 'Sea Lion Center', '{culture}', 37.81062, -122.41099, 'Second Level, West Marina, Pier 39', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -21003,10 +21040,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('d23d3a2c-90e7-4058-a2da-8a746324ea84', null, 'San Francisco', 'Barney''s Gourmet Hamburgers', '{food}', 37.8003, -122.4377, '3344 Steiner St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('fe38c739-b7c8-4467-a9f0-f35eb600fba0', null, 'San Francisco', 'Home Plate', '{food}', 37.7997, -122.4389, '2274 Lombard St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('23efb47f-f5f8-4721-a29e-87ca219e7eba', null, 'San Francisco', 'Pluto''s Fresh Food for a Hungry Universe', '{food}', 37.8, -122.441, '3258 Scott St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('bc674501-7a2d-46df-a39b-50c223694fbe', null, 'San Francisco', 'Alegrias', '{food}', 37.8002, -122.4348, '2018 Lombard St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('bc674501-7a2d-46df-a39b-50c223694fbe', null, 'San Francisco', 'Alegrias', '{food}', 37.8002, -122.4348, '2018 Lombard St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f5976c6d-9595-4f8b-a002-a3e68b2d3bf8', null, 'San Francisco', 'Bistro Aix', '{food}', 37.8002, -122.4376, '3340 Steiner St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('b2fe5fca-6d75-4d24-a207-46d1220742ce', null, 'San Francisco', 'Black Horse London Pub', '{bars}', 37.7986, -122.4245, '1514 Union St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('98cab174-1cf0-47e2-a7bc-5996ab5bb895', null, 'San Francisco', 'Blue Light', '{bars}', 37.7974, -122.4317, '1979 Union St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -21222,7 +21256,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('705bc4cd-5693-425b-a6c8-5696c6ef5728', null, 'Washington, D.C.', 'America''s Islamic Heritage Museum', '{culture}', 38.8635, -76.9912, '2315 Martin Luther King Junior Avenue SE', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f0d30acd-f235-4823-a2e6-02eee30812f0', null, 'Washington, D.C.', 'Anacostia Museum', '{culture}', 38.8569, -76.9769, '1901 Fort Place SE', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('1ba57083-08c0-4831-a365-58b2246598b4', null, 'Washington, D.C.', 'The Big Chair', '{culture}', 38.86539, -76.98974, '2101 Martin Luther King Jr Ave SE', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('d62e03ef-4a2e-4ff5-a63f-f53e6205cb3e', null, 'Washington, D.C.', 'Historic Uniontown', '{culture}', 38.86588, -76.98709, 'Washington, D.C.', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('d62e03ef-4a2e-4ff5-a63f-f53e6205cb3e', null, 'Washington, D.C.', 'Historic Uniontown', '{culture}', 38.86588, -76.98709, 'Washington, D.C.', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('c5a11e2f-9a5e-4955-afff-277a5fff5784', null, 'Washington, D.C.', 'Fort Stanton Overlook', '{culture}', 38.86, -76.9772, '1600 Morris Rd SE', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f0ff6ca9-5a19-4d57-a551-9ee024b18ea0', null, 'Washington, D.C.', 'Frederick Douglass National Historic Site', '{culture}', 38.8633, -76.9853, '1411 W Street SE', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d39db0dc-8307-4ad0-a09a-0a0c56a56bac', null, 'Washington, D.C.', 'Honfleur Art Gallery', '{culture}', 38.86706, -76.98735, '1241 Good Hope Rd SE', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -21256,10 +21293,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('bab2bcb0-0c66-4bee-a492-b48a2c718c89', null, 'Washington, D.C.', 'The Tombs', '{bars}', 38.906089, -77.070406, '1226 36th St NW', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('4d1ae971-f0a6-448f-a424-382023dc17e0', null, 'Washington, D.C.', 'National Museum of Natural History', '{culture}', 38.8913, -77.0259, 'Washington, D.C.', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0b568b69-81e1-4b07-a754-85f928d37b67', null, 'Washington, D.C.', 'National Museum of American History', '{culture}', 38.8913, -77.03, 'Washington, D.C.', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('03a40e6b-1cf7-4b45-af53-652e209b79b0', null, 'Washington, D.C.', 'National Museum of African American History and Culture', '{culture}', 38.891, -77.0326, 'Washington, D.C.', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('03a40e6b-1cf7-4b45-af53-652e209b79b0', null, 'Washington, D.C.', 'National Museum of African American History and Culture', '{culture}', 38.891, -77.0326, 'Washington, D.C.', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('dc606a7f-56d6-4f3d-a754-94abe333749b', null, 'Washington, D.C.', 'National Museum of the American Indian', '{culture}', 38.8883, -77.0166, 'Washington, D.C.', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3547265f-2fb7-4b9d-aaf0-6dc264fe71fc', null, 'Washington, D.C.', 'National Air and Space Museum', '{culture}', 38.888333, -77.02, 'Washington, D.C.', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e98b70a2-8285-4bc0-ab0e-eb626c110c62', null, 'Washington, D.C.', 'Hirshhorn Museum & Sculpture Garden', '{culture}', 38.888187, -77.022963, 'Washington, D.C.', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -21475,7 +21509,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('58cc4645-81f7-4b93-a26c-4322adac3d1d', null, 'Adelaide', 'Grandstand', '{bars}', -34.9209, 138.5974, 'North Terrace', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3ed00200-60c4-4c6e-ae14-9e6e9f949e6e', null, 'Adelaide', 'Crown & Anchor', '{bars}', -34.92369, 138.60854, '196 Grenfell St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('59b7aae2-d459-4202-a721-197202e116ce', null, 'Aigüestortes i Estany de Sant Maurici National Park', 'Ecomuseu de les Valls d''Àneu', '{culture}', 42.6274506, 1.1214513, 'Carrer del Camp 22-24, Esterri d''Aneu', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('0286a363-bd64-4449-a401-d88d6bfeb77a', null, 'Aigüestortes i Estany de Sant Maurici National Park', 'Vall de Boí Romanic museum', '{culture}', 42.5246088, 0.825565, 'Camí del Batalló 5,Erill la Vall', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('0286a363-bd64-4449-a401-d88d6bfeb77a', null, 'Aigüestortes i Estany de Sant Maurici National Park', 'Vall de Boí Romanic museum', '{culture}', 42.5246088, 0.825565, 'Camí del Batalló 5,Erill la Vall', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('c5884cfb-8bda-4e6d-ae52-f29651630b68', null, 'Aigüestortes i Estany de Sant Maurici National Park', 'Bar Restaurant Sallente', '{food}', 42.5072583, 0.9897819, 'Carretera de Cabdella s/n', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('739d34d2-bbb2-492e-a37d-052042f4fce0', null, 'Aigüestortes i Estany de Sant Maurici National Park', 'Les Ares', '{food}', 42.6479228, 1.0070903, 'Carretera Port de la Bonaigua, s/n, 25587, Lleida', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('cd67a51e-6578-4a94-a57e-0807632e07fb', null, 'Aigüestortes i Estany de Sant Maurici National Park', 'Bordes de Llessuí picnic area', '{food}', 42.4814393, 1.0593277, 'Aigüestortes i Estany de Sant Maurici National Park', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -21509,10 +21546,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('6547a5af-cf8b-44e5-a553-3aeb634d39a9', null, 'Alishan', 'Juh Shan Yuan Restaurant', '{food}', 23.5105, 120.8041, 'Alishan', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0a2fae29-67de-4ee7-adf1-70ce720e8d10', null, 'Altai Tavan Bogd National Park', 'Tavan Bogd Mountain', '{culture}', 49.16233, 87.83569, 'Altai Tavan Bogd National Park', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('5e04b07a-9704-4948-a36f-fd6cef50949c', null, 'Altai Tavan Bogd National Park', 'Lakes Region', '{culture}', 48.60107, 88.44406, 'Altai Tavan Bogd National Park', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('db13a965-d9c3-4ed3-a2d0-d7b6b4d72838', null, 'Altai Tavan Bogd National Park', 'Takhiltyn Havtsal', '{culture}', 48.75431, 88.14537, 'Altai Tavan Bogd National Park', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('db13a965-d9c3-4ed3-a2d0-d7b6b4d72838', null, 'Altai Tavan Bogd National Park', 'Takhiltyn Havtsal', '{culture}', 48.75431, 88.14537, 'Altai Tavan Bogd National Park', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('73e81c07-5842-4835-abaa-6432cc2a943c', null, 'Altai Tavan Bogd National Park', 'Tsagaan Gol', '{culture}', 49.10348, 88.15773, 'Altai Tavan Bogd National Park', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('59bbf8eb-f114-4769-a575-0f07e4ad0f05', null, 'Altai Tavan Bogd National Park', 'Tsagaan Salaa', '{culture}', 49.1785, 88.20785, 'Altai Tavan Bogd National Park', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c5c0f6b8-fe55-4dd2-ab95-2b6ac416d48a', null, 'Altrincham', 'Art With a Heart', '{culture}', 53.3858, -2.3534, 'New Street WA14 2QS', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -21728,7 +21762,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('8fc5b578-0caf-453c-a7c9-54fbc9c74bab', null, 'Baltimore', 'Baba''s Mediterranean Kitchen', '{food}', 39.27203, -76.60281, '745 E Fort Ave', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0b9bf878-6353-4654-a8c8-2e2c6eefcecc', null, 'Baltimore', 'Barfly''s', '{food}', 39.27296, -76.60471, '620 E Fort Ave', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a99ee53e-f282-4272-ab1c-e74c9c20e7b0', null, 'Baltimore', 'The 8 x 10', '{bars}', 39.277, -76.61386, '10 E Cross St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('b6aff720-dfe7-472c-a948-600c96978e4c', null, 'Baltimore', 'Hull Street Blues Cafe', '{bars}', 39.27224, -76.59201, '1222 Hull St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('b6aff720-dfe7-472c-a948-600c96978e4c', null, 'Baltimore', 'Hull Street Blues Cafe', '{bars}', 39.27224, -76.59201, '1222 Hull St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('7eaccebc-a56a-43d4-a243-992982417729', null, 'Baltimore', 'Baltimore & Ohio Railroad Museum', '{culture}', 39.2854, -76.6324, '901 W Pratt St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c38ec181-c412-48cf-a79c-194e87a19a50', null, 'Baltimore', 'Druid Hill Park', '{culture}', 39.325, -76.6433, 'Baltimore', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8fde687b-b259-416d-ad87-6916423769e8', null, 'Baltimore', 'Downtown Locker Room', '{shopping}', 39.31755, -76.65516, '2301 Liberty Heights Ave', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -21762,10 +21799,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('6f5802bb-4a72-49e1-a52a-6b5ab9ca6c9c', null, 'Aviation history in the United States', 'Wright Brothers National Memorial', '{culture}', 36.020542, -75.667493, '1000 North Croatan Highway', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('5179f69e-9177-46b8-a3ff-1afdae2f19d5', null, 'Aviation history in the United States', 'Steven F. Udvar-Hazy Center - National Air and Space Museum', '{culture}', 38.911444, -77.444111, '14390 Air and Space Museum Parkway', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('627f7597-a9cc-4dd9-a344-ca7b20c4ba37', null, 'Aviation history in the United States', 'Museum of Flight', '{culture}', 47.51857, -122.29701, '9404 E Marginal Way S', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('5c14bdb7-1329-4625-af3d-9b926f3de3dc', null, 'Aviation history in the United States', 'Delta Air Lines surplus sale', '{shopping}', 33.6569, -84.4202, '[[Hapeville]], Georgia, USA', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('5c14bdb7-1329-4625-af3d-9b926f3de3dc', null, 'Aviation history in the United States', 'Delta Air Lines surplus sale', '{shopping}', 33.6569, -84.4202, '[[Hapeville]], Georgia, USA', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d22cfc5f-869e-48ed-a4b2-74b258cb854c', null, 'Banff', 'Banff Park Museum National Historic Site', '{culture}', 51.173756, -115.571634, '91 Banff Ave', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('91387d2e-19a5-4f8c-a776-2dd5eaadddcb', null, 'Banff', 'Banff Springs Hotel National Historic Site', '{culture}', 51.16411, -115.562381, '405 Spray Ave', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('fe804e85-88ea-4c13-a66a-0296876a9a98', null, 'Banff', 'Buffalo Nations Luxton Museum', '{culture}', 51.172317, -115.576666, '1 Birch Ave', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -21981,7 +22015,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('62c5ba1f-bdc4-4d41-a20f-e28a2208a276', null, 'Biatorbágy', 'Coop', '{shopping}', 47.47378, 18.82421, 'Baross Gábor utca 1/a', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ccb7e7c9-2a53-4e57-a191-b8662f70b862', null, 'Biatorbágy', 'Premier Outlet', '{shopping}', 47.4652, 18.8872, 'Budaörsi út 4', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ac5024d6-136e-410c-a40c-1ca26bfbe35e', null, 'Biatorbágy', 'Bia Bistro', '{food}', 47.46705, 18.81589, 'Gábor Áron utca 1', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('0134bd84-9ba9-4bde-a656-229a69cde296', null, 'Biatorbágy', 'Bubi Kebab', '{food}', 47.51566, 18.83078, 'Rákoczi Ferenc utca 7, Páty', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('0134bd84-9ba9-4bde-a656-229a69cde296', null, 'Biatorbágy', 'Bubi Kebab', '{food}', 47.51566, 18.83078, 'Rákoczi Ferenc utca 7, Páty', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('859c585f-002f-4425-a7a4-c338685cbec8', null, 'Biatorbágy', 'Andrész Confectionery', '{bars}', 47.46677, 18.8149, 'Szabadság út 37', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('65921bb4-28d8-4bae-ad4a-601a8e6a9762', null, 'Biatorbágy', 'Dodi Confectionery', '{bars}', 47.46431, 18.8088, 'Nagy utca 50', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ef3dc31d-936d-4343-ac50-805e82ab0660', null, 'Bendemeer (New South Wales)', 'Bendemeer Hotel', '{food}', -30.87929, 151.15572, 'Caroline Street', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -22015,10 +22052,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('c9764233-cef8-493d-a78e-9b0e986f1b70', null, 'Birmingham (Alabama)', 'Gordos', '{food}', 33.472509, -86.819673, '433 Valley Ave', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('cffa5351-ae77-475f-a18d-b40e7e723ab0', null, 'Birmingham (Alabama)', 'Green Acres', '{food}', 33.515245, -86.811339, '1705 4th Ave N', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('fbdafeb7-14e6-4b21-a10c-31a6a10c119d', null, 'Birmingham (Alabama)', 'Avondale Brewery', '{bars}', 33.524506, -86.774206, '201 41st St S', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('9d063a11-1058-431f-a72a-166f2ad5edd3', null, 'Birmingham (Alabama)', 'Dave''s Pub', '{bars}', 33.499655, -86.795959, '1128 20th St S', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('9d063a11-1058-431f-a72a-166f2ad5edd3', null, 'Birmingham (Alabama)', 'Dave''s Pub', '{bars}', 33.499655, -86.795959, '1128 20th St S', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c62ab3b8-a086-4d3a-a6ac-ce8266b130f2', null, 'Birmingham', 'Aston Hall', '{culture}', 52.5063, -1.88436, 'Trinity Rd, Aston', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('b29d0867-ab71-4505-a9ec-1d625e0e1d6c', null, 'Birmingham', 'Bullring', '{shopping}', 52.4777, -1.894178, 'Birmingham', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('85eaabb0-d60f-48b8-a3e5-a3085bf9b468', null, 'Birmingham', 'The Mailbox', '{shopping}', 52.47617, -1.90457, 'Birmingham', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -22234,7 +22268,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('d90dccc5-4cf1-4e6b-a6a0-32d5225feeb3', null, 'Brewarrina', 'Brewarrina Aboriginal Fish Traps', '{culture}', -29.958541, 146.8556, 'Brewarrina', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('354a2afe-a016-4b4c-a6aa-3de4ed560364', null, 'Brewarrina', 'Brewarrina Visitor Information and Exhibition Centre', '{shopping}', -29.96081, 146.85761, '57 Bathurst St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3e3f1fae-1df9-49e4-a3c6-764a5c388992', null, 'Brewarrina', 'Gift Shop@Brewarrina Aboriginal Culture Museum', '{shopping}', -29.959314, 146.854021, 'Brewarrina', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('9c8c6f5b-e58a-4eb1-a906-d1ea82172e0c', null, 'Brewarrina', 'Brewarrina RSL', '{food}', -29.9622, 146.8564, '25 Bourke St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('9c8c6f5b-e58a-4eb1-a906-d1ea82172e0c', null, 'Brewarrina', 'Brewarrina RSL', '{food}', -29.9622, 146.8564, '25 Bourke St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('0014ed48-2166-4fc8-a172-1280217bed10', null, 'Brewarrina', 'Muddy Waters Brewarrina', '{food}', -29.9613, 146.8581, '77 Bathurst St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('90103595-1091-48b3-a7f7-e12daa0a20e4', null, 'Brewarrina', 'Hotel Brewarrina', '{bars}', -29.9606, 146.8567, '45 Bathurst St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3e2df767-7b7c-4f61-a551-4806b9aab6c8', null, 'Brewarrina', 'Royal Hotel Brewarrina', '{bars}', -29.96, 146.8553, '25-27 Bathurst St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -22268,10 +22305,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('1059d555-ae01-473b-a41a-73d92be5aec9', null, 'Bruges', '''t Brugs Beertje', '{bars}', 51.206819, 3.221711, 'Kemelstraat', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('dbd48af8-8232-4c18-a9e6-36e05e074710', null, 'Brunswick (Maine)', 'Androscoggin Swinging Bridge', '{culture}', 43.918333, -69.973889, 'Mill St & Cushing St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c02f4b42-4a8e-4c10-a755-e08ae0abe075', null, 'Brunswick (Maine)', 'Bowdoin College', '{culture}', 43.90875, -69.96231, '255 Maine St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('7008edcd-b3f0-45db-a3c0-787ea23f983a', null, 'Brunswick (Maine)', 'Bull Moose', '{shopping}', 43.9146, -69.9643, '151 Maine St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('7008edcd-b3f0-45db-a3c0-787ea23f983a', null, 'Brunswick (Maine)', 'Bull Moose', '{shopping}', 43.9146, -69.9643, '151 Maine St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c223b12c-b673-4570-a450-245c7897469c', null, 'Brunswick (Maine)', 'Estilo', '{shopping}', 43.9145, -69.9661, '10 Pleasant st', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8c078ac4-912d-493a-ad2a-23fe1d3533fe', null, 'Brunswick (Maine)', 'The Gelato Fiasco', '{food}', 43.9169, -69.9663, '74 Maine St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('6ff4bf3e-da07-4b96-a4a0-c5b5849fbdad', null, 'Brunswick (Maine)', 'Fat Boy Drive-In', '{food}', 43.9071, -69.9336, 'Route 24', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -22487,7 +22521,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('50ea1ec1-ecf9-4daf-a43e-c1c923de41c7', null, 'Cadí-Moixeró Natural Park', 'Source of Bastareny River', '{culture}', 42.2675389, 1.7993905, 'Pista de Bagà a Monnell', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('4fe43919-f62d-44f7-a463-6121246120e1', null, 'Cadí-Moixeró Natural Park', 'Prat de Cadí', '{culture}', 42.29554, 1.663485, 'Cadí-Moixeró Natural Park', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0792dc68-e7a2-4d24-a1fc-fceb4ef35c98', null, 'Cadí-Moixeró Natural Park', 'Castellar de n''Hug', '{culture}', 42.285, 2.018889, 'Cadí-Moixeró Natural Park', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('ddd1023b-ccea-4801-a13b-8a3aaabb8a3c', null, 'Cadí-Moixeró Natural Park', 'Ca la Masa sausages', '{shopping}', 42.2529037, 1.8620285, 'Plaça Catalunya nº 1 ,Bagà', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('ddd1023b-ccea-4801-a13b-8a3aaabb8a3c', null, 'Cadí-Moixeró Natural Park', 'Ca la Masa sausages', '{shopping}', 42.2529037, 1.8620285, 'Plaça Catalunya nº 1 ,Bagà', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('25d51224-f05b-49c0-a2a7-1841c16307be', null, 'Cadí-Moixeró Natural Park', 'Cal Lluïset Bakery', '{shopping}', 42.2336347, 1.8788657, 'C. Hostal, 9-7 ,Guardiola de Berguedà', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3ef65ea9-feca-4747-a3fc-3e6123dc0a5f', null, 'Cadí-Moixeró Natural Park', 'Cal Majuba', '{shopping}', 42.350675, 1.457662, 'Cal Majuba, Alàs', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('30fcf595-4fe5-404b-af19-c5de80e225e0', null, 'Cadí-Moixeró Natural Park', 'Estones', '{food}', 42.23507, 1.87621, 'Carretera a Bagà, 29, Guardiola de Berguedà', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -22521,10 +22558,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('2cfd2b6f-99ff-4171-a4af-d05e2c6fcfce', null, 'Cancún', 'Market 28', '{shopping}', 21.1617, -86.8343, 'Xel-ha m 2 13 SM 28, 28,', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('89c3ef67-c574-47b5-acb7-a8d24f38371c', null, 'Cancún', 'Market 23', '{shopping}', 21.16799, -86.82802, 'Ciricote 15, SM 23', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('6722c700-8903-4fae-a11d-e3752f025d6a', null, 'Cancún', 'Parque de las Palapas', '{food}', 21.1610404, -86.8275301, 'Cancún', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('671600c8-6a20-4bf6-ad36-eb3ed136ecbe', null, 'Cancún', 'Food stall directly in front of the bus station', '{food}', 21.1646301, -86.8266822, 'Cancún', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('671600c8-6a20-4bf6-ad36-eb3ed136ecbe', null, 'Cancún', 'Food stall directly in front of the bus station', '{food}', 21.1646301, -86.8266822, 'Cancún', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('cc394009-ca5a-4f57-a663-ff5e9693ff60', null, 'Cancún', 'Señor Frogs', '{bars}', 21.1325, -86.7475, 'Blvd. Kukulkan km 9, Zona Hotelera', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('51fa342e-edfd-4066-a43f-83bb83ff8249', null, 'Cancún', 'Dady''O', '{bars}', 21.133183, -86.7474, 'Blvd Kukulkan km 9.5, Zona Hotelera', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d03e1adb-7d7a-4731-a52b-ba2164db8620', null, 'Cannes', 'Philcat', '{food}', 43.55107, 7.01386, 'Cannes', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -22740,7 +22774,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('1633f0d2-2433-4972-a200-a9a03a674a44', null, 'Chiang Mai', 'Chiang Mai Foreign Cemetery', '{culture}', 18.77346, 99.00735, 'Chiang Mai-Lamphun Rd', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('13d140cc-b1d0-4d1c-a5df-ef230c5a18de', null, 'Chiang Mai', 'Chiang Mai Zoo & Aquarium', '{culture}', 18.8088, 98.9467, '100 Huay Kaew Rd', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ebaaf545-a5bc-47f3-ae16-92b691675d38', null, 'Chiang Mai', 'The Lost Book Shop', '{shopping}', 18.78527, 98.9919, 'Ratchamanka Rd', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('4319c56a-c3dd-4974-a7f3-bf3e206f78ed', null, 'Chiang Mai', 'Suriwong Book Centre', '{shopping}', 18.781026, 98.997509, 'Chiang Mai', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('4319c56a-c3dd-4974-a7f3-bf3e206f78ed', null, 'Chiang Mai', 'Suriwong Book Centre', '{shopping}', 18.781026, 98.997509, 'Chiang Mai', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('b58c543f-e8b4-4f49-ad38-fb769e410388', null, 'Chiang Mai', 'Anusarn Market', '{food}', 18.782606, 99.000914, 'Changklan Rd', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('1bacfd0d-ea88-49eb-aedb-9b1a063596f8', null, 'Chiang Mai', 'Kalare Food Centre', '{food}', 18.785138, 99.001091, 'Changklan Rd', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e9470ec7-aa52-4ad9-a315-a41e9399b9a0', null, 'Chiang Mai', 'Akha Ama', '{bars}', 18.79403, 98.99253, 'Moon Muang Rd, Soi 9', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -22774,10 +22811,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('618baa16-6291-4c5a-a31a-c64cc41d1670', null, 'Chicago', 'Brickyard Mall', '{shopping}', 41.928569, -87.787899, '2554 N Narragansett Ave', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('9869993c-c0f2-48e2-a89b-51de595c621e', null, 'Chicago', 'Out of the Past Records', '{shopping}', 41.880301, -87.735918, '4407 W Madison St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('30d2ee67-ef31-4765-a201-c46fe200445c', null, 'Chicago', 'Roeser''s Bakery', '{food}', 41.910684, -87.70818, '3216 W North Ave, Humboldt Park', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('de190fda-9e76-4098-a06f-ef427c8ff072', null, 'Chicago', 'Drexel Fountain', '{culture}', 41.801667, -87.605, 'at Hyde Park Blvd & Drexel Ave', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('de190fda-9e76-4098-a06f-ef427c8ff072', null, 'Chicago', 'Drexel Fountain', '{culture}', 41.801667, -87.605, 'at Hyde Park Blvd & Drexel Ave', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('aa5bc2ff-05e2-4979-a504-6247ab03ddc7', null, 'Chicago', 'Isidore Heller House', '{culture}', 41.801333, -87.597089, '5132 S Woodlawn', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('126dce6e-7ab3-46d0-a8de-58be8d21653e', null, 'Chicago', 'KAMII', '{culture}', 41.8026, -87.5986, '5039 S Greenwood Ave', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e1988f11-c2ce-462f-a356-693ea4677540', null, 'Chicago', 'Masjid Al-Faatir', '{culture}', 41.81004, -87.59642, '1200 E 47th St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -22993,7 +23027,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('5e8652f8-41fb-474e-af7d-15b6a0819a46', null, 'Copenhagen', 'Frilandsmuseet', '{culture}', 55.7857, 12.4899, 'Kongevejen 100, Lyngby', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('6dcaf7c4-bc6d-45b4-a2e5-8fd902a38ed7', null, 'Copenhagen', 'Lyngby Storcenter', '{shopping}', 55.77199, 12.506465, 'Klampenborgvej 232, Lyngby', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f47c59f3-c4e9-4809-a095-d1fab965e1fc', null, 'Copenhagen', 'Magasin Lyngby', '{shopping}', 55.770225, 12.505306, 'Lyngby Hovedgade 43, Lyngby', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('c128719a-ef9b-4202-aeb3-d398b0c4139c', null, 'Copenhagen', 'Cafe Jorden Rundt', '{food}', 55.7498, 12.58936, 'Strandvejen 152, Charlottenlund', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('c128719a-ef9b-4202-aeb3-d398b0c4139c', null, 'Copenhagen', 'Cafe Jorden Rundt', '{food}', 55.7498, 12.58936, 'Strandvejen 152, Charlottenlund', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('bdf16d4e-9700-4b20-aaf1-f66e54f2086e', null, 'Copenhagen', 'Brede Spisehus', '{food}', 55.794197, 12.500478, 'I.C. Modewegsvej 1, Lyngby', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('b235e057-afcc-4bad-adf9-8bfa62024c04', null, 'Copenhagen', 'Post Pub', '{bars}', 55.7689224, 12.5053408, 'Lyngby Hovedgade 78', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('266746a0-2e75-47e0-a812-c14054dcce80', null, 'Copenhagen', 'Templet', '{bars}', 55.7701386, 12.49961, 'Jernbanevej 16', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -23027,10 +23064,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('c0ea136c-9972-4858-a998-9b345a5c9bc4', null, 'Cozumel', 'San Gervasio', '{culture}', 20.504829, -86.825637, 'Carretera Costera Sur Km. 9', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('4f309176-7e37-4fa6-a107-4ed0cd68711c', null, 'Cozumel', 'Casa Denis', '{food}', 20.5093314, -86.9493326, 'Cozumel', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d0364fed-c76a-4d83-a75c-626e97a07d70', null, 'Cozumel', 'La Choza', '{food}', 20.5080036, -86.9498476, 'Cozumel', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('f7a34a01-1cac-415f-a14f-0a4a2144f5b6', null, 'Cozumel', 'Crazy King Burrito', '{food}', 20.5120593, -86.9473169, 'Calle 4 Nte', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('f7a34a01-1cac-415f-a14f-0a4a2144f5b6', null, 'Cozumel', 'Crazy King Burrito', '{food}', 20.5120593, -86.9473169, 'Calle 4 Nte', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('6eda6a30-f12b-4128-a600-e64e860065b5', null, 'Cozumel', 'Cerveceria Punta Sur', '{bars}', 20.507913331108504, -86.94990785798944, '10a Avenida Sur 229, Centro', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('38104989-0912-4be7-a102-b26e41234570', null, 'Cozumel', 'No Name Bar', '{bars}', 20.50610746448455, -86.95705395830844, 'Avenida Rafael Melgar', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('65c585c1-98c6-4d0f-a2fc-f732fe8c12d0', null, 'Cozumel', 'Skyreef Beach Bar', '{bars}', 20.44768841028109, -87.00391674359778, 'Carratera Costera KM 10', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -23246,7 +23280,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('d1b83e7f-ea88-42b9-ab30-acc6bc40d138', null, 'Del Valle Regional Park', 'Heron Bay', '{culture}', 37.615348, -121.734603, 'Del Valle Regional Park', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('05f7cd06-0b11-474a-aee6-7a4c11098450', null, 'Del Valle Regional Park', 'Swallow Bay', '{culture}', 37.600212, -121.719824, 'Del Valle Regional Park', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('14c5412a-8c93-4416-a67a-9fac4a158854', null, 'Del Valle Regional Park', 'Abandoned Cabin', '{culture}', 37.59116, -121.682079, 'Del Valle Regional Park', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('1d50d125-9646-4073-a74e-93eaab396e19', null, 'Del Valle Regional Park', 'Bridge to Nowhere', '{culture}', 37.584198, -121.685825, 'Del Valle Regional Park', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('1d50d125-9646-4073-a74e-93eaab396e19', null, 'Del Valle Regional Park', 'Bridge to Nowhere', '{culture}', 37.584198, -121.685825, 'Del Valle Regional Park', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('adb1720e-1b6b-4a8e-a492-51780c91d0c9', null, 'Del Valle Regional Park', 'Orchard', '{culture}', 37.620244, -121.749001, 'Del Valle Regional Park', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a65acedd-579a-4f9b-ae3f-9ebafdf57e78', null, 'Delungra', 'Copeton Dam', '{culture}', -29.904921, 150.923896, 'Copeton Dam Road', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('29089beb-81d3-4e35-a572-4ba22aadc7a2', null, 'Delungra', 'Graman Hotel', '{culture}', -29.46925, 150.92794, '4158 Yetman Road, Graman', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -23280,10 +23317,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('74cd66ff-2aa6-4aa1-ae6b-6c5e9f7371a0', null, 'Doha', 'Souq Waqif', '{shopping}', 25.288279, 51.532443, 'Al Jasra', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('5e2903da-123a-4192-ac13-72487063756c', null, 'Doha', 'Gold Souq', '{shopping}', 25.285582, 51.537797, 'Ali Bin Abdullah St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f58bfc4b-ddf1-4cc5-a87a-b08ed37d4910', null, 'Doha', 'Ric''s Kountry Kitchen', '{food}', 25.282388, 51.545526, 'Sana Complex, Ras Abu Abboud St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('bf4239ad-5dc0-4a03-a1d7-d2c521d0323b', null, 'Doha', 'Oishi Sushi', '{food}', 25.281518, 51.501684, 'Al Sadd St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('bf4239ad-5dc0-4a03-a1d7-d2c521d0323b', null, 'Doha', 'Oishi Sushi', '{food}', 25.281518, 51.501684, 'Al Sadd St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('1c58862a-d8a7-422a-a3b0-0cc00f500385', null, 'Doha', 'PappaRoti', '{bars}', 25.26249, 51.52892, 'C Ring Rd', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('4e69f2a9-4e8b-4497-a0e2-363e9cf5b740', null, 'Doetinchem', 'Stadsmuseum', '{culture}', 51.967217, 6.289686, 'Burgemeester van Nispenstraat 2', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e7adb0b5-72f8-4a13-a6aa-a755a5aa5eac', null, 'Doetinchem', 'Stadscentrum Doetinchem', '{culture}', 51.9655, 6.2889, 'Simonsplein', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -23499,7 +23533,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('55953701-cf18-46bf-a657-2be4224adadc', null, 'Entebbe', 'Anna''s Corner', '{food}', 0.05794, 32.47319, '1 Station Rd', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('1b29701c-9bb5-4e2a-a7f6-351cab6df4e4', null, 'Entebbe', '4 Turkeys Pub', '{bars}', 0.06128, 32.47193, 'Kampala Rd', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e5335272-4db0-4fe6-a577-ca26c32e3625', null, 'Erice', 'Castle of Venus', '{culture}', 38.035326, 12.591628, 'Via del Castello', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('042feb62-52b1-43ae-a69e-e8cc56e0ef10', null, 'Erice', 'Elymian-Punic Walls', '{culture}', 38.04101, 12.58753, 'Runs between Porta Spada and Porta Trapani', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('042feb62-52b1-43ae-a69e-e8cc56e0ef10', null, 'Erice', 'Elymian-Punic Walls', '{culture}', 38.04101, 12.58753, 'Runs between Porta Spada and Porta Trapani', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('662a0693-cb50-4c45-a528-5b52a317a52d', null, 'Erice', 'Antica Pasticceria da Michele', '{food}', 38.037908, 12.586622, 'Via Vittorio Emanuele, 10', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('21df2949-5730-4337-a6ef-ca7e79100c80', null, 'Erice', 'Ecirè', '{food}', 38.03798, 12.58682, 'Via Vittorio Emanuele, 119', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('2dc2c948-f62d-46a4-a241-0501423f02fe', null, 'Erice', 'Domus Blanca Lounge Bar', '{bars}', 38.03815, 12.58792, 'Via Gian Filippo Guarnotti, 60', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -23533,10 +23570,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('221fa3a2-172d-4bce-a532-886c394ccf70', null, 'Exeter', 'Princesshay', '{shopping}', 50.7245, -3.52775, '9 Catherine St, EX1 1QA', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('345af530-83ed-4100-a484-83bd0b848263', null, 'Exeter', 'Guildhall Shopping Centre', '{shopping}', 50.72343, -3.532558, '40 High St, EX4 3HP', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3942bfb1-ea63-496f-a2cd-e692223a5e92', null, 'Exeter', 'Dinosaur Café', '{food}', 50.72763, -3.5356, '5 New North Rd, EX4 4HH', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('8c242fc8-cd9d-4a88-a1b9-f54059c20a50', null, 'Exeter', 'The Fat Pig', '{food}', 50.72084, -3.53402, '2 John St, EX1 1BL', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('8c242fc8-cd9d-4a88-a1b9-f54059c20a50', null, 'Exeter', 'The Fat Pig', '{food}', 50.72084, -3.53402, '2 John St, EX1 1BL', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('130da8f6-d9d0-4caa-a352-24ba4ecddc5a', null, 'Exeter', 'The Angel', '{bars}', 50.725881, -3.533772, '32 Queen St, EX4 3SR', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('91306353-ccd1-4b59-ade1-580a5e019eac', null, 'Exeter', 'The Black Horse', '{bars}', 50.72675, -3.52719, 'Longbrook St, Exeter EX4 6AB', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('2f219e46-d161-48b8-a1bf-1902008316fe', null, 'Fall River (Massachusetts)', 'Battleship Cove', '{culture}', 41.706192, -71.163328, '5 Water St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -23752,7 +23786,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('58c38911-6acb-4e1f-a208-070ec38f1730', null, 'Game of Thrones tourism', 'Doune Castle', '{culture}', 56.19049, -4.05589, 'Game of Thrones tourism', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('5b8d5502-80d7-4da6-a24a-5f75cdc64b2a', null, 'Game of Thrones tourism', 'Castle Ward', '{culture}', 54.37065, -5.55547, 'Game of Thrones tourism', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('047a30bb-c074-48ad-a3bf-177eac4eee96', null, 'Game of Thrones tourism', 'Tollymore Forest Park', '{culture}', 54.216, -5.917, 'Game of Thrones tourism', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('cf3602cc-8998-488a-a6ae-4a4658ce4b56', null, 'Functionalist architecture in Finland', 'Taivallahti barracks', '{culture}', 60.177, 24.917, 'Functionalist architecture in Finland', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('cf3602cc-8998-488a-a6ae-4a4658ce4b56', null, 'Functionalist architecture in Finland', 'Taivallahti barracks', '{culture}', 60.177, 24.917, 'Functionalist architecture in Finland', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('626139df-0109-4219-a368-1bc6636a5bf8', null, 'Functionalist architecture in Finland', 'House of the Book', '{culture}', 60.1761, 24.9558, 'Kirjatyöntekijänkatu 10', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0be21743-1b3c-4bbd-a0de-ccfe271ef300', null, 'Functionalist architecture in Finland', 'Sturenkatu 21', '{culture}', 60.1925, 24.9532, 'Sturenkatu 21', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('10a5d16d-ef58-40eb-a0-2-2e7afffdd258', null, 'Functionalist architecture in Finland', 'Olympic village', '{culture}', 60.2105, 24.9502, 'Functionalist architecture in Finland', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -23786,10 +23823,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('aeb5ffc2-75c4-406c-a248-ed052247ad02', null, 'Glen Innes', 'Woolworths', '{shopping}', -29.74189, 151.73486, 'Corner of Wentworth Street and Grey Street', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('5a847ebf-9fc9-4d41-a3ab-23c02fa4e3c0', null, 'Glen Innes', 'Coles', '{shopping}', -29.7395, 151.73545, '357 Grey Street', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('366e4de0-36f1-449c-a09f-d97c6d5fe27c', null, 'Glen Innes', 'Yim Thai Restaurant', '{food}', -29.739512, 151.73172, '98 West Ave', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('9b19a58c-1350-4390-a77b-659e4ae69a91', null, 'Glen Innes', 'Dragon Court Chinese Restaurant', '{food}', -29.74057, 151.73525, 'Glen Innes', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('9b19a58c-1350-4390-a77b-659e4ae69a91', null, 'Glen Innes', 'Dragon Court Chinese Restaurant', '{food}', -29.74057, 151.73525, 'Glen Innes', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d172a168-dea0-47c4-afd2-96acb012d92c', null, 'Glen Innes', 'Great Central Hotel', '{bars}', -29.73735, 151.73585, '313 Grey Street', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('03fa8884-9383-46ee-a6f8-62196977ddf7', null, 'Glen Innes', 'Railway Tavern', '{bars}', -29.73797, 151.72798, 'corner of Bourke Street and Lambeth Street', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8c2c6264-9b5b-4dc4-a777-0fa02787d028', null, 'Goroka', 'J.K. McCarthy Museum', '{culture}', -6.085083, 145.393269, 'Airport Road', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -24005,7 +24039,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('a7f3f140-c989-4ca6-ae7a-dde6717d1de6', null, 'Harbin', 'Zhongyang Dajie', '{culture}', 45.767781, 126.614021, 'Harbin', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('4bfb1d7f-edd8-4785-a59d-c150639d4150', null, 'Harbin', 'St. Sophia Cathedral', '{culture}', 45.768094, 126.621522, 'Harbin', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('eed99481-0929-479f-a180-f8ce2f8037c2', null, 'Harbin', 'Churin', '{shopping}', 45.758856, 126.639927, 'No.319 Dongdazhi Street, Nangang District (南岗区东大直街319号)', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('099b0ebc-6f13-4e12-a688-d0ae78aeecce', null, 'Harbin', 'Bank of China Heilongjiang Branch', '{shopping}', 45.75857, 126.64058, 'No.19, Hongjun Jie', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('099b0ebc-6f13-4e12-a688-d0ae78aeecce', null, 'Harbin', 'Bank of China Heilongjiang Branch', '{shopping}', 45.75857, 126.64058, 'No.19, Hongjun Jie', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('f76a2be3-3c22-47f9-a34b-753e6338cb3d', null, 'Harbin', 'Modern Ice Lolly', '{food}', 45.77311, 126.61937, 'No. 89 Zhongyang St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('421c2857-9b2c-46a5-a26c-f210edd491ef', null, 'Harbin', 'Oriental Dumplings King', '{food}', 45.76977, 126.62012, '38 Zhongyang Avenue, Daoli District (道里区中央大街39号; Dàolǐqū Zhōngyāngdàjiē)', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8bb9abf5-34e7-454b-a40a-19142c0a1714', null, 'Harbin', 'Blue''s', '{bars}', 45.76917, 126.62881, '100 Diduan Jie (地段街100号)', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -24039,10 +24076,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('2a61682c-f5b7-41f6-a202-9d6262018aa2', null, 'Havelock Island', 'Kalapathar Beach', '{culture}', 12.0002, 93.0036, 'Havelock Island', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('229e67c7-f30b-4da9-a2e6-ab59215a9957', null, 'Havelock Island', 'Axis & SBI ATMs', '{shopping}', 12.033679, 92.99324, 'Havelock Island', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('97c96d86-cb97-4a70-ac5e-77f6636087f6', null, 'Havelock Island', 'Golden Spoon', '{food}', 12.030059, 92.995506, 'Havelock Island', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('25777212-09ee-49e8-ac99-ebfa2f660bfa', null, 'Havelock Island', 'B3, Barefoot Bar and Brasserie', '{food}', 12.041807, 92.982016, 'Village #1 / Jetty', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('25777212-09ee-49e8-ac99-ebfa2f660bfa', null, 'Havelock Island', 'B3, Barefoot Bar and Brasserie', '{food}', 12.041807, 92.982016, 'Village #1 / Jetty', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3064c02d-bd8b-40d3-a721-03f02edefc10', null, 'Heathrow Airport', 'Aer Lingus Lounge', '{culture}', 51.4689929, -0.44865709999999126, 'Heathrow Airport', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('6cb56085-8a17-40c3-a195-d9fbaf6cc614', null, 'Heathrow Airport', 'Caffè Nero', '{food}', 51.459062, -0.447105, 'Heathrow Airport', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('064354b3-c8b3-4265-a310-f692acef7171', null, 'Heerlen', 'Dutch Mine Museum', '{culture}', 50.892277, 5.970251, 'Mijnmuseumpad 2', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -24258,7 +24292,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('de8210c4-8706-497c-a984-c9b86588ea40', null, 'Inuvik', 'Stanton', '{shopping}', 68.369515, -133.743326, '49 Navy Road', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ddb091c3-ddfd-48e9-a04d-b92abbadbaac', null, 'Inuvik', 'Cloud Nine Restaurant', '{food}', 68.30625, -133.49718, '1355 Airport Rd', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('fd9d4826-8ad0-4cee-a74d-d4c8886de514', null, 'Inuvik', 'The Roost', '{food}', 68.3592, -133.72776, '108 Mackenzie Road', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('be1820fe-a4e5-465e-aafd-e6a062fde75c', null, 'Inuvik', 'Mad Trapper Pool Hall', '{bars}', 68.35892, -133.72654, '124 Mackenzie Road', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('be1820fe-a4e5-465e-aafd-e6a062fde75c', null, 'Inuvik', 'Mad Trapper Pool Hall', '{bars}', 68.35892, -133.72654, '124 Mackenzie Road', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('ba2892e2-0ed8-4a42-a4b0-f0760c900fd2', null, 'Inuvik', 'The Royal Canadian Legion 220: McInnes Branch', '{bars}', 68.3564, -133.7243, '118 Vetrans Way', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('560fa7e7-40e3-4e69-a6ec-198e96f36650', null, 'Indira Gandhi International Airport', 'Air India Lounge', '{culture}', 28.5548, 77.0842, 'Terminal 3', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('234647e0-f3fd-4330-a2f4-42b301743db1', null, 'Indira Gandhi International Airport', 'Allways VIP Guest Service', '{culture}', 28.5563, 77.0851, 'Terminal 3', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -24292,10 +24329,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('b23a0538-3e40-46ea-a738-59c2ef07a6c2', null, 'In the footsteps of explorers', 'Kronstadt Lutheran Cemetery', '{culture}', 59.997, 0, 'In the footsteps of explorers', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c353fcc1-e85c-479f-ab0f-cb5eabb03460', null, 'In the footsteps of explorers', 'Fort Conger', '{culture}', 81.716667, -64.716667, 'Lady Franklin Bay', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a58a78e8-86b7-4f64-a33d-c78c2c42384c', null, 'In the footsteps of explorers', 'Norwegian Anglican Church', '{culture}', -54.28, -36.510278, '[[Grytviken]], [[South Georgia]]', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('72feb9d9-645a-4e97-a6a4-474ed759b870', null, 'Innamincka', 'Innamincka Town Sunset Lookout', '{culture}', -27.743425, 140.74472, 'Innamincka', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('72feb9d9-645a-4e97-a6a4-474ed759b870', null, 'Innamincka', 'Innamincka Town Sunset Lookout', '{culture}', -27.743425, 140.74472, 'Innamincka', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('4c2d9981-237b-440f-af56-dd8e6fa8dd90', null, 'Innamincka', 'Innamincka Station', '{culture}', -27.724291, 140.763184, 'Innamincka Station Rd', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('2c510c95-59f4-41d3-a5a5-dd468645de68', null, 'Innamincka', 'Trading Post', '{shopping,food}', -27.746902, 140.737241, 'LOT 2 South Terrace', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e98a3c4d-239f-49db-a35e-afa6a0d29762', null, 'Innamincka', 'Innamincka Hotel', '{food,bars}', -27.746922, 140.737622, 'LOT 1 South Terrace', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -24511,7 +24545,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('2daeab88-7b87-4062-a629-ebeaa935ebea', null, 'Jewish Stockholm tour', 'Forum för levande historia', '{culture}', 59.325, 18.067917, 'Jewish Stockholm tour', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('60abf42f-d7ec-4131-a48b-8eae23898d56', null, 'Jewish Stockholm tour', 'Bajit', '{food}', 59.335239, 18.076747, 'Nybrogatan 19 A', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e3e8962a-17e9-465c-abfe-4f8afbd1bc86', null, 'Jewish Stockholm tour', 'Schmaltz', '{food}', 59.335, 18.07737, 'Nybrogatan 19', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('80259c6f-0c8d-4835-a735-72ba68cb2e4a', null, 'Karlovo', 'Monument of Vasil Levski', '{culture}', 42.63745, 24.80609, 'Vasil Levski ploshad', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('80259c6f-0c8d-4835-a735-72ba68cb2e4a', null, 'Karlovo', 'Monument of Vasil Levski', '{culture}', 42.63745, 24.80609, 'Vasil Levski ploshad', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('9c7be90f-ee16-4d55-a26d-a45a8a923664', null, 'Karlovo', 'July 20th square', '{culture}', 42.64363, 24.80624, 'Karlovo', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('62b5a118-feac-45f8-a63e-6db206162271', null, 'Karlovo', 'St. Nicholas church', '{culture}', 42.63658, 24.80674, 'Karlovo', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0b52cd3a-0c70-4520-a722-781a17c3825a', null, 'Karlovo', 'T Market', '{shopping}', 42.6417, 24.8008, 'Obshinski Pazar 44', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -24545,10 +24582,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('99ecb154-25ff-4040-a43e-cceecbfec319', null, 'Khabarovsk', 'Far East Regional Museum', '{culture}', 48.47337, 135.05115, '11 Shevchenko St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ba9a1eff-d51b-4cdd-af81-72228fb58bdc', null, 'Khabarovsk', 'Far Eastern Art Museum', '{culture}', 48.4731, 135.05244, '7 Shevchenko St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('134b5ad3-283b-437d-ab70-59ae3b865e50', null, 'Khabarovsk', 'Far Eastern Military Museum', '{culture}', 48.47339, 135.05265, '20 Shevchenko St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('7f44575d-0a56-4ea3-a512-b9fe899b4600', null, 'Khabarovsk', 'Chocolate', '{food}', 48.47333, 135.05717, '74 Turgeneva St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('7f44575d-0a56-4ea3-a512-b9fe899b4600', null, 'Khabarovsk', 'Chocolate', '{food}', 48.47333, 135.05717, '74 Turgeneva St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('cd8b5976-ca57-468e-a7dc-eff897e31004', null, 'Khabarovsk', 'Kabachok', '{food}', 48.47551, 135.06177, '84, Zaparina st', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('42aaffb5-7383-4e5b-a129-31eeb62ece10', null, 'Khabarovsk', 'Russki Restaurant', '{food}', 48.47012, 135.06158, 'Ussuriyskiy Bul''var, 9', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('447884bb-7116-4b4d-a56e-8ff6b58e9008', null, 'Khabarovsk', 'Crossroad', '{bars}', 48.4735, 135.05794, 'Ulitsa Murav''yeva-Amurskogo, 3б', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -24764,7 +24798,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('c82c2745-d1fd-4ac3-a9d1-ad869a29b208', null, 'La Macarena', 'Caño Cristales', '{culture}', 2.264167, -73.794444, 'La Macarena', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8019cbbe-57e6-46ba-a280-0d2fcd800b27', null, 'La Macarena', 'Caño de Piedras', '{culture}', 2.1918, -73.8274, 'La Macarena', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('190916cc-a593-4474-a436-59d48be9c8b4', null, 'La Macarena', 'Jardín Botánico', '{culture}', 2.1829, -73.7881, 'La Macarena', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('53a5ca06-7f31-4e66-ac94-8460d2d7186c', null, 'La Macarena', 'El Café de Lithos', '{food}', 2.1815, -73.7869, 'La Macarena', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('53a5ca06-7f31-4e66-ac94-8460d2d7186c', null, 'La Macarena', 'El Café de Lithos', '{food}', 2.1815, -73.7869, 'La Macarena', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('5ac4a24d-d583-4ecb-a70b-8837a3048811', null, 'La Macarena', 'Pan Unicrema', '{food}', 2.1822, -73.7863, 'Carrera 7, 7-08', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('aad87db1-c276-419f-a8ae-fc2e6d4eff50', null, 'Lake Alfred', 'Mackay Garden & Lakeside Preserve', '{culture}', 28.080583, -81.720283, '900 Mackay Blvd', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a31f2f5e-b308-4c94-a017-c3ca56281bf2', null, 'Lake Alfred', 'The Barn Antiques', '{shopping}', 28.143882, -81.735609, '167 C.R. 557A', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -24798,10 +24835,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('cd551c73-49e4-47f5-a7b4-ea47a1739646', null, 'La Perouse', 'La Perouse Museum', '{culture}', -33.98852, 151.231609, 'La Perouse', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3aaffd43-b7a2-44f5-a72f-2d64af252d23', null, 'La Perouse', 'Eora Shop', '{shopping}', -33.986848, 151.233765, '1585 Anzac Parade', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('26ad6460-409a-4564-a637-01046747c9c4', null, 'La Perouse', 'The Boatshed La Perouse', '{food}', -33.987799, 151.2313, 'La Perouse', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('c6644336-ea2c-434e-ac48-b078b0913684', null, 'La Perouse', 'Geovanni La Pizza', '{food}', -33.987961, 151.232388, 'La Perouse', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('c6644336-ea2c-434e-ac48-b078b0913684', null, 'La Perouse', 'Geovanni La Pizza', '{food}', -33.987961, 151.232388, 'La Perouse', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('dfa16853-f81a-42f9-a7bb-faaad7bbfb4c', null, 'Lac-aux-Sables', 'Église catholique de Lac-aux-Sables', '{culture}', 46.85829, -72.39987, '252, rue Principale', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('17c8774b-2f0a-4115-a8c2-965e46d35860', null, 'Lac-aux-Sables', 'Cimetière de Lac-aux-Sables (village principal)', '{culture}', 46.85831, -72.40044, '252 rue Principale', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('7c7e7958-7e86-4742-a2f8-5e1afb04a09a', null, 'Lac-aux-Sables', 'Les Marchés Tradition', '{shopping}', 46.86437, -72.39191, '725, rang Principale', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -25017,7 +25051,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('3f7f2382-7e94-45cc-a1eb-a64ebe13a94e', null, 'Lund', 'Bellini Pizzeria', '{food}', 55.716004, 13.204581, 'Getingevägen 50', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0f562e89-cb7a-48e7-a3bd-30992dad1077', null, 'Lund', 'Chop Chop Express', '{food}', 55.720947, 13.199426, 'Skarpskyttevägen 3', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e474c0cf-4de6-4acd-a566-d05fe325afb9', null, 'Lund', 'Bishop''s Arms', '{bars}', 55.706304, 13.191152, 'Sankt Petri Kyrkogata 7', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('7b59b5a2-6927-41fa-a27e-3458e481379c', null, 'Lund', 'The John Bull Pub', '{bars}', 55.704234, 13.189082, 'Bantorget 2', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('7b59b5a2-6927-41fa-a27e-3458e481379c', null, 'Lund', 'The John Bull Pub', '{bars}', 55.704234, 13.189082, 'Bantorget 2', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('2a9c5862-98e7-4afc-a4d8-42d62c383e35', null, 'Lynchburg', 'Daura Gallery', '{culture}', 37.39759166666666, -79.182275, '1501 Lakeside Dr', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('b92ce5e6-fbfc-4dd8-a2d0-883eb52953be', null, 'Lynchburg', 'Historic Sandusky', '{culture}', 37.380187, -79.196337, '757 Sandusky Dr', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d274068f-ad0c-4e61-af78-78ee7f8084f0', null, 'Lynchburg', 'Givens Books and Little Dickens', '{shopping}', 37.39955, -79.21109, '2236 Lakeside Dr', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -25051,10 +25088,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('2fd3e215-44a5-476b-ab76-b57e74793980', null, 'Madison', 'The Essen Haus', '{bars}', 43.07624, -89.37656, '514 E Wilson St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a782f2fd-35ce-4e83-a6db-38382dd51818', null, 'Madrid', 'Sol area', '{shopping}', 40.4188, -3.7048, 'Madrid', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e56e7188-48e4-4750-a527-579282e5368d', null, 'Madrid', 'Salamanca', '{shopping}', 40.4293, -3.6863, 'Madrid', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('50c8fe7d-f1d4-4823-a5ee-389a2429d86a', null, 'Madrid', 'Chueca and Calle Fuencarral area', '{shopping}', 40.423, -3.7006, 'Madrid', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('50c8fe7d-f1d4-4823-a5ee-389a2429d86a', null, 'Madrid', 'Chueca and Calle Fuencarral area', '{shopping}', 40.423, -3.7006, 'Madrid', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('522449a1-7885-4a8f-aaa1-032ecaa99430', null, 'Madrid', 'El Corte Inglés Preciados', '{shopping}', 40.41755, -3.70477, 'C/ Preciados 1-9', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('61ae8014-6dcd-44a4-ac63-a4b0cf7ba4b8', null, 'Madrid', '[[Madrid/La_Latina-Austrias#Calle Cava Baja', '{bars}', 40.4124, -3.70922, 'Madrid', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ad80ba8a-8aa7-493a-a727-83b03827f3c4', null, 'Mainz', 'Dom St. Martin', '{culture}', 49.999147, 8.273841, 'Markt 10', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -25270,7 +25304,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('da910f4e-0cc4-4bd0-a29a-a4b62e755cb1', null, 'Melbourne', 'Bourke Street Mall', '{shopping}', -37.813836, 144.96455, 'Melbourne', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f69c525f-07be-41a1-aedd-9c02fe5a8400', null, 'Melbourne', 'Fat', '{shopping}', -37.813936, 144.963454, 'Shop G03, GPO, 350 Bourke St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('9b89ea30-4ecc-443c-a2ab-af1f4ea56ce6', null, 'Melbourne', 'Aix', '{food}', -37.8164, 144.9655, 'Melbourne', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('6bb39b88-f59c-49fa-a61d-08d8e6150858', null, 'Melbourne', 'Manchester Press', '{food}', -37.81378, 144.96216, '8 Rankins Ln', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('6bb39b88-f59c-49fa-a61d-08d8e6150858', null, 'Melbourne', 'Manchester Press', '{food}', -37.81378, 144.96216, '8 Rankins Ln', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('f31d3218-6c17-4cd0-a60f-541385f34bee', null, 'Melbourne', 'Degraves Espresso Bar', '{bars}', -37.817, 144.9656, '23 Degraves Street', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d67a53af-ded8-4c79-a8a2-cfd6b552f028', null, 'Melbourne', 'Brother Baba Budan', '{bars}', -37.81345, 144.96223, '359 Little Bourke St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('4168da4e-bfd5-40e4-a142-c556013ebb32', null, 'Melbourne', 'Australian Jazz Museum', '{culture}', -37.8583, 145.208, '15 Mountain Highway, Wantirna', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -25304,10 +25341,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('53ac8b4e-e59d-4290-a49c-e9622394a6dd', null, 'Mexico City', 'Jaso Restaurant', '{bars}', 19.432215, -99.190613, 'Newton 88', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e2a97e82-c8f5-4f8c-aa5c-210eab9ede0e', null, 'Milford Sound', 'Mitre Peak', '{culture}', -44.633333, 167.85, 'Milford Sound', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('eb3dbd10-85ef-453e-aed2-182e712d624e', null, 'Milford Sound', 'Lady Bowen Falls', '{culture}', -44.66528, 167.925251, 'Milford Sound', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('98d7ed57-96d3-41d5-ae04-1c822fabdf2c', null, 'Milford Sound', 'Stirling Falls', '{culture}', -44.6101, 167.871, 'Milford Sound', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('98d7ed57-96d3-41d5-ae04-1c822fabdf2c', null, 'Milford Sound', 'Stirling Falls', '{culture}', -44.6101, 167.871, 'Milford Sound', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3ccf791d-17c9-4893-ab06-318e5498c1b0', null, 'Minot', 'Minot Railroad Museum', '{culture}', 48.237161, -101.29184, '19 1st St NE', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('7c6596b2-8bd2-4ca8-a848-b5e60838735a', null, 'Minot', 'Roosevelt Park and Zoo', '{culture}', 48.2342, -101.273, '1219 Burdick Expressway East', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0780fa67-1fb4-4101-a834-3b662735bb68', null, 'Minot', 'Dakota Square Mall', '{shopping}', 48.2064, -101.311, '16th Street SW', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -25523,7 +25557,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('1496113b-21c7-4939-a551-6802365d8a74', null, 'Mérida (Mexico)', 'El Gallito', '{bars}', 20.97692, -89.62223, 'Calle 45 No 511-A x 62 y 60', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e5de82f9-cbd4-40f7-ae0a-520eb1b353f0', null, 'Munich', 'Museum Villa Stuck', '{culture}', 48.1407, 11.5996, 'Prinzregentenstraße 60', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ba369c4c-1eab-40de-a5b6-2436ed8e1bd2', null, 'Munich', 'Friedhof Bogenhausen', '{culture}', 48.1478, 11.6015, 'Bogenhauser Kirchplatz 1', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('16c56577-3e4d-4521-a888-d05655131a98', null, 'Munich', 'Daseinstein', '{shopping}', 48.1363, 11.614, 'Einsteinstraße 130', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('16c56577-3e4d-4521-a888-d05655131a98', null, 'Munich', 'Daseinstein', '{shopping}', 48.1363, 11.614, 'Einsteinstraße 130', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('0b559942-c0ad-44c2-a340-7c280cc033e0', null, 'Munich', 'Monkey Island Records', '{shopping}', 48.1303, 11.5958, 'Steinstraße 67', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('438ca3c7-a95a-4529-a152-90912ece6f8f', null, 'Munich', 'Attentat Griechischer Salat', '{food}', 48.1166, 11.5833, 'Zugspitzstraße 10', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c73645b5-6a9f-4273-a525-6b83a31d5482', null, 'Munich', 'L''Angolo della Pizza', '{food}', 48.1312, 11.6065, 'Breisacher Straße 30', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -25557,10 +25594,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('79b83a47-d0b6-4081-a56f-1353a4a6f2ac', null, 'Nagykanizsa', 'Csarnok Üzletház', '{shopping}', 46.4562, 16.9838, 'Kalmár utca 6', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('221f7687-90ee-4b09-a4d0-ee272b30de19', null, 'Nagykanizsa', 'Dél-Zalai Áruház', '{shopping}', 46.45446, 16.98767, 'Zrínyi utca 15.', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('9c02d7f4-6f31-4140-accc-694c0b341934', null, 'Nagykanizsa', 'Adam''s Cafe', '{food}', 46.45548, 16.98671, 'Sabján Gyula utca 4', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('5f2a5e7b-ed2d-40f5-a4df-8e1724c579f7', null, 'Nagykanizsa', 'Berényi Confectionery and Pizzeria', '{food}', 46.4551, 16.99033, 'Fő út 3', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('5f2a5e7b-ed2d-40f5-a4df-8e1724c579f7', null, 'Nagykanizsa', 'Berényi Confectionery and Pizzeria', '{food}', 46.4551, 16.99033, 'Fő út 3', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a1d6f9c7-7770-4ea9-a295-9d8921947d87', null, 'Nagykanizsa', 'Cool Tour Terasse', '{bars}', 46.4563, 16.98908, 'Erzsébet tér 18', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0eeef60f-fa1b-4485-ab0a-bd76090aaa94', null, 'Nagykanizsa', 'ÉdessÉgbolt', '{bars}', 46.45605, 16.98938, 'Erzsébet tér 20', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('413f9b96-4e87-42da-afb8-394c8fc73e70', null, 'Nairobi', 'Kenyatta International Conference Centre (KICC)', '{culture}', -1.28894, 36.82267, 'Nairobi', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -25776,7 +25810,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('305e880b-4195-4b01-a1cb-630a71f4730c', null, 'Newport (Rhode Island)', 'Fort Adams', '{culture}', 41.475, -71.341111, '90 Fort Adams Dr', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('eab1807d-7d8d-4dab-a68c-3e22a683f1e2', null, 'Newport (Rhode Island)', 'Fort Adams State Park', '{culture}', 41.4781, -71.3356, '80 Fort Adams Dr', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('6e703e9a-abf2-4ea4-a3a7-d8fc21a628d3', null, 'Newport (Rhode Island)', 'Newport Gulls Baseball Team', '{culture}', 41.491006, -71.316861, '20 Americas Cup Ave', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('6617aee2-f95b-4e24-a60b-3af3a5f73ad0', null, 'Newport (Rhode Island)', 'Annie''s', '{food}', 41.4834, -71.3083, '176 Bellevue Ave', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('6617aee2-f95b-4e24-a60b-3af3a5f73ad0', null, 'Newport (Rhode Island)', 'Annie''s', '{food}', 41.4834, -71.3083, '176 Bellevue Ave', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('1782480b-25b4-4825-a236-702e3d368030', null, 'Newport (Rhode Island)', 'The Hungry Monkey', '{food}', 41.4932, -71.3106, '124 Broadway', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d649f9fe-2b49-4404-a2ff-02060192fe02', null, 'Newport (Rhode Island)', 'Scales & Shells', '{food}', 41.4785, -71.3144, '527 Thames St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('83e656c8-672e-4322-a1b3-7ba16eb1469e', null, 'Newport (Rhode Island)', 'The Black Pearl', '{food}', 41.4862, -71.3162, '30 Bannister''s Wharf', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -25810,10 +25847,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('c4418dd4-e582-475e-a1c3-9a8aa9c3a532', null, 'Nicosia', 'Pralina Café', '{bars}', 35.1657, 33.3615, '31 Stasikratous Street', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('92819178-cb9c-4838-a91d-69405e1e89b0', null, 'Nicosia', 'Babylon', '{bars}', 35.16303, 33.35516, '6 Iasonos Street', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('491b84cc-6536-4d74-ac2d-19b8ae522240', null, 'Ninoy Aquino International Airport', 'Our Lady of the Airways Parish', '{culture}', 14.5139, 121.00419, 'Chapel Rd cnr Ninoy Aquino Avenue, Parañaque', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('26255742-2f20-4e96-a905-39d45545c5d8', null, 'Ninoy Aquino International Airport', 'Shrine of Saint Thérèse of the Child Jesus', '{culture}', 14.52141, 121.01579, 'Newport Boulevard, Newport City, Pasay', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('26255742-2f20-4e96-a905-39d45545c5d8', null, 'Ninoy Aquino International Airport', 'Shrine of Saint Thérèse of the Child Jesus', '{culture}', 14.52141, 121.01579, 'Newport Boulevard, Newport City, Pasay', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c035d029-7e67-4d67-a41a-d92b23e9d8d9', null, 'Ninoy Aquino International Airport', 'Philippine Air Force Aerospace Museum', '{culture}', 14.51663, 121.01927, 'Andrews Avenue cor. Sales Road, Pasay', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e5ece01d-6a4d-45d3-a705-e6a32503a55f', null, 'Ninoy Aquino International Airport', 'Villamor Golf Club', '{culture}', 14.52498, 121.02095, 'Ninoy Aquino International Airport', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0166d843-c7ed-4b9d-a397-43c22c953f3e', null, 'Nishiawakura', 'Wakasugi Primeval Forest', '{culture}', 35.243271, 134.388156, 'Nishiawakura', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -26029,7 +26063,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('1b669876-2b1b-4d9e-a07d-15e846822614', null, 'Pai', 'Art in Chai', '{food}', 19.35818, 98.44171, 'Pai', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('44bae9c1-2470-437f-a0ca-1abe692bdd40', null, 'Pai', 'Boomelicious Cafe', '{food}', 19.35429, 98.44136, '92 Moo 4, Amphoe Pai', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d2297665-3786-4023-a1a5-0a9ba09af968', null, 'Pai', 'Burger House', '{food}', 19.35782, 98.44042, 'Pai', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('5a44bf47-313b-4279-ab7f-ed3e8b8011c0', null, 'Pai', 'Bamboo Bar', '{bars}', 19.35613, 98.445, 'Raddamrong Rd', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('5a44bf47-313b-4279-ab7f-ed3e8b8011c0', null, 'Pai', 'Bamboo Bar', '{bars}', 19.35613, 98.445, 'Raddamrong Rd', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('dc24603c-2da1-4de4-ae7a-e22809c5de20', null, 'Pai', 'Bebop Bar', '{bars}', 19.35512, 98.43544, 'Pai', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c50842a8-2fd4-4982-a152-3a4d6f4dc5c2', null, 'Pakse', 'Ban Keosamphanh', '{culture}', 15.1189, 105.79825, 'Pakse', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('34ad8556-83f9-43b2-a48a-b991cb8a7690', null, 'Pakse', 'Big Buddha', '{culture}', 15.0954, 105.8121, 'Pakse', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -26063,10 +26100,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('0f61ff9f-3074-4235-af15-8daa3fd671d4', null, 'Panmunjeom', 'Panmun-guk', '{culture}', 37.9563, 126.67755, 'Panmunjeom', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a753e6a8-f25f-4906-a50c-afae99b32fae', null, 'Panmunjeom', 'T1 through T3', '{culture}', 37.95591, 126.67697, 'Panmunjeom', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('958ed93d-966c-4263-a3e2-eb5e2bfb0ba0', null, 'Panmunjeom', 'Bridge of No Return', '{culture}', 37.956125, 126.670597, 'Panmunjeom', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('4ae980a8-3c71-4968-a698-19c0875b1a10', null, 'Panmunjeom', 'North Korea Peace Museum', '{culture}', 37.96107, 126.66447, 'Panmunjeom', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('4ae980a8-3c71-4968-a698-19c0875b1a10', null, 'Panmunjeom', 'North Korea Peace Museum', '{culture}', 37.96107, 126.66447, 'Panmunjeom', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8f3912a0-c3fc-4230-acc5-3090533534d0', null, 'Panmunjeom', 'Taesong-dong', '{culture}', 37.941667, 126.68, 'Panmunjeom', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3cbe92f3-f9ff-4105-a3ab-e8c0a36be73f', null, 'Panmunjeom', 'Kijong-dong', '{culture}', 37.94528, 126.65556, 'Panmunjeom', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e3e7451e-7659-47b4-a6a4-1cd565a40bcd', null, 'Paramaribo', 'Historical city centre', '{culture}', 5.8256, -55.15144, 'Paramaribo', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -26282,7 +26316,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('c04e8911-6873-483f-a57c-21ed228c1f15', null, 'Poros', 'Sti Rota Tavern', '{food}', 37.49867, 23.452288, 'Poros', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('45400e94-73d7-4492-a697-4a06b9175326', null, 'Poros', 'Malibu', '{bars}', 37.49843, 23.4553, 'Poros', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('b973e3f7-d308-49a1-aa7b-aa568c7c2d98', null, 'Poros', 'Joy', '{bars}', 37.49826, 23.4537, 'Poros', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('492baa8f-0a3a-49f1-a311-237e53663480', null, 'Plasencia', 'Aqueduct of Plasencia', '{culture}', 40.035836, -6.085397, 'C. arcos de San Antón', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('492baa8f-0a3a-49f1-a311-237e53663480', null, 'Plasencia', 'Aqueduct of Plasencia', '{culture}', 40.035836, -6.085397, 'C. arcos de San Antón', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('e4c1d392-c902-4f90-adc3-ec02adc41322', null, 'Plasencia', 'Old Cathedral of Plasencia', '{culture}', 40.0278, -6.09111, 'Plasencia', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('96be2592-a6d3-49a2-a06d-ec303d91ef34', null, 'Plasencia', 'La Puerta de Tannhäuser', '{shopping}', 40.0292, -6.092, 'Rúa Zapatería, 22', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('75c77aeb-a7c4-4349-a2df-cc65e1d8bbe3', null, 'Plasencia', 'Bocatería Elfo''s', '{food}', 40.0298, -6.089, 'C. Patalón, 26', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -26316,10 +26353,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('3704a3d4-8021-4e60-a48d-a724cb725d23', null, 'Port Fairy', 'Port Fairy Lighthouse', '{culture}', -38.391073, 142.253917, 'Griffiths Island', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('9b42f1e3-5d19-4711-a39a-4a90ef85c98f', null, 'Port Fairy', 'The Passage', '{shopping}', -38.383383, 142.234521, '39 Bank Street', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d2a74c32-a06d-43d2-a2ca-9fe073152004', null, 'Port Fairy', 'The Paper Store', '{shopping}', -38.384279, 142.236493, '50A Sackville Street', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('67f104c6-b0c3-4086-a28c-dbbc018b4454', null, 'Port Fairy', 'Yellow House Cafe & Thai Restaurant', '{food}', -38.383611, 142.23638, '19 Bank St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('67f104c6-b0c3-4086-a28c-dbbc018b4454', null, 'Port Fairy', 'Yellow House Cafe & Thai Restaurant', '{food}', -38.383611, 142.23638, '19 Bank St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('6a30a720-8201-4eba-a17c-e2666ec3225d', null, 'Port Fairy', 'The Wharf Port Fairy', '{food}', -38.38785, 142.2409, '29 Gipps Street', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('35d26e16-98b3-47c0-a529-e462ace8645d', null, 'Port Fairy', 'The Sentinel', '{bars}', -38.383195, 142.23641, '20 Bank Street', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('bda1708e-c201-4a60-afa0-9aee7fa35aee', null, 'Porto', 'Palácio da Bolsa', '{culture}', 41.141369, -8.615686, 'Rua Ferreira Borges, 4050-253', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -26535,7 +26569,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('d0d86fa4-f74d-4676-a795-99d2c826661a', null, 'Recife', 'Bar Central', '{bars}', -8.057724, -34.880171, 'Rua Mamede Simões 144 - Boa Vista', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('831bfc18-f31b-408c-a000-cc9476372ca4', null, 'Recife', 'Biruta', '{bars}', -8.089156, -34.880261, 'Rua Bem-Te-Vi, 15 - Pina (Zona Sul)', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('89e8fd96-6e68-40ce-a187-f12a8f8510e6', null, 'Renton', 'Jimi Hendrix Memorial', '{culture}', 47.486408, -122.173946, '350 Monroe Ave NE', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('52f23754-5bda-49c8-a928-7e9caecc811c', null, 'Renton', 'Renton History Museum', '{culture}', 47.480105, -122.203368, '235 Mill Ave S', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('52f23754-5bda-49c8-a928-7e9caecc811c', null, 'Renton', 'Renton History Museum', '{culture}', 47.480105, -122.203368, '235 Mill Ave S', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('bd11970e-efd6-4eba-a2c7-19b4ace825c8', null, 'Renton', 'Antiques District', '{shopping}', 47.479953, -122.205353, 'Wells Ave S & S 3rd St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('b6bb51e7-30b3-4d31-a79f-7532ae76f4f1', null, 'Renton', 'Game-Xplosion', '{shopping}', 47.479799, -122.20476, '918 S 3rd St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c2b590f4-9b91-4348-a924-53bc5e47543c', null, 'Renton', 'Blossom Vegetarian Restaurant', '{food}', 47.4793797, -122.208444, '2502, 305 Burnett Ave S', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -26569,10 +26606,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('c00049ae-290f-49f8-a16f-0ffaae90f93a', null, 'Riyadh', 'Al Faisaliah', '{shopping}', 24.68995, 46.68675, 'Olaya Rd', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('69cee60c-b422-4440-a221-3fdb41df1ca4', null, 'Riyadh', 'Jarir Bookstore', '{shopping}', 24.70181, 46.68069, 'Olaya Rd', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('32663b75-634f-4eab-a129-f5de95b60a20', null, 'Riyadh', 'Paragon Family Restaurant', '{food}', 24.6407255, 46.7194086, 'حي، Omar Al Moukhtar, Batha', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('d7fca270-aef1-4174-a90d-130486ee53e4', null, 'Riyadh', 'Al Shaya Persian Restaurant', '{food}', 24.7121275, 46.6750365, 'Kingdom Centre B1F Food Court< Al Olaya', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('d7fca270-aef1-4174-a90d-130486ee53e4', null, 'Riyadh', 'Al Shaya Persian Restaurant', '{food}', 24.7121275, 46.6750365, 'Kingdom Centre B1F Food Court< Al Olaya', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('6f48b985-83ea-4a83-a135-dbcfaf333b40', null, 'Riyadh', 'The Globe', '{bars}', 24.6896, 46.68624, 'Al-Faisaliah', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('38528fc1-b50a-4d7f-a72a-70d42ed5d0d4', null, 'Rochester (New York)', 'Cobb''s Hill Reservoir Park', '{culture}', 43.14, -77.57, 'Rochester (New York)', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0b60a95c-0503-497e-ae63-50221064a2da', null, 'Rochester (New York)', 'Genesee Valley Park', '{culture}', 43.12, -77.64, 'Moore Rd', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -26788,7 +26822,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('c70e4c6c-14cc-4474-a2c3-de7e8dbdaa0e', null, 'San Diego International Airport', 'Liberty Station Gifts', '{shopping}', 32.73136, -117.1929, 'San Diego International Airport', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('2fd804b9-fc6b-4ff7-a2c4-ce4b22c4324b', null, 'San Francisco', 'The Castro Theatre', '{culture}', 37.762, -122.435, '429 Castro St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('9c4a3fcd-c046-45cb-ac0c-0a065c907598', null, 'San Francisco', 'GLBT History Museum', '{culture}', 37.7607, -122.4356, '4127 18th St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('72a3b311-5f57-4d0f-adf4-3e1ed1fb4020', null, 'San Francisco', 'Cliff''s Variety', '{shopping}', 37.7613, -122.4347, '479 Castro St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('72a3b311-5f57-4d0f-adf4-3e1ed1fb4020', null, 'San Francisco', 'Cliff''s Variety', '{shopping}', 37.7613, -122.4347, '479 Castro St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('d60c5b72-f317-4db2-a51b-96c0c9242924', null, 'San Francisco', 'ImagiKnit', '{shopping}', 37.761, -122.4304, '3897 18th St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8e8096c1-4bc7-403f-a3ab-8e902da48170', null, 'San Francisco', '24th Street Cheese Company', '{food}', 37.7514, -122.4294, '3893 24th St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('dbbe9768-a9b8-4526-a206-524e85775c8e', null, 'San Francisco', 'Eric''s', '{food}', 37.7467, -122.4272, '1500 Church St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -26822,10 +26859,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('62837580-305c-40e0-a2df-356092dfb660', null, 'Sallandse Heuvelrug National Park', 'Bistro De Holterberg', '{food}', 52.291, 6.421, 'Forthaarseweg 1, Holten', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('2c4ae774-5693-4490-aad9-03e482decc04', null, 'Sandwich (Massachusetts)', 'Sandy Neck Beach', '{culture}', 41.739444, -70.378611, 'Rt. 6A', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('187f8650-244d-4dae-ac32-5bfe3ccd63fe', null, 'Sandwich (Massachusetts)', 'Scusset Beach State Reservation', '{culture}', 41.7794, -70.501, '20 Scusset Beach Road', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('94782fa3-36c1-4905-a5d4-6e95acb3968a', null, 'Sandwich (Massachusetts)', 'Town Neck Beach', '{culture}', 41.7659, -70.4801, 'Rte. 6A', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('94782fa3-36c1-4905-a5d4-6e95acb3968a', null, 'Sandwich (Massachusetts)', 'Town Neck Beach', '{culture}', 41.7659, -70.4801, 'Rte. 6A', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('62cd6e0a-736f-470c-a1a2-d906d63d2516', null, 'Sandwich (Massachusetts)', 'Dexter Grist Mill', '{culture}', 41.7578, -70.5006, '2 Water St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e2a4de83-bde0-4f6d-af44-b1eea0854df0', null, 'Sandwich (Massachusetts)', 'Hoxie House', '{culture}', 41.7553, -70.4982, '18 Water St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ac3b1517-fec4-4c09-a2ff-291eaaff5120', null, 'Sandwich (Massachusetts)', 'Nye Homestead and Museum', '{culture}', 41.728611, -70.431944, '85 Old County Rd', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -27041,7 +27075,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('ec0eb765-ffa3-45e3-a3ad-0286ebb26d48', null, 'Semarang', 'Lawang Sewu', '{culture}', -6.984, 110.4102, 'Jl Pemuda, Sekayu', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('2c296453-ee45-4139-a3d9-3aa961a6e958', null, 'Semarang', 'Bandeng Juwana Elrina', '{shopping}', -6.986428, 110.413279, 'Jl Pandanaran no.57', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c67d671e-0772-46d4-a3ef-02e36cdf01df', null, 'Semarang', 'Wingko Babat Cap Kereta Api', '{shopping}', -6.96804, 110.43006, 'Jl Cendrawasih 14', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('739829f6-b95a-4bb4-a353-dddbe2cf235a', null, 'Semarang', 'Ayam Goreng Kalasan', '{food}', -6.982687, 110.420438, 'Jl. Moh. Suyudi No.4, Miroto', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('739829f6-b95a-4bb4-a353-dddbe2cf235a', null, 'Semarang', 'Ayam Goreng Kalasan', '{food}', -6.982687, 110.420438, 'Jl. Moh. Suyudi No.4, Miroto', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('f1c06653-f5ea-4da9-a42a-fbfae7ab03fc', null, 'Semarang', 'Ayam Goreng Mbok Berek', '{food}', -6.984687, 110.385063, 'Jl. Jendral Sudirman No.384, Gisikdrono', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('09a98884-436e-4314-aac7-9b904d179b98', null, 'Semarang', 'Club 123', '{bars}', -6.97893, 110.41453, 'Jalan Pemuda 123', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('688b4219-ed15-4857-a7a6-145b255a13a7', null, 'Semarang', 'Marabunta Resto and Bar', '{bars}', -6.966812, 110.429937, 'Kota Lama (Old Town)', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -27075,10 +27112,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('3ca90e6c-e45d-4d98-a270-b6c0c2106ac0', null, 'Sheffield', 'Béres', '{food}', 53.3785952, -1.470972, 'Béres Pinstone St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0d787773-7464-4805-a91c-1f7681dcdf78', null, 'Sheffield', 'Coopland''s Bakery', '{food}', 53.3830532, -1.4641733, '1-3 Fitzalan Sq', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('ed530c13-12ff-4de9-a-53-4e060052c9fc', null, 'Sheffield', 'The Washington', '{bars}', 53.37782, -1.47811, 'Fitzwilliam St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('9063fee6-0966-461a-a66f-a170499ca150', null, 'Sheffield', 'The Frog & Parrot', '{bars}', 53.37969, -1.47633, 'Division Street', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('9063fee6-0966-461a-a66f-a170499ca150', null, 'Sheffield', 'The Frog & Parrot', '{bars}', 53.37969, -1.47633, 'Division Street', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('4db9551f-38d1-4cb5-a568-e9aa868b11d4', null, 'Sheki', 'Juma Mosque', '{culture}', 41.20252, 47.18118, 'Sheki', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c748da1b-ed5a-4591-aa12-2f8ab4a3cfac', null, 'Sheki', 'Silk Factory', '{culture}', 41.21024432779816, 47.17844782568927, 'Sheki', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e0a577da-4b69-4ec0-a543-376e62c0f769', null, 'Shenyang', 'Huaiyuanmen', '{culture}', 41.7952378215, 123.4427744622, 'Shenyang', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -27294,7 +27328,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('7fdbdd9d-5fb3-445b-a068-b9c6df8f41f8', null, 'Soltau', 'City Café', '{bars}', 52.98522, 9.8401, 'Marktstraße 17', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e58743db-d5d0-4121-a057-f2fabb57f4fc', null, 'Somerville', 'Brickbottom Artists Association', '{culture}', 42.375696, -71.084117, '1 Fitchburg St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('86bd9855-e02f-41eb-a692-49be66ed6a40', null, 'Somerville', 'Museum of Modern Renaissance', '{culture}', 42.399914, -71.118034, '115 College Ave', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('c6ccead7-8f85-4b19-a949-b1ce565245f0', null, 'Somerville', 'Assembly Row', '{shopping}', 42.394198, -71.079714, '340 Canal St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('c6ccead7-8f85-4b19-a949-b1ce565245f0', null, 'Somerville', 'Assembly Row', '{shopping}', 42.394198, -71.079714, '340 Canal St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('616cdd0b-7fcb-4d51-aea7-805ae1383a5c', null, 'Somerville', 'Blue Cloud Gallery', '{shopping}', 42.400184, -71.112421, '713 Broadway', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('cd5e6d39-417d-43c7-a73d-ce1020edbe10', null, 'Somerville', 'Kelly''s Diner', '{food}', 42.399529, -71.111611, '674 Broadway', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('2361d3bd-0ee1-4393-ad80-902e32431750', null, 'Somerville', 'Man-O-Salwa Kabob & Grill', '{food}', 42.384174, -71.100372, '66 Summer St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -27328,10 +27365,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('cf3120c7-8c4d-45ad-a37c-756a5b7e7674', null, 'St. Augustine', 'PK''s Roosevelt Room', '{food}', 29.894059, -81.312713, '119 St. George St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('08ac14ea-2563-4fc4-adcf-6b2e2e0f94ae', null, 'St. Augustine', 'The Hyppo', '{food}', 29.895429, -81.313134, '70 St. George St, 48 Charlotte St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('fd19dab2-7cc6-461c-a7e2-0e35279e0a0c', null, 'St. Augustine', 'Ann O''Malleys', '{bars}', 29.8975, -81.3142, '23 Orange St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('aeb51c10-bd5c-485a-a3e9-244a6c11546a', null, 'St. Augustine', 'Barley Republic', '{bars}', 29.8953, -81.3138, '48 Spanish St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('aeb51c10-bd5c-485a-a3e9-244a6c11546a', null, 'St. Augustine', 'Barley Republic', '{bars}', 29.8953, -81.3138, '48 Spanish St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('347590b1-e3f5-476f-a287-f6822186a982', null, 'St Davids', 'St David''s Cathedral', '{culture}', 51.881968, -5.2683, 'The Pebbles, SA62 6RD', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('9b12fa00-5579-4e4c-a319-4dbb4f08cd84', null, 'St Davids', 'Bishop''s Palace', '{culture}', 51.882174, -5.269802, 'The Close', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3849587b-89f0-4105-a4e4-67682c23a298', null, 'St Davids', 'Ma Simes Surf Hut', '{shopping}', 51.880693, -5.26338, '28 High Street', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -27547,7 +27581,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('64a53d7e-a8f8-4994-a33a-27b160d9df71', null, 'Sátoraljaújhely', 'Latabár Cafe', '{bars}', 48.3974, 21.65573, 'Táncsics tér 3/b', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('51317e28-d977-42c2-a77b-9e3162aa8e0e', null, 'Swedish Empire', 'Royal Palace', '{culture}', 59.32688, 18.07028, 'Swedish Empire', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('dfb1f720-1834-49a0-a387-a0180f7e600c', null, 'Swedish Empire', 'Army Museum', '{culture}', 59.3347, 18.0803, 'Riddargatan 13', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('276cd464-cf5c-47c4-a17c-f9c60f6c98c2', null, 'Swedish Empire', 'Vasa Museum', '{culture}', 59.32807, 18.09139, 'Galärvarvsvägen 14', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('276cd464-cf5c-47c4-a17c-f9c60f6c98c2', null, 'Swedish Empire', 'Vasa Museum', '{culture}', 59.32807, 18.09139, 'Galärvarvsvägen 14', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('022b9629-7c05-48b7-ae2e-9e9e7e309ee0', null, 'Swedish Empire', 'Drottningholm Palace', '{culture}', 59.3217, 17.8869, 'Swedish Empire', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('6e95f2cc-8142-4e0a-a102-8333aefd830d', null, 'Swedish Empire', 'Gothenburg City Museum', '{culture}', 57.70632, 11.96346, 'Norra Hamngatan 12', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('54397859-b3ab-4587-a186-de22207e4dde', null, 'Százhalombatta', 'Matrica Museum', '{culture}', 47.32163, 18.91098, 'Gesztenyés utca 1-3', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -27581,10 +27618,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('acc0b6e0-106d-4466-a435-21d7abd2e0b4', null, 'Svoboda', '"Magnit" Supermarket', '{shopping}', 51.973719, 36.30931, 'ул. Коммунистическая, 5', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('d80208d5-c5a2-456b-ada0-4dbe9da44e40', null, 'Svoboda', '"Pyatyorkochka Supermarket', '{shopping}', 51.970741, 36.302041, 'ул. Гагарина, 16', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('19e41817-2d05-434d-a4e1-3b5a46e93b64', null, 'Svoboda', 'Monastery Refectory', '{food}', 51.972618, 36.312143, 'Svoboda', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('1a90ef6e-d8b7-49b4-a3dd-83926f348192', null, 'Tabanan', 'Bali Butterfly Park', '{culture}', -8.48, 115.135, 'Jalan Batukaru, Banjar Sandan lebah, Wanasari village, Tabanan', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('1a90ef6e-d8b7-49b4-a3dd-83926f348192', null, 'Tabanan', 'Bali Butterfly Park', '{culture}', -8.48, 115.135, 'Jalan Batukaru, Banjar Sandan lebah, Wanasari village, Tabanan', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('fb40d73e-8391-4930-a8d1-8e0e7ed2306e', null, 'Tabanan', 'Pura Luhur Batukaru', '{culture}', -8.372039, 115.100394, 'near Wongayagede village', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('588dfe81-fad6-4c2f-a5da-4bd525364bab', null, 'Tabanan', 'Pura Taman Ayun', '{culture}', -8.54678, 115.16617, 'Tabanan', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('615ebd5d-24f1-4293-a5af-afce864fcff0', null, 'Tabanan', 'Sangeh Monkey Forest', '{culture}', -8.482, 115.207, 'Sangeh', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -27800,7 +27834,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('83ae6173-d65b-44a5-a5f5-65d65a096618', null, 'Toucheng', 'Drifters Pizza Pub', '{bars}', 24.88407, 121.8459, 'Wai''ao area', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('73f6e78d-1510-457b-a6e6-e2f68906ed08', null, 'Toucheng', 'Kanea Garden Pizza Bar', '{bars}', 24.86106, 121.81609, 'No.218, Jisiang Rd', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('620a4a7b-b3ec-4a45-a2e1-92fc215f6e4c', null, 'Trabzon', 'Santa Maria Church', '{culture}', 41.0072, 39.7318, 'Sümer Sk 24', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('71221ecd-dcfd-4dd3-a522-03ce24e1ffca', null, 'Trabzon', 'Kalepark Fortress', '{culture}', 41.0075, 39.7341, 'Trabzon', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('71221ecd-dcfd-4dd3-a522-03ce24e1ffca', null, 'Trabzon', 'Kalepark Fortress', '{culture}', 41.0075, 39.7341, 'Trabzon', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('da8c9788-94b3-4ce4-ae3f-1b6c6f40246c', null, 'Trabzon', 'City Museum', '{culture}', 41.0059, 39.7281, 'Kahramanmaraş Cd 14', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('91b11e06-d5a1-4a56-a410-b4506752c85c', null, 'Trabzon', 'Rubenis AVM', '{shopping}', 41.0049, 39.7162, 'İnönü Cd 14', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('5e89c796-8e6c-4eaa-a2f1-ae6c4ecf6a64', null, 'Trabzon', 'Forum Shopping Center', '{shopping}', 40.9995, 39.7601, 'off Devlet Karayolu Cd', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -27834,10 +27871,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('2b85b401-c179-4def-a150-31612ecff11f', null, 'Tsuyama', 'AEON Mall', '{shopping}', 35.064931, 134.045945, '1000-1 Kawanabe', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('fdbe0dd4-390f-4206-a3b4-ef02e36cd0fd', null, 'Tsuyama', 'Freak', '{food}', 35.060752, 133.999702, '23 Mino-machi', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c300fa9c-0e0f-4966-a32f-0cc06d110c40', null, 'Tsuyama', 'Hashino Shokudo', '{food}', 35.062095, 134.026885, '549-9 Kawasaki', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('08be099c-97d6-4f44-a609-76928a094a8e', null, 'Tsuyama', 'Bar Ritz', '{bars}', 35.100565, 134.002937, '63-5 Higashi Ichinomiya', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('08be099c-97d6-4f44-a609-76928a094a8e', null, 'Tsuyama', 'Bar Ritz', '{bars}', 35.100565, 134.002937, '63-5 Higashi Ichinomiya', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('b2ada8ea-395e-4dc4-a740-c0ad2ec0c06a', null, 'Tsuyama', 'Madonna Jr.', '{bars}', 35.059647, 134.003399, '5-8 Otemachi', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('f2cddfe5-dbde-41bb-a913-ee5eceac11a0', null, 'Tourist Drive 33', 'Glenworth Valley cafe', '{food}', -33.402974, 151.192812, 'Tourist Drive 33', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('9b72c1ed-3874-47eb-a5cf-969fad3e719d', null, 'Tourist Drive 33', 'Mangrove Creek Dam Picnic Area', '{food}', -33.219359, 151.121385, 'Tourist Drive 33', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -28053,7 +28087,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('17bdfafe-4d28-4f6a-aa95-159464e6ea68', null, 'Vall de Boí', 'La Mola Forn de Pa', '{bars}', 42.504944, 0.803818, 'Passeig Sant Feliu, 49, Barruera', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0c6fed7a-aebe-4128-a5d2-e03aebb2dfea', null, 'Vall de Boí', 'Bar la Rambla', '{bars}', 42.51467, 0.858379, 'Carrer Major', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c00cbca6-2c64-4a50-a139-7590aec70d6f', null, 'Ventura', 'Museum of Ventura County', '{culture}', 34.28077, -119.29938, '100 E. Main St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('cdf250f7-d538-40fd-a8ca-400aa32a61f4', null, 'Ventura', 'Bell Arts Factory', '{culture}', 34.28655, -119.29923, '432 N. Ventura Ave', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('cdf250f7-d538-40fd-a8ca-400aa32a61f4', null, 'Ventura', 'Bell Arts Factory', '{culture}', 34.28655, -119.29923, '432 N. Ventura Ave', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('3c5fadbc-b241-42fe-a71e-1e0beeea160b', null, 'Ventura', 'Olivas Adobe', '{culture}', 34.243932, -119.241768, '4200 Olivas Park Dr', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('e0de67c0-0ea6-4a3c-a118-7c204ef84c1f', null, 'Ventura', 'Ventura City Hall', '{culture}', 34.282195, -119.293081, '501 Poli Street #109', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('2ef6d380-3b76-4cf8-a580-6f786a6d9078', null, 'Vianden', 'Vianden Castle', '{culture}', 49.935, 6.202778, 'Vianden', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -28087,10 +28124,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('5cd0a779-4b43-4e47-a793-f93ea81405c0', null, 'Vientiane', 'Khop Chai Deu', '{bars}', 17.96451, 102.6075, 'Vientiane', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('a0a92988-137f-48c8-a4c2-92ec0b429225', null, 'Vientiane', 'Marina', '{bars}', 17.97018, 102.58245, 'Vientiane', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('240627c4-8ce1-4c52-a571-8646ab0e7e41', null, 'Villa la Angostura', 'Museo de Arte Contemporaneo Conrad Meier', '{culture}', -40.764942, -71.635739, 'Cerro Centinela 325', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('9c92b06b-726d-48dd-a110-0374a0f00294', null, 'Villa la Angostura', 'Coiron Patagonia', '{shopping}', -40.76222603962431, -71.64432456015665, 'Av. Arrayanes 172', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('9c92b06b-726d-48dd-a110-0374a0f00294', null, 'Villa la Angostura', 'Coiron Patagonia', '{shopping}', -40.76222603962431, -71.64432456015665, 'Av. Arrayanes 172', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3a03191e-3535-40c4-af36-a9da6f38c9e2', null, 'Villa la Angostura', 'Viejo Pastor', '{shopping}', -40.76164907012271, -71.64536525729083, 'Av. Arrayanes 111', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('3366171a-0be0-400e-a886-e7143f470728', null, 'Villa la Angostura', 'La Casita de la Oma', '{food}', -40.76487086687176, -71.64362379425535, 'Cerro Inacayal 303', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('df7fb9e8-5908-4e4a-a798-8185e3888183', null, 'Villa la Angostura', 'Cantina Napolitano', '{food}', -40.76199906242638, -71.64623518808638, 'Av. Arrayanes 66', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -28306,7 +28340,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('c011eb92-625f-48b0-a5db-1fcde2271d44', null, 'Wengen', 'Tanne Bar', '{bars}', 46.60643, 7.92097, 'Dorfstrasse', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('0d384260-a52b-424a-a57e-c9fd6b26364a', null, 'Wenzhou', 'Baizhangxia', '{culture}', 27.83371, 120.00637, 'Wencheng County', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('00f6f146-ad40-444c-a524-9aaf6ae37959', null, 'Wenzhou', 'Dongtou Islands', '{culture}', 27.8291142538, 121.1289762128, 'Dongtou District (洞头区)', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('6070a9c1-f7ad-4daf-a682-20b92581e077', null, 'Wenzhou', 'East Gate Street', '{culture}', 28.024559802, 120.6626238633, 'Lucheng District (鹿城区)', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('6070a9c1-f7ad-4daf-a682-20b92581e077', null, 'Wenzhou', 'East Gate Street', '{culture}', 28.024559802, 120.6626238633, 'Lucheng District (鹿城区)', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('2d109bdc-f280-46e6-a206-fa2c61f9162c', null, 'Wenzhou', 'Jiangxin Island', '{culture}', 28.03048, 120.635047, 'Lucheng District (鹿城区)', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('2c9bb829-f233-4ca7-a215-79b721ecf94d', null, 'Wenzhou', 'Wenzhou Grand Restaurant Ou Cuisine Hall', '{food}', 28.011032, 120.654995, '106 Chanjie Street (蝉街106号)', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8495a1ec-ad7f-4d24-a9ea-bcc83214bf10', null, 'Wenzhou', 'Wenzhou Overseas Chinese Hotel', '{food}', 28.008351, 120.653801, '17 Xinhe Street (信河街17号)', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -28340,10 +28377,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('6e83f9a7-581c-4ecd-a69f-476ac6a0b874', null, 'Williamsburg', 'The Daily Grind', '{food}', 37.27116, -76.71402, '240A Gooch Dr', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('816aeebe-2d8b-40e6-a531-e61a8aef65fa', null, 'Williamsburg', 'Berret''s Seafood Restaurant and Taphouse Grill', '{food}', 37.26974, -76.70694, '199 S Boundary St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('fbc1b1ec-4ea6-4022-a4a9-85e324a67c20', null, 'Williamsburg', 'The Green Leafe', '{bars}', 37.27399, -76.71265, '765 Scotland Street', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('e07c36b9-0712-4987-a189-1c0c2e78e404', null, 'Williamsburg', 'The College Delly', '{bars}', 37.27371, -76.71238, '336 Richmond Road', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('e07c36b9-0712-4987-a189-1c0c2e78e404', null, 'Williamsburg', 'The College Delly', '{bars}', 37.27371, -76.71238, '336 Richmond Road', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('de7d9aa8-2262-4da8-a3e0-e90000e02850', null, 'Wilmington (North Carolina)', 'Bellamy Mansion Museum', '{culture}', 34.236, -77.943, '503 Market St.', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('9109ab66-d063-481c-a16a-837a616cd382', null, 'Wilmington (North Carolina)', 'Burgwin-Wright Museum and Gardens', '{culture}', 34.23528, -77.94628, '224 Market St.', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('1d5e77eb-6e00-470d-a35e-80e68b5f6ef8', null, 'Wilmington (North Carolina)', 'The Cotton Exchange', '{shopping}', 34.23929, -77.94945, '321 N Front St', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -28559,7 +28593,10 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('8a0c92c3-9757-4231-ad5b-e0f2216404f4', null, 'Zacatecas', 'Plaza de Armas', '{culture}', 22.7762, -102.572, 'Zacatecas', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('5a16c6d8-7ec0-476c-a4d6-91b4d8d71e44', null, 'Zacatecas', 'Mercado González Ortega', '{shopping}', 22.77503, -102.57272, 'Zacatecas', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('4d5d9ed3-9c1f-415d-a2eb-dd072e97d503', null, 'Zacatecas', 'Centro Platero de Zacatecas', '{shopping}', 22.76658, -102.5312, 'Zacatecas', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('3f990f5c-a73b-46da-a675-d767ae6d4963', null, 'Zacatecas', 'Birrieria Don Polo', '{food}', 22.775829909555046, -102.57364864947661, 'Mercado Arroyo de la Plata', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
+('3f990f5c-a73b-46da-a675-d767ae6d4963', null, 'Zacatecas', 'Birrieria Don Polo', '{food}', 22.775829909555046, -102.57364864947661, 'Mercado Arroyo de la Plata', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
+on conflict do nothing;
+
+insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
 ('0b9df2d4-3576-4bb6-aeeb-796241147e8a', null, 'Zacatecas', 'Rincon Vegetariano Om Burger', '{food}', 22.7723312, -102.5773907, 'Calle Elías Amador 207', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('c28f5f7c-dd7a-4c6c-aff5-d310a009ebe8', null, 'Zacatecas', 'Meowka-Café', '{bars}', 22.77098, -102.57449, 'Av. Rayon 206', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('17f3476c-5547-4a7c-a2b4-6d106d3a71e8', null, 'Zacatecas', 'Cantina Las Quince Letras', '{bars}', 22.77517, -102.57515, 'Mártires de Chicago 309', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
@@ -28593,10 +28630,7 @@ insert into public.places (id, city_id, locality, name, categories, lat, lng, ad
 ('44814893-d59a-41d9-a6ee-436b61a1bca6', null, 'Zalaszentgrót', 'Market of Zalaszentgrót', '{shopping}', 46.94371, 17.07478, 'Templom tér', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('8340b9e4-4584-41ce-a393-b77d6c8c4ebb', null, 'Zalaszentgrót', 'Kis-Korona Restaurant and Guesthouse', '{food}', 46.94401, 17.0769, 'Eötvös Károly utca 4', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('795b6d54-2149-4924-a812-44709aa49678', null, 'Zalaszentgrót', 'Aranypatak Restaurant', '{food}', 46.8863, 17.1096, 'Kossuth utca 117/c, Zalaszentlászló', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
-('54312c55-2888-4593-acb9-c9c67cba11e8', null, 'Zalaszentgrót', 'Caffe del Schön', '{bars}', 46.94337, 17.07736, 'Batthyány utca 11', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z')
-on conflict do nothing;
-
-insert into public.places (id, city_id, locality, name, categories, lat, lng, address, description, created_by, created_at) values
+('54312c55-2888-4593-acb9-c9c67cba11e8', null, 'Zalaszentgrót', 'Caffe del Schön', '{bars}', 46.94337, 17.07736, 'Batthyány utca 11', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('cdf13da0-f9b1-4da6-a440-c006c7a33b46', null, 'Zalaszentgrót', 'Central Café', '{bars}', 46.94437, 17.07772, 'Csány László utca 2', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('9dbfaa27-1dda-4a85-a7f9-a0f5ebb9a04a', null, 'Zalalövő', 'All Saints Roman Catholic Chapel', '{culture}', 46.8468, 16.5722, 'Petőfi Sándor utca 100', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
 ('fdafacfe-c3c1-4f28-ae6e-e3d6c170fc26', null, 'Zalalövő', 'Borosán Valley and Holy Well', '{culture}', 46.838, 16.5821, 'Zalalövő', 'Listed by Wikivoyage', '00000000-0000-4000-a000-000000000001', '2026-01-01T00:00:00.000Z'),
