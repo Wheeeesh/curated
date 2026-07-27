@@ -78,6 +78,11 @@ body {
 .pr-safe {
   padding-right: env(safe-area-inset-right);
 }
+/* Installed to the home screen the app owns the whole screen, so anything
+   pinned to the top has to clear the status bar and the notch itself. */
+.pt-safe {
+  padding-top: env(safe-area-inset-top);
+}
 
 /* ——— Apple type scale ——— */
 .t-large-title {

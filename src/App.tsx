@@ -5,6 +5,7 @@ import { api } from './lib/api'
 import { useUi } from './lib/session'
 import { useMyProfile } from './lib/hooks'
 import { Toast } from './components/ui/Toast'
+import { InstallPrompt } from './components/ui/InstallPrompt'
 import { BottomNav } from './components/nav/BottomNav'
 import { WelcomeScreen } from './routes/WelcomeScreen'
 import { OnboardingScreen } from './routes/OnboardingScreen'
@@ -44,6 +45,9 @@ function WithNav() {
   return (
     <>
       <Outlet />
+      {/* Only on the main tabs: it sits above the tab bar, and nobody should
+          be asked to install before they have seen anything. */}
+      <InstallPrompt />
       <BottomNav />
     </>
   )

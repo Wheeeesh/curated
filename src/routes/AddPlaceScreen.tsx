@@ -131,7 +131,7 @@ export function AddPlaceScreen() {
 
   return (
     <div className="h-full overflow-y-auto bg-bg pb-16">
-      <div className="glass sticky top-0 z-20 flex items-center justify-between border-b border-separator px-4 py-2.5">
+      <div className="glass pt-safe sticky top-0 z-20 flex items-center justify-between border-b border-separator px-4 py-2.5">
         <button type="button" onClick={goBack} className="pressable min-h-[44px] pr-3 t-body">
           Cancel
         </button>

@@ -49,7 +49,7 @@ export function UserScreen() {
 
   return (
     <div className="h-full overflow-y-auto bg-bg pb-16">
-      <div className="glass sticky top-0 z-20 flex items-center border-b border-separator px-2 py-2">
+      <div className="glass pt-safe sticky top-0 z-20 flex items-center border-b border-separator px-2 py-2">
         <button type="button" onClick={goBack} className="pressable flex min-h-[44px] items-center gap-0.5 pl-1 pr-3 t-body">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
             <path d="M15 18l-6-6 6-6" strokeLinecap="round" strokeLinejoin="round" />

@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import type { Map as MapLibreMap } from 'maplibre-gl'
 import { CATEGORIES, overallScore, type Place } from '../lib/api/types'
 import {
@@ -68,6 +68,19 @@ export function MapScreen() {
     () => new Set((follows ?? []).filter((f) => f.followerId === me?.id).map((f) => f.followeeId)),
     [follows, me?.id],
   )
+
+  // The installed app's icon shortcuts open "?view=saved". Honour it once, then
+  // drop the parameter so switching tabs afterwards is not undone by a refresh.
+  const [searchParams, setSearchParams] = useSearchParams()
+  useEffect(() => {
+    const view = searchParams.get('view')
+    if (view !== 'saved' && view !== 'circle' && view !== 'all') return
+    setMapMode(view)
+    const next = new URLSearchParams(searchParams)
+    next.delete('view')
+    setSearchParams(next, { replace: true })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   // Debounced place search, biased towards wherever the map is looking.
   useEffect(() => {
@@ -262,7 +275,7 @@ export function MapScreen() {
       {/* Unmounted rather than hidden while placing a pin: a `hidden` class
           loses to the landscape `display` utilities in the same rule set. */}
       {!pinDropping && (
-        <div className="pointer-events-none absolute inset-x-0 top-0 z-20 space-y-2.5 px-4 pt-4 land:flex land:flex-wrap land:items-center land:gap-x-2 land:gap-y-1.5 land:space-y-0 land:pl-[84px] land:pt-2.5">
+        <div className="pointer-events-none pt-safe absolute inset-x-0 top-0 z-20 space-y-2.5 px-4 pt-4 land:flex land:flex-wrap land:items-center land:gap-x-2 land:gap-y-1.5 land:space-y-0 land:pl-[84px] land:pt-2.5">
           {/* Sideways the search row and the segmented control share one line,
               so the map keeps the vertical space it no longer has to spare. */}
           <div className="flex items-center gap-2 land:min-w-[200px] land:flex-1">
@@ -385,7 +398,7 @@ export function MapScreen() {
       {/* ——— dropping a pin: the map itself is the picker ——— */}
       {pinDropping && (
         <>
-          <div className="pointer-events-none absolute inset-x-0 top-0 z-20 px-4 pt-4 land:pl-[84px] land:pt-2.5">
+          <div className="pointer-events-none pt-safe absolute inset-x-0 top-0 z-20 px-4 pt-4 land:pl-[84px] land:pt-2.5">
             <div className="glass mx-auto w-fit rounded-full px-4 py-2 shadow-[0_2px_10px_rgba(0,0,0,0.1)]">
               <p className="t-subhead font-semibold">Move the map to place the pin</p>
             </div>
