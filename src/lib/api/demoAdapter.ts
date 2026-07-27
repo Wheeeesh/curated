@@ -20,6 +20,7 @@ import { SEED_PLACES } from '../../seed/places'
 import { SEED_REVIEWS } from '../../seed/reviews'
 import { buildSeedLedger } from '../../seed/ledger'
 import { importedPlaces } from '../../seed/imported'
+import { dedupePlaces } from '../places/duplicates'
 
 const STORAGE_KEY = 'curated-demo-v1'
 
@@ -194,7 +195,7 @@ export function createDemoAdapter(): DataAdapter {
     async listPlaces(cityId) {
       // Imported guide locations are read-only reference data, so they live
       // outside the persisted state rather than being written back on save.
-      const all = [...state.places, ...(await importedPlaces())]
+      const all = dedupePlaces([...state.places, ...(await importedPlaces())])
       return cityId ? all.filter((p) => p.cityId === cityId) : all
     },
     async getPlace(placeId) {

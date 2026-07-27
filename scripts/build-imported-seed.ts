@@ -16,6 +16,7 @@ import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'no
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import type { ImportedPlace } from './import-lefooding'
+import { VenueIndex } from '../src/lib/places/duplicates'
 
 const HERE = dirname(fileURLToPath(import.meta.url))
 const DATA = join(HERE, 'data')
@@ -69,6 +70,29 @@ const SOURCES = [
   'wikivoyage-places.json',
 ]
 
+/**
+ * How much to trust a source's coordinates, lower being better.
+ *
+ * Some sources publish a venue's real position; for the rest we resolved a
+ * postal address, which lands on the street and sometimes on the wrong end of
+ * it. When two sources describe one venue, the better-placed one wins.
+ */
+const COORD_RANK: Record<string, number> = {
+  'Le Fooding': 0,
+  'Gault&Millau': 0,
+  Eater: 0,
+  Wikidata: 0,
+  'Michelin Guide (via Wikidata)': 0,
+  Wikivoyage: 1, // hand-placed by editors, usually good
+  Curated: 2,
+  "The World's 50 Best Restaurants": 3,
+  "The World's 50 Best Bars": 3,
+  'La Liste': 3,
+  'Time Out': 3,
+}
+
+const coordRank = (source: string): number => COORD_RANK[source] ?? 2
+
 /** Sources spell the same country several ways; the map shows only one. */
 const COUNTRY_FIXES: [RegExp, string][] = [
   [/^(U\.?S\.?A\.?|US|USA|United States of America)$/i, 'United States'],
@@ -103,19 +127,57 @@ function run() {
   const all = SOURCES.flatMap(load)
   for (const p of all) p.locality = normaliseLocality(p.locality)
 
-  const byKey = new Map<string, ImportedPlace>()
+  // Cluster rather than bucket by rounded coordinates: two sources putting the
+  // same venue 40 m apart used to straddle a grid line and survive as two dots.
+  const index = new VenueIndex<ImportedPlace>()
+  const firstPass: ImportedPlace[] = []
+  let merged = 0
+
   for (const p of all) {
     if (!p.name?.trim() || !Number.isFinite(p.lat) || !Number.isFinite(p.lng)) continue
-    const key = `${p.name.toLowerCase().replace(/[^a-z0-9]/g, '')}|${p.lat.toFixed(3)}|${p.lng.toFixed(3)}`
-    const existing = byKey.get(key)
-    if (existing) {
-      existing.categories = [...new Set([...existing.categories, ...p.categories])]
-    } else {
-      byKey.set(key, { ...p, categories: [...new Set(p.categories)] })
+
+    const twin = index.find(p)
+    if (twin) {
+      merged++
+      twin.categories = [...new Set([...twin.categories, ...p.categories])]
+      // The name comes from the first source to claim it (SOURCES order), but
+      // the position should come from whichever source actually knows where
+      // the place is — that is what stops pins sitting a street away.
+      if (coordRank(p.source) < coordRank(twin.source)) {
+        twin.lat = p.lat
+        twin.lng = p.lng
+        if (p.address) twin.address = p.address
+      }
+      if (!twin.address) twin.address = p.address
+      if (!twin.locality) twin.locality = p.locality
+      continue
     }
+
+    const kept = { ...p, categories: [...new Set(p.categories)] }
+    firstPass.push(kept)
+    index.add(kept)
   }
 
-  const places = [...byKey.values()]
+  // A second pass, now allowing "one name extends the other", but only across
+  // different sources — see the note on isSameVenue.
+  const byIdentity = new VenueIndex<ImportedPlace>()
+  const places: ImportedPlace[] = []
+  for (const p of firstPass) {
+    const twin = byIdentity.find(p, true)
+    if (twin && twin.source !== p.source) {
+      merged++
+      twin.categories = [...new Set([...twin.categories, ...p.categories])]
+      if (coordRank(p.source) < coordRank(twin.source)) {
+        twin.lat = p.lat
+        twin.lng = p.lng
+        if (p.address) twin.address = p.address
+      }
+      continue
+    }
+    places.push(p)
+    byIdentity.add(p)
+  }
+
   const bySource = places.reduce<Record<string, number>>((acc, p) => {
     acc[p.source] = (acc[p.source] ?? 0) + 1
     return acc
@@ -173,7 +235,7 @@ function run() {
   mkdirSync(dirname(atlasPath), { recursive: true })
   writeFileSync(atlasPath, JSON.stringify(atlas))
 
-  console.log(`merged ${all.length} → ${places.length} unique places`)
+  console.log(`merged ${all.length} → ${places.length} unique places (${merged} duplicates folded in)`)
   for (const [src, n] of Object.entries(bySource).sort((a, b) => b[1] - a[1])) {
     console.log(`  ${src}: ${n}`)
   }

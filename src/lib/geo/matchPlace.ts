@@ -1,12 +1,15 @@
 import type { Place } from '../api/types'
 import type { GeoResult } from './geocode'
+import { distanceM, foldName, SAME_NAME_RADIUS_M } from '../places/duplicates'
 
 /**
  * How close a search result has to be to an atlas place before their names
  * are even worth comparing. Wide enough to survive the disagreement between
  * a geocoder's entrance pin and a guide's street address.
  */
-const NAME_MATCH_RADIUS_M = 150
+// Shared with the atlas build, so "already in the atlas" here means the same
+// thing it meant when the atlas was deduplicated.
+const NAME_MATCH_RADIUS_M = SAME_NAME_RADIUS_M
 
 /**
  * Close enough to be the same point whatever either side calls it — the last
@@ -15,25 +18,8 @@ const NAME_MATCH_RADIUS_M = 150
  */
 const SAME_POINT_RADIUS_M = 10
 
-function distanceM(aLat: number, aLng: number, bLat: number, bLng: number): number {
-  const R = 6371000
-  const toRad = (d: number) => (d * Math.PI) / 180
-  const dLat = toRad(bLat - aLat)
-  const dLng = toRad(bLng - aLng)
-  const s =
-    Math.sin(dLat / 2) ** 2 + Math.cos(toRad(aLat)) * Math.cos(toRad(bLat)) * Math.sin(dLng / 2) ** 2
-  return 2 * R * Math.asin(Math.sqrt(s))
-}
-
 /** Case, accents and punctuation all differ between sources; none of them matter. */
-function normalize(s: string): string {
-  return s
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-z0-9]+/g, ' ')
-    .trim()
-}
+const normalize = foldName
 
 /**
  * Whether two venue names denote the same place. Only exact matches and
