@@ -93,13 +93,18 @@ export function MapScreen() {
       arr.push(r)
       reviewsByPlace.set(r.placeId, arr)
     }
+    /** Yours, or vouched for by someone you follow. */
+    const inCircle = (p: Place): boolean => {
+      if (p.createdBy === me?.id || iFollow.has(p.createdBy)) return true
+      return (reviewsByPlace.get(p.id) ?? []).some((r) => iFollow.has(r.userId) && overallScore(r) >= 7)
+    }
+
     return places
       .filter((p) => filters.length === 0 || p.categories.some((c) => filters.includes(c)))
       .filter((p) => {
         if (mapMode === 'saved') return savedSet.has(p.id)
-        if (mapMode === 'foryou') return true
-        if (p.createdBy === me?.id || iFollow.has(p.createdBy)) return true
-        return (reviewsByPlace.get(p.id) ?? []).some((r) => iFollow.has(r.userId) && overallScore(r) >= 7)
+        if (mapMode === 'all') return true
+        return inCircle(p)
       })
       .map((p) => {
         const locked = !isPlaceUnlocked(p, unlock, me?.id ?? '', reviewedIds, {
@@ -113,6 +118,9 @@ export function MapScreen() {
           hasWarning: (reviewsByPlace.get(p.id) ?? []).some((r) => r.isWarning),
           locked,
           saved: savedSet.has(p.id),
+          // Carried even in All, where it is what keeps the places that
+          // actually matter to you legible among tens of thousands.
+          inCircle: inCircle(p),
         }
       })
   }, [places, reviews, filters, mapMode, iFollow, me?.id, me?.homeLat, me?.homeLng, engine, unlock, reviewedIds, savedSet])
@@ -292,9 +300,9 @@ export function MapScreen() {
             <div className="segmented glass pointer-events-auto shadow-[0_2px_10px_rgba(0,0,0,0.1)]">
               {(
                 [
-                  ['foryou', 'For you'],
                   ['circle', 'Circle'],
                   ['saved', 'Saved'],
+                  ['all', 'All'],
                 ] as const
               ).map(([mode, label]) => (
                 <button key={mode} type="button" data-on={mapMode === mode} onClick={() => setMapMode(mode)}>
@@ -326,7 +334,7 @@ export function MapScreen() {
               {mapMode === 'saved'
                 ? 'Open a place and tap Save to keep it here.'
                 : mapMode === 'circle'
-                  ? 'Switch to “For you”, or follow members from the Members tab.'
+                  ? 'Switch to “All”, or follow members from the Members tab.'
                   : filters.length > 0
                     ? 'Try clearing the category filters.'
                     : 'Search at the top to add the first one.'}

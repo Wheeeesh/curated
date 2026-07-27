@@ -14,6 +14,8 @@ export interface MapPin extends Place {
   locked: boolean
   /** Saved for later by this member. */
   saved: boolean
+  /** Pinned by someone this member follows, or vouched for by one. */
+  inCircle: boolean
 }
 
 const categoryColorExpr = [
@@ -39,6 +41,10 @@ function toGeoJson(pins: MapPin[]): FeatureCollection {
         hasWarning: p.hasWarning && !p.locked,
         locked: p.locked,
         saved: p.saved && !p.locked,
+        // Drawn full size; everything else is halved, so the atlas reads as
+        // a quiet backdrop and the places you have a reason to care about
+        // stand out from it.
+        prominent: !p.locked && (p.saved || p.inCircle),
       },
     })),
   }
@@ -159,17 +165,26 @@ export function MapView({
           // "something is here" without giving away what.
           'circle-color': ['case', ['get', 'locked'], '#8e8e93', categoryColorExpr],
           'circle-opacity': ['case', ['get', 'locked'], 0.4, 1],
-          // Generous targets: these are the primary tap targets on the map.
-          'circle-radius': ['case', ['get', 'locked'], 12, ['get', 'highMatch'], 18, 14],
+          // Circle and saved places keep the generous tap target; the rest of
+          // the atlas is half that, so a city reads as a texture you can scan
+          // rather than a wall of identical dots.
+          'circle-radius': [
+            'case',
+            ['get', 'locked'], 6,
+            ['all', ['get', 'prominent'], ['get', 'highMatch']], 18,
+            ['get', 'prominent'], 14,
+            ['get', 'highMatch'], 9,
+            7,
+          ],
           // White halo keeps pins legible on the light basemap; a graphite
           // ring marks a strong personal match, red marks a warning.
           'circle-stroke-width': [
             'case',
-            ['get', 'locked'], 6,
-            ['get', 'saved'], 4,
-            ['get', 'hasWarning'], 4,
-            ['get', 'highMatch'], 4,
-            3,
+            ['get', 'locked'], 3,
+            ['get', 'prominent'], 4,
+            ['get', 'hasWarning'], 2,
+            ['get', 'highMatch'], 2,
+            1.5,
           ],
           'circle-stroke-color': [
             'case',
@@ -190,7 +205,8 @@ export function MapView({
           'text-field': ['get', 'matchLabel'],
           'text-font': MAP_FONT,
           'text-size': 11,
-          'text-offset': [0, -2.2],
+          // Sits just clear of the dot, which is now two different sizes.
+          'text-offset': ['case', ['get', 'prominent'], ['literal', [0, -2.2]], ['literal', [0, -1.6]]],
           'text-allow-overlap': true,
         },
         paint: {
@@ -210,7 +226,7 @@ export function MapView({
           'text-field': ['get', 'name'],
           'text-font': MAP_FONT,
           'text-size': 11,
-          'text-offset': [0, 1.9],
+          'text-offset': ['case', ['get', 'prominent'], ['literal', [0, 1.9]], ['literal', [0, 1.2]]],
           'text-anchor': 'top',
           'text-optional': true,
         },
