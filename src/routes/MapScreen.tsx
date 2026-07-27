@@ -197,6 +197,39 @@ export function MapScreen() {
     }
   }
 
+  /**
+   * If location was already granted, fetch it once on arrival so the
+   * pin-where-I-am shortcut is there without having to ask for it first.
+   * Only when already granted — landing on the map must never trigger a
+   * permission prompt on its own.
+   */
+  useEffect(() => {
+    let cancelled = false
+    navigator.permissions
+      ?.query({ name: 'geolocation' })
+      .then((status) => {
+        if (cancelled || status.state !== 'granted') return
+        getCurrentPosition()
+          .then(({ lat, lng }) => !cancelled && setMyLocation({ lat, lng }))
+          .catch(() => {
+            /* it was granted a moment ago; nothing worth reporting */
+          })
+      })
+      .catch(() => {
+        // Permissions API unsupported (older Safari) — the button simply
+        // waits until the member taps the locate control.
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [])
+
+  /** Pin exactly where the member is standing, address resolved on arrival. */
+  const addPlaceHere = () => {
+    if (!myLocation) return
+    navigate('/add', { state: { lat: myLocation.lat, lng: myLocation.lng } })
+  }
+
   return (
     <div className="absolute inset-0">
       <MapView
@@ -306,7 +339,10 @@ export function MapScreen() {
         <button
           type="button"
           onClick={() => setUnlockOpen(true)}
-          className="pressable glass absolute inset-x-4 bottom-[76px] z-20 flex items-center gap-2 rounded-2xl px-4 py-3 text-left shadow-[0_2px_12px_rgba(0,0,0,0.12)] land:bottom-4 land:left-[84px] land:max-w-sm"
+          className={`pressable glass absolute inset-x-4 bottom-[76px] z-20 flex items-center gap-2 rounded-2xl px-4 py-3 text-left shadow-[0_2px_12px_rgba(0,0,0,0.12)] land:bottom-4 land:left-[84px] land:max-w-sm ${
+            // Leave the corner free when the pin-here button is there.
+            myLocation ? 'mr-[68px] land:mr-0' : ''
+          }`}
         >
           <span aria-hidden className="h-2.5 w-2.5 shrink-0 rounded-full bg-[#8e8e93] opacity-40 ring-4 ring-[rgba(142,142,147,0.22)]" />
           <span className="min-w-0 flex-1">
@@ -317,6 +353,24 @@ export function MapScreen() {
               {unlock.needed === 1 ? 'One review opens them' : `${Math.max(0, unlock.needed - unlock.progress)} reviews to open them`}
             </span>
           </span>
+        </button>
+      )}
+
+      {/* ——— pin where I am ———
+          Only once we actually know where that is, because the whole point is
+          skipping the search: it hands the add screen your exact coordinates. */}
+      {myLocation && !pinDropping && (
+        <button
+          type="button"
+          onClick={addPlaceHere}
+          aria-label="Add a place here"
+          className="pressable absolute bottom-[76px] right-4 z-20 flex h-14 w-14 items-center justify-center rounded-full bg-accent text-white shadow-[0_4px_16px_rgba(0,0,0,0.24)] land:bottom-4"
+        >
+          {/* A pin with a + through it: adding, at a location. */}
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9">
+            <path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12Z" strokeLinejoin="round" />
+            <path d="M12 6v6M9 9h6" strokeLinecap="round" />
+          </svg>
         </button>
       )}
 
