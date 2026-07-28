@@ -23,14 +23,27 @@ export interface DataAdapter {
 
   // session
   getSession(): Promise<Session | null>
-  onAuthChange(cb: (s: Session | null) => void): () => void
+  /**
+   * `event` is only supplied for the one case the app has to react to: the
+   * member arriving back from a password-reset email, where they are signed
+   * in but must be sent to set a new password rather than into the atlas.
+   */
+  onAuthChange(cb: (s: Session | null, event?: 'password-recovery') => void): () => void
   signUp(input: SignUpInput): Promise<Session>
   signIn(email: string, password: string): Promise<Session>
   signOut(): Promise<void>
+  /** Emails a link back to the app. Resolves even if the address is unknown. */
+  sendPasswordReset(email: string): Promise<void>
+  /** Sets a new password for the member the recovery link signed in. */
+  updatePassword(newPassword: string): Promise<void>
 
   // profiles & onboarding
   getProfile(userId: string): Promise<Profile | null>
-  updateProfile(patch: Partial<Pick<Profile, 'displayName' | 'bio' | 'avatarColor' | 'interests' | 'homeCity'>>): Promise<Profile>
+  updateProfile(
+    patch: Partial<Pick<Profile, 'displayName' | 'bio' | 'avatarColor' | 'avatarUrl' | 'interests' | 'homeCity'>>,
+  ): Promise<Profile>
+  /** Stores an already-resized image and returns the URL to display it from. */
+  uploadAvatar(image: Blob): Promise<string>
   completeOnboarding(interests: Category[], homeCity: string | null, homeLat: number | null, homeLng: number | null, followIds: string[]): Promise<void>
   listMembers(): Promise<Profile[]>
 

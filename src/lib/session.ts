@@ -33,6 +33,14 @@ interface UiState {
   session: Session | null | undefined // undefined = still loading
   setSession: (s: Session | null) => void
 
+  /**
+   * True between arriving from a password-reset email and setting the new
+   * password. The session that link creates is real, so without this the app
+   * would drop them straight into the atlas and the reset would never happen.
+   */
+  passwordRecovery: boolean
+  setPasswordRecovery: (v: boolean) => void
+
   /** Where the map is now — persisted so the app reopens where you left it. */
   view: MapView
   setView: (v: MapView) => void
@@ -52,6 +60,9 @@ interface UiState {
 export const useUi = create<UiState>((set) => ({
   session: undefined,
   setSession: (s) => set({ session: s }),
+
+  passwordRecovery: false,
+  setPasswordRecovery: (v) => set({ passwordRecovery: v }),
 
   view: loadView(),
   setView: (v) => {

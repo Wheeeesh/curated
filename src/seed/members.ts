@@ -20,13 +20,17 @@ export interface SeedMember extends Profile {
 
 const m = (
   n: number,
-  p: Omit<SeedMember, 'id' | 'isAdmin' | 'invitedBy' | 'onboarded' | 'isSeed' | 'createdAt' | 'homeLat' | 'homeLng'>,
+  p: Omit<
+    SeedMember,
+    'id' | 'isAdmin' | 'invitedBy' | 'onboarded' | 'isSeed' | 'createdAt' | 'homeLat' | 'homeLng' | 'avatarUrl'
+  >,
 ): SeedMember => ({
   id: memberId(n),
   isAdmin: false,
   invitedBy: null,
   homeLat: null,
   homeLng: null,
+  avatarUrl: null,
   onboarded: true,
   isSeed: true,
   createdAt: seedDate(200 - n * 6),

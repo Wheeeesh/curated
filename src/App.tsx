@@ -8,6 +8,7 @@ import { Toast } from './components/ui/Toast'
 import { InstallPrompt } from './components/ui/InstallPrompt'
 import { BottomNav } from './components/nav/BottomNav'
 import { WelcomeScreen } from './routes/WelcomeScreen'
+import { ResetPasswordScreen } from './routes/ResetPasswordScreen'
 import { OnboardingScreen } from './routes/OnboardingScreen'
 import { MapScreen } from './routes/MapScreen'
 import { PlaceDetailScreen } from './routes/PlaceDetailScreen'
@@ -53,15 +54,28 @@ function WithNav() {
   )
 }
 
+/**
+ * Arriving from a reset email signs the member in, so without this they would
+ * land on the map with the password they have forgotten still in force.
+ */
+function PasswordRecoveryGate() {
+  const recovery = useUi((s) => s.passwordRecovery)
+  const { pathname } = useLocation()
+  if (recovery && pathname !== '/reset-password') return <Navigate to="/reset-password" replace />
+  return null
+}
+
 export default function App() {
   const setSession = useUi((s) => s.setSession)
+  const setPasswordRecovery = useUi((s) => s.setPasswordRecovery)
 
   useEffect(() => {
     let cancelled = false
     api.getSession().then((s) => {
       if (!cancelled) setSession(s)
     })
-    const off = api.onAuthChange((s) => {
+    const off = api.onAuthChange((s, event) => {
+      if (event === 'password-recovery') setPasswordRecovery(true)
       setSession(s)
       // A sign-in/out invalidates everything user-scoped.
       queryClient.invalidateQueries()
@@ -70,7 +84,7 @@ export default function App() {
       cancelled = true
       off()
     }
-  }, [setSession])
+  }, [setSession, setPasswordRecovery])
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -78,8 +92,12 @@ export default function App() {
       <BrowserRouter basename={import.meta.env.BASE_URL}>
         {/* Portrait is a phone-width column; sideways the app fills the screen. */}
         <div className="relative mx-auto h-dvh max-w-md overflow-hidden bg-bg land:max-w-none">
+          <PasswordRecoveryGate />
           <Routes>
             <Route path="/welcome" element={<WelcomeScreen />} />
+            {/* Outside Protected: the member is signed in here, but must set a
+                password before anything else. */}
+            <Route path="/reset-password" element={<ResetPasswordScreen />} />
             <Route element={<Protected />}>
               <Route path="/onboarding" element={<OnboardingScreen />} />
               <Route element={<WithNav />}>

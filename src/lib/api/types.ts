@@ -77,6 +77,8 @@ export interface Profile {
   username: string
   displayName: string
   avatarColor: string
+  /** Uploaded picture. Falls back to the coloured initials when absent. */
+  avatarUrl: string | null
   bio: string
   interests: Category[]
   homeCity: string | null

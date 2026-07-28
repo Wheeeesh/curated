@@ -25,6 +25,7 @@ const toCity = (r: Row): City => ({
 })
 const toProfile = (r: Row): Profile => ({
   id: r.id, username: r.username, displayName: r.display_name, avatarColor: r.avatar_color,
+  avatarUrl: r.avatar_url ?? null,
   bio: r.bio ?? '', interests: r.interests ?? [], homeCity: r.home_city,
   homeLat: r.home_lat, homeLng: r.home_lng,
   isAdmin: r.is_admin, invitedBy: r.invited_by, onboarded: r.onboarded, isSeed: r.is_seed,
@@ -82,7 +83,9 @@ export function createSupabaseAdapter(url: string, anonKey: string): DataAdapter
       return mapSession(data.session)
     },
     onAuthChange(cb) {
-      const { data } = sb.auth.onAuthStateChange((_evt, session) => cb(mapSession(session)))
+      const { data } = sb.auth.onAuthStateChange((evt, session) =>
+        cb(mapSession(session), evt === 'PASSWORD_RECOVERY' ? 'password-recovery' : undefined),
+      )
       return () => data.subscription.unsubscribe()
     },
     async signUp(input: SignUpInput) {
@@ -112,6 +115,19 @@ export function createSupabaseAdapter(url: string, anonKey: string): DataAdapter
     async signOut() {
       await sb.auth.signOut()
     },
+    async sendPasswordReset(email) {
+      // Back to wherever this copy of the app is served from — "/" locally and
+      // the /curated/ subpath on Pages. This exact URL has to be listed under
+      // Authentication → URL Configuration → Redirect URLs in Supabase, or the
+      // link in the email lands on the site root and the recovery is lost.
+      const redirectTo = `${window.location.origin}${import.meta.env.BASE_URL}`
+      const { error } = await sb.auth.resetPasswordForEmail(email.trim(), { redirectTo })
+      die(error)
+    },
+    async updatePassword(newPassword) {
+      const { error } = await sb.auth.updateUser({ password: newPassword })
+      die(error)
+    },
 
     async getProfile(userId) {
       const { data, error } = await sb.from('profiles').select('*').eq('id', userId).maybeSingle()
@@ -123,6 +139,7 @@ export function createSupabaseAdapter(url: string, anonKey: string): DataAdapter
       if (patch.displayName !== undefined) row.display_name = patch.displayName
       if (patch.bio !== undefined) row.bio = patch.bio
       if (patch.avatarColor !== undefined) row.avatar_color = patch.avatarColor
+      if (patch.avatarUrl !== undefined) row.avatar_url = patch.avatarUrl
       if (patch.interests !== undefined) row.interests = patch.interests
       if (patch.homeCity !== undefined) row.home_city = patch.homeCity
       const { data, error } = await sb.from('profiles').update(row).eq('id', await uid()).select().single()
@@ -162,6 +179,27 @@ export function createSupabaseAdapter(url: string, anonKey: string): DataAdapter
       const { data, error } = await sb.from('profiles').select('*')
       die(error)
       return (data ?? []).map(toProfile)
+    },
+    async uploadAvatar(image) {
+      const me = await uid()
+      // One object per member, overwritten on each change, so old pictures do
+      // not accumulate. The query string busts the CDN cache after an upsert.
+      const path = `${me}.jpg`
+      const { error } = await sb.storage
+        .from('avatars')
+        .upload(path, image, { upsert: true, contentType: 'image/jpeg' })
+      if (error) {
+        const message = error.message
+        // The most likely failure by far is the bucket not existing yet, and
+        // "Bucket not found" would send Victor hunting in the wrong place.
+        throw new Error(
+          /bucket/i.test(message)
+            ? 'Picture storage is not set up yet — run the latest supabase/GO-LIVE.sql.'
+            : message || 'Could not upload that picture.',
+        )
+      }
+      const { data } = sb.storage.from('avatars').getPublicUrl(path)
+      return `${data.publicUrl}?v=${Date.now()}`
     },
 
     async follow(userId) {

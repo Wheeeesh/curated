@@ -110,6 +110,7 @@ export function createDemoAdapter(): DataAdapter {
         username,
         displayName: input.displayName.trim() || username,
         avatarColor: '#d0a75f',
+        avatarUrl: null,
         bio: '',
         interests: [],
         homeCity: null,
@@ -143,6 +144,18 @@ export function createDemoAdapter(): DataAdapter {
       persist()
       notify()
     },
+    async sendPasswordReset() {
+      // Nothing here can send email, and saying so is better than a spinner
+      // that appears to work and never arrives.
+      throw new Error('Demo mode runs entirely on this device and can’t send email. Any password works here.')
+    },
+    async updatePassword(newPassword) {
+      const uid = requireUser()
+      const entry = Object.values(state.accounts).find((a) => a.userId === uid)
+      if (!entry) throw new Error('No account to update.')
+      entry.password = newPassword
+      persist()
+    },
 
     async getProfile(userId) {
       return state.profiles.find((p) => p.id === userId) ?? null
@@ -152,6 +165,18 @@ export function createDemoAdapter(): DataAdapter {
       Object.assign(me, patch)
       persist()
       return me
+    },
+    async uploadAvatar(image) {
+      // No object storage in demo mode, so the picture rides along inside the
+      // persisted state as a data URL. Already resized by the caller, so this
+      // stays small enough for localStorage.
+      requireUser()
+      return await new Promise<string>((resolve, reject) => {
+        const reader = new FileReader()
+        reader.onload = () => resolve(String(reader.result))
+        reader.onerror = () => reject(new Error('Could not read that picture.'))
+        reader.readAsDataURL(image)
+      })
     },
     async completeOnboarding(interests: Category[], homeCity: string | null, homeLat: number | null, homeLng: number | null, followIds: string[]) {
       const uid = requireUser()

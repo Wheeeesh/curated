@@ -6,6 +6,20 @@ import { initials } from '../../lib/format'
  * makes people recognisable when scanning a list.
  */
 export function Avatar({ profile, size = 40 }: { profile: Profile; size?: number }) {
+  if (profile.avatarUrl) {
+    return (
+      <img
+        src={profile.avatarUrl}
+        alt=""
+        aria-hidden
+        width={size}
+        height={size}
+        loading="lazy"
+        className="shrink-0 rounded-full object-cover"
+        style={{ width: size, height: size, backgroundColor: `${profile.avatarColor}1f` }}
+      />
+    )
+  }
   return (
     <div
       aria-hidden
